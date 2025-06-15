@@ -7,3 +7,8 @@ enum Materials {
 	Grass,
 	Water
 }
+
+enum Lang {
+	Ru,
+	En
+}

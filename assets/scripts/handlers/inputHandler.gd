@@ -3,27 +3,18 @@ extends Node
 class_name InputHandler
 
 #----------------------------------------------
-# Отвечает за клики мышкой и за кнопки клавиатуры
+# Отвечает за кнопки клавиатуры
 # Соединяется через другие ноды с помощью сигналов
 #-----------------------------------------------
 
-signal click(scenePos: Vector2)
 signal key_running
 
 @onready var main: Node2D = get_node('/root/main')
-
-func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				if !event.pressed:
-					click.emit(main.get_global_mouse_position())
 
 
 func _process(_delta: float) -> void:	
 	if Input.is_action_just_pressed("ui_run") or Input.is_action_just_released("ui_run"):
 		key_running.emit()
-
 
 
 func get_dir() -> Vector2:

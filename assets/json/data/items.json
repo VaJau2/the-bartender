@@ -1,0 +1,6 @@
+{
+	"empty-glass": {
+		"type": "glass",
+		"texture": "assets/sprites/items/empty-glass.png"
+	}
+}

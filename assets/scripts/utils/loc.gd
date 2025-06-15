@@ -5,7 +5,7 @@ class_name Loc
 # Отвечает за получение всего игрового текста из assets/json/{lang}/
 #--------------------------------------------
 
-const LANG = 'ru'
+static var current_lang = Enums.Lang.Ru
 
 # Получает на вход путь до кода в виде "inGame.logs.start"
 # Первый элемент в пути - название файла
@@ -17,19 +17,22 @@ static func trans(code: String) -> String:
 		push_error("file path is empty")
 		
 	var fileName = path[0]
-	var jsonData = JsonParse.read("res://assets/json/" + LANG + "/" + fileName + ".json")
+	
+	var json_path = "res://assets/json/" + str(Enums.Lang.keys()[current_lang]) + "/" + fileName + ".json"
+	
+	var json_data = JsonParse.read(json_path)
 	path.remove_at(0)
 	
 	if len(path) == 0: 
 		push_error("json path is empty")
 	
-	var firstJsonCode = path[0]
-	var result = jsonData[firstJsonCode]
+	var first_json_code = path[0]
+	var result = json_data[first_json_code]
 	path.remove_at(0)
 	
 	while (len(path) > 0):
-		var nextJsonCode = path[0]
-		result = result[nextJsonCode]
+		var next_json_code = path[0]
+		result = result[next_json_code]
 		path.remove_at(0)
 	
 	return result
