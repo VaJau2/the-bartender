@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0qushes8s4bk"]
+
+[ext_resource type="Texture2D" uid="uid://8xohff471yru" path="res://assets/sprites/props/beach-sunbed.png" id="1_7t54q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aod3"]
+size = Vector2(51, 22)
+
+[node name="sunbed" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(2, -23)
+texture = ExtResource("1_7t54q")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -10)
+shape = SubResource("RectangleShape2D_3aod3")

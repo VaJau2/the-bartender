@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1qpk34paovkk"]
+
+[ext_resource type="Texture2D" uid="uid://wfoqi07bqxrf" path="res://assets/sprites/props/signs/town-sign.png" id="1_s4ouy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcefi"]
+radius = 4.12311
+
+[node name="town-sign" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_s4ouy")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dcefi")

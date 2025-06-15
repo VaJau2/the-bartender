@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5n0f07hjqv55"]
+
+[ext_resource type="Texture2D" uid="uid://cbfvd575qrjo" path="res://assets/sprites/props/nature_assets.png" id="1_k78wu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ams0t"]
+radius = 10.0
+height = 46.0
+
+[node name="tree1" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(5, -86)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_k78wu")
+region_enabled = true
+region_rect = Rect2(0, 0, 104.62, 139.331)
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ams0t")

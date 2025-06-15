@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drnxj4wwsv3bf"]
+
+[ext_resource type="Texture2D" uid="uid://edasloarao8v" path="res://assets/sprites/props/lampPost.png" id="1_jd2ar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cwlbw"]
+radius = 5.09902
+
+[node name="lightPost" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -43)
+texture = ExtResource("1_jd2ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cwlbw")

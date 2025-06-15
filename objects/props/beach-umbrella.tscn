@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0amrr8rnvm85"]
+
+[ext_resource type="Texture2D" uid="uid://dougscjy324pk" path="res://assets/sprites/props/beach-umbrella.png" id="1_elvaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aod3"]
+size = Vector2(5, 11)
+
+[node name="umbrella" type="StaticBody2D"]
+
+[node name="Beach-umbrella" type="Sprite2D" parent="."]
+position = Vector2(6, -46)
+texture = ExtResource("1_elvaj")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -3.5)
+shape = SubResource("RectangleShape2D_3aod3")

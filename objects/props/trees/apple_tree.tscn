@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://el3stdg3dluf"]
+
+[ext_resource type="Texture2D" uid="uid://crskut6xae53o" path="res://assets/sprites/trees/apple-tree.png" id="1_pne44"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rng16"]
+size = Vector2(83, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cywq"]
+size = Vector2(38.0642, 14.3095)
+
+[node name="appleTree" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-1, -67)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_pne44")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_rng16")
+
+[node name="shape2" type="CollisionShape2D" parent="."]
+position = Vector2(-26.412, 25.4912)
+rotation = -0.680678
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6cywq")
+
+[node name="shape3" type="CollisionShape2D" parent="."]
+position = Vector2(-48, 8)
+rotation = -0.436332
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6cywq")
+
+[node name="shape4" type="CollisionShape2D" parent="."]
+position = Vector2(43, -3)
+rotation = 0.122173
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6cywq")

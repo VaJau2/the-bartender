@@ -29,7 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bofkoqxcxu0h2" path="res://assets/audio/steps/water/stepWaterFast1.wav" id="26_2kgtx"]
 [ext_resource type="AudioStream" uid="uid://ny1mr4dtklpe" path="res://assets/audio/steps/water/stepWaterFast2.wav" id="27_kmw3l"]
 [ext_resource type="AudioStream" uid="uid://c67ccjkkgm006" path="res://assets/audio/steps/water/stepWaterFast3.wav" id="28_51m1h"]
-[ext_resource type="Script" uid="uid://cwlfnhcr8hagj" path="res://assets/scripts/waterSplashSpawner.gd" id="30_c3thp"]
+[ext_resource type="Script" uid="uid://cwlfnhcr8hagj" path="res://assets/scripts/stepSpawner.gd" id="30_c3thp"]
 [ext_resource type="PackedScene" uid="uid://cahq5mhin12os" path="res://objects/effects/water-step.tscn" id="31_7twir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l51np"]
@@ -191,7 +191,7 @@ walk_sounds = Array[AudioStream]([ExtResource("26_2kgtx"), ExtResource("27_kmw3l
 run_sounds = Array[AudioStream]([ExtResource("26_2kgtx"), ExtResource("27_kmw3l"), ExtResource("28_51m1h")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
-[node name="Character" type="CharacterBody2D"]
+[node name="character" type="CharacterBody2D"]
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0.75, -1)
@@ -238,7 +238,7 @@ steps_data = Array[ExtResource("6_1lg8h")]([SubResource("Resource_nrt7u"), SubRe
 script = ExtResource("19_1lg8h")
 parent = NodePath("../..")
 
-[node name="waterStepSpawner" type="Node2D" parent="audi" node_paths=PackedStringArray("steps_controller", "movement_controller")]
+[node name="stepSpawner" type="Node2D" parent="audi" node_paths=PackedStringArray("steps_controller", "movement_controller")]
 script = ExtResource("30_c3thp")
 prefab = ExtResource("31_7twir")
 steps_controller = NodePath("..")

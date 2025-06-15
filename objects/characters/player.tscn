@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_ho5yc"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_ssmtf"]
 
-[node name="Player" instance=ExtResource("1_h3hc8")]
+[node name="player" instance=ExtResource("1_h3hc8")]
 
 [node name="sprite" parent="." index="2"]
 texture = ExtResource("2_ho5yc")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca52fx3un2vc3"]
+
+[ext_resource type="Texture2D" uid="uid://bn2anna78opqp" path="res://assets/sprites/props/signs/farm-sign.png" id="1_d5rdb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcefi"]
+radius = 4.12311
+
+[node name="farm-sign" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_d5rdb")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dcefi")

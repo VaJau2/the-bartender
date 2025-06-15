@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cohrr1j8ybdb1"]
+
+[ext_resource type="Texture2D" uid="uid://b3lg54eqsym2n" path="res://assets/sprites/buildings/town/barn_closed.png" id="1_3bck1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j87h7"]
+size = Vector2(182, 149)
+
+[node name="barn" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(4, -125)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_3bck1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -54.5)
+shape = SubResource("RectangleShape2D_j87h7")

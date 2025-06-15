@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpkjdqxw3cmx8"]
+
+[ext_resource type="Texture2D" uid="uid://dm0m3adoy47sn" path="res://assets/sprites/buildings/bar/bar-side-wall.png" id="1_3d8qq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v5bk"]
+size = Vector2(6, 156)
+
+[node name="bar-side-wall" type="StaticBody2D"]
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0v5bk")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_3d8qq")

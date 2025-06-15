@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckdwwp3um3c5l"]
+
+[ext_resource type="Texture2D" uid="uid://coh8o8lgoqmpb" path="res://assets/sprites/buildings/town/market_assets.png" id="1_qubp5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drqof"]
+size = Vector2(68, 21)
+
+[node name="marketStand" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(1, -25)
+texture = ExtResource("1_qubp5")
+region_enabled = true
+region_rect = Rect2(93.532, 7.8208, 88.5406, 95.7399)
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(1, 9.5)
+shape = SubResource("RectangleShape2D_drqof")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf7u4ua2luc5b"]
+
+[ext_resource type="Texture2D" uid="uid://jat7qg7smifp" path="res://assets/sprites/buildings/town/houses.png" id="1_pal05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkr7y"]
+size = Vector2(124, 158.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yei45"]
+size = Vector2(97, 98)
+
+[node name="house8" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(7, -89)
+texture = ExtResource("1_pal05")
+region_enabled = true
+region_rect = Rect2(403.59, 278.613, 246.437, 255.143)
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(-39, -46)
+shape = SubResource("RectangleShape2D_kkr7y")
+
+[node name="shape2" type="CollisionShape2D" parent="."]
+position = Vector2(71.5, -60)
+shape = SubResource("RectangleShape2D_yei45")

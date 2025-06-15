@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmt3ulm1fcefl"]
+
+[ext_resource type="Texture2D" uid="uid://coh8o8lgoqmpb" path="res://assets/sprites/buildings/town/market_assets.png" id="1_kx7de"]
+
+[node name="apples" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_kx7de")
+region_enabled = true
+region_rect = Rect2(258.544, 212.345, 14.9833, 23.6641)
