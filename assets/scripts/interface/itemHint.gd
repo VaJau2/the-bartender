@@ -2,12 +2,14 @@ extends Panel
 
 class_name ItemHint
 
-@onready var main: Node2D = get_node('/root/main')
+@onready var interaction_handler: InteractionHandler = G.player.interaction_handler
 @onready var name_label: Label = get_node("name")
 
 
 func _ready() -> void:
 	set_process(false)
+	interaction_handler.show_item_hint.connect(_on_show_hint)
+	interaction_handler.hide_item_hint.connect(_on_hide_hint)
 
 
 func _process(_delta: float) -> void:
@@ -22,11 +24,11 @@ func _update_pos() -> void:
 	position = mouse_pos + Vector2(20, 20)
 
 
-func show_item_hint(item_code: String) -> void:
+func _on_show_hint(item_code: String) -> void:
 	name_label.text = Loc.trans("items." + item_code + ".name")
 	visible = true
 	set_process(true)
 
 
-func hide_item_hint() -> void:
+func _on_hide_hint() -> void:
 	visible = false

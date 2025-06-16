@@ -72,6 +72,7 @@ ui_run={
 
 2d_physics/layer_1="walls"
 2d_physics/layer_2="items"
+2d_physics/layer_3="put_areas"
 
 [rendering]
 

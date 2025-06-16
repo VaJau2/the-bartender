@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://jyddje2efq3h"]
+
+[ext_resource type="Texture2D" uid="uid://bsfp4yfolxyxc" path="res://assets/sprites/props/furn/kitchen-table.png" id="1_xhfhj"]
+[ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_8nqib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nqib"]
+size = Vector2(91, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dqvc"]
+size = Vector2(20, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq3dc"]
+size = Vector2(20, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pghvc"]
+size = Vector2(61, 14)
+
+[node name="kitchen-table" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_xhfhj")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5, -3.5)
+shape = SubResource("RectangleShape2D_8nqib")
+
+[node name="shape2" type="CollisionShape2D" parent="."]
+position = Vector2(45, 7)
+shape = SubResource("RectangleShape2D_3dqvc")
+
+[node name="putArea" type="Area2D" parent="."]
+position = Vector2(45, -7)
+collision_layer = 4
+collision_mask = 0
+collision_priority = 0.0
+monitorable = false
+script = ExtResource("2_8nqib")
+
+[node name="shape" type="CollisionShape2D" parent="putArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_mq3dc")
+
+[node name="shape2" type="CollisionShape2D" parent="putArea"]
+position = Vector2(-40.5, -14)
+shape = SubResource("RectangleShape2D_pghvc")
+
+[connection signal="input_event" from="putArea" to="putArea" method="_on_input_event"]
+[connection signal="mouse_entered" from="putArea" to="putArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="putArea" to="putArea" method="_on_mouse_exited"]

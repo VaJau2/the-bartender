@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dky0qodu1pl03"]
+
+[ext_resource type="Texture2D" uid="uid://ffeelv0gsbwq" path="res://assets/sprites/props/furn/fridge.png" id="1_8if52"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4844m"]
+size = Vector2(24, 43)
+
+[node name="fridge" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("1_8if52")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_4844m")

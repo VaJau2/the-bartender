@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dprg0njuxm3jc"]
+
+[ext_resource type="PackedScene" uid="uid://cjatsgx2yl2xp" path="res://objects/buildings/bar/bar-wall.tscn" id="1_drct4"]
+[ext_resource type="PackedScene" uid="uid://bpkjdqxw3cmx8" path="res://objects/buildings/bar/bar_side_wall.tscn" id="2_6el4l"]
+[ext_resource type="PackedScene" uid="uid://dtgfl4038lfdi" path="res://objects/buildings/bar/bar-front.tscn" id="3_xn7tl"]
+[ext_resource type="PackedScene" uid="uid://bawxlanqcl1vk" path="res://objects/buildings/bar/bar-roof.tscn" id="4_mfk4d"]
+[ext_resource type="PackedScene" uid="uid://jyddje2efq3h" path="res://objects/props/furn/kitchen_table.tscn" id="5_6el4l"]
+[ext_resource type="PackedScene" uid="uid://dcb6qk2peq5cp" path="res://objects/props/furn/sofa.tscn" id="6_xn7tl"]
+[ext_resource type="PackedScene" uid="uid://crmnwa0c6a3xu" path="res://objects/props/furn/glass_locker.tscn" id="7_mfk4d"]
+[ext_resource type="PackedScene" uid="uid://dky0qodu1pl03" path="res://objects/props/furn/fridge.tscn" id="8_ffeum"]
+
+[node name="bar" type="Node2D"]
+y_sort_enabled = true
+
+[node name="bar-wall" parent="." instance=ExtResource("1_drct4")]
+position = Vector2(9.04999, -131.63)
+scale = Vector2(1.01, 1.01)
+
+[node name="bar-side-wall" parent="bar-wall" instance=ExtResource("2_6el4l")]
+position = Vector2(139.554, 80.8218)
+scale = Vector2(0.990099, 1.26733)
+
+[node name="bar-side-wall2" parent="bar-wall" instance=ExtResource("2_6el4l")]
+position = Vector2(-140.644, 30.3267)
+scale = Vector2(0.942532, 0.419433)
+
+[node name="bar-side-wall3" parent="bar-wall" instance=ExtResource("2_6el4l")]
+position = Vector2(-137.673, 157.059)
+scale = Vector2(1.07021, 0.452528)
+
+[node name="bar-front" parent="." instance=ExtResource("3_xn7tl")]
+position = Vector2(10.475, 64.945)
+
+[node name="bar-roof" parent="." instance=ExtResource("4_mfk4d")]
+z_index = 2
+position = Vector2(10.725, -108.08)
+
+[node name="kitchen-table" parent="." instance=ExtResource("5_6el4l")]
+position = Vector2(80, -119)
+scale = Vector2(1.2, 1.2)
+
+[node name="sofa" parent="." instance=ExtResource("6_xn7tl")]
+position = Vector2(-93, -123)
+scale = Vector2(1.3, 1.3)
+
+[node name="glass-locker" parent="." instance=ExtResource("7_mfk4d")]
+position = Vector2(-19, -121)
+scale = Vector2(1.3, 1.3)
+
+[node name="fridge" parent="." instance=ExtResource("8_ffeum")]
+position = Vector2(129, -24)
+scale = Vector2(1.3, 1.3)

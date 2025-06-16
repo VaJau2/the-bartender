@@ -1,5 +1,5 @@
 extends CharacterBody2D
 
+class_name Player
 
-func _ready() -> void:
-	G.player = self
+@onready var interaction_handler: InteractionHandler = get_node("interactionHandler")

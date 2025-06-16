@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://crmnwa0c6a3xu"]
+
+[ext_resource type="Texture2D" uid="uid://gxwjn433o6xp" path="res://assets/sprites/props/furn/glass-locker.png" id="1_qd1wl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phgmr"]
+size = Vector2(46, 25)
+
+[node name="glass-locker" type="StaticBody2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_qd1wl")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_phgmr")

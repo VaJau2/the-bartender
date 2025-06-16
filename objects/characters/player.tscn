@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd3mnq7v4cljx"]
+[gd_scene load_steps=7 format=3 uid="uid://dd3mnq7v4cljx"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_h3hc8"]
 [ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player.png" id="2_ho5yc"]
 [ext_resource type="Script" uid="uid://5bnrtyglk2lx" path="res://assets/scripts/player.gd" id="2_ssmtf"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_ho5yc"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_ssmtf"]
+[ext_resource type="Script" uid="uid://dgrs1etu4tkry" path="res://assets/scripts/handlers/interactionHandler.gd" id="6_s7pd4"]
 
 [node name="player" instance=ExtResource("1_h3hc8")]
 script = ExtResource("2_ssmtf")
@@ -21,9 +22,12 @@ speed = 200
 script = ExtResource("3_ssmtf")
 movement_controller = NodePath("../movementContoller")
 
-[node name="camera" type="Camera2D" parent="." index="6"]
+[node name="interactionHandler" type="Node" parent="." index="6"]
+script = ExtResource("6_s7pd4")
+
+[node name="camera" type="Camera2D" parent="." index="7"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="audi" parent="." index="8"]
+[node name="audi" parent="." index="9"]
 default_material = 1
