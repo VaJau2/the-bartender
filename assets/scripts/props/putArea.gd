@@ -27,5 +27,4 @@ func interact() -> void:
 	item_to_put.process_mode = Node.PROCESS_MODE_INHERIT
 	item_to_put.visible = true
 	item_to_put.global_position = main.get_global_mouse_position()
-	interaction_controller.holding_item = null
-	interaction_controller.clear_item.emit()
+	interaction_controller.update_holding_item(null)

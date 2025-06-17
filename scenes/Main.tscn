@@ -886,7 +886,7 @@ position = Vector2(-21, -1)
 position = Vector2(165, -8)
 
 [node name="marketStand3" parent="props/market-props/stands" instance=ExtResource("19_nfivy")]
-position = Vector2(-83, -10)
+position = Vector2(-85, -10)
 
 [node name="marketStand4" parent="props/market-props/stands" instance=ExtResource("20_1nqs0")]
 position = Vector2(38, -9)
@@ -1542,7 +1542,7 @@ code = "empty-glass"
 
 [node name="item2" parent="." instance=ExtResource("48_gdcyb")]
 position = Vector2(176, 40)
-code = "glass-water"
+code = "apple"
 
 [node name="menu" type="CanvasLayer" parent="."]
 

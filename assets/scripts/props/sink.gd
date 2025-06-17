@@ -11,11 +11,11 @@ var base_item_path: String = "res://objects/props/items/base-item.tscn"
 func on_mouse_entered() -> void:
 	var item = interaction_controller.holding_item
 	if item == null or item.type != Enums.ItemType.glass: return
-	interaction_controller.show_put_hint.emit()
+	interaction_controller.show_item_hint.emit("sink")
 
 
 func on_mouse_exited() -> void:
-	interaction_controller.hide_put_hint.emit()
+	interaction_controller.hide_item_hint.emit()
 
 
 func interact() -> void:
@@ -31,4 +31,4 @@ func interact() -> void:
 	
 	audi.play()
 	item._ready()
-	interaction_controller.pickup_item.emit(item)
+	interaction_controller.update_holding_item(item)

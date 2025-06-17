@@ -17,7 +17,7 @@ size = Vector2(20, 48)
 size = Vector2(20, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pghvc"]
-size = Vector2(61, 14)
+size = Vector2(42, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py2cw"]
 size = Vector2(23, 12)
@@ -48,7 +48,7 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_mq3dc")
 
 [node name="shape2" type="CollisionShape2D" parent="putArea"]
-position = Vector2(-40.5, -14)
+position = Vector2(-31, -14)
 shape = SubResource("RectangleShape2D_pghvc")
 
 [node name="interactionHandler" type="Node" parent="putArea"]

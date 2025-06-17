@@ -9,6 +9,7 @@ class_name MovementController
 @onready var parent: CharacterBody2D = get_parent()
 @export var movement_speed = 100
 
+var may_move: bool = true
 var dir: Vector2
 var current_state: MovementState
 
@@ -43,7 +44,7 @@ func set_current_state(new_state: MovementState) -> void:
 func set_velocity(new_velocity: Vector2) -> void:
 	parent.velocity = new_velocity
 	
-	if new_velocity.length() > 0:
+	if new_velocity.length() > 0 and may_move:
 		move.emit()
 		parent.move_and_slide()
 	else:

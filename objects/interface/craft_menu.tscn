@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://ncde73ege2b2"]
+
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_k0pg1"]
+[ext_resource type="Script" uid="uid://bb5nwsne5e1rb" path="res://assets/scripts/interface/craftMenu.gd" id="2_b0vtf"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_r8unt"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_8esil"]
+
+[sub_resource type="Resource" id="Resource_6ybga"]
+script = ExtResource("4_8esil")
+node_path = NodePath("../start")
+code = "craft.start"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_bkyq0"]
+script = ExtResource("4_8esil")
+node_path = NodePath("../cancel")
+code = "craft.cancel"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_0pi0o"]
+script = ExtResource("4_8esil")
+node_path = NodePath("../ingredientsLabel")
+code = "craft.ingredient"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_8esil"]
+script = ExtResource("4_8esil")
+node_path = NodePath("../glassLabel")
+code = "craft.glass"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="craftMenu" type="Panel"]
+offset_right = 208.0
+offset_bottom = 200.0
+theme = ExtResource("1_k0pg1")
+script = ExtResource("2_b0vtf")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -32.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+disabled = true
+text = "Start"
+
+[node name="cancel" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 104.0
+offset_bottom = -12.0
+grow_vertical = 0
+text = "Cancel"
+
+[node name="ingredientsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -44.0
+offset_right = 107.0
+offset_bottom = -32.0
+grow_vertical = 2
+text = "Ingredient:"
+horizontal_alignment = 2
+
+[node name="ingredientIcon" type="Button" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 120.0
+offset_top = 48.0
+offset_right = 152.0
+offset_bottom = 80.0
+icon_alignment = 1
+expand_icon = true
+
+[node name="glassLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 12.0
+offset_right = 104.0
+offset_bottom = 24.0
+grow_vertical = 2
+text = "Glass:"
+horizontal_alignment = 2
+
+[node name="glassIcon" type="Button" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 120.0
+offset_top = 4.0
+offset_right = 152.0
+offset_bottom = 36.0
+grow_vertical = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("3_r8unt")
+nodes = Array[ExtResource("4_8esil")]([SubResource("Resource_6ybga"), SubResource("Resource_bkyq0"), SubResource("Resource_0pi0o"), SubResource("Resource_8esil")])
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="ingredientIcon" to="." method="_on_ingredient_icon_pressed"]
+[connection signal="pressed" from="glassIcon" to="." method="_on_glass_icon_pressed"]

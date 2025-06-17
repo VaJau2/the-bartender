@@ -12,9 +12,8 @@ var type: Enums.ItemType
 func _ready() -> void:
 	var json_data = JsonParse.read("res://assets/json/data/items.json")
 	var item_data = json_data[code]
-	type = Enums.ItemType.get(item_data["type"])
-	var texture_path = item_data["texture"]
-	sprite.texture = load("res://" + texture_path)
+	type = Enums.ItemType.get(item_data.type)
+	_load_icon(item_data)
 
 
 func on_mouse_entered() -> void:
@@ -29,7 +28,14 @@ func on_mouse_exited() -> void:
 func interact() -> void:
 	if interaction_controller.holding_item != null:
 		return
-	interaction_controller.holding_item = self
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
-	interaction_controller.pickup_item.emit(self)
+	interaction_controller.update_holding_item(self)
+
+
+func _load_icon(item_data: Dictionary) -> void:
+	var texture_path = item_data.texture
+	if !texture_path: return
+	var texture = load("res://" + texture_path)
+	if !texture: return
+	sprite.texture = texture

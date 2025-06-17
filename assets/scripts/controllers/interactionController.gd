@@ -2,8 +2,10 @@ extends Node
 
 class_name InteractionController
 
-const INTERACTION_DISTANCE: float = 200
+const INTERACTION_DISTANCE: float = 150
 const INTERACTION_COOLDOWN: float = 0.1
+
+@export var movement_controller: MovementController
 
 # сигналы для интерфейса 
 signal show_item_hint(code: String)
@@ -15,21 +17,35 @@ signal hide_put_hint()
 signal pickup_item(item: Item)
 signal clear_item()
 
+signal open_crafting_menu(crafting: CraftingBase)
+signal close_crafting_menu()
+
 var holding_item: Item
 var interaction_cooldown: float
 
 
+func update_holding_item(item: Item) -> void:
+	holding_item = item
+	if item != null:
+		pickup_item.emit(item)
+	else:
+		clear_item.emit()
+
+
 func mouse_entered_item(item: CollisionObject2D) -> void:
+	if !movement_controller.may_move: return
 	if item.has_method("on_mouse_entered"):
 		item.on_mouse_entered()
 
 
 func mouse_exited_item(item: CollisionObject2D) -> void:
+	if !movement_controller.may_move: return
 	if item.has_method("on_mouse_exited"):
 		item.on_mouse_exited()
 
 
 func interact(item) -> void:
+	if !movement_controller.may_move: return
 	if interaction_cooldown > 0: return
 	item.interact()
 	interaction_cooldown = INTERACTION_COOLDOWN

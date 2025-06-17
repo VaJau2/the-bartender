@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1sryj1nt7eu5"]
+[gd_scene load_steps=6 format=3 uid="uid://d1sryj1nt7eu5"]
 
 [ext_resource type="Texture2D" uid="uid://fx0finy5snqq" path="res://assets/sprites/props/bench1.png" id="1_j6utt"]
+[ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_g6ijv"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_t1521"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx3lh"]
 size = Vector2(46, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twqa3"]
+size = Vector2(46, 11)
 
 [node name="bench" type="StaticBody2D"]
 
@@ -14,3 +19,19 @@ texture = ExtResource("1_j6utt")
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_hx3lh")
+
+[node name="putArea" type="Area2D" parent="."]
+position = Vector2(-1, -1)
+collision_layer = 4
+collision_mask = 0
+collision_priority = 0.0
+monitorable = false
+script = ExtResource("2_g6ijv")
+metadata/_edit_group_ = true
+
+[node name="shape" type="CollisionShape2D" parent="putArea"]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_twqa3")
+
+[node name="interactionHandler" type="Node" parent="putArea"]
+script = ExtResource("3_t1521")

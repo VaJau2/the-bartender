@@ -14,5 +14,6 @@ enum Lang {
 }
 
 enum ItemType {
-	glass
+	glass,
+	ingredient
 }

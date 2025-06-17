@@ -10,24 +10,30 @@
 [node name="player" instance=ExtResource("1_h3hc8")]
 script = ExtResource("2_ssmtf")
 
-[node name="sprite" parent="." index="2"]
-texture = ExtResource("2_ho5yc")
-
-[node name="run" type="Node" parent="movementContoller" index="1"]
+[node name="movementContoller#run" type="Node" parent="." index="1"]
 script = ExtResource("3_ho5yc")
 anim = "walk-drunk"
 speed = 200
 
+[node name="sprite" parent="." index="3"]
+texture = ExtResource("2_ho5yc")
+
 [node name="inputController" type="Node" parent="." index="5" node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("3_ssmtf")
-movement_controller = NodePath("../movementContoller")
+movement_controller = NodePath("../movementController")
 
-[node name="interactionController" type="Node" parent="." index="6"]
+[node name="interactionController" type="Node" parent="." index="6" node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("6_s7pd4")
+movement_controller = NodePath("../movementController")
 
 [node name="camera" type="Camera2D" parent="." index="7"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="audi" parent="." index="9"]
+[node name="run" type="Node" parent="movementController" index="1"]
+script = ExtResource("3_ho5yc")
+anim = "walk-drunk"
+speed = 220
+
+[node name="audi" parent="." index="10"]
 default_material = 1

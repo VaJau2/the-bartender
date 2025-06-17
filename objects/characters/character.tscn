@@ -214,10 +214,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_ndjo6")
 }
 
-[node name="movementContoller" type="Node" parent="."]
+[node name="movementController" type="Node" parent="."]
 script = ExtResource("2_8wket")
 
-[node name="walk" type="Node" parent="movementContoller"]
+[node name="walk" type="Node" parent="movementController"]
 script = ExtResource("3_o4xot")
 default = true
 
@@ -225,13 +225,13 @@ default = true
 script = ExtResource("4_o4xot")
 sprite = NodePath("../sprite")
 anim = NodePath("../anim")
-movement_controller = NodePath("../movementContoller")
+movement_controller = NodePath("../movementController")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="." node_paths=PackedStringArray("movement_controller")]
 volume_db = -2.0
 max_distance = 100.0
 script = ExtResource("5_yuviu")
-movement_controller = NodePath("../movementContoller")
+movement_controller = NodePath("../movementController")
 steps_data = Array[ExtResource("6_1lg8h")]([SubResource("Resource_nrt7u"), SubResource("Resource_6ondm"), SubResource("Resource_xyefa"), SubResource("Resource_8om3k")])
 
 [node name="materialChecker" type="Node2D" parent="audi" node_paths=PackedStringArray("parent")]
@@ -242,6 +242,6 @@ parent = NodePath("../..")
 script = ExtResource("30_c3thp")
 prefab = ExtResource("31_7twir")
 steps_controller = NodePath("..")
-movement_controller = NodePath("../../movementContoller")
+movement_controller = NodePath("../../movementController")
 
 [connection signal="material_changed" from="audi/materialChecker" to="audi" method="on_change_material"]

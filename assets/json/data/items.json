@@ -7,4 +7,13 @@
 		"type": "glass",
 		"texture": "assets/sprites/items/glass-water.png"
 	},
+	"apple-juice": {
+		"type": "glass",
+		"texture": "assets/sprites/items/apple-juice.png"
+	},
+	"apple": {
+		"type": "ingredient",
+		"texture": "assets/sprites/items/apple.png",
+		"weight": 1
+	},
 }

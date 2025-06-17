@@ -5,4 +5,21 @@
 	"glass-water": {
 		"name": "Glass of water",
 	},
+	"apple-juice": {
+		"name": "Apple juice"
+	},
+	
+	"apple": {
+		"name": "Apple",
+	},
+	
+	"sink": {
+		"name": "Sink"
+	},
+	"juicer": {
+		"name": "Juicer"
+	},
+	"trash": {
+		"name": "Trashcan"
+	}
 }

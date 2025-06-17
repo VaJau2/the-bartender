@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_5s0xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35oom"]
-size = Vector2(16, 14)
+size = Vector2(14, 14)
 
 [node name="item" type="StaticBody2D"]
 collision_layer = 2
@@ -14,7 +14,9 @@ input_pickable = true
 script = ExtResource("1_c6bn3")
 
 [node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_35oom")
+region_rect = Rect2(0, 0, 16, 16)
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_35oom")
