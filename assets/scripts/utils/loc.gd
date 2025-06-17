@@ -5,7 +5,7 @@ class_name Loc
 # Отвечает за получение всего игрового текста из assets/json/{lang}/
 #--------------------------------------------
 
-static var current_lang = Enums.Lang.Ru
+static var current_lang = Enums.Lang.en
 
 # Получает на вход путь до кода в виде "inGame.logs.start"
 # Первый элемент в пути - название файла

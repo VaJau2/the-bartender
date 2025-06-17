@@ -8,13 +8,17 @@ var temp_interactable: Node
 
 func _ready() -> void:
 	input_handler = get_node("/root/main/menu/inputHandler")
-	input_handler.key_running.connect(_on_running)
+	input_handler.start_running.connect(_on_start_running)
+	input_handler.stop_running.connect(_on_stop_running)
 
 
-func _on_running() -> void:
-	var state = movement_controller.current_state.name
-	movement_controller.load_state("run" if state != "run" else "walk")
+func _on_start_running() -> void:
+	movement_controller.load_state("run")
 
+
+func _on_stop_running() -> void:
+	movement_controller.load_state("walk")
+	
 
 func _physics_process(_delta: float) -> void:
 	if input_handler.get_dir().length() > 0:

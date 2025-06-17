@@ -20,6 +20,10 @@ config/windows_native_icon="res://icon.ico"
 
 G="*res://assets/scripts/utils/global.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/stretch/mode="viewport"

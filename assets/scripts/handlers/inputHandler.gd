@@ -7,14 +7,17 @@ class_name InputHandler
 # Соединяется через другие ноды с помощью сигналов
 #-----------------------------------------------
 
-signal key_running
+signal start_running
+signal stop_running
 
 @onready var main: Node2D = get_node('/root/main')
 
 
 func _process(_delta: float) -> void:	
-	if Input.is_action_just_pressed("ui_run") or Input.is_action_just_released("ui_run"):
-		key_running.emit()
+	if Input.is_action_just_pressed("ui_run"):
+		start_running.emit()
+	if Input.is_action_just_released("ui_run"):
+		stop_running.emit()
 
 
 func get_dir() -> Vector2:

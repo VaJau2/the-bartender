@@ -2,5 +2,9 @@
 	"empty-glass": {
 		"type": "glass",
 		"texture": "assets/sprites/items/empty-glass.png"
-	}
+	},
+	"glass-water": {
+		"type": "glass",
+		"texture": "assets/sprites/items/glass-water.png"
+	},
 }

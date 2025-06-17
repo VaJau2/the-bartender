@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6wn8bn1wf130" path="res://assets/sprites/interface/items_back.png" id="1_ve7s4"]
 [ext_resource type="Script" uid="uid://b0ig48kvlf54l" path="res://assets/scripts/interface/holdingItemIcon.gd" id="1_w84e0"]
-[ext_resource type="Texture2D" uid="uid://bjtr601j30m1g" path="res://assets/sprites/interface/put-hint.png" id="3_w84e0"]
+[ext_resource type="Texture2D" uid="uid://bjtr601j30m1g" path="res://assets/sprites/trees/put-hint.png" id="3_w84e0"]
 
 [node name="item_icon" type="Panel"]
 offset_right = 50.0

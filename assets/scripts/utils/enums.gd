@@ -9,6 +9,10 @@ enum Materials {
 }
 
 enum Lang {
-	Ru,
-	En
+	ru,
+	en
+}
+
+enum ItemType {
+	glass
 }

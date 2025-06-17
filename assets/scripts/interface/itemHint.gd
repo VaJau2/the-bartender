@@ -2,14 +2,14 @@ extends Panel
 
 class_name ItemHint
 
-@onready var interaction_handler: InteractionHandler = G.player.interaction_handler
+@onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var name_label: Label = get_node("name")
 
 
 func _ready() -> void:
 	set_process(false)
-	interaction_handler.show_item_hint.connect(_on_show_hint)
-	interaction_handler.hide_item_hint.connect(_on_hide_hint)
+	interaction_controller.show_item_hint.connect(_on_show_hint)
+	interaction_controller.hide_item_hint.connect(_on_hide_hint)
 
 
 func _process(_delta: float) -> void:

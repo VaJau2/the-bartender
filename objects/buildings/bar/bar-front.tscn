@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtgfl4038lfdi"]
+[gd_scene load_steps=7 format=3 uid="uid://dtgfl4038lfdi"]
 
 [ext_resource type="Texture2D" uid="uid://b70di15i7pkoa" path="res://assets/sprites/buildings/bar/bar-front.png" id="1_jxwi2"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_a02bt"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_xyso0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5ixf"]
 size = Vector2(282, 42)
@@ -55,6 +56,5 @@ script = ExtResource("2_a02bt")
 position = Vector2(20.5, 1.5)
 shape = SubResource("RectangleShape2D_xyso0")
 
-[connection signal="input_event" from="putArea" to="putArea" method="_on_input_event"]
-[connection signal="mouse_entered" from="putArea" to="putArea" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="putArea" to="putArea" method="_on_mouse_exited"]
+[node name="interactionHandler" type="Node" parent="putArea"]
+script = ExtResource("3_xyso0")

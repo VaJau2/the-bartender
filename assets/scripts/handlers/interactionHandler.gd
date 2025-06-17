@@ -2,58 +2,29 @@ extends Node
 
 class_name InteractionHandler
 
-const INTERACTION_DISTANCE: float = 200
-
-signal show_item_hint(code: String)
-signal hide_item_hint()
-
-signal show_put_hint()
-signal hide_put_hint()
-
-signal pickup_item(item: Item)
-signal clear_item()
-
-var holding_item: Item
+@onready var interaction_controller: InteractionController = G.player.interaction_controller
+@onready var parent: CollisionObject2D = get_parent()
+var may_interact: bool
 
 
-func mouse_entered_item(item: Item) -> void:
-	show_item_hint.emit(item.code)
+func _ready() -> void:
+	parent.mouse_entered.connect(_on_mouse_entered)
+	parent.mouse_exited.connect(_on_mouse_exited)
+	parent.input_event.connect(_on_input_event)
 
 
-func mouse_exited_item() -> void:
-	hide_item_hint.emit()
+func _on_mouse_entered() -> void:
+	may_interact = G.player.global_position.distance_to(parent.global_position) <= InteractionController.INTERACTION_DISTANCE
+	if may_interact:
+		interaction_controller.mouse_entered_item(parent)
 
 
-func mouse_entered_put_area() -> void:
-	if holding_item == null: return
-	show_put_hint.emit()
+func _on_mouse_exited() -> void:
+	interaction_controller.mouse_exited_item(parent)
+	may_interact = false
 
 
-func mouse_exited_put_area() -> void:
-	if holding_item == null: return
-	hide_put_hint.emit()
-
-
-func put_item(pos: Vector2, parent: Node2D) -> void:
-	if holding_item == null: return
-	var temp_scale = holding_item.global_scale
-	holding_item.get_parent().remove_child(holding_item)
-	parent.add_child(holding_item)
-	holding_item.global_scale = temp_scale
-	holding_item.process_mode = Node.PROCESS_MODE_INHERIT
-	holding_item.visible = true
-	holding_item.global_position = pos
-	holding_item = null
-	clear_item.emit()
-
-
-func interact(item: Item) -> void:
-	if holding_item == null:
-		_interact_pickup(item)
-
-
-func _interact_pickup(item: Item) -> void:
-	holding_item = item
-	item.visible = false
-	item.process_mode = Node.PROCESS_MODE_DISABLED
-	pickup_item.emit(item)
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and !event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		if may_interact:
+			interaction_controller.interact(parent)

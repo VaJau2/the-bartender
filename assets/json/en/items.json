@@ -1,5 +1,8 @@
 {
-	"name": {
-		"empty-glass": "Empty glass"
-	}
+	"empty-glass": {
+		"name": "Empty glass",
+	},
+	"glass-water": {
+		"name": "Glass of water",
+	},
 }

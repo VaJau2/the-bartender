@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjtr601j30m1g"
-path="res://.godot/imported/put-hint.png-aaca7ac9fc24594a1cae720f5c72e706.ctex"
+uid="uid://qo5ho16tqril"
+path="res://.godot/imported/garbage.png-6bfb951e773eb0b92edf88328fe79710.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interface/put-hint.png"
-dest_files=["res://.godot/imported/put-hint.png-aaca7ac9fc24594a1cae720f5c72e706.ctex"]
+source_file="res://assets/sprites/props/furn/garbage.png"
+dest_files=["res://.godot/imported/garbage.png-6bfb951e773eb0b92edf88328fe79710.ctex"]
 
 [params]
 
