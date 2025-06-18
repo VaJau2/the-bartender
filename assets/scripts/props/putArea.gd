@@ -22,7 +22,7 @@ func interact() -> void:
 		return
 	var temp_scale = item_to_put.global_scale
 	item_to_put.get_parent().remove_child(item_to_put)
-	add_child(item_to_put)
+	get_parent().add_child(item_to_put)
 	item_to_put.global_scale = temp_scale
 	item_to_put.process_mode = Node.PROCESS_MODE_INHERIT
 	item_to_put.visible = true

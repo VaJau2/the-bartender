@@ -19,11 +19,49 @@
 		"category": "glass",
 		"texture": "assets/sprites/items/apple-juice.png"
 	},
+	"banana-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/banana-juice.png"
+	},
+	"coconut-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/coconut-juice.png"
+	},
+	
 	"apple": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/apple.png",
 		"weight": 1
+	},
+	"banana": {
+		"type": "ingredient",
+		"category": "fruit",
+		"texture": "assets/sprites/items/banana.png",
+		"weight": 1
+	},
+	"coconut": {
+		"type": "ingredient",
+		"category": "fruit",
+		"texture": "assets/sprites/items/coconut.png",
+		"weight": 2
+	},
+	"sliced-coconut": {
+		"type": "ingredient",
+		"category": "fruit",
+		"texture": "assets/sprites/items/sliced-coconut.png",
+		"weight": 0.5,
+		"limit": 3
+	},
+	
+	"knife": {
+		"type": "tool",
+		"category": "tool",
+		"texture": "assets/sprites/items/knife.png",
+		"weight": 1,
+		"limit": -1
 	},
 	"milk": {
 		"type": "tool",

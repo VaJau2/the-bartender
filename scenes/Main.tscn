@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=50 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -11,10 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://cn1ktyif63gtb" path="res://assets/audio/ambient/forest_day_3.mp3" id="6_s3wmy"]
 [ext_resource type="PackedScene" uid="uid://dprg0njuxm3jc" path="res://objects/buildings/bar/bar.tscn" id="8_8gny2"]
 [ext_resource type="PackedScene" uid="uid://b0amrr8rnvm85" path="res://objects/props/beach-umbrella.tscn" id="11_wp0k4"]
-[ext_resource type="PackedScene" uid="uid://cicamv232mrcc" path="res://objects/props/trees/palm_tree.tscn" id="12_5grtr"]
 [ext_resource type="PackedScene" uid="uid://d0qushes8s4bk" path="res://objects/props/beach-sunbed.tscn" id="12_bjd11"]
+[ext_resource type="PackedScene" uid="uid://c1b81c1wc0e1n" path="res://objects/props/trees/banana_palm_tree.tscn" id="13_8gny2"]
 [ext_resource type="Texture2D" uid="uid://b6tipf6cnmibl" path="res://assets/sprites/tiles/land-props.png" id="13_qmy6f"]
 [ext_resource type="PackedScene" uid="uid://ddn8jqednakqx" path="res://objects/props/signs/market_sign.tscn" id="15_cobve"]
+[ext_resource type="PackedScene" uid="uid://codvvyc5gpxvq" path="res://objects/props/trees/coconut_palm_tree.tscn" id="15_s3wmy"]
 [ext_resource type="PackedScene" uid="uid://ckdwwp3um3c5l" path="res://objects/buildings/marketStands/market_stand.tscn" id="18_bb450"]
 [ext_resource type="PackedScene" uid="uid://cpqedqthvwd1g" path="res://objects/props/barrel.tscn" id="18_yxlcp"]
 [ext_resource type="PackedScene" uid="uid://hadh3jb70alq" path="res://objects/props/barrels.tscn" id="19_ebg2g"]
@@ -412,65 +413,38 @@ region_rect = Rect2(15.4792, 18.2291, 16.5579, 15.2776)
 [node name="trees" type="Node2D" parent="props/beach-props"]
 y_sort_enabled = true
 
-[node name="palmTree" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-826, -464)
+[node name="bananaPalmTree" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(-720, -416)
 
-[node name="palmTree2" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-728, -450)
+[node name="bananaPalmTree2" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(-496, -384)
 
-[node name="palmTree3" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-619, -462)
+[node name="bananaPalmTree3" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(-264, -400)
 
-[node name="palmTree4" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-492, -435)
+[node name="bananaPalmTree4" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(16, -376)
 
-[node name="palmTree5" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-317, -464)
+[node name="bananaPalmTree5" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(64, -80)
 
-[node name="palmTree6" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-141, -448)
+[node name="bananaPalmTree6" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(528, -408)
 
-[node name="palmTree7" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(12, -412)
+[node name="bananaPalmTree7" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(776, -416)
 
-[node name="palmTree8" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-262, -408)
+[node name="bananaPalmTree8" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(1136, -360)
 
-[node name="palmTree9" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(-585, -384)
+[node name="bananaPalmTree9" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(1528, -256)
 
-[node name="palmTree10" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(325, -404)
+[node name="bananaPalmTree10" parent="props/beach-props/trees" instance=ExtResource("13_8gny2")]
+position = Vector2(2024, -400)
 
-[node name="palmTree11" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(589, -436)
-
-[node name="palmTree12" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(458, -376)
-
-[node name="palmTree13" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(816, -418)
-
-[node name="palmTree14" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(1177, -253)
-
-[node name="palmTree15" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(1362, -382)
-
-[node name="palmTree16" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(1057, -444)
-
-[node name="palmTree17" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(1689, -479)
-
-[node name="palmTree18" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(2041, -408)
-
-[node name="palmTree19" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(1943, -296)
-
-[node name="palmTree20" parent="props/beach-props/trees" instance=ExtResource("12_5grtr")]
-position = Vector2(1681, -247)
+[node name="coconutPalmTree" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(-176, -184)
 
 [node name="market-props" type="Node2D" parent="props"]
 y_sort_enabled = true
@@ -1261,7 +1235,7 @@ position = Vector2(-2210, -2609)
 position = Vector2(-1999, -2608)
 
 [node name="appleTree12" parent="props/farm-props/trees" instance=ExtResource("35_hq6as")]
-position = Vector2(-1783, -2603)
+position = Vector2(-1760, -2624)
 
 [node name="appleTree30" parent="props/farm-props/trees" instance=ExtResource("35_hq6as")]
 position = Vector2(-1876, -2895)
@@ -1536,17 +1510,15 @@ texture = ExtResource("13_qmy6f")
 region_enabled = true
 region_rect = Rect2(16.1601, -0.936382, 13.77, 18.5183)
 
-[node name="item" parent="." instance=ExtResource("48_gdcyb")]
-position = Vector2(168, 0)
-code = "apple"
-
 [node name="item2" parent="." instance=ExtResource("48_gdcyb")]
-position = Vector2(176, 40)
-code = "milk"
+z_index = 1
+position = Vector2(184, 32)
+code = "knife"
 
 [node name="item3" parent="." instance=ExtResource("48_gdcyb")]
-position = Vector2(152, -24)
-code = "apple"
+z_index = 1
+position = Vector2(184, 64)
+code = "milk"
 
 [node name="menu" type="CanvasLayer" parent="."]
 

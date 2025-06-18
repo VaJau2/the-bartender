@@ -18,7 +18,7 @@ func _on_body_exited(body: Node2D) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ageiq"]
-size = Vector2(293, 165)
+size = Vector2(293, 187)
 
 [node name="bar-roof" type="Node2D"]
 
@@ -32,7 +32,7 @@ script = SubResource("GDScript_0ch2i")
 sprite = NodePath("../Bar-roof")
 
 [node name="shape" type="CollisionShape2D" parent="area"]
-position = Vector2(0.5, -0.5)
+position = Vector2(0.5, 10.5)
 shape = SubResource("RectangleShape2D_ageiq")
 
 [connection signal="body_entered" from="area" to="area" method="_on_body_entered"]

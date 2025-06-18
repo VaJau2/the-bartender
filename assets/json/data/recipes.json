@@ -1,12 +1,23 @@
 {
 	"juicer": {
-		"apple": "apple-juice"
+		"apple": "apple-juice",
+		"banana": "banana-juice",
 	},
 	"tool": [
 		{
 			"item": "empty-glass",
 			"holding_item": "milk",
 			"result": "glass-milk"
-		}
+		},
+		{
+			"item": "coconut",
+			"holding_item": "knife",
+			"result": "sliced-coconut"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "sliced-coconut",
+			"result": "coconut-juice"
+		},
 	]
 }

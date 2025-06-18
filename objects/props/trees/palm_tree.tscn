@@ -6,7 +6,7 @@
 radius = 3.0
 height = 18.0
 
-[node name="palmTree" type="StaticBody2D"]
+[node name="bananaPalmTree" type="StaticBody2D"]
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(4, -61)

@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://el3stdg3dluf"]
+[gd_scene load_steps=13 format=3 uid="uid://el3stdg3dluf"]
 
+[ext_resource type="Script" uid="uid://cc4ex0fqhhnvu" path="res://assets/scripts/props/tree.gd" id="1_fahye"]
 [ext_resource type="Texture2D" uid="uid://crskut6xae53o" path="res://assets/sprites/trees/apple-tree.png" id="1_pne44"]
+[ext_resource type="Texture2D" uid="uid://b3882fii7ohen" path="res://assets/sprites/items/apple.png" id="2_rng16"]
+[ext_resource type="AudioStream" uid="uid://bv6htqaapn672" path="res://assets/audio/trees/hit_wood.mp3" id="2_w1qvy"]
+[ext_resource type="AudioStream" uid="uid://cclic45t3fybh" path="res://assets/audio/trees/fruit_fall.mp3" id="3_wmxu4"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="4_j6n4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rng16"]
 size = Vector2(83, 35)
@@ -8,12 +13,206 @@ size = Vector2(83, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cywq"]
 size = Vector2(38.0642, 14.3095)
 
-[node name="appleTree" type="StaticBody2D"]
+[sub_resource type="Animation" id="Animation_j6n4q"]
+resource_name = "RESET"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fruits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100963),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fruits/Apple2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100963),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-71, -41), Vector2(-71, -41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fruits/Apple3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.100963),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-36, -35), Vector2(-36, -35)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fruits/Apple5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.100963),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(79, -58), Vector2(79, -58)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("fruits/Apple4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.100963),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(38, -35), Vector2(38, -35)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("sprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -67), Vector2(-1, -67)]
+}
+
+[sub_resource type="Animation" id="Animation_fahye"]
+resource_name = "fall"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fruits/Apple2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.199893, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-71, -41), Vector2(-74, 20), Vector2(-74, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fruits/Apple3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.199893),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-36, -35), Vector2(-36, 31)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fruits/Apple4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.199893, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(38, -35), Vector2(41, 28), Vector2(40, 30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fruits/Apple5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.199893, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(79, -58), Vector2(81, 6), Vector2(80, 26)]
+}
+
+[sub_resource type="Animation" id="Animation_rng16"]
+resource_name = "shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.5, -67), Vector2(0.5, -67), Vector2(-2.5, -67), Vector2(0.5, -67), Vector2(-2.5, -67)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fruits:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.5, 0), Vector2(1.5, 0), Vector2(-1.5, 0), Vector2(1.5, 0), Vector2(-1.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fahye"]
+_data = {
+&"RESET": SubResource("Animation_j6n4q"),
+&"fall": SubResource("Animation_fahye"),
+&"shake": SubResource("Animation_rng16")
+}
+
+[node name="appleTree" type="StaticBody2D" node_paths=PackedStringArray("fruits_parent", "anim")]
+input_pickable = true
+script = ExtResource("1_fahye")
+fruits_parent = NodePath("fruits")
+anim = NodePath("anim")
+code = "apple-tree"
+fruit_code = "apple"
+hit_sound = ExtResource("2_w1qvy")
+fall_sound = ExtResource("3_wmxu4")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-1, -67)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_pne44")
+
+[node name="fruits" type="Node2D" parent="."]
+
+[node name="Apple2" type="Sprite2D" parent="fruits"]
+visible = false
+position = Vector2(-71, -41)
+texture = ExtResource("2_rng16")
+
+[node name="Apple3" type="Sprite2D" parent="fruits"]
+visible = false
+position = Vector2(-36, -35)
+texture = ExtResource("2_rng16")
+
+[node name="Apple4" type="Sprite2D" parent="fruits"]
+visible = false
+position = Vector2(38, -35)
+texture = ExtResource("2_rng16")
+
+[node name="Apple5" type="Sprite2D" parent="fruits"]
+visible = false
+position = Vector2(79, -58)
+texture = ExtResource("2_rng16")
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
@@ -22,17 +221,25 @@ shape = SubResource("RectangleShape2D_rng16")
 [node name="shape2" type="CollisionShape2D" parent="."]
 position = Vector2(-26.412, 25.4912)
 rotation = -0.680678
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6cywq")
 
 [node name="shape3" type="CollisionShape2D" parent="."]
 position = Vector2(-48, 8)
 rotation = -0.436332
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6cywq")
 
 [node name="shape4" type="CollisionShape2D" parent="."]
 position = Vector2(43, -3)
 rotation = 0.122173
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6cywq")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="."]
+max_distance = 500.0
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fahye")
+}
+
+[node name="interactionHandler" type="Node" parent="."]
+script = ExtResource("4_j6n4q")

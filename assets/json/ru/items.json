@@ -11,14 +11,33 @@
 	"apple-juice": {
 		"name": "Яблочный сок"
 	},
+	"banana-juice": {
+		"name": "Банановый сок"
+	},
+	"coconut-juice": {
+		"name": "Кокосовый сок"
+	},
 	
 	"apple": {
 		"name": "Яблоко",
+	},
+	"banana": {
+		"name": "Банан"
+	},
+	"coconut": {
+		"name": "Кокос"
+	},
+	"sliced-coconut": {
+		"name": "Разрезанный кокос"
 	},
 	
 	"milk": {
 		"name": "Молоко"
 	},
+	"knife": {
+		"name": "Нож"
+	},
+	
 	
 	"sink": {
 		"name": "Раковина"
@@ -37,5 +56,11 @@
 	},
 	"fridge": {
 		"name": "Холодильник"
+	},
+	"apple-tree": {
+		"name": "Яблоня"
+	},
+	"palm-tree": {
+		"name": "Пальма"
 	}
 }

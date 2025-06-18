@@ -11,13 +11,31 @@
 	"apple-juice": {
 		"name": "Apple juice"
 	},
+	"banana-juice": {
+		"name": "Banana juice"
+	},
+	"coconut-juice": {
+		"name": "Coconut juice"
+	},
 	
 	"apple": {
 		"name": "Apple",
 	},
+	"banana": {
+		"name": "Banana"
+	},
+	"coconut": {
+		"name": "Coconut"
+	},
+	"sliced-coconut" {
+		"name": "Sliced coconut"
+	}
 	
 	"milk": {
 		"name": "Milk"
+	},
+	"knife": {
+		"name": "Knife"
 	},
 	
 	"sink": {
@@ -37,5 +55,11 @@
 	},
 	"fridge": {
 		"name": "Fridge"
+	},
+	"apple-tree": {
+		"name": "Apple tree"
+	},
+	"palm-tree": {
+		"name": "Palm tree"
 	}
 }

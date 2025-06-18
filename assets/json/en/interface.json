@@ -12,6 +12,7 @@
 	"categories": {
 		"glass": "Glasses",
 		"fruit": "Fruits",
-		"liquid": "Liquids"
+		"liquid": "Liquids",
+		"tool": "Tools"
 	}
 }

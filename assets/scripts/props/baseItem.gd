@@ -10,7 +10,10 @@ class_name Item
 var item_data: Dictionary
 var type: Enums.ItemType
 var category: String
-var limit: int = -1
+var limit: int = 0
+
+
+signal taken(item: Item)
 
 
 func _ready() -> void:
@@ -42,12 +45,15 @@ func interact() -> void:
 		visible = false
 		process_mode = Node.PROCESS_MODE_DISABLED
 		interaction_controller.update_holding_item(self)
+		taken.emit(self)
 	else:
 		var holding_item = interaction_controller.holding_item
 		var result = RecepiesHandler.get_tool_result(code, holding_item.code)
 		if result == "": return
 		code = result
 		_ready()
+		
+		if holding_item.limit == -1: return
 		if holding_item.limit > 1:
 			holding_item.limit -= 1
 		else:

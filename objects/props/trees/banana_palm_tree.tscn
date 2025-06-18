@@ -1,0 +1,206 @@
+[gd_scene load_steps=13 format=3 uid="uid://c1b81c1wc0e1n"]
+
+[ext_resource type="Texture2D" uid="uid://c04ndktde0hc8" path="res://assets/sprites/items/banana.png" id="1_27u1q"]
+[ext_resource type="Script" uid="uid://cc4ex0fqhhnvu" path="res://assets/scripts/props/tree.gd" id="1_wyrnh"]
+[ext_resource type="Texture2D" uid="uid://b4lhecsvgs28s" path="res://assets/sprites/trees/palm-tree.png" id="2_4he42"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="4_2fsvj"]
+[ext_resource type="AudioStream" uid="uid://bv6htqaapn672" path="res://assets/audio/trees/hit_wood.mp3" id="4_heby0"]
+[ext_resource type="AudioStream" uid="uid://cclic45t3fybh" path="res://assets/audio/trees/fruit_fall.mp3" id="5_r4j73"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wrkm"]
+radius = 3.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_4he42"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -58)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fruits:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fruits/banana:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8.5, -90)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fruits/banana2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8.5, -84)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("fruits/banana3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.5, -79)]
+}
+
+[sub_resource type="Animation" id="Animation_wyrnh"]
+resource_name = "fall"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fruits/banana:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.300856),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-8.5, -90), Vector2(-25.5, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fruits/banana2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.300856),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-8.5, -84), Vector2(-14.5, -3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fruits/banana3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.300856),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3.5, -79), Vector2(-7.5, 9)]
+}
+
+[sub_resource type="Animation" id="Animation_27u1q"]
+resource_name = "shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100285, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, -58.2), Vector2(8, -58.2), Vector2(2, -58.2), Vector2(8, -58.2), Vector2(2, -58.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fruits:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100285, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3.5, -0.199997), Vector2(2.5, -0.199997), Vector2(-3.5, -0.199997), Vector2(2.5, -0.199997), Vector2(-3.5, -0.199997)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4he42"]
+_data = {
+&"RESET": SubResource("Animation_4he42"),
+&"fall": SubResource("Animation_wyrnh"),
+&"shake": SubResource("Animation_27u1q")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyrnh"]
+size = Vector2(9, 93)
+
+[node name="bananaPalmTree" type="StaticBody2D"]
+
+[node name="fruits" type="Node2D" parent="."]
+position = Vector2(-1.5, 0)
+
+[node name="banana" type="Sprite2D" parent="fruits"]
+position = Vector2(-8.5, -90)
+texture = ExtResource("1_27u1q")
+
+[node name="banana2" type="Sprite2D" parent="fruits"]
+position = Vector2(-8.5, -84)
+texture = ExtResource("1_27u1q")
+
+[node name="banana3" type="Sprite2D" parent="fruits"]
+position = Vector2(-3.5, -79)
+texture = ExtResource("1_27u1q")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(4, -58)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_4he42")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6wrkm")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4he42")
+}
+
+[node name="area" type="Area2D" parent="." node_paths=PackedStringArray("fruits_parent", "anim")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_wyrnh")
+fruits_parent = NodePath("../fruits")
+anim = NodePath("../anim")
+code = "palm-tree"
+fruit_code = "banana"
+hit_sound = ExtResource("4_heby0")
+fall_sound = ExtResource("5_r4j73")
+
+[node name="interactionHandler" type="Node" parent="area"]
+script = ExtResource("4_2fsvj")
+
+[node name="shape" type="CollisionShape2D" parent="area"]
+position = Vector2(1.5, -47.5)
+shape = SubResource("RectangleShape2D_wyrnh")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="area"]
+max_distance = 500.0
