@@ -1,7 +1,7 @@
 extends CollisionObject2D
 
-const SPAWN_TIME_MIN: float = 100
-const SPAWN_TIME_MAX: float = 150
+const SPAWN_TIME_MIN: float = 150
+const SPAWN_TIME_MAX: float = 200
 
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var audi: AudioStreamPlayer2D = get_node("audi")
@@ -68,7 +68,7 @@ func interact() -> void:
 		await anim.animation_finished
 		for fruit in fruit_sprites:
 			if fruit.visible: 
-				var item: Item = ItemSpawner.spawn_item(fruit_code, fruit.global_position, get_parent())
+				var item = ItemSpawner.spawn_item(fruit_code, fruit.global_position, get_parent())
 				item.taken.connect(_on_item_taken)
 				spawned_items.append(item)
 			fruit.visible = false

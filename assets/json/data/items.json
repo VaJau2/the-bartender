@@ -29,6 +29,31 @@
 		"category": "glass",
 		"texture": "assets/sprites/items/coconut-juice.png"
 	},
+	"blueberry-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/blueberry-juice.png"
+	},
+	"strawberry-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/strawberry-juice.png"
+	},
+	"raspberry-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/raspberry-juice.png"
+	},
+	"blackberry-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/blackberry-juice.png"
+	},
+	"tomato-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/tomato-juice.png"
+	},
 	
 	"apple": {
 		"type": "ingredient",
@@ -54,6 +79,36 @@
 		"texture": "assets/sprites/items/sliced-coconut.png",
 		"weight": 0.5,
 		"limit": 3
+	},
+	"blueberry": {
+		"type": "ingredient",
+		"category": "berry",
+		"texture": "assets/sprites/items/blueberry.png",
+		"weight": 0.1
+	},
+	"strawberry": {
+		"type": "ingredient",
+		"category": "berry",
+		"texture": "assets/sprites/items/strawberry.png",
+		"weight": 0.1
+	},
+	"raspberry": {
+		"type": "ingredient",
+		"category": "berry",
+		"texture": "assets/sprites/items/raspberry.png",
+		"weight": 0.1
+	},
+	"blackberry": {
+		"type": "ingredient",
+		"category": "berry",
+		"texture": "assets/sprites/items/blackberry.png",
+		"weight": 0.1
+	},
+	"tomato": {
+		"type": "ingredient",
+		"category": "berry",
+		"texture": "assets/sprites/items/tomato.png",
+		"weight": 0.2
 	},
 	
 	"knife": {

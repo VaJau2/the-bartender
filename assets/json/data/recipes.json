@@ -2,6 +2,11 @@
 	"juicer": {
 		"apple": "apple-juice",
 		"banana": "banana-juice",
+		"blueberry": "blueberry-juice",
+		"strawberry": "strawberry-juice",
+		"raspberry": "raspberry-juice",
+		"blackberry": "blackberry-juice",
+		"tomato": "tomato-juice",
 	},
 	"tool": [
 		{

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=52 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -45,6 +45,8 @@
 [ext_resource type="PackedScene" uid="uid://ducb6y8bc5u3p" path="res://objects/props/trees/tree_2.tscn" id="37_8b871"]
 [ext_resource type="PackedScene" uid="uid://d1qpk34paovkk" path="res://objects/props/signs/town_sign.tscn" id="38_cmqll"]
 [ext_resource type="PackedScene" uid="uid://bkjwqra0munmw" path="res://objects/props/trees/tree_3.tscn" id="38_pdwbg"]
+[ext_resource type="PackedScene" uid="uid://b0dnu1ngdistm" path="res://objects/props/plants/bush.tscn" id="42_gdcyb"]
+[ext_resource type="PackedScene" uid="uid://fgpblr75kert" path="res://objects/props/plants/bush2.tscn" id="43_oa6sj"]
 [ext_resource type="PackedScene" uid="uid://md8i4cl7o1sj" path="res://objects/props/items/base-item.tscn" id="48_gdcyb"]
 [ext_resource type="PackedScene" uid="uid://do7flv2k02fwo" path="res://objects/interface/interface.tscn" id="48_oa6sj"]
 
@@ -445,6 +447,24 @@ position = Vector2(2024, -400)
 
 [node name="coconutPalmTree" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
 position = Vector2(-176, -184)
+
+[node name="coconutPalmTree2" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(352, -344)
+
+[node name="coconutPalmTree3" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(736, -304)
+
+[node name="coconutPalmTree4" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(1344, -360)
+
+[node name="coconutPalmTree5" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(2120, -488)
+
+[node name="coconutPalmTree6" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(1920, -176)
+
+[node name="coconutPalmTree7" parent="props/beach-props/trees" instance=ExtResource("15_s3wmy")]
+position = Vector2(1712, -448)
 
 [node name="market-props" type="Node2D" parent="props"]
 y_sort_enabled = true
@@ -1164,6 +1184,109 @@ scale = Vector2(-1, 1)
 [node name="tree52" parent="props/town-props/static-trees" instance=ExtResource("38_pdwbg")]
 position = Vector2(-4124, -311)
 scale = Vector2(-1, 1)
+
+[node name="plants" type="Node2D" parent="props/town-props"]
+y_sort_enabled = true
+
+[node name="Bush" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1159, 61)
+code = "blueberry"
+
+[node name="Bush2" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1231, -43)
+code = "blueberry"
+
+[node name="Bush3" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1399, 269)
+code = "blueberry"
+
+[node name="Bush4" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1959, 53)
+code = "blueberry"
+
+[node name="Bush5" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(2143, 541)
+code = "blueberry"
+
+[node name="Bush6" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(2671, 453)
+code = "blueberry"
+
+[node name="Bush7" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(2263, -515)
+code = "blueberry"
+
+[node name="Bush8" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1471, -419)
+code = "blueberry"
+
+[node name="Bush9" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(863, -443)
+code = "blueberry"
+
+[node name="Bush10" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(-553, 357)
+code = "blueberry"
+
+[node name="Bush11" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(-2505, -475)
+code = "blueberry"
+
+[node name="Bush12" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(-2617, 205)
+code = "strawberry"
+
+[node name="Bush13" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(119, -459)
+code = "strawberry"
+
+[node name="Bush14" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1951, 309)
+code = "strawberry"
+
+[node name="Bush15" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1775, -267)
+code = "raspberry"
+
+[node name="Bush16" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(1143, -507)
+code = "raspberry"
+
+[node name="Bush17" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(-953, -611)
+code = "raspberry"
+
+[node name="Bush18" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(-3041, -659)
+code = "raspberry"
+
+[node name="Bush19" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(-4321, -179)
+code = "blackberry"
+
+[node name="Bush20" parent="props/town-props/plants" instance=ExtResource("42_gdcyb")]
+position = Vector2(2351, -67)
+code = "blackberry"
+
+[node name="Bush21" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
+position = Vector2(-1201, 29)
+code = "tomato"
+
+[node name="Bush22" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
+position = Vector2(-1145, 29)
+code = "tomato"
+
+[node name="Bush23" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
+position = Vector2(-1089, 29)
+code = "tomato"
+
+[node name="Bush24" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
+position = Vector2(-1113, 69)
+code = "tomato"
+
+[node name="Bush25" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
+position = Vector2(-1177, 69)
+code = "tomato"
 
 [node name="farm-props" type="Node2D" parent="props"]
 y_sort_enabled = true

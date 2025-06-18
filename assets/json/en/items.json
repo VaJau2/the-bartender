@@ -17,6 +17,21 @@
 	"coconut-juice": {
 		"name": "Coconut juice"
 	},
+	"blueberry-juice": {
+		"name": "Blueberry juice"
+	},
+	"strawberry-juice": {
+		"name": "Strawberry juice"
+	},
+	"raspberry-juice": {
+		"name": "Raspberry juice"
+	},
+	"blackberry-juice": {
+		"name": "Blackberry juice"
+	},
+	"tomato_juice": {
+		"name": "Tomato juice"
+	},
 	
 	"apple": {
 		"name": "Apple",
@@ -29,7 +44,22 @@
 	},
 	"sliced-coconut" {
 		"name": "Sliced coconut"
-	}
+	},
+	"blueberry": {
+		"name": "Blueberry",
+	},
+	"strawberry": {
+		"name": "Strawberry"
+	},
+	"raspberry": {
+		"name": "Raspberry"
+	},
+	"blackberry": {
+		"name": "Blackberry"
+	},
+	"tomato": {
+		"name": "Tomato"
+	},
 	
 	"milk": {
 		"name": "Milk"

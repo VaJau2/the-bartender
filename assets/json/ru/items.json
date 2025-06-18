@@ -17,6 +17,21 @@
 	"coconut-juice": {
 		"name": "Кокосовый сок"
 	},
+	"blueberry-juice": {
+		"name": "Черничный сок"
+	},
+	"strawberry-juice": {
+		"name": "Клубничный сок"
+	},
+	"raspberry-juice": {
+		"name": "Малиновый сок"
+	},
+	"blackberry-juice": {
+		"name": "Ежевичный сок"
+	},
+	"tomato-juice": {
+		"name": "Томатный сок"
+	},
 	
 	"apple": {
 		"name": "Яблоко",
@@ -29,6 +44,21 @@
 	},
 	"sliced-coconut": {
 		"name": "Разрезанный кокос"
+	},
+	"blueberry": {
+		"name": "Черника"
+	},
+	"strawberry": {
+		"name": "Клубника"
+	},
+	"raspberry": {
+		"name": "Малина"
+	},
+	"blackberry": {
+		"name": "Ежевика"
+	},
+	"tomato": {
+		"name": "Помидор"
 	},
 	
 	"milk": {
