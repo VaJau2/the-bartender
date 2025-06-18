@@ -10,7 +10,7 @@ const WORK_TIME: float = 3
 
 func on_mouse_entered() -> void:
 	if !may_interact: return
-	interaction_controller.show_item_hint.emit(code)
+	interaction_controller.show_hint.emit(code)
 
 
 func on_mouse_exited() -> void:

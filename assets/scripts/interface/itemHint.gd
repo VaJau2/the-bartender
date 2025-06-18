@@ -8,7 +8,8 @@ class_name ItemHint
 
 func _ready() -> void:
 	set_process(false)
-	interaction_controller.show_item_hint.connect(_on_show_hint)
+	interaction_controller.show_hint.connect(_on_show_hint)
+	interaction_controller.show_item_hint.connect(_on_show_item_hint)
 	interaction_controller.hide_item_hint.connect(_on_hide_hint)
 
 
@@ -24,8 +25,19 @@ func _update_pos() -> void:
 	position = mouse_pos + Vector2(20, 20)
 
 
-func _on_show_hint(item_code: String) -> void:
-	name_label.text = Loc.trans("items." + item_code + ".name")
+func _on_show_hint(code: String) -> void:
+	name_label.text = Loc.trans("items." + code + ".name")
+	_set_hint_visible()
+
+
+func _on_show_item_hint(item: Item) -> void:
+	name_label.text = Loc.trans("items." + item.code + ".name")
+	if item.limit > 0:
+		name_label.text += " (" + item.get_limit_percent() + ")"
+	_set_hint_visible()
+
+
+func _set_hint_visible() -> void:
 	await get_tree().process_frame
 	size.x = 72 + name_label.text.length() * 4.5
 	visible = true

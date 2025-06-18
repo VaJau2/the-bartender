@@ -5,12 +5,19 @@
 	"glass-water": {
 		"name": "Стакан с водой",
 	},
+	"glass-milk": {
+		"name": "Стакан с молоком",
+	},
 	"apple-juice": {
 		"name": "Яблочный сок"
 	},
 	
 	"apple": {
 		"name": "Яблоко",
+	},
+	
+	"milk": {
+		"name": "Молоко"
 	},
 	
 	"sink": {

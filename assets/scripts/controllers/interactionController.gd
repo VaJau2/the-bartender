@@ -8,7 +8,8 @@ const INTERACTION_COOLDOWN: float = 0.1
 @export var movement_controller: MovementController
 
 # сигналы для интерфейса 
-signal show_item_hint(code: String)
+signal show_hint(code: String)
+signal show_item_hint(item: Item)
 signal hide_item_hint()
 
 signal show_put_hint()

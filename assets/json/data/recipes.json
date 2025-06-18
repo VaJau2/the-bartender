@@ -1,5 +1,12 @@
 {
 	"juicer": {
 		"apple": "apple-juice"
-	}
+	},
+	"tool": [
+		{
+			"item": "empty-glass",
+			"holding_item": "milk",
+			"result": "glass-milk"
+		}
+	]
 }

@@ -6,7 +6,7 @@ extends Area2D
 func on_mouse_entered() -> void:
 	var item = interaction_controller.holding_item
 	if item == null: return
-	interaction_controller.show_item_hint.emit("trash")
+	interaction_controller.show_hint.emit("trash")
 
 
 func on_mouse_exited() -> void:

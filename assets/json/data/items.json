@@ -9,6 +9,11 @@
 		"category": "glass",
 		"texture": "assets/sprites/items/glass-water.png"
 	},
+	"glass-milk": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/glass-milk.png"
+	},
 	"apple-juice": {
 		"type": "glass",
 		"category": "glass",
@@ -20,4 +25,11 @@
 		"texture": "assets/sprites/items/apple.png",
 		"weight": 1
 	},
+	"milk": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/milk.png",
+		"weight": 2,
+		"limit": 5
+	}
 }

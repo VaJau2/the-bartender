@@ -1537,11 +1537,15 @@ region_enabled = true
 region_rect = Rect2(16.1601, -0.936382, 13.77, 18.5183)
 
 [node name="item" parent="." instance=ExtResource("48_gdcyb")]
-position = Vector2(176, 8)
+position = Vector2(168, 0)
 code = "apple"
 
 [node name="item2" parent="." instance=ExtResource("48_gdcyb")]
 position = Vector2(176, 40)
+code = "milk"
+
+[node name="item3" parent="." instance=ExtResource("48_gdcyb")]
+position = Vector2(152, -24)
 code = "apple"
 
 [node name="menu" type="CanvasLayer" parent="."]

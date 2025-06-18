@@ -14,7 +14,7 @@ var items: Array[Item]
 
 
 func on_mouse_entered() -> void:
-	interaction_controller.show_item_hint.emit(code)
+	interaction_controller.show_hint.emit(code)
 
 
 func on_mouse_exited() -> void:

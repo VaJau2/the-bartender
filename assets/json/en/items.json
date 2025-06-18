@@ -5,12 +5,19 @@
 	"glass-water": {
 		"name": "Glass of water",
 	},
+	"glass-milk": {
+		"name": "Glass of milk",
+	},
 	"apple-juice": {
 		"name": "Apple juice"
 	},
 	
 	"apple": {
 		"name": "Apple",
+	},
+	
+	"milk": {
+		"name": "Milk"
 	},
 	
 	"sink": {

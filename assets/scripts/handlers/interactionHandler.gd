@@ -26,9 +26,9 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and !event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		if parent is Item: print("interact with " + parent.name)
 		_check_may_interact()
 		if may_interact:
+			if parent is Item: print("interacting with " + parent.name)
 			interaction_controller.interact(parent)
 
 
