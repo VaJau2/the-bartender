@@ -4,5 +4,13 @@
 		"cancel": "Cancel",
 		"ingredient": "Ingredient:",
 		"glass": "Glass:"
+	},
+	"storage": {
+		"empty": "Empty",
+		"close": "Close"
+	},
+	"categories": {
+		"glass": "Glasses",
+		"fruit": "Fruits"
 	}
 }

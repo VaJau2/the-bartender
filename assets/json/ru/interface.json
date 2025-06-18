@@ -4,5 +4,13 @@
 		"cancel": "Отмена",
 		"ingredient": "Ингредиент:",
 		"glass": "Стакан:"
+	},
+	"storage": {
+		"empty": "Пусто",
+		"close": "Закрыть"
+	},
+	"categories": {
+		"glass": "Стаканы",
+		"fruit": "Фрукты"
 	}
 }

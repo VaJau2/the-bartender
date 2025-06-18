@@ -1,10 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu82g27afmoet"]
+[gd_scene load_steps=9 format=3 uid="uid://cu82g27afmoet"]
 
 [ext_resource type="Script" uid="uid://de5gkr10fgewt" path="res://assets/scripts/props/juicer.gd" id="1_kbiog"]
 [ext_resource type="Texture2D" uid="uid://c3ylhi1c11rbv" path="res://assets/sprites/props/furn/juicer.png" id="1_oxusw"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="2_l1qmc"]
+[ext_resource type="AudioStream" uid="uid://dapfj12q11f5r" path="res://assets/audio/props/juicer_work.mp3" id="4_ljwnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1qmc"]
+
+[sub_resource type="Animation" id="Animation_kbiog"]
+resource_name = "work"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.105029, 0.201248, 0.303566, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -7), Vector2(1, -7), Vector2(-1, -7), Vector2(1, -7), Vector2(-1, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_ljwnr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhjfk"]
+_data = {
+&"RESET": SubResource("Animation_ljwnr"),
+&"work": SubResource("Animation_kbiog")
+}
 
 [node name="juicer" type="Area2D"]
 script = ExtResource("1_kbiog")
@@ -22,4 +61,16 @@ script = ExtResource("2_l1qmc")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(39, 21)
+stream = ExtResource("4_ljwnr")
 max_distance = 800.0
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qhjfk")
+}
+speed_scale = 2.0
+
+[node name="timer" type="Timer" parent="."]
+
+[node name="spawnPoint" type="Node2D" parent="."]
+position = Vector2(4.45, -2.035)

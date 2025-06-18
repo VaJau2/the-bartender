@@ -1,18 +1,22 @@
 {
 	"empty-glass": {
 		"type": "glass",
+		"category": "glass",
 		"texture": "assets/sprites/items/empty-glass.png"
 	},
 	"glass-water": {
 		"type": "glass",
+		"category": "glass",
 		"texture": "assets/sprites/items/glass-water.png"
 	},
 	"apple-juice": {
 		"type": "glass",
+		"category": "glass",
 		"texture": "assets/sprites/items/apple-juice.png"
 	},
 	"apple": {
 		"type": "ingredient",
+		"category": "fruit",
 		"texture": "assets/sprites/items/apple.png",
 		"weight": 1
 	},

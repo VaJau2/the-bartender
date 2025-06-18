@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dky0qodu1pl03"]
+[gd_scene load_steps=8 format=3 uid="uid://dky0qodu1pl03"]
 
 [ext_resource type="Texture2D" uid="uid://ffeelv0gsbwq" path="res://assets/sprites/props/furn/fridge.png" id="1_8if52"]
+[ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/storage.gd" id="2_3mko2"]
+[ext_resource type="AudioStream" uid="uid://tigdqjfkowl1" path="res://assets/audio/props/FridgeOpen.wav" id="3_gdehl"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_hv655"]
+[ext_resource type="AudioStream" uid="uid://pj6jrqnm0yjn" path="res://assets/audio/props/FridgeClose.wav" id="4_r51fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4844m"]
-size = Vector2(24, 43)
+size = Vector2(24, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdehl"]
+size = Vector2(26, 49)
 
 [node name="fridge" type="StaticBody2D"]
 
@@ -12,5 +19,23 @@ position = Vector2(0, -20)
 texture = ExtResource("1_8if52")
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4844m")
+
+[node name="storageArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_3mko2")
+open_sound = ExtResource("3_gdehl")
+close_sound = ExtResource("4_r51fw")
+code = "fridge"
+
+[node name="shape" type="CollisionShape2D" parent="storageArea"]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_gdehl")
+
+[node name="interactionHandler" type="Node" parent="storageArea"]
+script = ExtResource("3_hv655")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
+max_distance = 500.0

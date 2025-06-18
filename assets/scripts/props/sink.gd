@@ -8,6 +8,7 @@ extends Area2D
 
 var base_item_path: String = "res://objects/props/items/base-item.tscn"
 
+
 func on_mouse_entered() -> void:
 	var item = interaction_controller.holding_item
 	if item == null or item.type != Enums.ItemType.glass: return

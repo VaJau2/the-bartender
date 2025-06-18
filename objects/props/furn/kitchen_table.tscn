@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jyddje2efq3h"]
+[gd_scene load_steps=16 format=3 uid="uid://jyddje2efq3h"]
 
 [ext_resource type="Texture2D" uid="uid://bsfp4yfolxyxc" path="res://assets/sprites/props/furn/kitchen-table.png" id="1_xhfhj"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_8nqib"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://bfl3bjpikxlog" path="res://assets/scripts/props/sink.gd" id="4_mq3dc"]
 [ext_resource type="AudioStream" uid="uid://kl5mw27njuq" path="res://assets/audio/props/sink_use.mp3" id="5_pghvc"]
 [ext_resource type="AudioStream" uid="uid://vc77c21jrbn6" path="res://assets/audio/splat.ogg" id="6_py2cw"]
+[ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/storage.gd" id="7_omtbk"]
+[ext_resource type="AudioStream" uid="uid://dmmgxh8udrnb8" path="res://assets/audio/props/FurnOpen.wav" id="8_boaa4"]
+[ext_resource type="AudioStream" uid="uid://b7o3gsyttraeo" path="res://assets/audio/props/FurnClose.wav" id="9_w36da"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nqib"]
 size = Vector2(91, 27)
@@ -21,6 +24,9 @@ size = Vector2(42, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py2cw"]
 size = Vector2(23, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omtbk"]
+size = Vector2(88, 20)
 
 [node name="kitchen-table" type="StaticBody2D"]
 
@@ -56,6 +62,8 @@ script = ExtResource("3_3dqvc")
 
 [node name="sink" type="Area2D" parent="."]
 position = Vector2(-39, -21)
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("4_mq3dc")
 fill_sound = ExtResource("5_pghvc")
 splat_sound = ExtResource("6_py2cw")
@@ -71,3 +79,21 @@ script = ExtResource("3_3dqvc")
 position = Vector2(39, 21)
 stream = ExtResource("5_pghvc")
 max_distance = 800.0
+
+[node name="storageArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("7_omtbk")
+open_sound = ExtResource("8_boaa4")
+close_sound = ExtResource("9_w36da")
+code = "lockers"
+
+[node name="shape" type="CollisionShape2D" parent="storageArea"]
+position = Vector2(-10, -2)
+shape = SubResource("RectangleShape2D_omtbk")
+
+[node name="interactionHandler" type="Node" parent="storageArea"]
+script = ExtResource("3_3dqvc")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
+max_distance = 500.0

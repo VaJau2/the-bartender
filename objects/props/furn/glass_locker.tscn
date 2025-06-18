@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://crmnwa0c6a3xu"]
+[gd_scene load_steps=6 format=3 uid="uid://crmnwa0c6a3xu"]
 
+[ext_resource type="Script" uid="uid://djovrjrxan3t7" path="res://assets/scripts/props/glassLocker.gd" id="1_k0rr8"]
 [ext_resource type="Texture2D" uid="uid://gxwjn433o6xp" path="res://assets/sprites/props/furn/glass-locker.png" id="1_qd1wl"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="2_phgmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phgmr"]
 size = Vector2(46, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0rr8"]
+size = Vector2(45, 39)
 
 [node name="glass-locker" type="StaticBody2D"]
 
@@ -14,3 +19,16 @@ texture = ExtResource("1_qd1wl")
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_phgmr")
+
+[node name="area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_k0rr8")
+
+[node name="shape" type="CollisionShape2D" parent="area"]
+position = Vector2(-0.5, -9.5)
+shape = SubResource("RectangleShape2D_k0rr8")
+
+[node name="interactionHandler" type="Node" parent="area"]
+script = ExtResource("2_phgmr")

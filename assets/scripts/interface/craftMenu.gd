@@ -13,7 +13,7 @@ var temp_crarfting: CraftingBase
 
 func _ready() -> void:
 	interaction_controller.open_crafting_menu.connect(_on_open_menu)
-	interaction_controller.close_crafting_menu.connect(_on_cancel_pressed)
+	interaction_controller.close_menu.connect(_on_cancel_pressed)
 
 
 func _process(_delta: float) -> void:
@@ -57,4 +57,5 @@ func _on_ingredient_icon_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
+	temp_crarfting.start()
 	_on_cancel_pressed()

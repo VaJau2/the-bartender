@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://deo4bi0lfym01"]
+
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_tpkvh"]
+[ext_resource type="Script" uid="uid://bbqh0uth48udr" path="res://assets/scripts/interface/storageMenu.gd" id="2_dqpl8"]
+[ext_resource type="PackedScene" uid="uid://bk2hulhun3t45" path="res://objects/interface/storage/itemButton.tscn" id="3_qm6x6"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_vsb81"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_schpk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tpkvh"]
+font_size = 18
+outline_size = 1
+
+[sub_resource type="Resource" id="Resource_sljo8"]
+script = ExtResource("4_schpk")
+node_path = NodePath("../empty")
+code = "storage.empty"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_bkyq0"]
+script = ExtResource("4_schpk")
+node_path = NodePath("../close")
+code = "storage.close"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="storageMenu" type="Panel"]
+offset_right = 376.0
+offset_bottom = 272.0
+theme = ExtResource("1_tpkvh")
+script = ExtResource("2_dqpl8")
+button_prefab = ExtResource("3_qm6x6")
+
+[node name="header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Storage"
+label_settings = SubResource("LabelSettings_tpkvh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="empty" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = -8.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Empty
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = -16.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="vbox" type="VBoxContainer" parent="scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 80.0
+offset_bottom = -12.0
+grow_vertical = 0
+text = "close"
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("3_vsb81")
+nodes = Array[ExtResource("4_schpk")]([SubResource("Resource_sljo8"), SubResource("Resource_bkyq0")])
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

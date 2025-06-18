@@ -26,6 +26,8 @@ func _update_pos() -> void:
 
 func _on_show_hint(item_code: String) -> void:
 	name_label.text = Loc.trans("items." + item_code + ".name")
+	await get_tree().process_frame
+	size.x = 72 + name_label.text.length() * 4.5
 	visible = true
 	set_process(true)
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://md8i4cl7o1sj"]
+[gd_scene load_steps=6 format=3 uid="uid://md8i4cl7o1sj"]
 
 [ext_resource type="Script" uid="uid://ciy7nxm43xex6" path="res://assets/scripts/props/baseItem.gd" id="1_c6bn3"]
 [ext_resource type="Texture2D" uid="uid://dl45iltjx5fks" path="res://assets/sprites/items/default.png" id="2_35oom"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_5s0xa"]
+[ext_resource type="Script" uid="uid://bi13sxyuesl0t" path="res://assets/scripts/props/itemMoving.gd" id="4_wfg8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35oom"]
 size = Vector2(14, 14)
@@ -23,3 +24,6 @@ shape = SubResource("RectangleShape2D_35oom")
 
 [node name="interactionHandler" type="Node" parent="."]
 script = ExtResource("3_5s0xa")
+
+[node name="moving" type="Node" parent="."]
+script = ExtResource("4_wfg8v")

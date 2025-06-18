@@ -17,8 +17,10 @@ signal hide_put_hint()
 signal pickup_item(item: Item)
 signal clear_item()
 
+signal close_menu()
 signal open_crafting_menu(crafting: CraftingBase)
-signal close_crafting_menu()
+signal open_storage_menu(storage: Storage)
+
 
 var holding_item: Item
 var interaction_cooldown: float

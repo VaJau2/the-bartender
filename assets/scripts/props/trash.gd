@@ -16,6 +16,7 @@ func on_mouse_exited() -> void:
 func interact() -> void:
 	var item = interaction_controller.holding_item
 	if item == null: return
+	if item.type == Enums.ItemType.glass: G.glasses_count -= 1
 	
 	item.queue_free()
 	interaction_controller.update_holding_item(null)

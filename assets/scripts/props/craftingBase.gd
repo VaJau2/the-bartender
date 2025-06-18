@@ -6,6 +6,8 @@ class_name CraftingBase
 
 @export var code: String
 
+var may_interact: bool = true
+
 var ingredient: Item = null
 var glass: Item = null
 var result_code: String
@@ -21,3 +23,7 @@ func get_ingredient() -> void:
 	if interaction_controller.holding_item != null: return
 	interaction_controller.update_holding_item(ingredient)
 	ingredient = null
+
+
+func start() -> void:
+	pass

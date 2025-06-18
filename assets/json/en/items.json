@@ -21,5 +21,14 @@
 	},
 	"trash": {
 		"name": "Trashcan"
+	},
+	"glass-locker": {
+		"name": "Glass cabinet"
+	},
+	"lockers": {
+		"name": "Lockers"
+	},
+	"fridge": {
+		"name": "Fridge"
 	}
 }

@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func _on_mouse_entered() -> void:
-	may_interact = G.player.global_position.distance_to(parent.global_position) <= InteractionController.INTERACTION_DISTANCE
+	_check_may_interact()
 	if may_interact:
 		interaction_controller.mouse_entered_item(parent)
 
@@ -26,5 +26,11 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and !event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		if parent is Item: print("interact with " + parent.name)
+		_check_may_interact()
 		if may_interact:
 			interaction_controller.interact(parent)
+
+
+func _check_may_interact() -> void:
+	may_interact = G.player.global_position.distance_to(parent.global_position) <= InteractionController.INTERACTION_DISTANCE
