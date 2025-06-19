@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=53 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://bkjwqra0munmw" path="res://objects/props/trees/tree_3.tscn" id="38_pdwbg"]
 [ext_resource type="PackedScene" uid="uid://b0dnu1ngdistm" path="res://objects/props/plants/bush.tscn" id="42_gdcyb"]
 [ext_resource type="PackedScene" uid="uid://fgpblr75kert" path="res://objects/props/plants/bush2.tscn" id="43_oa6sj"]
+[ext_resource type="PackedScene" uid="uid://3mwjuv02mmvb" path="res://objects/props/plants/carrot_plant.tscn" id="44_0f1tp"]
 [ext_resource type="PackedScene" uid="uid://md8i4cl7o1sj" path="res://objects/props/items/base-item.tscn" id="48_gdcyb"]
 [ext_resource type="PackedScene" uid="uid://do7flv2k02fwo" path="res://objects/interface/interface.tscn" id="48_oa6sj"]
 
@@ -1269,24 +1270,45 @@ position = Vector2(2351, -67)
 code = "blackberry"
 
 [node name="Bush21" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
-position = Vector2(-1201, 29)
+position = Vector2(-1249, 29)
 code = "tomato"
 
 [node name="Bush22" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
-position = Vector2(-1145, 29)
+position = Vector2(-1161, 29)
 code = "tomato"
 
 [node name="Bush23" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
-position = Vector2(-1089, 29)
+position = Vector2(-1065, 29)
 code = "tomato"
 
 [node name="Bush24" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
-position = Vector2(-1113, 69)
+position = Vector2(-1113, 85)
 code = "tomato"
 
 [node name="Bush25" parent="props/town-props/plants" instance=ExtResource("43_oa6sj")]
-position = Vector2(-1177, 69)
+position = Vector2(-1209, 85)
 code = "tomato"
+
+[node name="carrot-plant" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-2017, 29)
+
+[node name="carrot-plant2" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-1961, 29)
+
+[node name="carrot-plant3" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-1897, 29)
+
+[node name="carrot-plant4" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-1841, 29)
+
+[node name="carrot-plant5" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-1985, 61)
+
+[node name="carrot-plant6" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-1929, 61)
+
+[node name="carrot-plant7" parent="props/town-props/plants" instance=ExtResource("44_0f1tp")]
+position = Vector2(-1873, 61)
 
 [node name="farm-props" type="Node2D" parent="props"]
 y_sort_enabled = true

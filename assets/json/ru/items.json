@@ -32,6 +32,9 @@
 	"tomato-juice": {
 		"name": "Томатный сок"
 	},
+	"carrot-juice": {
+		"name": "Морковный сок"
+	},
 	
 	"apple": {
 		"name": "Яблоко",
@@ -59,6 +62,9 @@
 	},
 	"tomato": {
 		"name": "Помидор"
+	},
+	"carrot": {
+		"name": "Морковь"
 	},
 	
 	"milk": {

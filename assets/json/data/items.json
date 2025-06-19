@@ -54,6 +54,11 @@
 		"category": "glass",
 		"texture": "assets/sprites/items/tomato-juice.png"
 	},
+	"carrot-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/carrot-juice.png"
+	},
 	
 	"apple": {
 		"type": "ingredient",
@@ -106,8 +111,14 @@
 	},
 	"tomato": {
 		"type": "ingredient",
-		"category": "berry",
+		"category": "vegetable",
 		"texture": "assets/sprites/items/tomato.png",
+		"weight": 0.2
+	},
+	"carrot": {
+		"type": "ingredient",
+		"category": "vegetable",
+		"texture": "assets/sprites/items/carrot.png",
 		"weight": 0.2
 	},
 	

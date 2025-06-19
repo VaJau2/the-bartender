@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://3mwjuv02mmvb"]
+
+[ext_resource type="Texture2D" uid="uid://jgspvx5oxii5" path="res://assets/sprites/props/carrot-plant.png" id="1_r3rb5"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="2_l8su6"]
+[ext_resource type="Script" uid="uid://n2db5a1etpai" path="res://assets/scripts/props/carrotPlant.gd" id="2_lhgl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhgl0"]
+size = Vector2(20, 23)
+
+[node name="carrot-plant" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+scale = Vector2(1.4, 1.359)
+texture = ExtResource("1_r3rb5")
+
+[node name="area" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_lhgl0")
+sprite = NodePath("../sprite")
+code = "carrot"
+
+[node name="shape" type="CollisionShape2D" parent="area"]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_lhgl0")
+
+[node name="interactionHandler" type="Node" parent="area"]
+script = ExtResource("2_l8su6")

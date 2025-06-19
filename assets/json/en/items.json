@@ -29,8 +29,11 @@
 	"blackberry-juice": {
 		"name": "Blackberry juice"
 	},
-	"tomato_juice": {
+	"tomato-juice": {
 		"name": "Tomato juice"
+	},
+	"carrot-juice": {
+		"name": "Carrot juice"
 	},
 	
 	"apple": {
@@ -59,6 +62,9 @@
 	},
 	"tomato": {
 		"name": "Tomato"
+	},
+	"carror": {
+		"name": "Carrot"
 	},
 	
 	"milk": {
