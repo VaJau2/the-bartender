@@ -18,3 +18,9 @@ enum ItemType {
 	ingredient,
 	tool
 }
+
+enum StorageType {
+	bag,
+	fridge,
+	locker
+}

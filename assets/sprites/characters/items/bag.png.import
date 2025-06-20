@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciw2hnnpjnunk"
-path="res://.godot/imported/bar-roof.png-79079b8bd248e2b7ba8c9eb57daa8df7.ctex"
+uid="uid://digw164pwr3dv"
+path="res://.godot/imported/bag.png-aa054449b036822b2fdcb7acec75c50b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/buildings/bar/bar-roof.png"
-dest_files=["res://.godot/imported/bar-roof.png-79079b8bd248e2b7ba8c9eb57daa8df7.ctex"]
+source_file="res://assets/sprites/characters/items/bag.png"
+dest_files=["res://.godot/imported/bag.png-aa054449b036822b2fdcb7acec75c50b.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

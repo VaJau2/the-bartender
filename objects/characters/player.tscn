@@ -1,39 +1,56 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd3mnq7v4cljx"]
+[gd_scene load_steps=9 format=3 uid="uid://dd3mnq7v4cljx"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_h3hc8"]
 [ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player.png" id="2_ho5yc"]
 [ext_resource type="Script" uid="uid://5bnrtyglk2lx" path="res://assets/scripts/player.gd" id="2_ssmtf"]
-[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_ho5yc"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_ssmtf"]
+[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storageHandler.gd" id="6_g87t3"]
 [ext_resource type="Script" uid="uid://dgrs1etu4tkry" path="res://assets/scripts/controllers/interactionController.gd" id="6_s7pd4"]
+[ext_resource type="AudioStream" uid="uid://cc7nxo1fbw1l3" path="res://assets/audio/ui_items_takeall.wav" id="7_g87t3"]
+
+[sub_resource type="GDScript" id="GDScript_s7pd4"]
+script/source = "extends Sprite2D
+
+
+func _ready() -> void:
+	get_parent().update_using_storage.connect(_on_update_using_storage)
+	visible = G.player.using_storage
+
+
+func _on_update_using_storage(value: bool):
+	visible = value
+"
 
 [node name="player" instance=ExtResource("1_h3hc8")]
 script = ExtResource("2_ssmtf")
 
-[node name="movementContoller#run" type="Node" parent="." index="1"]
-script = ExtResource("3_ho5yc")
-anim = "walk-drunk"
-speed = 200
-
-[node name="sprite" parent="." index="3"]
+[node name="sprite" parent="." index="2"]
 texture = ExtResource("2_ho5yc")
 
-[node name="inputController" type="Node" parent="." index="5" node_paths=PackedStringArray("movement_controller")]
+[node name="bag" parent="." index="3"]
+script = SubResource("GDScript_s7pd4")
+
+[node name="inputController" type="Node" parent="." index="4" node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("3_ssmtf")
 movement_controller = NodePath("../movementController")
 
-[node name="interactionController" type="Node" parent="." index="6" node_paths=PackedStringArray("movement_controller")]
+[node name="interactionController" type="Node" parent="." index="5" node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("6_s7pd4")
 movement_controller = NodePath("../movementController")
+
+[node name="storageHandler" type="Node" parent="." index="6" node_paths=PackedStringArray("interaction_controller")]
+script = ExtResource("6_g87t3")
+interaction_controller = NodePath("../interactionController")
+code = "bag"
+weight = 15
+
+[node name="audi" type="AudioStreamPlayer2D" parent="storageHandler" index="0"]
+stream = ExtResource("7_g87t3")
+max_distance = 500.0
 
 [node name="camera" type="Camera2D" parent="." index="7"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="run" type="Node" parent="movementController" index="1"]
-script = ExtResource("3_ho5yc")
-anim = "walk-drunk"
-speed = 220
-
-[node name="audi" parent="." index="10"]
+[node name="audi" parent="." index="11"]
 default_material = 1

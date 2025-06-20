@@ -7,11 +7,14 @@ class_name Item
 @onready var moving: ItemMoving = get_node("moving")
 
 @export var code: String
+
 var item_data: Dictionary
+
 var type: Enums.ItemType
 var category: String
-var limit: int = 0
-
+var limit: int
+var weight: float
+var needs_fridge: bool
 
 signal taken(item: Item)
 
@@ -22,8 +25,23 @@ func _ready() -> void:
 	category = item_data.category
 	if item_data.has("limit"):
 		limit = item_data.limit
+	if item_data.has("weight"):
+		weight = item_data.weight
+	if item_data.has("need_fridge"):
+		needs_fridge = item_data.need_fridge
 	type = Enums.ItemType.get(item_data.type)
 	_load_icon()
+
+
+func enable() -> void:
+	process_mode = Node.PROCESS_MODE_INHERIT
+	visible = true
+
+
+func disable() -> void:
+	moving.set_velocity(Vector2.ZERO)
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func on_mouse_entered() -> void:
@@ -40,10 +58,14 @@ func get_limit_percent() -> String:
 
 
 func interact() -> void:
+	if G.player.using_storage:
+		if G.player.storage_handler.can_put_item(self):
+			disable()
+			G.player.storage_handler.put_item(self)
+			return
+	
 	if interaction_controller.holding_item == null:
-		moving.set_velocity(Vector2.ZERO)
-		visible = false
-		process_mode = Node.PROCESS_MODE_DISABLED
+		disable()
 		interaction_controller.update_holding_item(self)
 		taken.emit(self)
 	else:

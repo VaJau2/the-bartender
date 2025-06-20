@@ -5,10 +5,12 @@ extends Panel
 @onready var name_label: Label = get_node("header")
 @onready var empty_label: Label = get_node("empty")
 @onready var buttons_parent: VBoxContainer = get_node("scroll/vbox")
+@onready var weight_parent: Control = get_node("weight")
+@onready var weight_bar: ProgressBar = get_node("weight/weightBar")
 
 @export var button_prefab: PackedScene
 
-var temp_storage: Storage
+var temp_storage: StorageHandler
 var categories_codes: Array[String]
 
 
@@ -23,10 +25,20 @@ func _process(_delta: float) -> void:
 		_on_close_pressed()
 
 
-func _on_open_menu(storage: Storage) -> void:
+func _on_open_menu(storage: StorageHandler) -> void:
+	if visible:
+		_on_close_pressed()
+		return
+	
 	movement_controller.may_move = false
-	name_label.text = Loc.trans("items." + storage.code + ".name")
 	temp_storage = storage
+	
+	name_label.text = Loc.trans("items." + storage.code + ".name")
+	weight_parent.visible = storage.weight > 0
+	if weight_parent.visible:
+		weight_bar.max_value = storage.weight
+		_update_weight()
+	
 	empty_label.visible = storage.items.is_empty()
 	if storage.items.is_empty():
 		visible = true
@@ -102,3 +114,7 @@ func _create_category(code: String) -> void:
 	label.text = Loc.trans("interface.categories." + code)
 	buttons_parent.add_child(label)
 	buttons_parent.add_child(HSeparator.new())
+
+
+func _update_weight() -> void:
+	weight_bar.value = temp_storage.get_items_weight()

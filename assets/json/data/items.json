@@ -2,62 +2,84 @@
 	"empty-glass": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/empty-glass.png"
+		"texture": "assets/sprites/items/empty-glass.png",
+		"weight": 0.1
 	},
 	"glass-water": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/glass-water.png"
+		"texture": "assets/sprites/items/glass-water.png",
+		"weight": 1,
 	},
 	"glass-milk": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/glass-milk.png"
+		"texture": "assets/sprites/items/glass-milk.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"apple-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/apple-juice.png"
+		"texture": "assets/sprites/items/apple-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"banana-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/banana-juice.png"
+		"texture": "assets/sprites/items/banana-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"coconut-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/coconut-juice.png"
+		"texture": "assets/sprites/items/coconut-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"blueberry-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/blueberry-juice.png"
+		"texture": "assets/sprites/items/blueberry-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"strawberry-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/strawberry-juice.png"
+		"texture": "assets/sprites/items/strawberry-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"raspberry-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/raspberry-juice.png"
+		"texture": "assets/sprites/items/raspberry-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"blackberry-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/blackberry-juice.png"
+		"texture": "assets/sprites/items/blackberry-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"tomato-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/tomato-juice.png"
+		"texture": "assets/sprites/items/tomato-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	"carrot-juice": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/carrot-juice.png"
+		"texture": "assets/sprites/items/carrot-juice.png",
+		"weight": 1,
+		"need_fridge": 1
 	},
 	
 	"apple": {
@@ -113,7 +135,7 @@
 		"type": "ingredient",
 		"category": "vegetable",
 		"texture": "assets/sprites/items/tomato.png",
-		"weight": 0.2
+		"weight": 0.2,
 	},
 	"carrot": {
 		"type": "ingredient",
@@ -127,13 +149,14 @@
 		"category": "tool",
 		"texture": "assets/sprites/items/knife.png",
 		"weight": 1,
-		"limit": -1
+		"limit": -1,
 	},
 	"milk": {
 		"type": "tool",
 		"category": "liquid",
 		"texture": "assets/sprites/items/milk.png",
 		"weight": 2,
-		"limit": 5
+		"limit": 5,
+		"need_fridge": 1
 	}
 }

@@ -4,3 +4,14 @@ class_name Player
 
 @onready var interaction_controller: InteractionController = get_node("interactionController")
 @onready var movement_controller: MovementController = get_node("movementController")
+@onready var storage_handler: StorageHandler = get_node("storageHandler")
+
+@export var using_storage: bool
+
+
+signal update_using_storage(value: bool)
+
+
+func set_using_storage(value: bool): 
+	using_storage = value
+	update_using_storage.emit(value)

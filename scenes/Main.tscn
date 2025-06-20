@@ -257,6 +257,7 @@ tile_set = SubResource("TileSet_2ofn6")
 
 [node name="player" parent="." instance=ExtResource("1_0bbpv")]
 position = Vector2(102, 49)
+using_storage = true
 
 [node name="props" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1656,12 +1657,10 @@ region_enabled = true
 region_rect = Rect2(16.1601, -0.936382, 13.77, 18.5183)
 
 [node name="item2" parent="." instance=ExtResource("48_gdcyb")]
-z_index = 1
 position = Vector2(184, 32)
 code = "knife"
 
 [node name="item3" parent="." instance=ExtResource("48_gdcyb")]
-z_index = 1
 position = Vector2(184, 64)
 code = "milk"
 

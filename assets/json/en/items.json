@@ -73,6 +73,9 @@
 	"knife": {
 		"name": "Knife"
 	},
+	"bag": {
+		"name": "Bag"
+	},
 	
 	"sink": {
 		"name": "Sink"

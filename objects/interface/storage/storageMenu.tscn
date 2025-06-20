@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://deo4bi0lfym01"]
+[gd_scene load_steps=16 format=3 uid="uid://deo4bi0lfym01"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_tpkvh"]
 [ext_resource type="Script" uid="uid://bbqh0uth48udr" path="res://assets/scripts/interface/storageMenu.gd" id="2_dqpl8"]
 [ext_resource type="PackedScene" uid="uid://bk2hulhun3t45" path="res://objects/interface/storage/itemButton.tscn" id="3_qm6x6"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_vsb81"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_schpk"]
+[ext_resource type="Script" uid="uid://dv145101viuul" path="res://assets/scripts/interface/storage/weightBar.gd" id="6_upfr7"]
+[ext_resource type="Script" uid="uid://c6iw112sre23d" path="res://assets/scripts/interface/storage/weightBarColor.gd" id="7_6ilx7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tpkvh"]
 font_size = 18
@@ -21,6 +23,40 @@ script = ExtResource("4_schpk")
 node_path = NodePath("../close")
 code = "storage.close"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qm6x6"]
+script = ExtResource("4_schpk")
+node_path = NodePath("../weight/Label")
+code = "storage.weight"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_eumj3"]
+script = ExtResource("7_6ilx7")
+min_percent = 0
+max_percent = 60
+color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c6iw112sre23d"
+
+[sub_resource type="Resource" id="Resource_l103h"]
+script = ExtResource("7_6ilx7")
+min_percent = 61
+max_percent = 80
+color = Color(1, 0.794549, 0.590185, 1)
+metadata/_custom_type_script = "uid://c6iw112sre23d"
+
+[sub_resource type="Resource" id="Resource_06rwd"]
+script = ExtResource("7_6ilx7")
+min_percent = 81
+max_percent = 90
+color = Color(0.843137, 0.337255, 0, 1)
+metadata/_custom_type_script = "uid://c6iw112sre23d"
+
+[sub_resource type="Resource" id="Resource_p4mtg"]
+script = ExtResource("7_6ilx7")
+min_percent = 91
+max_percent = 100
+color = Color(0.841251, 2.96004e-06, 9.62615e-07, 1)
+metadata/_custom_type_script = "uid://c6iw112sre23d"
 
 [node name="storageMenu" type="Panel"]
 offset_right = 376.0
@@ -91,6 +127,50 @@ text = "close"
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("3_vsb81")
-nodes = Array[ExtResource("4_schpk")]([SubResource("Resource_sljo8"), SubResource("Resource_bkyq0")])
+nodes = Array[ExtResource("4_schpk")]([SubResource("Resource_sljo8"), SubResource("Resource_bkyq0"), SubResource("Resource_qm6x6")])
+
+[node name="weight" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="weightBar" type="ProgressBar" parent="weight"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -24.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+value = 25.0
+show_percentage = false
+script = ExtResource("6_upfr7")
+colors = Array[ExtResource("7_6ilx7")]([SubResource("Resource_eumj3"), SubResource("Resource_l103h"), SubResource("Resource_06rwd"), SubResource("Resource_p4mtg")])
+
+[node name="Label" type="Label" parent="weight"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 57.0
+offset_bottom = 16.0
+grow_vertical = 2
+text = "Weight"
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="value_changed" from="weight/weightBar" to="weight/weightBar" method="_on_value_changed"]

@@ -7,7 +7,8 @@
 	},
 	"storage": {
 		"empty": "Пусто",
-		"close": "Закрыть"
+		"close": "Закрыть",
+		"weight": "Вес"
 	},
 	"categories": {
 		"glass": "Стаканы",

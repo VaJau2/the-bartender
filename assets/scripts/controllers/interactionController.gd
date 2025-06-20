@@ -20,7 +20,7 @@ signal clear_item()
 
 signal close_menu()
 signal open_crafting_menu(crafting: CraftingBase)
-signal open_storage_menu(storage: Storage)
+signal open_storage_menu(storage: StorageHandler)
 
 var interacting_item: Item # костыль для того, чтобы игнорировать putArea, когда на ней Item
 var interaction_cooldown: float

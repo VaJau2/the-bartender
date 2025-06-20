@@ -1,6 +1,6 @@
 extends Node
 
-@export var sprite: Sprite2D
+@export var sprites: Array[Sprite2D]
 @export var anim: AnimationPlayer
 @export var movement_controller: MovementController
 @onready var parent: CharacterBody2D = get_parent()
@@ -31,4 +31,5 @@ func on_state_changed(_state) -> void:
 
 func _process(_delta) -> void:
 	if watch_velocity and parent.velocity.x != 0:
-		sprite.flip_h = parent.velocity.x < 0
+		for sprite in sprites:
+			sprite.flip_h = parent.velocity.x < 0
