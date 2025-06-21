@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/barStorageArea.gd" id="11_3p14s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3pc3"]
-size = Vector2(278, 156)
+size = Vector2(278, 172)
 
 [node name="bar" type="Node2D"]
 y_sort_enabled = true
@@ -70,7 +70,7 @@ monitorable = false
 script = ExtResource("11_3p14s")
 
 [node name="shape" type="CollisionShape2D" parent="storage-area"]
-position = Vector2(7, -53)
+position = Vector2(7, -45)
 shape = SubResource("RectangleShape2D_x3pc3")
 
 [connection signal="body_entered" from="storage-area" to="storage-area" method="_on_body_entered"]

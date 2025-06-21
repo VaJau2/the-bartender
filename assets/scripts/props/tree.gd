@@ -61,7 +61,7 @@ func interact() -> void:
 	audi.stream = hit_sound
 	audi.play()
 	await anim.animation_finished
-	if randf() < 0.2:
+	if randf() < 0.3:
 		anim.play("fall")
 		audi.stream = fall_sound
 		audi.play()

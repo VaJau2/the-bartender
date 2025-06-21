@@ -36,3 +36,12 @@ static func trans(code: String) -> String:
 		path.remove_at(0)
 	
 	return result
+
+
+static func get_plural(number:int, code: String) -> String:
+	var trans_text = trans("interface.plural." + code)
+	var words = trans_text.split('|')
+	var cases = [2, 0, 1, 1, 1, 2];
+	if number % 100 > 4 and number % 100 < 20: return words[2]
+	if number % 10 < 5: return words[cases[number % 10]]
+	return words[cases[5]]

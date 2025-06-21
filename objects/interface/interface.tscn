@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=14 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="PackedScene" uid="uid://b0vda7f1r2ivw" path="res://objects/interface/itemIcon.tscn" id="3_2dkr1"]
@@ -7,6 +7,22 @@
 [ext_resource type="Texture2D" uid="uid://cuacambctgeos" path="res://assets/sprites/interface/bag_icon.png" id="5_hryqi"]
 [ext_resource type="Texture2D" uid="uid://d4crp3m13wevf" path="res://assets/sprites/interface/bag_icon_hover.png" id="6_25ur3"]
 [ext_resource type="Script" uid="uid://oi345nxxx8yq" path="res://assets/scripts/interface/bagIcon.gd" id="7_25ur3"]
+[ext_resource type="Script" uid="uid://b5v785lhs3jwb" path="res://assets/scripts/interface/moneyPanel.gd" id="8_3ewrv"]
+[ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="11_oxl46"]
+
+[sub_resource type="Resource" id="Resource_qawhh"]
+script = ExtResource("11_oxl46")
+node_path = NodePath("../goalLabel")
+code = "money.goal"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_11rc7"]
+script = ExtResource("11_oxl46")
+node_path = NodePath("../daysLeftLabel")
+code = "money.days_left"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="interface" type="Control"]
 layout_mode = 3
@@ -92,5 +108,93 @@ offset_top = -24.0
 offset_right = 40.0
 offset_bottom = -1.0
 text = "Tab"
+
+[node name="moneyPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.694118)
+layout_mode = 0
+offset_left = 960.0
+offset_top = 32.0
+offset_right = 1136.0
+offset_bottom = 64.0
+script = ExtResource("8_3ewrv")
+
+[node name="money" type="Label" parent="moneyPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_right = -48.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="bit" type="TextureRect" parent="moneyPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -38.0
+offset_top = 2.0
+offset_right = -10.0
+offset_bottom = 30.0
+grow_horizontal = 0
+texture = ExtResource("9_whndr")
+
+[node name="goalLabel" type="Label" parent="moneyPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+grow_vertical = 0
+text = "Goal:"
+horizontal_alignment = 2
+
+[node name="goal" type="Label" parent="moneyPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 8.0
+offset_right = 168.0
+offset_bottom = 31.0
+grow_vertical = 0
+text = "1000"
+horizontal_alignment = 2
+
+[node name="daysLeftLabel" type="Label" parent="moneyPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 55.0
+grow_vertical = 0
+text = "Days Left:"
+horizontal_alignment = 2
+
+[node name="daysLeft" type="Label" parent="moneyPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 55.0
+grow_vertical = 0
+text = "7"
+horizontal_alignment = 1
+
+[node name="translation" type="Node" parent="moneyPanel"]
+script = ExtResource("10_wyfr1")
+nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh"), SubResource("Resource_11rc7")])
 
 [connection signal="pressed" from="bagIcon" to="bagIcon" method="_on_pressed"]

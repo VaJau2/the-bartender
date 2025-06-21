@@ -72,8 +72,12 @@ func _on_update_using_storage(value: bool) -> void:
 		get_node("audi").play()
 		return
 	
+	var items_moved = []
 	for item in G.player.storage_handler.items:
 		if item.needs_fridge and storage_type != Enums.StorageType.fridge: continue
 		if !item.needs_fridge and storage_type == Enums.StorageType.fridge: continue
-		G.player.storage_handler.items.erase(item)
+		items_moved.append(item)
 		items.append(item)
+	
+	for item in items_moved:
+		G.player.storage_handler.items.erase(item)

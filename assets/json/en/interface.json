@@ -10,6 +10,10 @@
 		"close": "Close",
 		"weight": "Weight"
 	},
+	"money": {
+		"goal": "Goal:",
+		"days_left": "Days Left:"
+	},
 	"categories": {
 		"glass": "Glasses",
 		"fruit": "Fruits",
@@ -17,5 +21,8 @@
 		"berry": "Berries",
 		"liquid": "Liquids",
 		"tool": "Tools"
-	}
+	},
+	"plural": {
+		"bits": "bit|bits|bits"
+	},
 }
