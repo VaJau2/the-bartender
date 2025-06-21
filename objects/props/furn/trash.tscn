@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://blquoyolxe74c"]
 
-[ext_resource type="Script" uid="uid://osem5crgar24" path="res://assets/scripts/props/trash.gd" id="1_8c5ek"]
+[ext_resource type="Script" uid="uid://osem5crgar24" path="res://assets/scripts/props/bar/trash.gd" id="1_8c5ek"]
 [ext_resource type="Texture2D" uid="uid://qo5ho16tqril" path="res://assets/sprites/props/furn/garbage.png" id="2_r5syv"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_y4mmg"]
 

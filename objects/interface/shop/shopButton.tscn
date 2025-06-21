@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjlfik2xqyd0m"]
+
+[ext_resource type="Script" uid="uid://bnyubv8eye0ta" path="res://assets/scripts/interface/shop/shopButton.gd" id="1_au1ot"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 8.0
+offset_bottom = 8.0
+icon_alignment = 1
+script = ExtResource("1_au1ot")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

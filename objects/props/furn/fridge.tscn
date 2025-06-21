@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dky0qodu1pl03"]
 
 [ext_resource type="Texture2D" uid="uid://ffeelv0gsbwq" path="res://assets/sprites/props/furn/fridge.png" id="1_8if52"]
-[ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/storageArea.gd" id="2_3mko2"]
+[ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/bar/storageArea.gd" id="2_3mko2"]
 [ext_resource type="AudioStream" uid="uid://tigdqjfkowl1" path="res://assets/audio/props/FridgeOpen.wav" id="3_gdehl"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_hv655"]
 [ext_resource type="AudioStream" uid="uid://pj6jrqnm0yjn" path="res://assets/audio/props/FridgeClose.wav" id="4_r51fw"]

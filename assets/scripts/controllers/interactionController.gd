@@ -10,6 +10,7 @@ const INTERACTION_DISTANCE: float = 150
 # сигналы для интерфейса 
 signal show_hint(code: String)
 signal show_item_hint(item: Item)
+signal show_hint_text(text: String)
 signal hide_item_hint()
 
 signal show_put_hint()
@@ -21,6 +22,7 @@ signal clear_item()
 signal close_menu()
 signal open_crafting_menu(crafting: CraftingBase)
 signal open_storage_menu(storage: StorageHandler)
+signal open_shop_menu(shop: MarketStand)
 
 var interacting_item: Item # костыль для того, чтобы игнорировать putArea, когда на ней Item
 var interaction_cooldown: float

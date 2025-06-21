@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cu82g27afmoet"]
 
-[ext_resource type="Script" uid="uid://de5gkr10fgewt" path="res://assets/scripts/props/juicer.gd" id="1_kbiog"]
+[ext_resource type="Script" uid="uid://de5gkr10fgewt" path="res://assets/scripts/props/bar/juicer.gd" id="1_kbiog"]
 [ext_resource type="Texture2D" uid="uid://c3ylhi1c11rbv" path="res://assets/sprites/props/furn/juicer.png" id="1_oxusw"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="2_l1qmc"]
 [ext_resource type="AudioStream" uid="uid://dapfj12q11f5r" path="res://assets/audio/props/juicer_work.mp3" id="4_ljwnr"]

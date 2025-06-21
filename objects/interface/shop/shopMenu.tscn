@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://bohrnxbwka51t"]
+
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_jgcyp"]
+[ext_resource type="Script" uid="uid://ovipc7k4mug7" path="res://assets/scripts/interface/shop/shopMenu.gd" id="2_rync5"]
+[ext_resource type="PackedScene" uid="uid://bjlfik2xqyd0m" path="res://objects/interface/shop/shopButton.tscn" id="3_1tkwp"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="5_ielyl"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="6_1pspb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rync5"]
+font_size = 18
+outline_size = 1
+
+[sub_resource type="Resource" id="Resource_234wi"]
+script = ExtResource("6_1pspb")
+node_path = NodePath("../header")
+code = "shop.header"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_7xxgi"]
+script = ExtResource("6_1pspb")
+node_path = NodePath("../close")
+code = "shop.close"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="shopMenu" type="Panel"]
+offset_right = 384.0
+offset_bottom = 256.0
+theme = ExtResource("1_jgcyp")
+script = ExtResource("2_rync5")
+button_prefab = ExtResource("3_1tkwp")
+
+[node name="header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "Shop"
+label_settings = SubResource("LabelSettings_rync5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="grid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -72.0
+offset_right = 156.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 9
+
+[node name="close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 96.0
+offset_bottom = -20.0
+grow_vertical = 0
+text = "close"
+
+[node name="delivery" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -40.0
+offset_right = -29.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "delivery (+50 bit)"
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("5_ielyl")
+nodes = Array[ExtResource("6_1pspb")]([SubResource("Resource_234wi"), SubResource("Resource_7xxgi")])
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

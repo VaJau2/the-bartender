@@ -10,6 +10,10 @@
 		"close": "Close",
 		"weight": "Weight"
 	},
+	"shop": {
+		"header": "Shop",
+		"close": "Close",
+	},
 	"money": {
 		"goal": "Goal:",
 		"days_left": "Days Left:"

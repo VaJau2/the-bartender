@@ -45,7 +45,7 @@
 	"coconut": {
 		"name": "Coconut"
 	},
-	"sliced-coconut" {
+	"sliced-coconut": {
 		"name": "Sliced coconut"
 	},
 	"blueberry": {
@@ -100,5 +100,9 @@
 	},
 	"palm-tree": {
 		"name": "Palm tree"
-	}
+	},
+	
+	"shop": {
+		"name": "Shop",
+	},
 }

@@ -8,19 +8,24 @@ class_name NavigationMovementController
 
 @export var nav_agent: NavigationAgent2D
 
+signal came_to_point
+
 var target: Vector2
 
 
 func _physics_process(_delta):
 	if !nav_agent.is_target_reachable() or nav_agent.is_navigation_finished():
+		if nav_agent.is_navigation_finished():
+			came_to_point.emit()
 		set_velocity(Vector2.ZERO)
 		set_physics_process(false)
 		return
 	
 	var current_pos: Vector2 = parent.global_position
-	dir = nav_agent.get_next_path_position()
+	var next_pos: Vector2 = nav_agent.get_next_path_position()
+	dir = current_pos.direction_to(next_pos)
 	
-	parent._physics_process(_delta)
+	super(_delta)
 
 
 func set_target(new_target: Vector2) -> void:

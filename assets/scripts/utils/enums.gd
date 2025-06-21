@@ -24,3 +24,8 @@ enum StorageType {
 	fridge,
 	locker
 }
+
+enum ShopItemType {
+	item,
+	bag
+}

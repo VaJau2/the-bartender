@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://crmnwa0c6a3xu" path="res://objects/props/furn/glass_locker.tscn" id="7_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://dky0qodu1pl03" path="res://objects/props/furn/fridge.tscn" id="8_ffeum"]
 [ext_resource type="PackedScene" uid="uid://blquoyolxe74c" path="res://objects/props/furn/trash.tscn" id="9_rog3o"]
-[ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/barStorageArea.gd" id="11_3p14s"]
+[ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/bar/barStorageArea.gd" id="11_3p14s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3pc3"]
 size = Vector2(278, 172)

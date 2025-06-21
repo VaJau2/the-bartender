@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckdwwp3um3c5l"]
+[gd_scene load_steps=9 format=3 uid="uid://ckdwwp3um3c5l"]
 
 [ext_resource type="Texture2D" uid="uid://coh8o8lgoqmpb" path="res://assets/sprites/buildings/town/market_assets.png" id="1_qubp5"]
+[ext_resource type="Texture2D" uid="uid://dl2bi4mlgvpd0" path="res://assets/sprites/props/sign-open/closed.png" id="3_6cdtc"]
+[ext_resource type="Texture2D" uid="uid://b1g84tbivx63" path="res://assets/sprites/props/sign-open/open.png" id="3_06cts"]
+[ext_resource type="Script" uid="uid://b1nqry7wrcxg5" path="res://assets/scripts/props/market/marketStandInteraction.gd" id="4_byxa2"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="5_an5wc"]
+[ext_resource type="Script" uid="uid://f2cmt7ywpi5r" path="res://assets/scripts/props/market/marketStand.gd" id="5_byxa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drqof"]
 size = Vector2(68, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byxa2"]
+size = Vector2(65, 40)
+
 [node name="marketStand" type="StaticBody2D"]
+script = ExtResource("5_byxa2")
+
+[node name="standPoint" type="Node2D" parent="."]
+position = Vector2(-2, -1)
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(1, -25)
@@ -16,3 +28,25 @@ region_rect = Rect2(93.532, 7.8208, 88.5406, 95.7399)
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(1, 9.5)
 shape = SubResource("RectangleShape2D_drqof")
+
+[node name="open" type="Sprite2D" parent="."]
+position = Vector2(-19, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6cdtc")
+
+[node name="interaction" type="Area2D" parent="." node_paths=PackedStringArray("open_sign", "stand_point")]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_byxa2")
+open_sign = NodePath("../open")
+stand_point = NodePath("../standPoint")
+open_texture = ExtResource("3_06cts")
+closed_texture = ExtResource("3_6cdtc")
+
+[node name="shape" type="CollisionShape2D" parent="interaction"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_byxa2")
+
+[node name="interactionHandler" type="Node" parent="interaction"]
+script = ExtResource("5_an5wc")

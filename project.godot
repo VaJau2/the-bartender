@@ -37,6 +37,15 @@ window/stretch/mode="viewport"
 
 project/assembly_name="The Bartender"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://assets/scripts/": "green",
+"res://objects/": "yellow",
+"res://scenes/": "purple"
+}
+
 [input]
 
 ui_left={

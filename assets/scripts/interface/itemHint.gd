@@ -10,6 +10,7 @@ func _ready() -> void:
 	set_process(false)
 	interaction_controller.show_hint.connect(_on_show_hint)
 	interaction_controller.show_item_hint.connect(_on_show_item_hint)
+	interaction_controller.show_hint_text.connect(_on_show_hint_text)
 	interaction_controller.hide_item_hint.connect(_on_hide_hint)
 
 
@@ -34,6 +35,11 @@ func _on_show_item_hint(item: Item) -> void:
 	name_label.text = Loc.trans("items." + item.code + ".name")
 	if item.limit > 0:
 		name_label.text += " (" + item.get_limit_percent() + ")"
+	_set_hint_visible()
+
+
+func _on_show_hint_text(text: String) -> void:
+	name_label.text = text
 	_set_hint_visible()
 
 

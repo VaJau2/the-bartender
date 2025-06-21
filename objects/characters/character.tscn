@@ -121,6 +121,35 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_7twir"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31, 24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bag:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31, 28]
+}
+
 [sub_resource type="Animation" id="Animation_o31xw"]
 resource_name = "sit"
 length = 1.5
@@ -237,35 +266,6 @@ tracks/1/keys = {
 "values": [8, 9, 10, 11, 12, 13, 14, 15, 8]
 }
 
-[sub_resource type="Animation" id="Animation_7twir"]
-resource_name = "run"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [24, 25, 26, 27, 28, 29, 30, 31, 24]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("bag:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [24, 25, 26, 27, 28, 29, 30, 31, 28]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ndjo6"]
 _data = {
 &"RESET": SubResource("Animation_1ds1p"),
@@ -361,8 +361,7 @@ anim = NodePath("../anim")
 movement_controller = NodePath("../movementController")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="." node_paths=PackedStringArray("movement_controller")]
-volume_db = -2.0
-max_distance = 100.0
+max_distance = 200.0
 script = ExtResource("5_yuviu")
 movement_controller = NodePath("../movementController")
 steps_data = Array[ExtResource("6_1lg8h")]([SubResource("Resource_nrt7u"), SubResource("Resource_6ondm"), SubResource("Resource_xyefa"), SubResource("Resource_8om3k")])

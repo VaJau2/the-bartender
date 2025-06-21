@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://crmnwa0c6a3xu"]
 
-[ext_resource type="Script" uid="uid://djovrjrxan3t7" path="res://assets/scripts/props/glassLocker.gd" id="1_k0rr8"]
+[ext_resource type="Script" uid="uid://djovrjrxan3t7" path="res://assets/scripts/props/bar/glassLocker.gd" id="1_k0rr8"]
 [ext_resource type="Texture2D" uid="uid://gxwjn433o6xp" path="res://assets/sprites/props/furn/glass-locker.png" id="1_qd1wl"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="2_phgmr"]
 
