@@ -1,0 +1,19 @@
+﻿[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://lf47n6phs8ky"
+path="res://.godot/imported/The Twilights - Sea Of Love.ogg-b1e450162bc834a3005729b629c6b4df.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/radio/The Twilights - Sea Of Love.ogg"
+dest_files=["res://.godot/imported/The Twilights - Sea Of Love.ogg-b1e450162bc834a3005729b629c6b4df.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

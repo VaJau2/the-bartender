@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtgfl4038lfdi"]
+[gd_scene load_steps=8 format=3 uid="uid://dtgfl4038lfdi"]
 
 [ext_resource type="Texture2D" uid="uid://b70di15i7pkoa" path="res://assets/sprites/buildings/bar/bar-front.png" id="1_jxwi2"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_a02bt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_xyso0"]
+[ext_resource type="PackedScene" uid="uid://brqbgo141gdix" path="res://objects/props/furn/radio.tscn" id="4_7vtbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5ixf"]
 size = Vector2(282, 42)
@@ -11,7 +12,7 @@ size = Vector2(282, 42)
 size = Vector2(19, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyso0"]
-size = Vector2(225, 21)
+size = Vector2(199, 21)
 
 [node name="bar-front" type="StaticBody2D"]
 
@@ -53,8 +54,11 @@ monitorable = false
 script = ExtResource("2_a02bt")
 
 [node name="shape" type="CollisionShape2D" parent="putArea"]
-position = Vector2(20.5, 1.5)
+position = Vector2(33.5, 1.5)
 shape = SubResource("RectangleShape2D_xyso0")
 
 [node name="interactionHandler" type="Node" parent="putArea"]
 script = ExtResource("3_xyso0")
+
+[node name="radio" parent="." instance=ExtResource("4_7vtbw")]
+position = Vector2(-79, -29)
