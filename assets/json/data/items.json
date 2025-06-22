@@ -81,12 +81,19 @@
 		"weight": 1,
 		"need_fridge": 1
 	},
+	"orange-juice": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/orange-juice.png",
+		"weight": 1,
+		"need_fridge": 1
+	},
 	
 	"apple": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/apple.png",
-		"weight": 1
+		"weight": 1.5
 	},
 	"banana": {
 		"type": "ingredient",
@@ -106,6 +113,12 @@
 		"texture": "assets/sprites/items/sliced-coconut.png",
 		"weight": 0.5,
 		"limit": 3
+	},
+	"orange": {
+		"type": "ingredient",
+		"category": "fruit",
+		"texture": "assets/sprites/items/orange.png",
+		"weight": 0.6
 	},
 	"blueberry": {
 		"type": "ingredient",
@@ -143,6 +156,7 @@
 		"texture": "assets/sprites/items/carrot.png",
 		"weight": 0.2
 	},
+	
 	
 	"knife": {
 		"type": "tool",

@@ -13,6 +13,10 @@
 	"shop": {
 		"header": "Shop",
 		"close": "Close",
+		"delivery": "+ delivery ",
+		"success": "Successfully purchased!",
+		"not_money": "Not enough money :c",
+		"not_space": "Not enough space :c"
 	},
 	"money": {
 		"goal": "Goal:",

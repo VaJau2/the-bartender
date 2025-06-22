@@ -14,9 +14,9 @@ func _on_pressed() -> void:
 
 
 func _on_mouse_entered() -> void:
-	var text = Loc.trans("items." + item.code + ".name")
-	text += " - " + str(item.price) + " " + Loc.get_plural(item.price, "bits")
-	interaction_controller.show_hint_text.emit(text)
+	var item_text = Loc.trans("items." + item.code + ".name")
+	item_text += " - " + str(item.price) + " " + Loc.get_plural(item.price, "bits")
+	interaction_controller.show_hint_text.emit(item_text)
 
 
 func _on_mouse_exited() -> void:

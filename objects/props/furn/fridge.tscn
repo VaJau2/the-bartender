@@ -40,7 +40,7 @@ script = ExtResource("3_hv655")
 [node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
 max_distance = 500.0
 
-[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area")]
+[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area") groups=["bar_storage"]]
 script = ExtResource("6_r51fw")
 storage_type = 1
 area = NodePath("..")

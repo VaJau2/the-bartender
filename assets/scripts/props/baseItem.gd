@@ -58,17 +58,10 @@ func get_limit_percent() -> String:
 
 
 func interact() -> void:
-	if G.player.using_storage:
-		if G.player.storage_handler.can_put_item(self):
-			disable()
-			G.player.storage_handler.put_item(self)
-			return
+	if interaction_controller.try_get_item(self):
+		return
 	
-	if interaction_controller.holding_item == null:
-		disable()
-		interaction_controller.update_holding_item(self)
-		taken.emit(self)
-	else:
+	if interaction_controller.holding_item != null:
 		var holding_item = interaction_controller.holding_item
 		var result = RecepiesHandler.get_tool_result(code, holding_item.code)
 		if result == "": return

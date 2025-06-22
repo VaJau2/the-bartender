@@ -7,6 +7,7 @@ class_name Player
 @onready var storage_handler: StorageHandler = get_node("storageHandler")
 
 @export var using_storage: bool
+var has_storage: bool = false
 
 
 signal update_using_storage(value: bool)

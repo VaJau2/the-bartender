@@ -35,6 +35,9 @@
 	"carrot-juice": {
 		"name": "Carrot juice"
 	},
+	"orange-juice": {
+		"name": "Orange juice"
+	},
 	
 	"apple": {
 		"name": "Apple",
@@ -65,6 +68,9 @@
 	},
 	"carror": {
 		"name": "Carrot"
+	},
+	"orange": {
+		"name": "Orange"
 	},
 	
 	"milk": {

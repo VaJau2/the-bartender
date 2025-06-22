@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bnyubv8eye0ta" path="res://assets/scripts/interface/shop/shopButton.gd" id="1_au1ot"]
 
 [node name="Button" type="Button"]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(42, 42)
 offset_right = 8.0
 offset_bottom = 8.0
 icon_alignment = 1

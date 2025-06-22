@@ -15,6 +15,7 @@ size = Vector2(65, 40)
 
 [node name="marketStand" type="StaticBody2D"]
 script = ExtResource("5_byxa2")
+delivery_price = 5
 
 [node name="standPoint" type="Node2D" parent="."]
 position = Vector2(-2, -1)

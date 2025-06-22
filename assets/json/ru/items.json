@@ -35,6 +35,9 @@
 	"carrot-juice": {
 		"name": "Морковный сок"
 	},
+	"orange-juice": {
+		"name": "Апельсиновый сок"
+	},
 	
 	"apple": {
 		"name": "Яблоко",
@@ -65,6 +68,9 @@
 	},
 	"carrot": {
 		"name": "Морковь"
+	},
+	"orange": {
+		"name": "Апельсин"
 	},
 	
 	"milk": {

@@ -7,7 +7,8 @@
 		"raspberry": "raspberry-juice",
 		"blackberry": "blackberry-juice",
 		"tomato": "tomato-juice",
-		"carrot": "carrot-juice"
+		"carrot": "carrot-juice",
+		"orange": "orange-juice"
 	},
 	"tool": [
 		{

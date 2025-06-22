@@ -92,7 +92,7 @@ close_sound = ExtResource("9_w36da")
 position = Vector2(-10, -2)
 shape = SubResource("RectangleShape2D_omtbk")
 
-[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area")]
+[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area") groups=["bar_storage"]]
 script = ExtResource("10_w36da")
 storage_type = 2
 area = NodePath("..")

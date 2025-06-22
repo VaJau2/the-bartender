@@ -69,3 +69,19 @@ func interact(item) -> void:
 		return
 	
 	item.interact()
+
+
+func try_get_item(item: Item) -> bool:
+	if G.player.using_storage:
+		if G.player.storage_handler.can_put_item(item):
+			item.disable()
+			G.player.storage_handler.put_item(item)
+			return true
+		
+	if holding_item == null:
+		item.disable()
+		update_holding_item(item)
+		item.taken.emit(item)
+		return true
+	
+	return false
