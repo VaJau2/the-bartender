@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddif36437muxt"]
+
+[ext_resource type="Script" uid="uid://cd3fw4rfy7p7a" path="res://assets/scripts/interface/barMenu/drinkItem.gd" id="1_t1rqa"]
+
+[node name="drink" type="Panel"]
+custom_minimum_size = Vector2(200, 20)
+offset_right = 200.0
+offset_bottom = 32.0
+script = ExtResource("1_t1rqa")
+
+[node name="label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.818
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -50.144
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drink item"
+vertical_alignment = 1
+
+[node name="button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="price" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.585
+anchor_right = 0.91
+anchor_bottom = 1.0
+offset_left = 0.0399933
+offset_right = -0.0350037
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+placeholder_text = "1"
+alignment = 1
+flat = true
+
+[connection signal="text_changed" from="price" to="." method="_on_price_text_changed"]

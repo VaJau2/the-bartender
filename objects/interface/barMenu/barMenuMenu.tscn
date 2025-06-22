@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4hl7qvavoi52"]
+
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_p41gu"]
+[ext_resource type="Script" uid="uid://bdt8ekx1qooxg" path="res://assets/scripts/interface/barMenu/barMenuMenu.gd" id="2_di1ju"]
+[ext_resource type="PackedScene" uid="uid://ddif36437muxt" path="res://objects/interface/barMenu/drinkItem.tscn" id="3_f5kws"]
+[ext_resource type="PackedScene" uid="uid://brkio33oocad4" path="res://objects/interface/barMenu/receiptItem.tscn" id="4_dr1h5"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="5_f5kws"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="6_dr1h5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdmpy"]
+font_size = 18
+outline_size = 1
+
+[sub_resource type="Resource" id="Resource_y877m"]
+script = ExtResource("6_dr1h5")
+node_path = NodePath("../header")
+code = "bar_menu.header"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_f5kws"]
+script = ExtResource("6_dr1h5")
+node_path = NodePath("../drinksLabel")
+code = "bar_menu.drinks"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_dr1h5"]
+script = ExtResource("6_dr1h5")
+node_path = NodePath("../priceLabel")
+code = "bar_menu.price"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_12fkd"]
+script = ExtResource("6_dr1h5")
+node_path = NodePath("../availableLabel")
+code = "bar_menu.available"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_fxx8k"]
+script = ExtResource("6_dr1h5")
+node_path = NodePath("../close")
+code = "bar_menu.close"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="barMenu" type="Panel"]
+offset_right = 512.0
+offset_bottom = 384.0
+theme = ExtResource("1_p41gu")
+script = ExtResource("2_di1ju")
+drink_receipt_item = ExtResource("4_dr1h5")
+drink_item = ExtResource("3_f5kws")
+
+[node name="header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Menu"
+label_settings = SubResource("LabelSettings_wdmpy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 96.0
+offset_bottom = -20.0
+grow_vertical = 0
+text = "close"
+
+[node name="drinksLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 72.0
+offset_bottom = 60.0
+text = "Drinks"
+horizontal_alignment = 1
+
+[node name="priceLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 168.0
+offset_top = 48.0
+offset_right = 213.0
+offset_bottom = 60.0
+text = "Price"
+horizontal_alignment = 1
+
+[node name="drinksScroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.146
+anchor_bottom = 0.917
+offset_left = 16.0
+offset_top = 15.936
+offset_right = 248.0
+offset_bottom = -32.128
+grow_vertical = 2
+
+[node name="vbox" type="VBoxContainer" parent="drinksScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="divider" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.146
+anchor_right = 0.5
+anchor_bottom = 0.979
+offset_top = -0.064003
+offset_right = 4.0
+offset_bottom = -47.936
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="availableLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 296.0
+offset_top = 48.0
+offset_right = 341.0
+offset_bottom = 60.0
+text = "Available"
+horizontal_alignment = 1
+
+[node name="receiptsScroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 272.0
+offset_top = -120.0
+offset_right = 496.0
+offset_bottom = 128.0
+grow_vertical = 2
+
+[node name="vbox" type="VBoxContainer" parent="receiptsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("5_f5kws")
+nodes = Array[ExtResource("6_dr1h5")]([SubResource("Resource_y877m"), SubResource("Resource_f5kws"), SubResource("Resource_dr1h5"), SubResource("Resource_12fkd"), SubResource("Resource_fxx8k")])
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

@@ -3,7 +3,8 @@
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/empty-glass.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"empty": 1
 	},
 	"glass-water": {
 		"type": "glass",

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="11_oxl46"]
-[ext_resource type="PackedScene" uid="uid://b4hl7qvavoi52" path="res://objects/interface/barMenuMenu.tscn" id="13_qawhh"]
+[ext_resource type="PackedScene" uid="uid://b4hl7qvavoi52" path="res://objects/interface/barMenu/barMenuMenu.tscn" id="13_qawhh"]
 
 [sub_resource type="Resource" id="Resource_qawhh"]
 script = ExtResource("11_oxl46")
@@ -72,10 +72,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -188.0
+offset_left = -192.0
 offset_top = -136.0
-offset_right = 188.0
-offset_bottom = 136.0
+offset_right = 192.0
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu")]
@@ -104,9 +104,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -128.0
+offset_top = -192.0
 offset_right = 256.0
-offset_bottom = 128.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -134,6 +134,7 @@ offset_top = -24.0
 offset_right = 40.0
 offset_bottom = -1.0
 text = "Tab"
+horizontal_alignment = 1
 
 [node name="moneyPanel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.694118)

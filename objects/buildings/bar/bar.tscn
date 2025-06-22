@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bi5dlecqbpktx" path="res://assets/sprites/buildings/bar/menu.png" id="4_iojdi"]
 [ext_resource type="PackedScene" uid="uid://bawxlanqcl1vk" path="res://objects/buildings/bar/bar-roof.tscn" id="4_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://jyddje2efq3h" path="res://objects/props/furn/kitchen_table.tscn" id="5_6el4l"]
-[ext_resource type="Script" uid="uid://5bjwmkv1gnj" path="res://assets/scripts/props/bar/barMenu.gd" id="5_e60yj"]
+[ext_resource type="Script" uid="uid://5bjwmkv1gnj" path="res://assets/scripts/props/bar/barMenu/barMenu.gd" id="5_e60yj"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="5_kk164"]
 [ext_resource type="PackedScene" uid="uid://cu82g27afmoet" path="res://objects/props/furn/juicer.tscn" id="6_x3pc3"]
 [ext_resource type="PackedScene" uid="uid://dcb6qk2peq5cp" path="res://objects/props/furn/sofa.tscn" id="6_xn7tl"]

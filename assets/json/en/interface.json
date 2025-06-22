@@ -18,6 +18,13 @@
 		"not_money": "Not enough money :c",
 		"not_space": "Not enough space :c"
 	},
+	"bar_menu": {
+		"header": "Bar menu",
+		"drinks": "Drinks",
+		"price": "Price",
+		"available": "Available",
+		"close": "Close",
+	},
 	"money": {
 		"goal": "Goal:",
 		"days_left": "Days Left:"
