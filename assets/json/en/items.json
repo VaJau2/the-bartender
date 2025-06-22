@@ -101,6 +101,9 @@
 	"fridge": {
 		"name": "Fridge"
 	},
+	"radio": {
+		"name": "Radio"
+	},
 	"apple-tree": {
 		"name": "Apple tree"
 	},

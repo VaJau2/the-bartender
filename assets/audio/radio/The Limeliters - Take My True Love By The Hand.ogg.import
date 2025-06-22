@@ -1,0 +1,19 @@
+﻿[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdkdt6vkrnnii"
+path="res://.godot/imported/The Limeliters - Take My True Love By The Hand.ogg-9dd300f03798835e84c90248a0c16a4c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/radio/The Limeliters - Take My True Love By The Hand.ogg"
+dest_files=["res://.godot/imported/The Limeliters - Take My True Love By The Hand.ogg-9dd300f03798835e84c90248a0c16a4c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

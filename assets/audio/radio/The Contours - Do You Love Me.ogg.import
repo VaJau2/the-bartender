@@ -1,0 +1,19 @@
+﻿[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4ctpo7uiq1vp"
+path="res://.godot/imported/The Contours - Do You Love Me.ogg-09d68149fdccf1ffd3dda66255b35197.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/radio/The Contours - Do You Love Me.ogg"
+dest_files=["res://.godot/imported/The Contours - Do You Love Me.ogg-09d68149fdccf1ffd3dda66255b35197.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
