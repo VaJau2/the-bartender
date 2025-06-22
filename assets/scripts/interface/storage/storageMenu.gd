@@ -9,6 +9,7 @@ extends Panel
 @onready var weight_bar: ProgressBar = get_node("weight/weightBar")
 
 @export var button_prefab: PackedScene
+@export var other_menus: Array[Panel]
 
 var temp_storage: StorageHandler
 var categories_codes: Array[String]
@@ -26,6 +27,9 @@ func _process(_delta: float) -> void:
 
 
 func _on_open_menu(storage: StorageHandler) -> void:
+	for menu in other_menus:
+		if menu.visible: return
+	
 	if visible:
 		_on_close_pressed()
 		return

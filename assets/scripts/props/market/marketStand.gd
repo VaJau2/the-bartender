@@ -4,6 +4,10 @@ class_name MarketStand
 
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var interaction: MarketStandInteraction = get_node("interaction")
+@onready var audi: AudioStreamPlayer2D = get_node("audi")
+
+@onready var buy_sound: AudioStream = load("res://assets/audio/buying/buy.wav")
+@onready var delivery_buy_sound: AudioStream = load("res://assets/audio/buying/delivery_buy.wav")
 
 @export var items: Array[ShopItem]
 @export var delivery_price: int = 10
@@ -26,8 +30,10 @@ func buy_item(item: ShopItem) -> void:
 	if item.type == Enums.ShopItemType.bag:
 		if G.player.has_storage: return
 		G.player.has_storage = true
-		G.player.update_using_storage.emit(true)
+		G.player.set_using_storage(true)
 		_show_text("success")
+		audi.stream = buy_sound
+		audi.play()
 	
 	elif item.type == Enums.ShopItemType.item:
 		var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
@@ -39,10 +45,15 @@ func buy_item(item: ShopItem) -> void:
 			else:
 				_deliver_item(new_item)
 				M.remove_money(delivery_price)
+				_show_text("success")
+				audi.stream = delivery_buy_sound
+				audi.play()
 		else:
 			var get_item_result = interaction_controller.try_get_item(new_item)
 			if get_item_result:
 				_show_text("success")
+				audi.stream = buy_sound
+				audi.play()
 			else:
 				_show_text("not_space")
 				new_item.queue_free()

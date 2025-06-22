@@ -23,6 +23,7 @@ signal close_menu()
 signal open_crafting_menu(crafting: CraftingBase)
 signal open_storage_menu(storage: StorageHandler)
 signal open_shop_menu(shop: MarketStand)
+signal open_bar_menu(menu: BarMenu)
 
 var interacting_item: Item # костыль для того, чтобы игнорировать putArea, когда на ней Item
 var interaction_cooldown: float

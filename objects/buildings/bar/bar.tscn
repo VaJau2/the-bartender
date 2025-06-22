@@ -1,16 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://dprg0njuxm3jc"]
+[gd_scene load_steps=17 format=3 uid="uid://dprg0njuxm3jc"]
 
 [ext_resource type="PackedScene" uid="uid://cjatsgx2yl2xp" path="res://objects/buildings/bar/bar-wall.tscn" id="1_drct4"]
 [ext_resource type="PackedScene" uid="uid://bpkjdqxw3cmx8" path="res://objects/buildings/bar/bar_side_wall.tscn" id="2_6el4l"]
 [ext_resource type="PackedScene" uid="uid://dtgfl4038lfdi" path="res://objects/buildings/bar/bar-front.tscn" id="3_xn7tl"]
+[ext_resource type="Texture2D" uid="uid://bi5dlecqbpktx" path="res://assets/sprites/buildings/bar/menu.png" id="4_iojdi"]
 [ext_resource type="PackedScene" uid="uid://bawxlanqcl1vk" path="res://objects/buildings/bar/bar-roof.tscn" id="4_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://jyddje2efq3h" path="res://objects/props/furn/kitchen_table.tscn" id="5_6el4l"]
+[ext_resource type="Script" uid="uid://5bjwmkv1gnj" path="res://assets/scripts/props/bar/barMenu.gd" id="5_e60yj"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="5_kk164"]
 [ext_resource type="PackedScene" uid="uid://cu82g27afmoet" path="res://objects/props/furn/juicer.tscn" id="6_x3pc3"]
 [ext_resource type="PackedScene" uid="uid://dcb6qk2peq5cp" path="res://objects/props/furn/sofa.tscn" id="6_xn7tl"]
 [ext_resource type="PackedScene" uid="uid://crmnwa0c6a3xu" path="res://objects/props/furn/glass_locker.tscn" id="7_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://dky0qodu1pl03" path="res://objects/props/furn/fridge.tscn" id="8_ffeum"]
 [ext_resource type="PackedScene" uid="uid://blquoyolxe74c" path="res://objects/props/furn/trash.tscn" id="9_rog3o"]
 [ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/bar/barStorageArea.gd" id="11_3p14s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e60yj"]
+size = Vector2(28, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3pc3"]
 size = Vector2(278, 172)
@@ -36,6 +42,23 @@ scale = Vector2(1.07021, 0.452528)
 
 [node name="bar-front" parent="." instance=ExtResource("3_xn7tl")]
 position = Vector2(10.475, 64.945)
+
+[node name="menu" type="Sprite2D" parent="bar-front"]
+position = Vector2(101.525, -68.945)
+texture = ExtResource("4_iojdi")
+
+[node name="menu-area" type="Area2D" parent="bar-front"]
+position = Vector2(101.525, -68.945)
+collision_layer = 2
+collision_mask = 0
+monitorable = false
+script = ExtResource("5_e60yj")
+
+[node name="shape" type="CollisionShape2D" parent="bar-front/menu-area"]
+shape = SubResource("RectangleShape2D_e60yj")
+
+[node name="interactionHandler" type="Node" parent="bar-front/menu-area"]
+script = ExtResource("5_kk164")
 
 [node name="bar-roof" parent="." instance=ExtResource("4_mfk4d")]
 z_index = 2
@@ -68,6 +91,8 @@ scale = Vector2(1.2, 1.2)
 [node name="storage-area" type="Area2D" parent="."]
 monitorable = false
 script = ExtResource("11_3p14s")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="shape" type="CollisionShape2D" parent="storage-area"]
 position = Vector2(7, -45)

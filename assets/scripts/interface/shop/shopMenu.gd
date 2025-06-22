@@ -23,6 +23,7 @@ func _on_open_menu(shop: MarketStand) -> void:
 	temp_shop = shop
 	movement_controller.may_move = false
 	
+	delivery_button.button_pressed  = temp_shop.is_delivery
 	delivery_button.text = Loc.trans("interface.shop.delivery") \
 		+ "(+" + str(temp_shop.delivery_price) + " " \
 		+ Loc.get_plural(temp_shop.delivery_price, "bits") + ")"

@@ -111,4 +111,7 @@
 	"shop": {
 		"name": "Shop",
 	},
+	"menu": {
+		"name": "Menu"
+	}
 }
