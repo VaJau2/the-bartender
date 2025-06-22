@@ -1,20 +1,35 @@
-﻿[gd_scene load_steps=20 format=3 uid="uid://brqbgo141gdix"]
+[gd_scene load_steps=20 format=3 uid="uid://brqbgo141gdix"]
 
-[ext_resource type="Texture2D" uid="uid://bv383pltw88vy" path="res://assets/sprites/props/furn/Radio.png" id="1_0uj6y"]
+[ext_resource type="Texture2D" uid="uid://cd2qk14vr6gfm" path="res://assets/sprites/props/furn/Radio.png" id="1_0uj6y"]
 [ext_resource type="Script" uid="uid://cb7umtmvgxs48" path="res://assets/scripts/props/bar/radio.gd" id="2_b5mjt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_tst2n"]
-[ext_resource type="AudioStream" uid="uid://dte6x28jox72w" path="res://assets/audio/radio/Chubby Checker - Let's Twist Again.ogg" id="3_yj7wk"]
-[ext_resource type="AudioStream" uid="uid://bqajqxearcqph" path="res://assets/audio/radio/Link Wray - Switchblade.ogg" id="4_fg3pt"]
-[ext_resource type="AudioStream" uid="uid://l37to0r2temd" path="res://assets/audio/radio/Little Eva - The Loco Motion.ogg" id="5_881ol"]
-[ext_resource type="AudioStream" uid="uid://gtlnl4syajpu" path="res://assets/audio/radio/Little Walter - Come Back Baby.ogg" id="6_ano3l"]
-[ext_resource type="AudioStream" uid="uid://p0wa4l52lr45" path="res://assets/audio/radio/Perry Como - Magic Moments.ogg" id="7_xrjjv"]
-[ext_resource type="AudioStream" uid="uid://c43mllo5wfr34" path="res://assets/audio/radio/The Belmonts - I Wonder Why.ogg" id="8_nkplk"]
-[ext_resource type="AudioStream" uid="uid://c4ctpo7uiq1vp" path="res://assets/audio/radio/The Contours - Do You Love Me.ogg" id="9_gp20a"]
-[ext_resource type="AudioStream" uid="uid://bt8bwir2hsurs" path="res://assets/audio/radio/The Marvelettes - Please Mr. Postman.ogg" id="10_yvbkf"]
-[ext_resource type="AudioStream" uid="uid://dbl8k3yi0urnc" path="res://assets/audio/radio/The Trashmen - Surfin Bird.ogg" id="11_dtqoh"]
-[ext_resource type="AudioStream" uid="uid://lf47n6phs8ky" path="res://assets/audio/radio/The Twilights - Sea Of Love.ogg" id="12_aegqn"]
-[ext_resource type="AudioStream" uid="uid://bxs3jy3h5oag2" path="res://assets/audio/radio/Switch.ogg" id="13_fg3pt"]
-[ext_resource type="AudioStream" uid="uid://dxfb1ic4akwh5" path="res://assets/audio/radio/Noise.ogg" id="14_881ol"]
+[ext_resource type="AudioStream" uid="uid://dfm87wto8dn5c" path="res://assets/audio/radio/Chubby Checker - Let's Twist Again.ogg" id="3_yj7wk"]
+[ext_resource type="AudioStream" uid="uid://b2dw7mp3l3d0s" path="res://assets/audio/radio/Link Wray - Switchblade.ogg" id="4_fg3pt"]
+[ext_resource type="AudioStream" uid="uid://biidbu681o7ni" path="res://assets/audio/radio/Little Eva - The Loco Motion.ogg" id="5_881ol"]
+[ext_resource type="AudioStream" uid="uid://dlk8uguobwakx" path="res://assets/audio/radio/Little Walter - Come Back Baby.ogg" id="6_ano3l"]
+[ext_resource type="AudioStream" uid="uid://cyny0dx3ibhyx" path="res://assets/audio/radio/Perry Como - Magic Moments.ogg" id="7_xrjjv"]
+[ext_resource type="AudioStream" uid="uid://mr1hdt2jcfqm" path="res://assets/audio/radio/The Belmonts - I Wonder Why.ogg" id="8_nkplk"]
+[ext_resource type="AudioStream" uid="uid://liliphcs1cyt" path="res://assets/audio/radio/The Contours - Do You Love Me.ogg" id="9_gp20a"]
+[ext_resource type="AudioStream" uid="uid://kdgp1wqsa8t5" path="res://assets/audio/radio/The Marvelettes - Please Mr. Postman.ogg" id="10_yvbkf"]
+[ext_resource type="AudioStream" uid="uid://crpwjhq5bafq2" path="res://assets/audio/radio/The Trashmen - Surfin Bird.ogg" id="11_dtqoh"]
+[ext_resource type="AudioStream" uid="uid://ir7nmdnqqs5w" path="res://assets/audio/radio/The Twilights - Sea Of Love.ogg" id="12_aegqn"]
+[ext_resource type="AudioStream" uid="uid://ce65ecms2fq38" path="res://assets/audio/radio/Switch.ogg" id="13_fg3pt"]
+[ext_resource type="AudioStream" uid="uid://1jt8etg8h5ls" path="res://assets/audio/radio/Noise.ogg" id="14_881ol"]
+
+[sub_resource type="Animation" id="Animation_cuvxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_0a4fr"]
 resource_name = "play"
@@ -31,21 +46,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [1, 2, 3, 2, 1, 4, 5, 4, 1]
-}
-
-[sub_resource type="Animation" id="Animation_cuvxl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdd3c"]
