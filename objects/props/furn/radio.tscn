@@ -89,10 +89,11 @@ shape = SubResource("RectangleShape2D_mv3my")
 script = ExtResource("3_tst2n")
 
 [node name="song" type="AudioStreamPlayer2D" parent="interactArea"]
-max_distance = 500.0
+max_distance = 800.0
+bus = &"Radio"
 
 [node name="noise" type="AudioStreamPlayer2D" parent="interactArea"]
-volume_db = -5.0
+volume_db = -10.0
 max_distance = 500.0
 
 [connection signal="finished" from="interactArea/song" to="interactArea" method="_on_song_finished"]
