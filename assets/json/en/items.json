@@ -38,6 +38,15 @@
 	"orange-juice": {
 		"name": "Orange juice"
 	},
+	"espresso": {
+		"name": "Espresso"
+	},
+	"cappuccino": {
+		"name": "Cappuccino"
+	},
+	"latte": {
+		"name": "Latte"
+	},
 	
 	"apple": {
 		"name": "Apple",
@@ -72,6 +81,9 @@
 	"orange": {
 		"name": "Orange"
 	},
+	"coffee-beans": {
+		"name": "Coffee Beans"
+	},
 	
 	"milk": {
 		"name": "Milk"
@@ -88,6 +100,9 @@
 	},
 	"juicer": {
 		"name": "Juicer"
+	},
+	"coffee-machine": {
+		"name": "Coffee Machine"
 	},
 	"trash": {
 		"name": "Trashcan"

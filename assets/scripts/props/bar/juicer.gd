@@ -32,7 +32,7 @@ func interact() -> void:
 		interaction_controller.clear_item.emit()
 	
 	elif item.type == Enums.ItemType.ingredient and ingredient == null:
-		var result = RecepiesHandler.get_juicer_result(item.code)
+		var result = RecepiesHandler.get_crafting_result(code, item.code)
 		if result == "": return
 		ingredient = item
 		result_code = result
@@ -42,8 +42,10 @@ func interact() -> void:
 
 func start() -> void:
 	may_interact = false
-	ingredient.queue_free()
-	ingredient = null
+	ingredient.limit -= 1
+	if ingredient.limit < 1:
+			ingredient.queue_free()
+			ingredient = null
 	glass.queue_free()
 	glass = null
 	audi.play()
@@ -54,5 +56,5 @@ func start() -> void:
 	
 	anim.stop()
 	var result = ItemSpawner.spawn_item(result_code, spawn_point.global_position, get_parent())
-	result.moving.set_velocity(Vector2(42, 5))
+	result.moving.set_velocity(result_velocity)
 	may_interact = true

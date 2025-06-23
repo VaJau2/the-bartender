@@ -5,6 +5,7 @@ class_name CraftingBase
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 
 @export var code: String
+@export var result_velocity: Vector2 = Vector2(42, 5)
 
 var may_interact: bool = true
 

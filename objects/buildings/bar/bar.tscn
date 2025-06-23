@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://lex35ciwtvhs" path="res://assets/scripts/props/bar/openArea.gd" id="8_iv511"]
 [ext_resource type="Texture2D" uid="uid://sftv8d3nm7uu" path="res://assets/sprites/props/sign-open/open-left.png" id="9_j280y"]
 [ext_resource type="PackedScene" uid="uid://blquoyolxe74c" path="res://objects/props/furn/trash.tscn" id="9_rog3o"]
+[ext_resource type="PackedScene" uid="uid://bm0rfpspa728k" path="res://objects/props/furn/сoffee_machine.tscn" id="10_cdsm4"]
 [ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/bar/barStorageArea.gd" id="11_3p14s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e60yj"]
@@ -97,6 +98,9 @@ scale = Vector2(1.2, 1.2)
 [node name="juicer" parent="kitchen-table" instance=ExtResource("6_x3pc3")]
 position = Vector2(-16.6667, -19.1667)
 code = "juicer"
+
+[node name="coffee_machine" parent="kitchen-table" instance=ExtResource("10_cdsm4")]
+position = Vector2(42.5, -17.5)
 
 [node name="sofa" parent="." instance=ExtResource("6_xn7tl")]
 position = Vector2(-93, -123)
