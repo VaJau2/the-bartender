@@ -63,18 +63,29 @@ func interact() -> void:
 	
 	if interaction_controller.holding_item != null:
 		var holding_item = interaction_controller.holding_item
-		var result = RecepiesHandler.get_tool_result(code, holding_item.code)
-		if result == "": return
-		code = result
-		_ready()
-		
-		if holding_item.limit == -1: return
-		if holding_item.limit > 1:
-			holding_item.limit -= 1
-		else:
-			holding_item.queue_free()
-			interaction_controller.update_holding_item(null)
+		var craft_result = _try_craft_item(self, holding_item)
+		if !craft_result:
+			_try_craft_item(holding_item, self)
 
+
+func _try_craft_item(item1: Item, item2: Item) -> bool:
+	var result = RecepiesHandler.get_tool_result(item1.code, item2.code)
+	if result == "": return false
+	item1.code = result
+	item1._ready()
+	if item1 == interaction_controller.holding_item:
+		interaction_controller.update_holding_item(item1)
+		
+	if item2.limit == -1: return true
+	if item2.limit > 1:
+		item2.limit -= 1
+	else:
+		if item2 == interaction_controller.holding_item:
+			interaction_controller.update_holding_item(null)
+			
+		item2.queue_free()
+		
+	return true
 
 func _load_icon() -> void:
 	var texture_path = item_data.texture
