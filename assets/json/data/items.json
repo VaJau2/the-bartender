@@ -89,6 +89,27 @@
 		"weight": 1,
 		"need_fridge": 1
 	},
+	"espresso": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/espresso.png",
+		"weight": 1,
+		"need_fridge": 1
+	},
+	"cappuccino": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/cappuccino.png",
+		"weight": 1,
+		"need_fridge": 1
+	},
+	"latte": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/latte.png",
+		"weight": 1,
+		"need_fridge": 1
+	},
 	
 	"apple": {
 		"type": "ingredient",
@@ -157,7 +178,13 @@
 		"texture": "assets/sprites/items/carrot.png",
 		"weight": 0.2
 	},
-	
+	"coffee-beans": {
+		"type": "ingredient",
+		"category": "vegetable",
+		"texture": "assets/sprites/items/coffee-beans.png",
+		"weight": 0.1,
+		"limit": 5,
+	},
 	
 	"knife": {
 		"type": "tool",

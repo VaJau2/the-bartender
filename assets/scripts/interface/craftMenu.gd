@@ -56,6 +56,20 @@ func _on_ingredient_icon_pressed() -> void:
 	_on_cancel_pressed()
 
 
+func _on_mouse_entered_to_ingredient() -> void:
+	if temp_crarfting.ingredient != null:
+		interaction_controller.show_item_hint.emit(temp_crarfting.ingredient)	
+
+
+func _on_mouse_entered_to_glass() -> void:
+	if temp_crarfting.glass != null:
+		interaction_controller.show_item_hint.emit(temp_crarfting.glass)
+
+
+func _on_mouse_exited() -> void:
+	interaction_controller.hide_item_hint.emit()
+
+
 func _on_start_pressed() -> void:
 	temp_crarfting.start()
 	_on_cancel_pressed()

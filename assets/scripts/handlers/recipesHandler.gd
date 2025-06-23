@@ -1,9 +1,9 @@
 class_name RecepiesHandler
 
 
-static func get_juicer_result(ingredient: String) -> String:
+static func get_crafting_result(machine: String, ingredient: String) -> String:
 	var json_data = JsonParse.read("res://assets/json/data/recipes.json")
-	var recipes = json_data.juicer
+	var recipes = json_data[machine]
 	if recipes.has(ingredient):
 		return recipes[ingredient]
 	return ""

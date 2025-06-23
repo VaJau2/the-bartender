@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=90 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -57,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://b5n0f07hjqv55" path="res://objects/props/trees/tree_1.tscn" id="36_8cp6k"]
 [ext_resource type="Texture2D" uid="uid://clfla6anfav28" path="res://assets/sprites/items/knife.png" id="36_hyu0y"]
 [ext_resource type="PackedScene" uid="uid://ducb6y8bc5u3p" path="res://objects/props/trees/tree_2.tscn" id="37_8b871"]
+[ext_resource type="Texture2D" uid="uid://b3u2pn15vyf5u" path="res://assets/sprites/items/coffee-beans.png" id="37_e2bht"]
 [ext_resource type="PackedScene" uid="uid://d1qpk34paovkk" path="res://objects/props/signs/town_sign.tscn" id="38_cmqll"]
 [ext_resource type="Texture2D" uid="uid://ci5rns0xmjti6" path="res://assets/sprites/items/bag-item.png" id="38_lfilp"]
 [ext_resource type="PackedScene" uid="uid://bkjwqra0munmw" path="res://objects/props/trees/tree_3.tscn" id="38_pdwbg"]
@@ -265,6 +266,14 @@ code = "milk"
 type = 0
 icon = ExtResource("34_lfilp")
 price = 8
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_rsknx"]
+script = ExtResource("21_0qimb")
+code = "coffee-beans"
+type = 0
+icon = ExtResource("37_e2bht")
+price = 10
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_gcaob"]
@@ -1091,7 +1100,7 @@ region_rect = Rect2(365.957, 55.9795, 17.3845, 17.6649)
 
 [node name="marketStand3" parent="navRegion/props/market-props/stands" instance=ExtResource("19_nfivy")]
 position = Vector2(112, -1)
-items = Array[ExtResource("21_0qimb")]([SubResource("Resource_nu61c"), SubResource("Resource_e2bht"), SubResource("Resource_a3hxr")])
+items = Array[ExtResource("21_0qimb")]([SubResource("Resource_nu61c"), SubResource("Resource_e2bht"), SubResource("Resource_a3hxr"), SubResource("Resource_rsknx")])
 
 [node name="sign" type="Sprite2D" parent="navRegion/props/market-props/stands/marketStand3"]
 position = Vector2(1, -45)
