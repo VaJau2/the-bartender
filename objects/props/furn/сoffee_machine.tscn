@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm0rfpspa728k"]
+
+[ext_resource type="Script" uid="uid://de5gkr10fgewt" path="res://assets/scripts/props/bar/juicer.gd" id="1_or87b"]
+[ext_resource type="Texture2D" uid="uid://cevaktefc4r0b" path="res://assets/sprites/props/furn/Coffee Machine.png" id="2_or87b"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_rs34m"]
+[ext_resource type="AudioStream" uid="uid://dhqwji0tcw5e6" path="res://assets/audio/props/CofeeMachine.wav" id="4_or87b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqxp"]
+size = Vector2(20, 24)
+
+[sub_resource type="Animation" id="Animation_ljwnr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_kbiog"]
+resource_name = "work"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.105029, 0.201248, 0.303566, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -12), Vector2(1, -12), Vector2(-1, -12), Vector2(1, -12), Vector2(-1, -12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhjfk"]
+_data = {
+&"RESET": SubResource("Animation_ljwnr"),
+&"work": SubResource("Animation_kbiog")
+}
+
+[node name="coffee_machine" type="Area2D"]
+script = ExtResource("1_or87b")
+code = "coffee-machine"
+result_velocity = Vector2(0, 42)
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_or87b")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_xcqxp")
+
+[node name="interactionHandler" type="Node" parent="."]
+script = ExtResource("3_rs34m")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(39, 21)
+stream = ExtResource("4_or87b")
+max_distance = 800.0
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qhjfk")
+}
+speed_scale = 2.0
+
+[node name="timer" type="Timer" parent="."]
+
+[node name="spawnPoint" type="Node2D" parent="."]
+position = Vector2(0, -2)

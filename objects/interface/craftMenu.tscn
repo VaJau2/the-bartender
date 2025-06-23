@@ -134,5 +134,9 @@ nodes = Array[ExtResource("4_8esil")]([SubResource("Resource_6ybga"), SubResourc
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]
+[connection signal="mouse_entered" from="ingredientIcon" to="." method="_on_mouse_entered_to_ingredient"]
+[connection signal="mouse_exited" from="ingredientIcon" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="ingredientIcon" to="." method="_on_ingredient_icon_pressed"]
+[connection signal="mouse_entered" from="glassIcon" to="." method="_on_mouse_entered_to_glass"]
+[connection signal="mouse_exited" from="glassIcon" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="glassIcon" to="." method="_on_glass_icon_pressed"]

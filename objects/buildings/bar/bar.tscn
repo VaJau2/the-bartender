@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dprg0njuxm3jc"]
+[gd_scene load_steps=18 format=3 uid="uid://dprg0njuxm3jc"]
 
 [ext_resource type="PackedScene" uid="uid://cjatsgx2yl2xp" path="res://objects/buildings/bar/bar-wall.tscn" id="1_drct4"]
 [ext_resource type="PackedScene" uid="uid://bpkjdqxw3cmx8" path="res://objects/buildings/bar/bar_side_wall.tscn" id="2_6el4l"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://crmnwa0c6a3xu" path="res://objects/props/furn/glass_locker.tscn" id="7_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://dky0qodu1pl03" path="res://objects/props/furn/fridge.tscn" id="8_ffeum"]
 [ext_resource type="PackedScene" uid="uid://blquoyolxe74c" path="res://objects/props/furn/trash.tscn" id="9_rog3o"]
+[ext_resource type="PackedScene" uid="uid://bm0rfpspa728k" path="res://objects/props/furn/сoffee_machine.tscn" id="10_cdsm4"]
 [ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/bar/barStorageArea.gd" id="11_3p14s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e60yj"]
@@ -71,6 +72,9 @@ scale = Vector2(1.2, 1.2)
 [node name="juicer" parent="kitchen-table" instance=ExtResource("6_x3pc3")]
 position = Vector2(-16.6667, -19.1667)
 code = "juicer"
+
+[node name="coffee_machine" parent="kitchen-table" instance=ExtResource("10_cdsm4")]
+position = Vector2(42.5, -17.5)
 
 [node name="sofa" parent="." instance=ExtResource("6_xn7tl")]
 position = Vector2(-93, -123)

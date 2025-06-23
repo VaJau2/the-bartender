@@ -38,6 +38,15 @@
 	"orange-juice": {
 		"name": "Апельсиновый сок"
 	},
+	"espresso": {
+		"name": "Эспрессо"
+	},
+	"cappuccino": {
+		"name": "Капучино"
+	},
+	"latte": {
+		"name": "Латте"
+	},
 	
 	"apple": {
 		"name": "Яблоко",
@@ -72,6 +81,9 @@
 	"orange": {
 		"name": "Апельсин"
 	},
+	"coffee-beans": {
+		"name": "Кофейные зёрна"
+	},
 	
 	"milk": {
 		"name": "Молоко"
@@ -88,6 +100,9 @@
 	},
 	"juicer": {
 		"name": "Соковыжималка"
+	},
+	"coffee-machine": {
+		"name": "Кофемашина"
 	},
 	"trash": {
 		"name": "Мусорка"

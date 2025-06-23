@@ -10,6 +10,9 @@
 		"carrot": "carrot-juice",
 		"orange": "orange-juice"
 	},
+	"coffee-machine": {
+		"coffee-beans": "espresso"
+	},
 	"tool": [
 		{
 			"item": "empty-glass",
@@ -25,6 +28,16 @@
 			"item": "empty-glass",
 			"holding_item": "sliced-coconut",
 			"result": "coconut-juice"
+		},
+		{
+			"item": "espresso",
+			"holding_item": "milk",
+			"result": "cappuccino"
+		},
+		{
+			"item": "cappuccino",
+			"holding_item": "milk",
+			"result": "latte"
 		},
 	]
 }
