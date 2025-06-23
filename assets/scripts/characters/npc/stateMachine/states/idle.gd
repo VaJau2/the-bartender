@@ -1,12 +1,16 @@
 extends State
 
+const CHECK_BAR_TIME: float = 4
+
 var npc: NPC
 
 var temp_walk_point: NpcWalkPoint
 var wait_timer: float
+var check_bar_timer: float = CHECK_BAR_TIME
 var is_walking: bool
 
 @export var animation_controller: AnimationController
+@onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
 
 
 func init() -> void:
@@ -25,6 +29,8 @@ func _process(delta: float) -> void:
 		wait_timer -= delta
 		return
 	
+	if _check_bar(delta): return
+	
 	if !is_walking:
 		_reset_old_point()
 		_find_new_point()
@@ -33,9 +39,16 @@ func _process(delta: float) -> void:
 		is_walking = true
 
 
+func enable() -> void:
+	movement_controller.reset_came_distance()
+	super()
+
+
 func disable() -> void:
 	movement_controller.load_state("walk")
 	temp_walk_point = null
+	wait_timer = 0
+	is_walking = false
 	super()
 
 
@@ -65,3 +78,16 @@ func _on_came() -> void:
 	if temp_walk_point.point != null:
 		npc.global_position = temp_walk_point.point.global_position
 	is_walking = false
+
+
+func _check_bar(delta: float) -> bool:
+	if bar_menu.is_open:
+		if check_bar_timer > 0:
+			check_bar_timer -= delta
+		else:
+			if randf() < 0.5:
+				state_machine.set_state("bar")
+				return true
+			else:
+				check_bar_timer = CHECK_BAR_TIME
+	return false

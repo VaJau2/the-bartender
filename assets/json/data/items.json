@@ -11,104 +11,119 @@
 		"category": "glass",
 		"texture": "assets/sprites/items/glass-water.png",
 		"weight": 1,
+		"prices": [1, 6]
 	},
 	"glass-milk": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/glass-milk.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [5, 10]
 	},
 	"apple-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/apple-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [6, 12]
 	},
 	"banana-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/banana-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [5, 10]
 	},
 	"coconut-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/coconut-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [8, 16]
 	},
 	"blueberry-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/blueberry-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [4, 8]
 	},
 	"strawberry-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/strawberry-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [5, 9]
 	},
 	"raspberry-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/raspberry-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [4, 9]
 	},
 	"blackberry-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/blackberry-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [6, 12]
 	},
 	"tomato-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/tomato-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [4, 8]
 	},
 	"carrot-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/carrot-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [5, 10]
 	},
 	"orange-juice": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/orange-juice.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [10, 18],
 	},
 	"espresso": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/espresso.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [15, 20],
 	},
 	"cappuccino": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/cappuccino.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [25, 30],
 	},
 	"latte": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/latte.png",
 		"weight": 1,
-		"need_fridge": 1
+		"need_fridge": 1,
+		"prices": [35, 40],
 	},
 	
 	"apple": {

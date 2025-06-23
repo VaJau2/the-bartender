@@ -8,13 +8,12 @@ extends Area2D
 
 @export var bar_menu: BarMenu
 
-var is_open: bool
-
 signal on_change_open(value: bool)
 
 
 func _ready() -> void:
 	bar_menu.menu_changed.connect(_on_menu_changed)
+	bar_menu.open_changed.connect(_on_open_changed)
 
 
 func on_mouse_entered() -> void:
@@ -25,17 +24,20 @@ func on_mouse_exited() -> void:
 	interaction_controller.hide_item_hint.emit()
 
 
+
 func interact() -> void:
-	if !is_open and bar_menu.items.is_empty():
+	if !bar_menu.is_open and bar_menu.items.is_empty():
 		interaction_controller.show_hint_text.emit(Loc.trans("interface.bar_menu.is_empty"))
 		return
 	
 	interaction_controller.hide_item_hint.emit()
-	is_open = !is_open
-	sprite.texture = open_texture if is_open else closed_texture
+	bar_menu.set_is_open(!bar_menu.is_open)
+
+
+func _on_open_changed(value: bool) -> void:
+	sprite.texture = open_texture if value else closed_texture
 
 
 func _on_menu_changed() -> void:
 	if bar_menu.items.is_empty():
-		is_open = false
-		sprite.texture = closed_texture
+		bar_menu.set_is_open(false)
