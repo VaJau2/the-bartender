@@ -22,6 +22,11 @@ func start_trading(npc: CharacterBody2D) -> void:
 	is_open = true
 
 
+func stop_trading() -> void:
+	interaction.set_open(false)
+	is_open = false
+
+
 func buy_item(item: ShopItem) -> void:
 	if M.money < item.price: 
 		_show_text("not_money")

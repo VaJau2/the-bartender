@@ -10,13 +10,15 @@ class_name NavigationMovementController
 
 signal came_to_point
 
-var target: Vector2
-
 
 func _physics_process(_delta):
 	if !nav_agent.is_target_reachable() or nav_agent.is_navigation_finished():
+		if !nav_agent.is_target_reachable():
+			print(get_parent().name + " cannot reach destination")
+		
 		if nav_agent.is_navigation_finished():
 			came_to_point.emit()
+		
 		set_velocity(Vector2.ZERO)
 		set_physics_process(false)
 		return

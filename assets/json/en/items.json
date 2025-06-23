@@ -116,5 +116,8 @@
 	},
 	"menu": {
 		"name": "Menu"
+	},
+	"open-sign": {
+		"name": "Open/closed sign"
 	}
 }

@@ -44,6 +44,7 @@ func _load_receipt_items() -> void:
 	var receipt_items = temp_menu.get_receipt_items()
 	for item in receipt_items:
 		if temp_menu.has_item(item): continue
+		
 		var menu_item: ReceiptBarMenuItem = drink_receipt_item.instantiate()
 		receipts_parent.add_child(menu_item)
 		menu_item.set_code(item)
@@ -69,7 +70,7 @@ func _on_receipt_item_click(item: ReceiptBarMenuItem) -> void:
 
 
 func _on_menu_item_click(clicked_drink: BarDrinkMenuItem) -> void:
-	temp_menu.items.erase(clicked_drink.item)
+	temp_menu.remove_item(clicked_drink.item)
 	clicked_drink.queue_free()
 	
 	for item in receipts_parent.get_children(): item.queue_free()

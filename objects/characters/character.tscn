@@ -343,6 +343,16 @@ script = ExtResource("2_8wket")
 script = ExtResource("3_o4xot")
 default = true
 
+[node name="sit" type="Node" parent="movementController"]
+script = ExtResource("3_o4xot")
+idle_anim = "sit"
+speed = 0
+
+[node name="sleep" type="Node" parent="movementController"]
+script = ExtResource("3_o4xot")
+idle_anim = "sleep"
+speed = 0
+
 [node name="run" type="Node" parent="movementController"]
 script = ExtResource("3_o4xot")
 anim = "run"

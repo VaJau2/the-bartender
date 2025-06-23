@@ -6,6 +6,8 @@ class_name BarMenu
 
 var items: Array[BarMenuItem]
 
+signal menu_changed
+
 
 func on_mouse_entered() -> void:
 	interaction_controller.show_hint.emit("menu")
@@ -26,7 +28,13 @@ func add_item_to_menu(code: String) -> BarMenuItem:
 	menu_item.price = 0
 	
 	items.append(menu_item)
+	menu_changed.emit()
 	return menu_item
+
+
+func remove_item(item: BarMenuItem) -> void:
+	items.erase(item)
+	menu_changed.emit()
 
 
 func has_item(code: String) -> bool:

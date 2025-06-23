@@ -8,9 +8,9 @@ size = Vector2(51, 22)
 [node name="sunbed" type="StaticBody2D"]
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(2, -23)
+position = Vector2(2, -7)
 texture = ExtResource("1_7t54q")
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -10)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_3aod3")
