@@ -3,7 +3,7 @@ extends Node
 class_name State
 
 const SLEEP_TIME = 21
-const WAKE_TIME = 5
+const WAKE_TIME = 6
 const SLEEP_CHANCE = 0.2
 
 @export var default: bool

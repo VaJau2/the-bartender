@@ -119,6 +119,9 @@
 	"radio": {
 		"name": "Radio"
 	},
+	"sofa": {
+		"name": "Sofa"
+	},
 	"apple-tree": {
 		"name": "Apple tree"
 	},

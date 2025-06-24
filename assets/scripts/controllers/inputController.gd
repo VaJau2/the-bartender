@@ -1,5 +1,7 @@
 extends Node
 
+class_name InputController
+
 @export var movement_controller: MovementController
 var input_handler: InputHandler
 var is_moving: bool = false

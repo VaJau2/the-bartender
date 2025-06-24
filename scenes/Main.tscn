@@ -2329,8 +2329,7 @@ delivery_price = 2
 
 [node name="timeHandler" type="Node" parent="."]
 script = ExtResource("66_gcaob")
-hour = 21
-minute = 50
+hour = 12
 
 [node name="timeLight" type="DirectionalLight2D" parent="timeHandler"]
 color = Color(1, 1, 1, 0)

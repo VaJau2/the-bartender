@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
+@onready var input_controller: InputController = get_node("inputController")
 @onready var interaction_controller: InteractionController = get_node("interactionController")
 @onready var movement_controller: MovementController = get_node("movementController")
 @onready var storage_handler: StorageHandler = get_node("storageHandler")

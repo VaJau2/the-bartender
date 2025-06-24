@@ -1,16 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcb6qk2peq5cp"]
+[gd_scene load_steps=5 format=3 uid="uid://dcb6qk2peq5cp"]
 
+[ext_resource type="Script" uid="uid://dr258mes4flw" path="res://assets/scripts/props/bar/barSofa.gd" id="1_48h2s"]
 [ext_resource type="Texture2D" uid="uid://d4gcbp7vdnhk1" path="res://assets/sprites/props/furn/sofa.png" id="1_nq4an"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_c1s3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0iiw"]
-size = Vector2(46, 20)
+size = Vector2(46, 17)
 
 [node name="sofa" type="StaticBody2D"]
+script = ExtResource("1_48h2s")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -3)
 texture = ExtResource("1_nq4an")
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_i0iiw")
+
+[node name="interactionHandler" type="Node" parent="."]
+script = ExtResource("3_c1s3r")
+
+[node name="sleepPos" type="Node2D" parent="."]
+position = Vector2(0, 3)
