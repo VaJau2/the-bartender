@@ -7,10 +7,16 @@ class_name NpcDialogue
 
 @export var thinking_texture: Texture
 @export var thanks_textures: Array[Texture]
+@export var wrong_texture: Texture
 
 
 func show_thinking_icon() -> void:
 	icon.texture = thinking_texture
+	visible = true
+
+
+func show_wrong_icon() -> void:
+	icon.texture = wrong_texture
 	visible = true
 
 

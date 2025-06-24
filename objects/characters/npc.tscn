@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://864ql456evru"]
+[gd_scene load_steps=20 format=3 uid="uid://864ql456evru"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_y63yl"]
 [ext_resource type="Script" uid="uid://cvjt8u00s6ytm" path="res://assets/scripts/characters/npc/npc.gd" id="2_bcxtt"]
@@ -14,6 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://dl45iltjx5fks" path="res://assets/sprites/items/default.png" id="11_msbil"]
 [ext_resource type="Texture2D" uid="uid://mtbr028t0ygf" path="res://assets/sprites/interface/dialogue/thanks1.png" id="11_yafal"]
 [ext_resource type="Texture2D" uid="uid://c36wk5diq5idu" path="res://assets/sprites/interface/dialogue/thanks2.png" id="12_ay7hr"]
+[ext_resource type="Texture2D" uid="uid://cks0fdquck40x" path="res://assets/sprites/interface/dialogue/wronk_drink.png" id="13_ay7hr"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="16_43ndy"]
+[ext_resource type="Script" uid="uid://dfvjjbydbnb6c" path="res://assets/scripts/characters/npc/npcInteraction.gd" id="16_xfs8l"]
+[ext_resource type="AudioStream" uid="uid://tyuabus2rfwy" path="res://assets/audio/buying/selling.mp3" id="17_x6edk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs8l"]
+size = Vector2(22, 25)
 
 [node name="npc" instance=ExtResource("1_y63yl")]
 collision_mask = 0
@@ -53,6 +60,7 @@ position = Vector2(0, -55)
 script = ExtResource("9_hdnwl")
 thinking_texture = ExtResource("10_msbil")
 thanks_textures = Array[Texture]([ExtResource("11_yafal"), ExtResource("12_ay7hr")])
+wrong_texture = ExtResource("13_ay7hr")
 
 [node name="bubble" type="Sprite2D" parent="dialogue" index="0"]
 texture = ExtResource("9_wmg46")
@@ -60,3 +68,22 @@ texture = ExtResource("9_wmg46")
 [node name="icon" type="Sprite2D" parent="dialogue" index="1"]
 position = Vector2(0, -3)
 texture = ExtResource("11_msbil")
+
+[node name="interactionArea" type="Area2D" parent="." index="11" node_paths=PackedStringArray("bar_state", "dialogue")]
+collision_layer = 2
+collision_mask = 0
+monitorable = false
+script = ExtResource("16_xfs8l")
+bar_state = NodePath("../stateMachine/bar")
+dialogue = NodePath("../dialogue")
+sale_sound = ExtResource("17_x6edk")
+
+[node name="shape" type="CollisionShape2D" parent="interactionArea" index="0"]
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_xfs8l")
+
+[node name="interactionHandler" type="Node" parent="interactionArea" index="1"]
+script = ExtResource("16_43ndy")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="interactionArea" index="2"]
+max_distance = 500.0

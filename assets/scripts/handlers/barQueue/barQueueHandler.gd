@@ -4,6 +4,10 @@ class_name BarQueueHandler
 
 var queue_items: Array[BarQueueItem]
 
+signal queue_updated
+
+var ordering_npc: NPC
+
 
 func _ready() -> void: 
 	for point in get_children():
@@ -31,6 +35,7 @@ func erase_from_queue(npc: NPC) -> void:
 	for item in queue_items:
 		if item.npc == npc:
 			item.npc = null
+			queue_updated.emit()
 
 
 func is_in_queue(npc: NPC) -> bool:

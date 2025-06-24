@@ -1,16 +1,20 @@
 extends State
 
-const CHECK_BAR_TIME: float = 4
+class_name IdleState
+
+const CHECK_BAR_TIME: float = 10
+const CHECK_BAR_CHANCE: float = 0.4
 
 var npc: NPC
 
 var temp_walk_point: NpcWalkPoint
 var wait_timer: float
-var check_bar_timer: float = CHECK_BAR_TIME
+var check_bar_timer: float
 var is_walking: bool
 
 @export var animation_controller: AnimationController
 @onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
+@onready var bar_radio: Radio = get_tree().get_first_node_in_group("bar_radio")
 
 
 func init() -> void:
@@ -41,6 +45,7 @@ func _process(delta: float) -> void:
 
 func enable() -> void:
 	movement_controller.reset_came_distance()
+	check_bar_timer = CHECK_BAR_TIME
 	super()
 
 
@@ -85,7 +90,9 @@ func _check_bar(delta: float) -> bool:
 		if check_bar_timer > 0:
 			check_bar_timer -= delta
 		else:
-			if randf() < 0.5:
+			var check_chance = CHECK_BAR_CHANCE
+			if bar_radio.is_playing: check_chance = check_chance + 0.2
+			if randf() < check_chance:
 				state_machine.set_state("bar")
 				return true
 			else:

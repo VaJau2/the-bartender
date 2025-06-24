@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=91 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dprg0njuxm3jc" path="res://objects/buildings/bar/bar.tscn" id="8_8gny2"]
 [ext_resource type="PackedScene" uid="uid://864ql456evru" path="res://objects/characters/npc.tscn" id="9_0qimb"]
 [ext_resource type="PackedScene" uid="uid://b0amrr8rnvm85" path="res://objects/props/beach-umbrella.tscn" id="11_wp0k4"]
-[ext_resource type="Script" uid="uid://cinhup2pc8xc4" path="res://assets/scripts/handlers/barQueue/barQueueHandler.gd" id="12_a3hxr"]
 [ext_resource type="PackedScene" uid="uid://d0qushes8s4bk" path="res://objects/props/beach-sunbed.tscn" id="12_bjd11"]
 [ext_resource type="PackedScene" uid="uid://c1b81c1wc0e1n" path="res://objects/props/trees/banana_palm_tree.tscn" id="13_8gny2"]
 [ext_resource type="Texture2D" uid="uid://b6tipf6cnmibl" path="res://assets/sprites/tiles/land-props.png" id="13_qmy6f"]
@@ -706,25 +705,6 @@ position = Vector2(-3, -33)
 
 [node name="bar" parent="props/navRegion" instance=ExtResource("8_8gny2")]
 position = Vector2(336, 0)
-
-[node name="queueHandler" type="Node2D" parent="props/navRegion/bar" groups=["bar_queue"]]
-position = Vector2(3, 119)
-script = ExtResource("12_a3hxr")
-
-[node name="1" type="Node2D" parent="props/navRegion/bar/queueHandler"]
-position = Vector2(1, -54)
-
-[node name="2" type="Node2D" parent="props/navRegion/bar/queueHandler"]
-position = Vector2(-44, -54)
-
-[node name="3" type="Node2D" parent="props/navRegion/bar/queueHandler"]
-position = Vector2(-93, -53)
-
-[node name="4" type="Node2D" parent="props/navRegion/bar/queueHandler"]
-position = Vector2(53, -54)
-
-[node name="5" type="Node2D" parent="props/navRegion/bar/queueHandler"]
-position = Vector2(99, -54)
 
 [node name="beach-props" type="Node2D" parent="props/navRegion"]
 y_sort_enabled = true

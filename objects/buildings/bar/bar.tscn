@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dprg0njuxm3jc"]
+[gd_scene load_steps=23 format=3 uid="uid://dprg0njuxm3jc"]
 
 [ext_resource type="PackedScene" uid="uid://cjatsgx2yl2xp" path="res://objects/buildings/bar/bar-wall.tscn" id="1_drct4"]
 [ext_resource type="PackedScene" uid="uid://bpkjdqxw3cmx8" path="res://objects/buildings/bar/bar_side_wall.tscn" id="2_6el4l"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://blquoyolxe74c" path="res://objects/props/furn/trash.tscn" id="9_rog3o"]
 [ext_resource type="PackedScene" uid="uid://bm0rfpspa728k" path="res://objects/props/furn/сoffee_machine.tscn" id="10_cdsm4"]
 [ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/bar/barStorageArea.gd" id="11_3p14s"]
+[ext_resource type="Script" uid="uid://cinhup2pc8xc4" path="res://assets/scripts/handlers/barQueue/barQueueHandler.gd" id="19_j358a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e60yj"]
 size = Vector2(28, 20)
@@ -129,6 +130,25 @@ metadata/_edit_group_ = true
 [node name="shape" type="CollisionShape2D" parent="working-area"]
 position = Vector2(7, -45)
 shape = SubResource("RectangleShape2D_x3pc3")
+
+[node name="queueHandler" type="Node2D" parent="." groups=["bar_queue"]]
+position = Vector2(3, 119)
+script = ExtResource("19_j358a")
+
+[node name="1" type="Node2D" parent="queueHandler"]
+position = Vector2(1, -54)
+
+[node name="2" type="Node2D" parent="queueHandler"]
+position = Vector2(-44, -54)
+
+[node name="3" type="Node2D" parent="queueHandler"]
+position = Vector2(-93, -53)
+
+[node name="4" type="Node2D" parent="queueHandler"]
+position = Vector2(53, -54)
+
+[node name="5" type="Node2D" parent="queueHandler"]
+position = Vector2(99, -54)
 
 [connection signal="body_entered" from="working-area" to="working-area" method="_on_body_entered"]
 [connection signal="body_exited" from="working-area" to="working-area" method="_on_body_exited"]
