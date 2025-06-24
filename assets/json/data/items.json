@@ -59,7 +59,7 @@
 		"texture": "assets/sprites/items/strawberry-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [5, 9]
+		"prices": [6, 12]
 	},
 	"raspberry-juice": {
 		"type": "glass",
@@ -99,7 +99,7 @@
 		"texture": "assets/sprites/items/orange-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [10, 18],
+		"prices": [12, 20],
 	},
 	"espresso": {
 		"type": "glass",

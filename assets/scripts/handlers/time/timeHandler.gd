@@ -4,10 +4,13 @@ class_name TimeHandler
 
 @export var hour: int
 @export var minute: int
+var day: int
+
 var minute_delta: float
 
 signal hour_tick
 signal minute_tick
+signal day_tick
 
 
 func get_time_formatted() -> String:
@@ -24,8 +27,6 @@ func get_time_formatted() -> String:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"): minute += 10
-	
 	if minute_delta < 1:
 		minute_delta += delta
 		return
@@ -33,13 +34,15 @@ func _process(delta: float) -> void:
 	minute += 1
 	minute_delta = 0
 	
-	if minute == 60:
+	if minute >= 60:
 		minute = 0
 		
 		if hour < 23:
 			hour += 1
 		else:
 			hour = 0
+			day += 1
+			day_tick.emit()
 		
 		hour_tick.emit()
 	

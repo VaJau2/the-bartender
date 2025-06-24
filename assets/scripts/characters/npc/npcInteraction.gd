@@ -25,6 +25,7 @@ func interact() -> void:
 		
 		dialogue.show_item_icon(ordered_drink)
 	else:
+		if G.glasses_count > 0: G.glasses_count -= 1
 		player_drink.queue_free()
 		interaction_controller.update_holding_item(null)
 		dialogue.show_thanks_icon()

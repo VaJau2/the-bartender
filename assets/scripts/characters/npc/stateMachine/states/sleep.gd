@@ -1,6 +1,6 @@
 extends State
 
-const WAKE_CHANCE = 0.2
+const WAKE_CHANCE = 0.3
 
 const CHECK_BAR_TIME: float = 60
 const CHECK_BAR_CHANCE: float = 0.05

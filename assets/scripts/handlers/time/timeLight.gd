@@ -1,7 +1,7 @@
 extends PointLight2D
 
 const NIGHT_ON_HOUR = 22
-const MORNING_OFF_HOUR = 7
+const MORNING_OFF_HOUR = 6
 
 
 func _ready() -> void:

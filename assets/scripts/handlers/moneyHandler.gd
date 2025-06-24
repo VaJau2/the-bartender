@@ -18,5 +18,5 @@ func remove_money(value: int) -> void:
 
 func _process(_delta: float) -> void:
 	#TODO убрать после теста
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_home"):
 		add_money(50)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=18 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="PackedScene" uid="uid://b0vda7f1r2ivw" path="res://objects/interface/itemIcon.tscn" id="3_2dkr1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b5v785lhs3jwb" path="res://assets/scripts/interface/moneyPanel.gd" id="8_3ewrv"]
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
+[ext_resource type="Script" uid="uid://byqw1g5bfju7b" path="res://assets/scripts/interface/daysLeft.gd" id="11_1mtbf"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="11_oxl46"]
 [ext_resource type="Script" uid="uid://b5ch322cr0q0e" path="res://assets/scripts/interface/timeClock.gd" id="13_11rc7"]
 [ext_resource type="PackedScene" uid="uid://b4hl7qvavoi52" path="res://objects/interface/barMenu/barMenuMenu.tscn" id="13_qawhh"]
@@ -221,6 +222,7 @@ offset_bottom = 55.0
 grow_vertical = 0
 text = "7"
 horizontal_alignment = 1
+script = ExtResource("11_1mtbf")
 
 [node name="translation" type="Node" parent="moneyPanel"]
 script = ExtResource("10_wyfr1")
