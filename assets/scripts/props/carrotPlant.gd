@@ -1,7 +1,7 @@
 extends Area2D
 
-const SPAWN_TIME_MIN: float = 100
-const SPAWN_TIME_MAX: float = 150
+const SPAWN_TIME_MIN: float = 150
+const SPAWN_TIME_MAX: float = 250
 
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @export var sprite: Sprite2D
@@ -37,9 +37,11 @@ func interact() -> void:
 	if !has_item or interaction_controller.holding_item != null: return
 	
 	var item = ItemSpawner.spawn_item(code, global_position, get_parent())
-	item.visible = false
-	item.process_mode = Node.PROCESS_MODE_DISABLED
-	interaction_controller.update_holding_item(item)
+	item.disable()
+	
+	if !interaction_controller.try_get_item(item):
+		item.queue_free()
+		return
 	
 	sprite.visible = false
 	has_item = false

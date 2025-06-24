@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dprg0njuxm3jc"]
+[gd_scene load_steps=23 format=3 uid="uid://dprg0njuxm3jc"]
 
 [ext_resource type="PackedScene" uid="uid://cjatsgx2yl2xp" path="res://objects/buildings/bar/bar-wall.tscn" id="1_drct4"]
 [ext_resource type="PackedScene" uid="uid://bpkjdqxw3cmx8" path="res://objects/buildings/bar/bar_side_wall.tscn" id="2_6el4l"]
@@ -6,18 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://bi5dlecqbpktx" path="res://assets/sprites/buildings/bar/menu.png" id="4_iojdi"]
 [ext_resource type="PackedScene" uid="uid://bawxlanqcl1vk" path="res://objects/buildings/bar/bar-roof.tscn" id="4_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://jyddje2efq3h" path="res://objects/props/furn/kitchen_table.tscn" id="5_6el4l"]
+[ext_resource type="Texture2D" uid="uid://dgl7layxxc55" path="res://assets/sprites/props/sign-open/closed-left.png" id="5_cdsm4"]
 [ext_resource type="Script" uid="uid://5bjwmkv1gnj" path="res://assets/scripts/props/bar/barMenu/barMenu.gd" id="5_e60yj"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="5_kk164"]
 [ext_resource type="PackedScene" uid="uid://cu82g27afmoet" path="res://objects/props/furn/juicer.tscn" id="6_x3pc3"]
 [ext_resource type="PackedScene" uid="uid://dcb6qk2peq5cp" path="res://objects/props/furn/sofa.tscn" id="6_xn7tl"]
 [ext_resource type="PackedScene" uid="uid://crmnwa0c6a3xu" path="res://objects/props/furn/glass_locker.tscn" id="7_mfk4d"]
 [ext_resource type="PackedScene" uid="uid://dky0qodu1pl03" path="res://objects/props/furn/fridge.tscn" id="8_ffeum"]
+[ext_resource type="Script" uid="uid://lex35ciwtvhs" path="res://assets/scripts/props/bar/openArea.gd" id="8_iv511"]
+[ext_resource type="Texture2D" uid="uid://sftv8d3nm7uu" path="res://assets/sprites/props/sign-open/open-left.png" id="9_j280y"]
 [ext_resource type="PackedScene" uid="uid://blquoyolxe74c" path="res://objects/props/furn/trash.tscn" id="9_rog3o"]
 [ext_resource type="PackedScene" uid="uid://bm0rfpspa728k" path="res://objects/props/furn/сoffee_machine.tscn" id="10_cdsm4"]
 [ext_resource type="Script" uid="uid://c7virlvskyt3w" path="res://assets/scripts/props/bar/barStorageArea.gd" id="11_3p14s"]
+[ext_resource type="Script" uid="uid://cinhup2pc8xc4" path="res://assets/scripts/handlers/barQueue/barQueueHandler.gd" id="19_j358a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e60yj"]
 size = Vector2(28, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j280y"]
+size = Vector2(20, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3pc3"]
 size = Vector2(278, 172)
@@ -38,7 +45,7 @@ position = Vector2(-140.644, 30.3267)
 scale = Vector2(0.942532, 0.419433)
 
 [node name="bar-side-wall3" parent="bar-wall" instance=ExtResource("2_6el4l")]
-position = Vector2(-137.673, 157.059)
+position = Vector2(-138.663, 157.059)
 scale = Vector2(1.07021, 0.452528)
 
 [node name="bar-front" parent="." instance=ExtResource("3_xn7tl")]
@@ -48,17 +55,39 @@ position = Vector2(10.475, 64.945)
 position = Vector2(101.525, -68.945)
 texture = ExtResource("4_iojdi")
 
-[node name="menu-area" type="Area2D" parent="bar-front"]
-position = Vector2(101.525, -68.945)
+[node name="menu-area" type="Area2D" parent="bar-front/menu" node_paths=PackedStringArray("working_area") groups=["bar_menu"]]
 collision_layer = 2
 collision_mask = 0
 monitorable = false
 script = ExtResource("5_e60yj")
+working_area = NodePath("../../../working-area")
 
-[node name="shape" type="CollisionShape2D" parent="bar-front/menu-area"]
+[node name="shape" type="CollisionShape2D" parent="bar-front/menu/menu-area"]
 shape = SubResource("RectangleShape2D_e60yj")
 
-[node name="interactionHandler" type="Node" parent="bar-front/menu-area"]
+[node name="interactionHandler" type="Node" parent="bar-front/menu/menu-area"]
+script = ExtResource("5_kk164")
+
+[node name="open" type="Sprite2D" parent="bar-front"]
+position = Vector2(119.525, -31.945)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_cdsm4")
+metadata/_edit_group_ = true
+
+[node name="open-area" type="Area2D" parent="bar-front/open" node_paths=PackedStringArray("sprite", "bar_menu")]
+position = Vector2(-2, 0)
+scale = Vector2(2, 2)
+script = ExtResource("8_iv511")
+sprite = NodePath("..")
+open_texture = ExtResource("9_j280y")
+closed_texture = ExtResource("5_cdsm4")
+bar_menu = NodePath("../../menu/menu-area")
+
+[node name="shape" type="CollisionShape2D" parent="bar-front/open/open-area"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_j280y")
+
+[node name="interactionHandler" type="Node" parent="bar-front/open/open-area"]
 script = ExtResource("5_kk164")
 
 [node name="bar-roof" parent="." instance=ExtResource("4_mfk4d")]
@@ -92,15 +121,34 @@ scale = Vector2(1.3, 1.3)
 position = Vector2(114, -97)
 scale = Vector2(1.2, 1.2)
 
-[node name="storage-area" type="Area2D" parent="."]
+[node name="working-area" type="Area2D" parent="."]
 monitorable = false
 script = ExtResource("11_3p14s")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="shape" type="CollisionShape2D" parent="storage-area"]
+[node name="shape" type="CollisionShape2D" parent="working-area"]
 position = Vector2(7, -45)
 shape = SubResource("RectangleShape2D_x3pc3")
 
-[connection signal="body_entered" from="storage-area" to="storage-area" method="_on_body_entered"]
-[connection signal="body_exited" from="storage-area" to="storage-area" method="_on_body_exited"]
+[node name="queueHandler" type="Node2D" parent="." groups=["bar_queue"]]
+position = Vector2(3, 119)
+script = ExtResource("19_j358a")
+
+[node name="1" type="Node2D" parent="queueHandler"]
+position = Vector2(1, -54)
+
+[node name="2" type="Node2D" parent="queueHandler"]
+position = Vector2(-44, -54)
+
+[node name="3" type="Node2D" parent="queueHandler"]
+position = Vector2(-93, -53)
+
+[node name="4" type="Node2D" parent="queueHandler"]
+position = Vector2(53, -54)
+
+[node name="5" type="Node2D" parent="queueHandler"]
+position = Vector2(99, -54)
+
+[connection signal="body_entered" from="working-area" to="working-area" method="_on_body_entered"]
+[connection signal="body_exited" from="working-area" to="working-area" method="_on_body_exited"]

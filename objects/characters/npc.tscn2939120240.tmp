@@ -1,0 +1,62 @@
+[gd_scene load_steps=15 format=3 uid="uid://864ql456evru"]
+
+[ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_y63yl"]
+[ext_resource type="Script" uid="uid://cvjt8u00s6ytm" path="res://assets/scripts/characters/npc/npc.gd" id="2_bcxtt"]
+[ext_resource type="Script" uid="uid://brqan51auaekl" path="res://assets/scripts/characters/npc/npcSprite.gd" id="3_a7t21"]
+[ext_resource type="Script" uid="uid://6gu4rfslrt2r" path="res://assets/scripts/controllers/movement/navigationMovementController.gd" id="3_c2sos"]
+[ext_resource type="Script" uid="uid://rbfcpj7frdrt" path="res://assets/scripts/characters/npc/stateMachine/stateMachine.gd" id="4_7wbc1"]
+[ext_resource type="Script" uid="uid://ciqnnujnwh8w0" path="res://assets/scripts/characters/npc/stateMachine/states/idle.gd" id="6_5npa1"]
+[ext_resource type="Script" uid="uid://cpky7eevqjtay" path="res://assets/scripts/characters/npc/stateMachine/states/work.gd" id="7_dotrs"]
+[ext_resource type="Script" uid="uid://b0nw6xfh8f3ul" path="res://assets/scripts/characters/npc/stateMachine/states/bar.gd" id="8_46d5v"]
+[ext_resource type="Script" uid="uid://d1gq2afulobr4" path="res://assets/scripts/characters/npc/npcDialogue.gd" id="9_hdnwl"]
+[ext_resource type="Texture2D" uid="uid://8pejvgklhiif" path="res://assets/sprites/interface/dialogue/bubble.png" id="9_wmg46"]
+[ext_resource type="Texture2D" uid="uid://bodoc5fg6jgu0" path="res://assets/sprites/interface/dialogue/thinking.png" id="10_msbil"]
+[ext_resource type="Texture2D" uid="uid://dl45iltjx5fks" path="res://assets/sprites/items/default.png" id="11_msbil"]
+[ext_resource type="Texture2D" uid="uid://mtbr028t0ygf" path="res://assets/sprites/interface/dialogue/thanks1.png" id="11_yafal"]
+[ext_resource type="Texture2D" uid="uid://c36wk5diq5idu" path="res://assets/sprites/interface/dialogue/thanks2.png" id="12_ay7hr"]
+
+[node name="npc" instance=ExtResource("1_y63yl")]
+collision_mask = 0
+script = ExtResource("2_bcxtt")
+
+[node name="sprite" parent="." index="2"]
+script = ExtResource("3_a7t21")
+
+[node name="navAgent" type="NavigationAgent2D" parent="." index="5"]
+target_desired_distance = 20.0
+
+[node name="movementController" parent="." index="6" node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("3_c2sos")
+nav_agent = NodePath("../navAgent")
+
+[node name="stateMachine" type="Node" parent="." index="8"]
+script = ExtResource("4_7wbc1")
+
+[node name="idle" type="Node" parent="stateMachine" index="0" node_paths=PackedStringArray("animation_controller", "movement_controller")]
+script = ExtResource("6_5npa1")
+animation_controller = NodePath("../../animationController")
+default = true
+movement_controller = NodePath("../../movementController")
+
+[node name="work" type="Node" parent="stateMachine" index="1" node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("7_dotrs")
+movement_controller = NodePath("../../movementController")
+
+[node name="bar" type="Node" parent="stateMachine" index="2" node_paths=PackedStringArray("dialogue", "movement_controller")]
+script = ExtResource("8_46d5v")
+dialogue = NodePath("../../dialogue")
+movement_controller = NodePath("../../movementController")
+
+[node name="dialogue" type="Node2D" parent="." index="10"]
+visible = false
+position = Vector2(0, -55)
+script = ExtResource("9_hdnwl")
+thinking_texture = ExtResource("10_msbil")
+thanks_textures = Array[Texture]([ExtResource("11_yafal"), ExtResource("12_ay7hr")])
+
+[node name="bubble" type="Sprite2D" parent="dialogue" index="0"]
+texture = ExtResource("9_wmg46")
+
+[node name="icon" type="Sprite2D" parent="dialogue" index="1"]
+position = Vector2(0, -3)
+texture = ExtResource("11_msbil")

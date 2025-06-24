@@ -313,9 +313,9 @@ position = Vector2(0.75, -1)
 shape = SubResource("RectangleShape2D_l51np")
 
 [node name="shadow" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.45098)
-position = Vector2(1, 0)
-scale = Vector2(0.744186, 1)
+modulate = Color(1, 1, 1, 0.321569)
+position = Vector2(0.999999, 0)
+scale = Vector2(0.651163, 1)
 texture = ExtResource("1_cfspk")
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -342,6 +342,16 @@ script = ExtResource("2_8wket")
 [node name="walk" type="Node" parent="movementController"]
 script = ExtResource("3_o4xot")
 default = true
+
+[node name="sit" type="Node" parent="movementController"]
+script = ExtResource("3_o4xot")
+idle_anim = "sit"
+speed = 0
+
+[node name="sleep" type="Node" parent="movementController"]
+script = ExtResource("3_o4xot")
+idle_anim = "sleep"
+speed = 0
 
 [node name="run" type="Node" parent="movementController"]
 script = ExtResource("3_o4xot")

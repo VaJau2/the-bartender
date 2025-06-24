@@ -24,6 +24,7 @@
 		"price": "Price",
 		"available": "Available",
 		"close": "Close",
+		"is_empty": "Bar menu is empty"
 	},
 	"money": {
 		"goal": "Goal:",
