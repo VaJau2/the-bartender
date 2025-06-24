@@ -22,6 +22,7 @@ func init() -> void:
 	is_walking = false
 	npc = state_machine.npc
 	movement_controller.came_to_point.connect(_on_came)
+	G.time.minute_tick.connect(_on_minute_tick)
 
 
 func _process(delta: float) -> void:
@@ -51,6 +52,7 @@ func enable() -> void:
 
 func disable() -> void:
 	movement_controller.load_state("walk")
+	if temp_walk_point != null: temp_walk_point.is_busy = false
 	temp_walk_point = null
 	wait_timer = 0
 	is_walking = false
@@ -98,3 +100,10 @@ func _check_bar(delta: float) -> bool:
 			else:
 				check_bar_timer = CHECK_BAR_TIME
 	return false
+
+
+func _on_minute_tick() -> void:
+	if !is_processing() or npc.sleep_place == null: return
+	if G.time.hour >= SLEEP_TIME or G.time.hour < WAKE_TIME:
+		if randf() < SLEEP_CHANCE:
+			state_machine.set_state("sleep")

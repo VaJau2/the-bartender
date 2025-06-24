@@ -16,6 +16,7 @@ func init() -> void:
 	super()
 	work_place = state_machine.npc.work_place
 	movement_controller.came_to_point.connect(_on_came)
+	G.time.minute_tick.connect(_on_minute_tick)
 
 
 func _process(delta: float) -> void:
@@ -52,3 +53,10 @@ func _check_bar(delta: float) -> bool:
 			else:
 				check_bar_timer = CHECK_BAR_TIME
 	return false
+
+
+func _on_minute_tick() -> void:
+	if !is_processing() or state_machine.npc.sleep_place == null: return
+	if G.time.hour >= SLEEP_TIME or G.time.hour < WAKE_TIME:
+		if randf() < SLEEP_CHANCE:
+			state_machine.set_state("sleep")

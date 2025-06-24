@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcwnr207wn7cy"]
+[gd_scene load_steps=9 format=3 uid="uid://dcwnr207wn7cy"]
 
 [ext_resource type="Texture2D" uid="uid://sa4x8iyebw4s" path="res://assets/sprites/props/fountain.png" id="1_7v876"]
 [ext_resource type="AudioStream" uid="uid://b4wbflo01qxf5" path="res://assets/audio/ambient/fountain.mp3" id="2_bao0y"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bao0y"]
+polygon = PackedVector2Array(32, -12, 21, -19, 11, -22, 4, -22, 10, -25, 6, -30, 3, -30, 5, -32, 2, -38, -2, -38, -5, -32, -3, -30, -6, -30, -11, -26, -5, -22, -18, -20, -32, -12, -32, 6, -24, 14, -13, 17, 14, 17, 24, 14, 32, 7)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bao0y"]
 radius = 17.0
@@ -54,6 +57,9 @@ func _ready() -> void:
 "
 
 [node name="fountain" type="StaticBody2D"]
+
+[node name="shadows" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_bao0y")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -12)

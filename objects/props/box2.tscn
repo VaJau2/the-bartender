@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://colsqigxrldac"]
+[gd_scene load_steps=4 format=3 uid="uid://colsqigxrldac"]
 
-[ext_resource type="Texture2D" uid="uid://coh8o8lgoqmpb" path="res://assets/sprites/buildings/market/market_assets.png" id="1_85c0a"]
+[ext_resource type="Texture2D" uid="uid://coh8o8lgoqmpb" path="res://assets/sprites/buildings/town/market_assets.png" id="1_85c0a"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_85c0a"]
+polygon = PackedVector2Array(8, 3, 8, -18, -8, -18, -8, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h8dv"]
 size = Vector2(17, 10)
 
 [node name="box" type="StaticBody2D"]
+
+[node name="shadow" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_85c0a")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)

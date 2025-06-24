@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drnxj4wwsv3bf"]
+[gd_scene load_steps=5 format=3 uid="uid://drnxj4wwsv3bf"]
 
 [ext_resource type="Texture2D" uid="uid://edasloarao8v" path="res://assets/sprites/props/lampPost.png" id="1_jd2ar"]
+[ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="2_cwlbw"]
+[ext_resource type="Script" uid="uid://b6jatwgmnlu7x" path="res://assets/scripts/handlers/time/timeLight.gd" id="3_jgsb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cwlbw"]
 radius = 5.09902
@@ -13,3 +15,10 @@ texture = ExtResource("1_jd2ar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cwlbw")
+
+[node name="light" type="PointLight2D" parent="."]
+position = Vector2(1, -80)
+enabled = false
+shadow_color = Color(0, 0, 0, 0.133333)
+texture = ExtResource("2_cwlbw")
+script = ExtResource("3_jgsb0")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd3mnq7v4cljx"]
+[gd_scene load_steps=11 format=3 uid="uid://dd3mnq7v4cljx"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_h3hc8"]
 [ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player.png" id="2_ho5yc"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storageHandler.gd" id="6_g87t3"]
 [ext_resource type="Script" uid="uid://dgrs1etu4tkry" path="res://assets/scripts/controllers/interactionController.gd" id="6_s7pd4"]
 [ext_resource type="AudioStream" uid="uid://cc7nxo1fbw1l3" path="res://assets/audio/ui_items_takeall.wav" id="7_g87t3"]
+[ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="8_m8dop"]
+[ext_resource type="Script" uid="uid://dsfagr5v63f6a" path="res://assets/scripts/characters/playerLighter.gd" id="9_m8dop"]
 
 [sub_resource type="GDScript" id="GDScript_s7pd4"]
 script/source = "extends Sprite2D
@@ -54,3 +56,22 @@ position_smoothing_enabled = true
 
 [node name="audi" parent="." index="11"]
 default_material = 1
+
+[node name="lighter" type="Node2D" parent="." index="12"]
+
+[node name="posL" type="Node2D" parent="lighter" index="0"]
+position = Vector2(-12, -38)
+
+[node name="posR" type="Node2D" parent="lighter" index="1"]
+position = Vector2(11, -38)
+
+[node name="lighter" type="PointLight2D" parent="lighter" index="2" node_paths=PackedStringArray("sprite", "pos_l", "pos_r")]
+position = Vector2(11, -38)
+enabled = false
+color = Color(0.643137, 0.368627, 0.211765, 0.686275)
+texture = ExtResource("8_m8dop")
+texture_scale = 0.5
+script = ExtResource("9_m8dop")
+sprite = NodePath("../../sprite")
+pos_l = NodePath("../posL")
+pos_r = NodePath("../posR")

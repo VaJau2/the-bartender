@@ -30,7 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://bofkoqxcxu0h2" path="res://assets/audio/steps/water/stepWaterFast1.wav" id="26_2kgtx"]
 [ext_resource type="AudioStream" uid="uid://ny1mr4dtklpe" path="res://assets/audio/steps/water/stepWaterFast2.wav" id="27_kmw3l"]
 [ext_resource type="AudioStream" uid="uid://c67ccjkkgm006" path="res://assets/audio/steps/water/stepWaterFast3.wav" id="28_51m1h"]
-[ext_resource type="Script" uid="uid://cwlfnhcr8hagj" path="res://assets/scripts/stepSpawner.gd" id="30_c3thp"]
+[ext_resource type="Script" uid="uid://cwlfnhcr8hagj" path="res://assets/scripts/characters/stepSpawner.gd" id="30_c3thp"]
 [ext_resource type="PackedScene" uid="uid://cahq5mhin12os" path="res://objects/effects/water-step.tscn" id="31_7twir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l51np"]

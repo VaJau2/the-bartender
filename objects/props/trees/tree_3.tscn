@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkjwqra0munmw"]
+[gd_scene load_steps=4 format=3 uid="uid://bkjwqra0munmw"]
 
 [ext_resource type="Texture2D" uid="uid://cbfvd575qrjo" path="res://assets/sprites/props/nature_assets.png" id="1_4prya"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wrkm"]
 radius = 3.0
 height = 18.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4prya"]
+polygon = PackedVector2Array(8, 4, 7, -5, 8, -17, 15, -37, 12, -41, 5, -29, -10, -39, -11, -33, 0, -25, 3, -15, 0, -6, -3, 4)
 
 [node name="tree1" type="StaticBody2D"]
 
@@ -19,3 +22,6 @@ region_rect = Rect2(196.237, 2.84335, 52.7653, 68.5695)
 position = Vector2(1, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6wrkm")
+
+[node name="shadows" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_4prya")

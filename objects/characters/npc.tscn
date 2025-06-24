@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://864ql456evru"]
+[gd_scene load_steps=21 format=3 uid="uid://864ql456evru"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_y63yl"]
 [ext_resource type="Script" uid="uid://cvjt8u00s6ytm" path="res://assets/scripts/characters/npc/npc.gd" id="2_bcxtt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b0nw6xfh8f3ul" path="res://assets/scripts/characters/npc/stateMachine/states/bar.gd" id="8_46d5v"]
 [ext_resource type="Script" uid="uid://d1gq2afulobr4" path="res://assets/scripts/characters/npc/npcDialogue.gd" id="9_hdnwl"]
 [ext_resource type="Texture2D" uid="uid://8pejvgklhiif" path="res://assets/sprites/interface/dialogue/bubble.png" id="9_wmg46"]
+[ext_resource type="Script" uid="uid://yibmj6g0m3jh" path="res://assets/scripts/characters/npc/stateMachine/states/sleep.gd" id="9_xuxqs"]
 [ext_resource type="Texture2D" uid="uid://bodoc5fg6jgu0" path="res://assets/sprites/interface/dialogue/thinking.png" id="10_msbil"]
 [ext_resource type="Texture2D" uid="uid://dl45iltjx5fks" path="res://assets/sprites/items/default.png" id="11_msbil"]
 [ext_resource type="Texture2D" uid="uid://mtbr028t0ygf" path="res://assets/sprites/interface/dialogue/thanks1.png" id="11_yafal"]
@@ -52,6 +53,10 @@ movement_controller = NodePath("../../movementController")
 [node name="bar" type="Node" parent="stateMachine" index="2" node_paths=PackedStringArray("dialogue", "movement_controller")]
 script = ExtResource("8_46d5v")
 dialogue = NodePath("../../dialogue")
+movement_controller = NodePath("../../movementController")
+
+[node name="sleep" type="Node" parent="stateMachine" index="3" node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("9_xuxqs")
 movement_controller = NodePath("../../movementController")
 
 [node name="dialogue" type="Node2D" parent="." index="10"]

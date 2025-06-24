@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://codvvyc5gpxvq"]
+[gd_scene load_steps=14 format=3 uid="uid://codvvyc5gpxvq"]
 
 [ext_resource type="Texture2D" uid="uid://c0csk28suino4" path="res://assets/sprites/items/coconut.png" id="1_m72mn"]
 [ext_resource type="Texture2D" uid="uid://b4lhecsvgs28s" path="res://assets/sprites/trees/palm-tree.png" id="2_w5cno"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="4_5h8qq"]
 [ext_resource type="AudioStream" uid="uid://bv6htqaapn672" path="res://assets/audio/trees/hit_wood.mp3" id="4_t3ywi"]
 [ext_resource type="AudioStream" uid="uid://cclic45t3fybh" path="res://assets/audio/trees/fruit_fall.mp3" id="5_5h8qq"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t3ywi"]
+polygon = PackedVector2Array(9, 1, 8, -1, 6, -1, 6, -87, -3, -87, -3, -2, -6, -2, -7, 0, -6, 2, -4, 3, 6, 3, 8, 2)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wrkm"]
 radius = 3.0
@@ -205,6 +208,11 @@ texture = ExtResource("1_m72mn")
 position = Vector2(4, -58)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("2_w5cno")
+
+[node name="shadows" type="LightOccluder2D" parent="sprite"]
+position = Vector2(-2.5, 36.25)
+scale = Vector2(0.625, 0.625)
+occluder = SubResource("OccluderPolygon2D_t3ywi")
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)

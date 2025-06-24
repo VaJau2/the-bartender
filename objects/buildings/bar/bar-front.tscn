@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtgfl4038lfdi"]
+[gd_scene load_steps=11 format=3 uid="uid://dtgfl4038lfdi"]
 
 [ext_resource type="Texture2D" uid="uid://b70di15i7pkoa" path="res://assets/sprites/buildings/bar/bar-front.png" id="1_jxwi2"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_a02bt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_xyso0"]
 [ext_resource type="PackedScene" uid="uid://brqbgo141gdix" path="res://objects/props/furn/radio.tscn" id="4_7vtbw"]
+[ext_resource type="Texture2D" uid="uid://c0nxhoacik726" path="res://assets/sprites/buildings/bar/girlanda.png" id="5_thfa3"]
+[ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="6_grxcm"]
+[ext_resource type="Script" uid="uid://b6jatwgmnlu7x" path="res://assets/scripts/handlers/time/timeLight.gd" id="7_7nvx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5ixf"]
 size = Vector2(282, 42)
@@ -62,3 +65,48 @@ script = ExtResource("3_xyso0")
 
 [node name="radio" parent="." instance=ExtResource("4_7vtbw")]
 position = Vector2(-79, -29)
+
+[node name="girlanga" type="Node2D" parent="."]
+
+[node name="Girlanda" type="Sprite2D" parent="girlanga"]
+position = Vector2(-67, -59.5)
+texture = ExtResource("5_thfa3")
+
+[node name="Girlanda2" type="Sprite2D" parent="girlanga"]
+position = Vector2(53, -58.5)
+texture = ExtResource("5_thfa3")
+
+[node name="light" type="PointLight2D" parent="girlanga"]
+position = Vector2(-120, -84)
+enabled = false
+color = Color(0.713726, 0.211765, 0.188235, 0.678431)
+texture = ExtResource("6_grxcm")
+script = ExtResource("7_7nvx4")
+
+[node name="light5" type="PointLight2D" parent="girlanga"]
+position = Vector2(111, -80)
+enabled = false
+color = Color(0.713726, 0.211765, 0.188235, 0.678431)
+texture = ExtResource("6_grxcm")
+script = ExtResource("7_7nvx4")
+
+[node name="light2" type="PointLight2D" parent="girlanga"]
+position = Vector2(-56, -83)
+enabled = false
+color = Color(0.266667, 0.341176, 0.862745, 0.623529)
+texture = ExtResource("6_grxcm")
+script = ExtResource("7_7nvx4")
+
+[node name="light4" type="PointLight2D" parent="girlanga"]
+position = Vector2(85, -81)
+enabled = false
+color = Color(0.266667, 0.341176, 0.862745, 0.623529)
+texture = ExtResource("6_grxcm")
+script = ExtResource("7_7nvx4")
+
+[node name="light3" type="PointLight2D" parent="girlanga"]
+position = Vector2(8, -84)
+enabled = false
+color = Color(0.215686, 0.486275, 0.215686, 0.705882)
+texture = ExtResource("6_grxcm")
+script = ExtResource("7_7nvx4")

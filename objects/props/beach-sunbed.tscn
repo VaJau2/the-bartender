@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0qushes8s4bk"]
+[gd_scene load_steps=5 format=3 uid="uid://d0qushes8s4bk"]
 
 [ext_resource type="Texture2D" uid="uid://8xohff471yru" path="res://assets/sprites/props/beach-sunbed.png" id="1_7t54q"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7t54q"]
+polygon = PackedVector2Array(31, -30, 24, -15, -24, -9, -27, -1, -25, -1, -25, 10, -27, 17, -23, 17, -19, 8, 20, 5, 18, 17, 23, 17, 25, 2, 31, -11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aod3"]
 size = Vector2(51, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t54q"]
+size = Vector2(6, 8)
+
 [node name="sunbed" type="StaticBody2D"]
+
+[node name="shadows" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_7t54q")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(2, -7)
@@ -14,3 +23,11 @@ texture = ExtResource("1_7t54q")
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_3aod3")
+
+[node name="shape2" type="CollisionShape2D" parent="."]
+position = Vector2(-23, 13)
+shape = SubResource("RectangleShape2D_7t54q")
+
+[node name="shape3" type="CollisionShape2D" parent="."]
+position = Vector2(21, 13)
+shape = SubResource("RectangleShape2D_7t54q")

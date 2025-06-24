@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1sryj1nt7eu5"]
+[gd_scene load_steps=7 format=3 uid="uid://d1sryj1nt7eu5"]
 
 [ext_resource type="Texture2D" uid="uid://fx0finy5snqq" path="res://assets/sprites/props/bench1.png" id="1_j6utt"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_g6ijv"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_t1521"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g6ijv"]
+polygon = PackedVector2Array(22, 12, 22, -7, -22, -7, -22, 12, -16, 12, -16, 8, 17, 8, 17, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx3lh"]
 size = Vector2(46, 17)
@@ -11,6 +14,9 @@ size = Vector2(46, 17)
 size = Vector2(46, 11)
 
 [node name="bench" type="StaticBody2D"]
+
+[node name="shadows" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_g6ijv")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0.5, -5)

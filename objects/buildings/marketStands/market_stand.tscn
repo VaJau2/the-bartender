@@ -11,7 +11,7 @@
 size = Vector2(68, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byxa2"]
-size = Vector2(65, 40)
+size = Vector2(65, 32)
 
 [node name="marketStand" type="StaticBody2D"]
 script = ExtResource("5_byxa2")
@@ -49,7 +49,7 @@ open_texture = ExtResource("3_06cts")
 closed_texture = ExtResource("3_6cdtc")
 
 [node name="shape" type="CollisionShape2D" parent="interaction"]
-position = Vector2(0.5, -1)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_byxa2")
 
 [node name="interactionHandler" type="Node" parent="interaction"]
