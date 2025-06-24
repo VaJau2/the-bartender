@@ -42,6 +42,7 @@ func buy_item(item: ShopItem) -> void:
 	
 	elif item.type == Enums.ShopItemType.item:
 		var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
+		new_item.disable()
 		
 		if is_delivery:
 			if M.money < item.price + delivery_price:
@@ -77,5 +78,4 @@ func _deliver_item(item: Item) -> void:
 	for storage: StorageHandler in storages:
 		if !item.needs_fridge and storage.storage_type == Enums.StorageType.fridge: continue
 		if item.needs_fridge and storage.storage_type != Enums.StorageType.fridge: continue
-		item.disable()
 		storage.put_item(item)

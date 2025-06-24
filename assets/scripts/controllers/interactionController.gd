@@ -38,6 +38,11 @@ func _process(delta: float) -> void:
 func update_holding_item(item: Item) -> void:
 	holding_item = item
 	if item != null:
+		var old_scale = item.global_scale
+		item.get_parent().remove_child(item)
+		add_child(item)
+		item.global_scale = old_scale
+		
 		pickup_item.emit(item)
 	else:
 		clear_item.emit()

@@ -27,6 +27,10 @@ func put_holding_item() -> void:
 
 
 func put_item(item: Item) -> void:
+	var old_scale = item.global_scale
+	item.get_parent().remove_child(item)
+	add_child(item)
+	item.global_scale = old_scale
 	items.append(item)
 
 
