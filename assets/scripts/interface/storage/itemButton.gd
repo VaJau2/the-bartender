@@ -2,9 +2,9 @@ extends Button
 
 class_name StorageItemButton
 
-var item: Item
+var item: StorageItem
 
-signal on_click(item: Item)
+signal on_click(item: StorageItem)
 
 
 func _ready() -> void:

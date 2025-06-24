@@ -27,6 +27,8 @@ func _process(_delta: float) -> void:
 
 
 func _on_open_menu(storage: StorageHandler) -> void:
+	interaction_controller.hide_item_hint.emit()
+	
 	for menu in other_menus:
 		if menu.visible: return
 	
@@ -68,10 +70,10 @@ func _on_close_pressed() -> void:
 func _sort_items(items: Array) -> Dictionary:
 	var result = {} 
 	
-	items.sort_custom(func(a: Item, b: Item): return a.category > b.category)
+	items.sort_custom(func(a: StorageItem, b: StorageItem): return a.category > b.category)
 	var categories_count = {}
 	
-	for item: Item in items:
+	for item: StorageItem in items:
 		if categories_count.has(item.category):
 			categories_count[item.category] += 1
 		else:
@@ -91,7 +93,7 @@ func _sort_items(items: Array) -> Dictionary:
 
 
 func _create_item_button(item_data: Dictionary, create_category: bool) -> void:
-	var item: Item = item_data.item
+	var item: StorageItem = item_data.item
 	
 	if create_category and categories_codes.has(item.category):
 		_create_category(item.category)
@@ -106,8 +108,8 @@ func _create_item_button(item_data: Dictionary, create_category: bool) -> void:
 	button.on_click.connect(_on_item_button_click)
 
 
-func _on_item_button_click(item: Item) -> void:
-	temp_storage.get_item(item)
+func _on_item_button_click(item: StorageItem) -> void:
+	temp_storage.get_item(item.code)
 	_on_close_pressed()
 
 

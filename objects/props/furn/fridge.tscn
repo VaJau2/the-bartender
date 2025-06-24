@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://tigdqjfkowl1" path="res://assets/audio/props/FridgeOpen.wav" id="3_gdehl"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_hv655"]
 [ext_resource type="AudioStream" uid="uid://pj6jrqnm0yjn" path="res://assets/audio/props/FridgeClose.wav" id="4_r51fw"]
-[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storageHandler.gd" id="6_r51fw"]
+[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storage/storageHandler.gd" id="6_r51fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4844m"]
 size = Vector2(24, 11)

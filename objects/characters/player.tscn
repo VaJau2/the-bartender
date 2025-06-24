@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player.png" id="2_ho5yc"]
 [ext_resource type="Script" uid="uid://5bnrtyglk2lx" path="res://assets/scripts/characters/player.gd" id="2_ssmtf"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_ssmtf"]
-[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storageHandler.gd" id="6_g87t3"]
+[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storage/storageHandler.gd" id="6_g87t3"]
 [ext_resource type="Script" uid="uid://dgrs1etu4tkry" path="res://assets/scripts/controllers/interactionController.gd" id="6_s7pd4"]
 [ext_resource type="AudioStream" uid="uid://cc7nxo1fbw1l3" path="res://assets/audio/ui_items_takeall.wav" id="7_g87t3"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="8_m8dop"]

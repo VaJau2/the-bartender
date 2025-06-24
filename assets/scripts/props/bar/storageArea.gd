@@ -35,5 +35,5 @@ func close() -> void:
 	audi.play()
 
 
-func get_item(item: Item) -> void:
-	storage.get_item(item)
+func get_item(code: String) -> void:
+	storage.get_item(code)

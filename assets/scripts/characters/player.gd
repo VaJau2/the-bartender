@@ -10,10 +10,11 @@ class_name Player
 @export var using_storage: bool
 var has_storage: bool = false
 
-
 signal update_using_storage(value: bool)
+signal move_items_from_bag
 
 
 func set_using_storage(value: bool): 
 	using_storage = value
 	update_using_storage.emit(value)
+	if !value: move_items_from_bag.emit()

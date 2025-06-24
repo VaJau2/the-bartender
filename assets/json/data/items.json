@@ -43,7 +43,7 @@
 		"texture": "assets/sprites/items/coconut-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [8, 16]
+		"prices": [10, 20]
 	},
 	"blueberry-juice": {
 		"type": "glass",
@@ -99,7 +99,7 @@
 		"texture": "assets/sprites/items/orange-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [12, 20],
+		"prices": [14, 20],
 	},
 	"espresso": {
 		"type": "glass",

@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/bar/storageArea.gd" id="7_omtbk"]
 [ext_resource type="AudioStream" uid="uid://dmmgxh8udrnb8" path="res://assets/audio/props/FurnOpen.wav" id="8_boaa4"]
 [ext_resource type="AudioStream" uid="uid://b7o3gsyttraeo" path="res://assets/audio/props/FurnClose.wav" id="9_w36da"]
-[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storageHandler.gd" id="10_w36da"]
+[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storage/storageHandler.gd" id="10_w36da"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nqib"]
 size = Vector2(91, 27)

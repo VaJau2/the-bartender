@@ -59,6 +59,7 @@ func get_limit_percent() -> String:
 
 func interact() -> void:
 	if interaction_controller.try_get_item(self):
+		interaction_controller.hide_item_hint.emit()
 		return
 	
 	if interaction_controller.holding_item != null:
