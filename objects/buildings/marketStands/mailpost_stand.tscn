@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfcgmnrkxurab"]
+
+[ext_resource type="Script" uid="uid://f2cmt7ywpi5r" path="res://assets/scripts/props/market/marketStand.gd" id="1_r1121"]
+[ext_resource type="Texture2D" uid="uid://dl2bi4mlgvpd0" path="res://assets/sprites/props/sign-open/closed.png" id="3_7rjq8"]
+[ext_resource type="Script" uid="uid://b1nqry7wrcxg5" path="res://assets/scripts/props/market/marketStandInteraction.gd" id="4_e3l2r"]
+[ext_resource type="Texture2D" uid="uid://b1g84tbivx63" path="res://assets/sprites/props/sign-open/open.png" id="5_5eei4"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="6_gosob"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_43cf8"]
+load_path = "res://.godot/imported/market_assets.png-c5b09ffcab68210d583b1e5a1fbaf9a5.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drqof"]
+size = Vector2(68, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byxa2"]
+size = Vector2(65, 32)
+
+[node name="mailpostStand" type="StaticBody2D"]
+script = ExtResource("1_r1121")
+code = "mailpost"
+delivery_price = 0
+
+[node name="standPoint" type="Node2D" parent="."]
+position = Vector2(8, -6)
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(1, 3)
+texture = SubResource("CompressedTexture2D_43cf8")
+region_enabled = true
+region_rect = Rect2(3.03097, 27.1771, 77.6301, 39.1626)
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(1, 9.5)
+shape = SubResource("RectangleShape2D_drqof")
+
+[node name="open" type="Sprite2D" parent="."]
+position = Vector2(-19, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7rjq8")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="."]
+max_distance = 800.0
+
+[node name="interaction" type="Area2D" parent="." node_paths=PackedStringArray("open_sign", "stand_point")]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_e3l2r")
+open_sign = NodePath("../open")
+stand_point = NodePath("../standPoint")
+open_texture = ExtResource("5_5eei4")
+closed_texture = ExtResource("3_7rjq8")
+
+[node name="shape" type="CollisionShape2D" parent="interaction"]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_byxa2")
+
+[node name="interactionHandler" type="Node" parent="interaction"]
+script = ExtResource("6_gosob")

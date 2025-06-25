@@ -47,6 +47,36 @@
 	"latte": {
 		"name": "Латте"
 	},
+	"cola": {
+		"name": "Кола"
+	},
+	"beer": {
+		"name": "Пиво"
+	},
+	"cider": {
+		"name": "Сидр"
+	},
+	"vodka": {
+		"name": "Водка"
+	},
+	"whiskey": {
+		"name": "Виски"
+	},
+	"wine": {
+		"name": "Вино"
+	},
+	"tequila": {
+		"name": "Текила"
+	},
+	"rum": {
+		"name": "Ром"
+	},
+	"absinthe": {
+		"name": "Абсен"
+	},
+	"gin": {
+		"name": "Джин"
+	},
 	
 	"apple": {
 		"name": "Яблоко",
@@ -88,6 +118,37 @@
 	"milk": {
 		"name": "Молоко"
 	},
+	"beer-bottle": {
+		"name": "Пиво"
+	},
+	"cola-bottle": {
+		"name": "Кола"
+	},
+	"cider-bottle": {
+		"name": "Сидр"
+	},
+	"vodka-bottle": {
+		"name": "Водка"
+	},
+	"whiskey-bottle": {
+		"name": "Виски"
+	},
+	"wine-bottle": {
+		"name": "Вино"
+	},
+	"tequila-bottle": {
+		"name": "Текила"
+	},
+	"rum-bottle": {
+		"name": "Ром"
+	},
+	"absinthe-bottle": {
+		"name": "Абсент"
+	},
+	"gin-bottle": {
+		"name": "Джин"
+	},
+	
 	"knife": {
 		"name": "Нож"
 	},
@@ -131,6 +192,9 @@
 	
 	"shop": {
 		"name": "Магазин",
+	},
+	"mailpost": {
+		"name": "Почта"
 	},
 	"menu": {
 		"name": "Меню"

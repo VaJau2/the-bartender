@@ -28,6 +28,8 @@ func _physics_process(_delta):
 
 
 func load_state(state_name: String = 'default') -> void:
+	if current_state != null and state_name == current_state.name: return
+	
 	if state_name == 'default':
 		for state in get_children():
 			if state is MovementState and state.default:

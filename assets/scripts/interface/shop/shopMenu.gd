@@ -4,6 +4,8 @@ extends Panel
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var buttons_parent: GridContainer = get_node("grid")
 @onready var delivery_button: CheckBox = get_node("delivery")
+@onready var header: Label = get_node("header")
+@onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
 @export var button_prefab: PackedScene
 
@@ -20,9 +22,13 @@ func _on_open_menu(shop: MarketStand) -> void:
 		_on_close_pressed()
 		return
 	
+	pause_menu.may_pause = false
 	temp_shop = shop
 	movement_controller.may_move = false
 	
+	header.text = Loc.trans("items." + temp_shop.code + ".name")
+	
+	delivery_button.disabled = temp_shop.fixed_delivery
 	delivery_button.button_pressed  = temp_shop.is_delivery
 	delivery_button.text = Loc.trans("interface.shop.delivery") \
 		+ "(+" + str(temp_shop.delivery_price) + " " \
@@ -47,6 +53,8 @@ func _on_close_pressed() -> void:
 	movement_controller.may_move = true
 	for button in buttons_parent.get_children():
 		button.queue_free()
+	await get_tree().process_frame
+	pause_menu.may_pause = true
 
 
 func _on_delivery_toggled(toggled_on: bool) -> void:

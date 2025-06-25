@@ -59,12 +59,13 @@
 		"continue": "Continue",
 	},
 	"statistics": {
-		"drinks_sold": "Drinks sold",
-		"drinks_spilled": "Drinks spilled",
-		"juices_made": "Juices made",
-		"coffee_made": "Coffee made",
-		"money_spent": "Money spent",
-		"apples_stolen": "Apples stolen"
+		"drinks_sold": "Drinks sold:",
+		"drinks_spilled": "Drinks spilled:",
+		"juices_made": "Juices made:",
+		"coffee_made": "Coffee made:",
+		"money_spent": "Money spent:",
+		"apples_stolen": "Apples stolen:",
+		"ponies_drunk": "Ponies made drunk:"
 	},
 	"lost": {
 		"header": "You've successfully lost",

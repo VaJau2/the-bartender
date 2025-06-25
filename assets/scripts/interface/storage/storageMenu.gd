@@ -7,6 +7,7 @@ extends Panel
 @onready var buttons_parent: VBoxContainer = get_node("scroll/vbox")
 @onready var weight_parent: Control = get_node("weight")
 @onready var weight_bar: ProgressBar = get_node("weight/weightBar")
+@onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
 @export var button_prefab: PackedScene
 @export var other_menus: Array[Panel]
@@ -36,6 +37,7 @@ func _on_open_menu(storage: StorageHandler) -> void:
 		_on_close_pressed()
 		return
 	
+	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	temp_storage = storage
 	
@@ -65,6 +67,8 @@ func _on_close_pressed() -> void:
 	categories_codes.clear()
 	for child in buttons_parent.get_children():
 		child.queue_free()
+	await get_tree().process_frame
+	pause_menu.may_pause = true
 
 
 func _sort_items(items: Array) -> Dictionary:

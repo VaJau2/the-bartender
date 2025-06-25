@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=132 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -67,7 +67,20 @@
 [ext_resource type="PackedScene" uid="uid://b0dnu1ngdistm" path="res://objects/props/plants/bush.tscn" id="42_gdcyb"]
 [ext_resource type="PackedScene" uid="uid://fgpblr75kert" path="res://objects/props/plants/bush2.tscn" id="43_oa6sj"]
 [ext_resource type="PackedScene" uid="uid://3mwjuv02mmvb" path="res://objects/props/plants/carrot_plant.tscn" id="44_0f1tp"]
+[ext_resource type="Texture2D" uid="uid://c221h8oh71co5" path="res://assets/sprites/buildings/town/mail_sign.png" id="47_gia1l"]
+[ext_resource type="PackedScene" uid="uid://bfcgmnrkxurab" path="res://objects/buildings/marketStands/mailpost_stand.tscn" id="47_vwcyu"]
 [ext_resource type="PackedScene" uid="uid://do7flv2k02fwo" path="res://objects/interface/interface.tscn" id="48_oa6sj"]
+[ext_resource type="Texture2D" uid="uid://bc2m75nsbpaak" path="res://assets/sprites/items/beer-bottle.png" id="49_csfbn"]
+[ext_resource type="PackedScene" uid="uid://cectb5bmq8mi6" path="res://objects/props/box1.tscn" id="49_rsknx"]
+[ext_resource type="Texture2D" uid="uid://d2behfc27qd0h" path="res://assets/sprites/items/cider-bottle.png" id="50_sj5fg"]
+[ext_resource type="Texture2D" uid="uid://eguy2mku0dlm" path="res://assets/sprites/items/cola-bottle.png" id="51_1xgkc"]
+[ext_resource type="Texture2D" uid="uid://d0m658jxl30a6" path="res://assets/sprites/items/vodka-bottle.png" id="52_x1gp3"]
+[ext_resource type="Texture2D" uid="uid://8f3uatxsvkwh" path="res://assets/sprites/items/whiskey-bottle.png" id="53_le2d2"]
+[ext_resource type="Texture2D" uid="uid://da7v6cyoetdy8" path="res://assets/sprites/items/wine-bottle.png" id="54_gexia"]
+[ext_resource type="Texture2D" uid="uid://dq3xmfj8mpnv3" path="res://assets/sprites/items/tequila-bottle.png" id="55_le2d2"]
+[ext_resource type="Texture2D" uid="uid://duvnl5kbki7yp" path="res://assets/sprites/items/rum-bottle.png" id="56_gexia"]
+[ext_resource type="Texture2D" uid="uid://wf7trm5c4fql" path="res://assets/sprites/items/absinthe-bottle.png" id="57_fun0h"]
+[ext_resource type="Texture2D" uid="uid://d152u34y03kex" path="res://assets/sprites/items/gin-bottle.png" id="58_oqdxe"]
 [ext_resource type="Script" uid="uid://batxgqtk2g0wn" path="res://assets/scripts/characters/npc/npcWalkPoint.gd" id="63_e2bht"]
 [ext_resource type="Script" uid="uid://cnidhjflx64kr" path="res://assets/scripts/handlers/time/timeGlobalLight.gd" id="66_aqa1v"]
 [ext_resource type="Script" uid="uid://it2xbqym4xol" path="res://assets/scripts/handlers/time/timeHandler.gd" id="66_gcaob"]
@@ -235,7 +248,7 @@ script = ExtResource("21_0qimb")
 code = "strawberry"
 type = 0
 icon = ExtResource("26_vshs7")
-price = 2
+price = 3
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_hyu0y"]
@@ -251,7 +264,7 @@ script = ExtResource("21_0qimb")
 code = "blackberry"
 type = 0
 icon = ExtResource("28_0owt5")
-price = 2
+price = 3
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_nu61c"]
@@ -268,14 +281,6 @@ code = "carrot"
 type = 0
 icon = ExtResource("33_hyu0y")
 price = 2
-metadata/_custom_type_script = "uid://dcywvgx0phtap"
-
-[sub_resource type="Resource" id="Resource_a3hxr"]
-script = ExtResource("21_0qimb")
-code = "milk"
-type = 0
-icon = ExtResource("34_lfilp")
-price = 8
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_rsknx"]
@@ -300,6 +305,94 @@ code = "bag"
 type = 1
 icon = ExtResource("38_lfilp")
 price = 15
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_4pegn"]
+script = ExtResource("21_0qimb")
+code = "milk"
+type = 0
+icon = ExtResource("34_lfilp")
+price = 10
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_4pmbt"]
+script = ExtResource("21_0qimb")
+code = "cola-bottle"
+type = 0
+icon = ExtResource("51_1xgkc")
+price = 10
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_fun0h"]
+script = ExtResource("21_0qimb")
+code = "beer-bottle"
+type = 0
+icon = ExtResource("49_csfbn")
+price = 15
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_oqdxe"]
+script = ExtResource("21_0qimb")
+code = "cider-bottle"
+type = 0
+icon = ExtResource("50_sj5fg")
+price = 16
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_iarty"]
+script = ExtResource("21_0qimb")
+code = "vodka-bottle"
+type = 0
+icon = ExtResource("52_x1gp3")
+price = 35
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_csdio"]
+script = ExtResource("21_0qimb")
+code = "gin-bottle"
+type = 0
+icon = ExtResource("58_oqdxe")
+price = 30
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_tcd68"]
+script = ExtResource("21_0qimb")
+code = "whiskey-bottle"
+type = 0
+icon = ExtResource("53_le2d2")
+price = 50
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_nc5fr"]
+script = ExtResource("21_0qimb")
+code = "tequila-bottle"
+type = 0
+icon = ExtResource("55_le2d2")
+price = 38
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_3fqo2"]
+script = ExtResource("21_0qimb")
+code = "rum-bottle"
+type = 0
+icon = ExtResource("56_gexia")
+price = 45
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_nlgwl"]
+script = ExtResource("21_0qimb")
+code = "absinthe-bottle"
+type = 0
+icon = ExtResource("57_fun0h")
+price = 60
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_3mhcn"]
+script = ExtResource("21_0qimb")
+code = "wine-bottle"
+type = 0
+icon = ExtResource("54_gexia")
+price = 100
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_8t8ul"]
@@ -684,6 +777,12 @@ position = Vector2(-4645, -2338)
 code = "applejack"
 work_place = NodePath("../../props/navRegion/farm-props/farmMarketStand")
 sleep_place = NodePath("../../props/navRegion/farm-props/houses/house19/door")
+
+[node name="derpy" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-2552, -1560)
+code = "derpy"
+work_place = NodePath("../../props/navRegion/town-props/houses/house5/mailpostStand")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house5/door")
 
 [node name="props" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1510,7 +1609,7 @@ region_rect = Rect2(365.957, 55.9795, 17.3845, 17.6649)
 
 [node name="marketStand3" parent="props/navRegion/market-props/stands" instance=ExtResource("19_nfivy")]
 position = Vector2(112, -1)
-items = Array[ExtResource("21_0qimb")]([SubResource("Resource_nu61c"), SubResource("Resource_e2bht"), SubResource("Resource_a3hxr"), SubResource("Resource_rsknx")])
+items = Array[ExtResource("21_0qimb")]([SubResource("Resource_nu61c"), SubResource("Resource_e2bht"), SubResource("Resource_rsknx")])
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/marketStand3"]
 position = Vector2(1, -45)
@@ -1566,6 +1665,30 @@ position = Vector2(12, 61)
 
 [node name="house5" parent="props/navRegion/town-props/houses" instance=ExtResource("22_ebg2g")]
 position = Vector2(-1854, -147)
+
+[node name="MailSign" type="Sprite2D" parent="props/navRegion/town-props/houses/house5"]
+position = Vector2(8, -34)
+texture = ExtResource("47_gia1l")
+
+[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house5"]
+position = Vector2(5, 64)
+
+[node name="mailpostStand" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("47_vwcyu")]
+position = Vector2(-115, 32)
+items = Array[ExtResource("21_0qimb")]([SubResource("Resource_4pegn"), SubResource("Resource_4pmbt"), SubResource("Resource_fun0h"), SubResource("Resource_oqdxe"), SubResource("Resource_iarty"), SubResource("Resource_csdio"), SubResource("Resource_tcd68"), SubResource("Resource_nc5fr"), SubResource("Resource_3fqo2"), SubResource("Resource_nlgwl"), SubResource("Resource_3mhcn")])
+fixed_delivery = true
+
+[node name="box3" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("23_xa025")]
+position = Vector2(-51, 40)
+
+[node name="box2" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("23_xa025")]
+position = Vector2(-32, 40)
+
+[node name="box4" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("49_rsknx")]
+position = Vector2(-41, 28)
+
+[node name="box" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("23_xa025")]
+position = Vector2(-163, 40)
 
 [node name="house6" parent="props/navRegion/town-props/houses" instance=ExtResource("23_2ofn6")]
 position = Vector2(157, -45)
@@ -2348,7 +2471,7 @@ pause_menu = NodePath("../pauseMenu")
 position = Vector2(204, 6)
 zoom = Vector2(1.5, 1.5)
 
-[node name="pauseMenu" parent="menu" instance=ExtResource("71_qd1pt")]
+[node name="pauseMenu" parent="menu" groups=["pause_menu"] instance=ExtResource("71_qd1pt")]
 visible = false
 
 [node name="timeHandler" type="Node" parent="."]

@@ -15,6 +15,7 @@ var category: String
 var limit: int
 var weight: float
 var needs_fridge: bool
+var booze_time: float
 
 signal taken(item: Item)
 
@@ -29,6 +30,8 @@ func _ready() -> void:
 		weight = item_data.weight
 	if item_data.has("need_fridge"):
 		needs_fridge = item_data.need_fridge
+	if item_data.has("booze_time"):
+		booze_time = item_data.booze_time
 	type = Enums.ItemType.get(item_data.type)
 	_load_icon()
 

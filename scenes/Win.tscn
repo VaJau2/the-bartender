@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dra84nwloiwru"]
+[gd_scene load_steps=20 format=3 uid="uid://dra84nwloiwru"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_pnk8a"]
 [ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/winMenu/statisticsCountLabel.gd" id="2_24ius"]
@@ -78,6 +78,12 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 script = ExtResource("4_tgfro")
 node_path = NodePath("../VBoxContainer/applesStolen/label")
 code = "statistics.apples_stolen"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ukgp0"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../VBoxContainer/poniesDrunk/label")
+code = "statistics.ponies_drunk"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="Win" type="Control"]
@@ -347,6 +353,35 @@ vertical_alignment = 1
 script = ExtResource("2_24ius")
 code = "apples_stolen"
 
+[node name="poniesDrunk" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="VBoxContainer/poniesDrunk"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -272.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ponies made drunk:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="VBoxContainer/poniesDrunk"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "ponies_drunk"
+
 [node name="divider2" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -355,9 +390,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -192.0
-offset_top = 116.0
+offset_top = 134.0
 offset_right = 192.0
-offset_bottom = 124.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -382,4 +417,4 @@ script = SubResource("GDScript_pnk8a")
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("3_npi8v")
-nodes = Array[ExtResource("4_tgfro")]([SubResource("Resource_ob58s"), SubResource("Resource_npi8v"), SubResource("Resource_tgfro"), SubResource("Resource_raq4n"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy")])
+nodes = Array[ExtResource("4_tgfro")]([SubResource("Resource_ob58s"), SubResource("Resource_npi8v"), SubResource("Resource_tgfro"), SubResource("Resource_raq4n"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0")])

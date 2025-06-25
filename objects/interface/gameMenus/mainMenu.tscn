@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://qimmp16brh26"]
+[gd_scene load_steps=12 format=3 uid="uid://qimmp16brh26"]
 
 [ext_resource type="Script" uid="uid://bq1mfx0o3t5v7" path="res://assets/scripts/interface/gameMenus/mainMenu.gd" id="1_kqg8x"]
 [ext_resource type="FontFile" uid="uid://dh7j8o2l35way" path="res://assets/materials/JosefinSans-Bold.ttf" id="1_qw6eu"]
+[ext_resource type="Shader" uid="uid://dw2vcknsfkjvj" path="res://assets/materials/blur.gdshader" id="2_0n8ap"]
 [ext_resource type="PackedScene" uid="uid://f2lpxwck6hrt" path="res://objects/interface/gameMenus/settingsPanel.tscn" id="3_orms5"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_s0nid"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_su511"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gg33v"]
+shader = ExtResource("2_0n8ap")
+shader_parameter/lod = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kqg8x"]
 font = ExtResource("1_qw6eu")
@@ -37,14 +42,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kqg8x")
 
+[node name="back" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gg33v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="menu" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 8.0
+offset_left = 96.0
 offset_top = -180.0
-offset_right = 360.0
+offset_right = 448.0
 offset_bottom = 124.0
 grow_vertical = 2
 

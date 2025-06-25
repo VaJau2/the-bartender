@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var bar_state: BarState
+@export var drunk_handler: DrunkHandler
 @export var dialogue: NpcDialogue
 @export var sale_sound: AudioStream
 
@@ -27,6 +28,9 @@ func interact() -> void:
 	else:
 		if G.glasses_count > 0: G.glasses_count -= 1
 		G.statistics.drinks_sold += 1
+		
+		var booze_time = player_drink.booze_time
+		
 		player_drink.queue_free()
 		interaction_controller.update_holding_item(null)
 		dialogue.set_transparency(1)
@@ -41,5 +45,9 @@ func interact() -> void:
 		
 		await get_tree().create_timer(1).timeout
 		if !bar_state.is_processing(): return
+		
+		if booze_time > 0:
+			drunk_handler.add_drunk_time(booze_time)
+			G.statistics.ponies_drunk += 1
 		
 		bar_state.state_machine.set_state("idle")

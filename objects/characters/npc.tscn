@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://864ql456evru"]
+[gd_scene load_steps=22 format=3 uid="uid://864ql456evru"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_y63yl"]
 [ext_resource type="Script" uid="uid://cvjt8u00s6ytm" path="res://assets/scripts/characters/npc/npc.gd" id="2_bcxtt"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="16_43ndy"]
 [ext_resource type="Script" uid="uid://dfvjjbydbnb6c" path="res://assets/scripts/characters/npc/npcInteraction.gd" id="16_xfs8l"]
 [ext_resource type="AudioStream" uid="uid://tyuabus2rfwy" path="res://assets/audio/buying/selling.mp3" id="17_x6edk"]
+[ext_resource type="Script" uid="uid://dvs0d4ofhm5lm" path="res://assets/scripts/characters/npc/drunkHandler.gd" id="20_fbupb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs8l"]
 size = Vector2(22, 25)
@@ -74,12 +75,13 @@ texture = ExtResource("9_wmg46")
 position = Vector2(0, -3)
 texture = ExtResource("11_msbil")
 
-[node name="interactionArea" type="Area2D" parent="." index="11" node_paths=PackedStringArray("bar_state", "dialogue")]
+[node name="interactionArea" type="Area2D" parent="." index="11" node_paths=PackedStringArray("bar_state", "drunk_handler", "dialogue")]
 collision_layer = 2
 collision_mask = 0
 monitorable = false
 script = ExtResource("16_xfs8l")
 bar_state = NodePath("../stateMachine/bar")
+drunk_handler = NodePath("../drunkHandler")
 dialogue = NodePath("../dialogue")
 sale_sound = ExtResource("17_x6edk")
 
@@ -92,3 +94,7 @@ script = ExtResource("16_43ndy")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="interactionArea" index="2"]
 max_distance = 500.0
+
+[node name="drunkHandler" type="Node" parent="." index="12" node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("20_fbupb")
+movement_controller = NodePath("../movementController")

@@ -47,6 +47,36 @@
 	"latte": {
 		"name": "Latte"
 	},
+	"cola": {
+		"name": "Cola"
+	},
+	"beer": {
+		"name": "Beer"
+	},
+	"cider": {
+		"name": "Cider"
+	},
+	"vodka": {
+		"name": "Vodka"
+	},
+	"whiskey": {
+		"name": "Whiskey"
+	},
+	"wine": {
+		"name": "Wine"
+	},
+	"tequila": {
+		"name": "Tequila"
+	},
+	"rum": {
+		"name": "Rum"
+	},
+	"absinthe": {
+		"name": "Absinthe"
+	},
+	"gin": {
+		"name": "Gin"
+	},
 	
 	"apple": {
 		"name": "Apple",
@@ -75,7 +105,7 @@
 	"tomato": {
 		"name": "Tomato"
 	},
-	"carror": {
+	"carrot": {
 		"name": "Carrot"
 	},
 	"orange": {
@@ -88,6 +118,37 @@
 	"milk": {
 		"name": "Milk"
 	},
+	"beer-bottle": {
+		"name": "Beer"
+	},
+	"cola-bottle": {
+		"name": "Cola"
+	},
+	"cider-bottle": {
+		"name": "Cider"
+	},
+	"vodka-bottle": {
+		"name": "Vodka"
+	},
+	"whiskey-bottle": {
+		"name": "Whiskey"
+	},
+	"wine-bottle": {
+		"name": "Wine"
+	},
+	"tequila-bottle": {
+		"name": "Tequila"
+	},
+	"rum-bottle": {
+		"name": "Rum"
+	},
+	"absinthe-bottle": {
+		"name": "Absinthe"
+	},
+	"gin-bottle": {
+		"name": "Gin"
+	},
+	
 	"knife": {
 		"name": "Knife"
 	},
@@ -131,6 +192,9 @@
 	
 	"shop": {
 		"name": "Shop",
+	},
+	"mailpost": {
+		"name": "Mail post"
 	},
 	"menu": {
 		"name": "Menu"

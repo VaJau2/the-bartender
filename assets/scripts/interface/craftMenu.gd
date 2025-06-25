@@ -7,6 +7,7 @@ extends Panel
 @onready var glass_icon: Button = get_node("glassIcon")
 @onready var ingredient_icon: Button = get_node("ingredientIcon")
 @onready var start: Button = get_node("start")
+@onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
 var temp_crarfting: CraftingBase
 
@@ -24,6 +25,7 @@ func _process(_delta: float) -> void:
 
 func _on_open_menu(crafting: CraftingBase) -> void:
 	visible = true
+	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	name_label.text = Loc.trans("items." + crafting.code + ".name")
 	temp_crarfting = crafting
@@ -44,6 +46,8 @@ func _on_open_menu(crafting: CraftingBase) -> void:
 func _on_cancel_pressed() -> void:
 	visible = false
 	movement_controller.may_move = true
+	await get_tree().process_frame
+	pause_menu.may_pause = true
 
 
 func _on_glass_icon_pressed() -> void:

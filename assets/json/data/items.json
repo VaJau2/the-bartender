@@ -125,6 +125,95 @@
 		"need_fridge": 1,
 		"prices": [35, 50],
 	},
+	"cola": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/cola.png",
+		"weight": 1,
+		"need_fridge": 1,
+		"prices": [5, 10],
+	},
+	"beer": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/beer.png",
+		"weight": 2,
+		"need_fridge": 1,
+		"booze_time": 5,
+		"prices": [10, 20],
+	},
+	"cider": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/cider.png",
+		"weight": 2,
+		"need_fridge": 1,
+		"booze_time": 4,
+		"prices": [11, 21],
+	},
+	"vodka": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/vodka.png",
+		"weight": 0.2,
+		"need_fridge": 1,
+		"booze_time": 15,
+		"prices": [20, 30],
+	},
+	"whiskey": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/whiskey.png",
+		"weight": 0.2,
+		"need_fridge": 1,
+		"booze_time": 14,
+		"prices": [30, 45],
+	},
+	"wine": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/wine.png",
+		"weight": 0.2,
+		"need_fridge": 1,
+		"booze_time": 5,
+		"prices": [60, 80],
+	},
+	"tequila": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/tequila.png",
+		"weight": 0.2,
+		"need_fridge": 1,
+		"booze_time": 18,
+		"prices": [22, 32],
+	},
+	"rum": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/rum.png",
+		"weight": 0.3,
+		"need_fridge": 1,
+		"booze_time": 13,
+		"prices": [25, 40],
+	},
+	"absinthe": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/absinthe.png",
+		"weight": 0.2,
+		"need_fridge": 1,
+		"booze_time": 16,
+		"prices": [30, 42],
+	},
+	"gin": {
+		"type": "glass",
+		"category": "glass",
+		"texture": "assets/sprites/items/gin.png",
+		"weight": 0.2,
+		"need_fridge": 1,
+		"booze_time": 16,
+		"prices": [15, 25],
+	},
 	
 	"apple": {
 		"type": "ingredient",
@@ -215,5 +304,85 @@
 		"weight": 2,
 		"limit": 5,
 		"need_fridge": 1
-	}
+	},
+	"beer-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/beer-bottle.png",
+		"weight": 1,
+		"limit": 4,
+		"need_fridge": 1
+	},
+	"cola-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/cola-bottle.png",
+		"weight": 1,
+		"limit": 3,
+		"need_fridge": 1
+	},
+	"cider-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/cider-bottle.png",
+		"weight": 1,
+		"limit": 4,
+		"need_fridge": 1
+	},
+	"vodka-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/vodka-bottle.png",
+		"weight": 1,
+		"limit": 6,
+		"need_fridge": 1
+	},
+	"whiskey-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/whiskey-bottle.png",
+		"weight": 1,
+		"limit": 4,
+		"need_fridge": 1
+	},
+	"wine-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/wine-bottle.png",
+		"weight": 1,
+		"limit": 5,
+		"need_fridge": 1
+	},
+	"tequila-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/tequila-bottle.png",
+		"weight": 1,
+		"limit": 7,
+		"need_fridge": 1
+	},
+	"rum-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/rum-bottle.png",
+		"weight": 1,
+		"limit": 5,
+		"need_fridge": 1
+	},
+	"absinthe-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/absinthe-bottle.png",
+		"weight": 1,
+		"limit": 6,
+		"need_fridge": 1
+	},
+	"gin-bottle": {
+		"type": "tool",
+		"category": "liquid",
+		"texture": "assets/sprites/items/gin-bottle.png",
+		"weight": 1,
+		"limit": 4,
+		"need_fridge": 1
+	},
 }

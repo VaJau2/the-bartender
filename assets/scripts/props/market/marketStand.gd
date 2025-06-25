@@ -9,8 +9,10 @@ class_name MarketStand
 @onready var buy_sound: AudioStream = load("res://assets/audio/buying/buy.wav")
 @onready var delivery_buy_sound: AudioStream = load("res://assets/audio/buying/delivery_buy.wav")
 
+@export var code: String = "shop"
 @export var items: Array[ShopItem]
 @export var delivery_price: int = 10
+@export var fixed_delivery: bool
 
 var is_open: bool
 var is_delivery: bool
@@ -20,6 +22,8 @@ func start_trading(npc: CharacterBody2D) -> void:
 	npc.global_position = interaction.get_stand_pos()
 	interaction.set_open(true)
 	is_open = true
+	if fixed_delivery:
+		is_delivery = true
 
 
 func stop_trading() -> void:
@@ -68,8 +72,8 @@ func buy_item(item: ShopItem) -> void:
 	M.remove_money(item.price)
 
 
-func _show_text(code: String) -> void:
-	var text = Loc.trans("interface.shop." + code)
+func _show_text(_code: String) -> void:
+	var text = Loc.trans("interface.shop." + _code)
 	interaction_controller.show_hint_text.emit(text)
 
 

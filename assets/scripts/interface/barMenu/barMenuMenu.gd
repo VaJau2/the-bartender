@@ -10,6 +10,7 @@ class_name BarMenuMenu
 
 @onready var items_parent: VBoxContainer = get_node("drinksScroll/vbox")
 @onready var receipts_parent: VBoxContainer = get_node("receiptsScroll/vbox")
+@onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
 var temp_menu: BarMenu
 
@@ -27,6 +28,7 @@ func _process(_delta: float) -> void:
 
 func _on_open_menu(menu: BarMenu) -> void:
 	visible = true
+	pause_menu.may_pause = true
 	movement_controller.may_move = false
 	temp_menu = menu
 	_load_receipt_items()
@@ -38,6 +40,8 @@ func _on_close_pressed() -> void:
 	movement_controller.may_move = true
 	for item in items_parent.get_children(): item.queue_free()
 	for item in receipts_parent.get_children(): item.queue_free()
+	await get_tree().process_frame
+	pause_menu.may_pause = true
 
 
 func _load_receipt_items() -> void:

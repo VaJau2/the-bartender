@@ -39,5 +39,55 @@
 			"holding_item": "milk",
 			"result": "latte"
 		},
+		{
+			"item": "empty-glass",
+			"holding_item": "cola-bottle",
+			"result": "cola"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "beer-bottle",
+			"result": "beer"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "cider-bottle",
+			"result": "cider"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "vodka-bottle",
+			"result": "vodka"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "whiskey-bottle",
+			"result": "whiskey"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "wine-bottle",
+			"result": "wine"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "tequila-bottle",
+			"result": "tequila"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "rum-bottle",
+			"result": "rum"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "absinthe-bottle",
+			"result": "absinthe"
+		},
+		{
+			"item": "empty-glass",
+			"holding_item": "gin-bottle",
+			"result": "gin"
+		},
 	]
 }

@@ -21,7 +21,7 @@ func set_open(value: bool) -> void:
 
 func on_mouse_entered() -> void:
 	if !stand.is_open: return
-	interaction_controller.show_hint.emit("shop")
+	interaction_controller.show_hint.emit(stand.code)
 
 
 func on_mouse_exited() -> void:

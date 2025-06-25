@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	if !is_walking:
 		_reset_old_point()
 		_find_new_point()
-		movement_controller.load_state("walk")
+		movement_controller.load_state(npc.walk_state)
 		movement_controller.set_target(temp_walk_point.global_position)
 		is_walking = true
 
@@ -51,7 +51,7 @@ func enable() -> void:
 
 
 func disable() -> void:
-	movement_controller.load_state("walk")
+	movement_controller.load_state(npc.walk_state)
 	if temp_walk_point != null: temp_walk_point.is_busy = false
 	temp_walk_point = null
 	wait_timer = 0
