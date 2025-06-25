@@ -1,4 +1,18 @@
 {
+	"main_menu": {
+		"pause": "Pause",
+		"start": "Start",
+		"continue": "Continue",
+		"settings": "Settings",
+		"exit": "Exit game"
+	},
+	"settings": {
+		"lang_label": "Language",
+		"lang_value": "Eng",
+		"fullscreen_label": "Fullscreen",
+		"fullscreen_button": "Change",
+		"volume_label": "Volume"
+	},
 	"craft": {
 		"start": "Start",
 		"cancel": "Cancel",
@@ -37,6 +51,25 @@
 		"berry": "Berries",
 		"liquid": "Liquids",
 		"tool": "Tools"
+	},
+	"win": {
+		"header": "You've successfully won",
+		"text": "You have saved up enough money to pay off the debt for the purchase of the bar c:",
+		"statistics": "Statistics:",
+		"continue": "Continue",
+	},
+	"statistics": {
+		"drinks_sold": "Drinks sold",
+		"drinks_spilled": "Drinks spilled",
+		"juices_made": "Juices made",
+		"coffee_made": "Coffee made",
+		"money_spent": "Money spent",
+		"apples_stolen": "Apples stolen"
+	},
+	"lost": {
+		"header": "You've successfully lost",
+		"text": "You didn't have time to save enough money on time, and you had to sell the bar :с",
+		"continue": "Continue",
 	},
 	"plural": {
 		"bits": "bit|bits|bits"

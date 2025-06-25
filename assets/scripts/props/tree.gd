@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 
 func spawn_fruits() -> void:
 	for spawned_item in spawned_items:
-		spawned_item.queue_free()
+		if spawned_item != null: spawned_item.queue_free()
 	spawned_items.clear()
 	
 	for fruit in fruit_sprites:
@@ -81,4 +81,7 @@ func interact() -> void:
 
 
 func _on_item_taken(item: Item) -> void:
-	spawned_items.erase(item)
+	if spawned_items.has(item):
+		spawned_items.erase(item)
+		if item.code == "apple":
+			G.statistics.apples_stolen += 1

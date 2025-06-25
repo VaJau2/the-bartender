@@ -22,8 +22,9 @@ config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
-G="*res://assets/scripts/utils/global.gd"
+G="*res://assets/scripts/system/global.gd"
 M="*res://assets/scripts/handlers/moneyHandler.gd"
+S="*res://assets/scripts/system/sceneLoader.gd"
 
 [debug]
 

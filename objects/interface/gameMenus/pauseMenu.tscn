@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://m433kj61gret"]
+
+[ext_resource type="Script" uid="uid://7gitqyjllng8" path="res://assets/scripts/interface/gameMenus/pauseMenu.gd" id="1_c11wu"]
+[ext_resource type="FontFile" uid="uid://dh7j8o2l35way" path="res://assets/materials/JosefinSans-Bold.ttf" id="2_4imrw"]
+[ext_resource type="PackedScene" uid="uid://f2lpxwck6hrt" path="res://objects/interface/gameMenus/settingsPanel.tscn" id="3_c11wu"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="4_6ob7q"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="5_wrthb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c11wu"]
+font = ExtResource("2_4imrw")
+font_size = 30
+
+[sub_resource type="Resource" id="Resource_6t3y8"]
+script = ExtResource("5_wrthb")
+node_path = NodePath("../menu/gameLabel")
+code = "main_menu.pause"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_l5p4l"]
+script = ExtResource("5_wrthb")
+node_path = NodePath("../menu/Continue")
+code = "main_menu.continue"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_s0nid"]
+script = ExtResource("5_wrthb")
+node_path = NodePath("../menu/Settings")
+code = "main_menu.settings"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_su511"]
+script = ExtResource("5_wrthb")
+node_path = NodePath("../menu/Exit")
+code = "main_menu.exit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="pauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_c11wu")
+
+[node name="menu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 92.0
+grow_vertical = 2
+
+[node name="gameLabel" type="Label" parent="menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 32.0
+offset_right = -32.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_c11wu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="divider" type="ColorRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 72.0
+grow_horizontal = 2
+
+[node name="Continue" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -32.0
+offset_right = 92.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="Settings" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 16.0
+offset_right = 92.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings
+"
+
+[node name="Exit" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 64.0
+offset_right = 92.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[node name="settingsPanel" parent="menu" instance=ExtResource("3_c11wu")]
+layout_mode = 1
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("4_6ob7q")
+nodes = Array[ExtResource("5_wrthb")]([SubResource("Resource_6t3y8"), SubResource("Resource_l5p4l"), SubResource("Resource_s0nid"), SubResource("Resource_su511")])
+
+[connection signal="pressed" from="menu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="menu/Exit" to="." method="_on_exit_pressed"]

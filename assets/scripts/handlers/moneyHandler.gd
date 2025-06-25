@@ -12,6 +12,7 @@ func add_money(value: int) -> void:
 
 
 func remove_money(value: int) -> void:
+	G.statistics.money_spent += value
 	money -= value
 	money_updated.emit()
 

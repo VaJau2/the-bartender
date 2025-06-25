@@ -55,6 +55,12 @@ func start() -> void:
 	await timer.timeout
 	
 	anim.stop()
+	
+	if code == "juicer":
+		G.statistics.juices_made += 1
+	elif code == "coffee-machine":
+		G.statistics.coffee_made += 1
+	
 	var result = ItemSpawner.spawn_item(result_code, spawn_point.global_position, get_parent())
 	result.moving.set_velocity(result_velocity)
 	may_interact = true

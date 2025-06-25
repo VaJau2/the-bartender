@@ -10,9 +10,12 @@ const MORNING_OFF_HOUR = 7
 
 func _ready() -> void:
 	G.time.hour_tick.connect(_on_hour_tick)
+	_set_start_light()
 
 
 func _process(_delta: float) -> void:
+	if !enabled: return
+	
 	if sprite.flip_h:
 		position = pos_l.position
 	else:
@@ -25,3 +28,8 @@ func _on_hour_tick() -> void:
 	
 	if G.time.hour == MORNING_OFF_HOUR:
 		enabled = false
+
+
+func _set_start_light() -> void:
+	if G.time.hour >= NIGHT_ON_HOUR or G.time.hour < MORNING_OFF_HOUR:
+		enabled = true

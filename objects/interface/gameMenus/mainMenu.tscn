@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://qimmp16brh26"]
+
+[ext_resource type="Script" uid="uid://bq1mfx0o3t5v7" path="res://assets/scripts/interface/gameMenus/mainMenu.gd" id="1_kqg8x"]
+[ext_resource type="FontFile" uid="uid://dh7j8o2l35way" path="res://assets/materials/JosefinSans-Bold.ttf" id="1_qw6eu"]
+[ext_resource type="PackedScene" uid="uid://f2lpxwck6hrt" path="res://objects/interface/gameMenus/settingsPanel.tscn" id="3_orms5"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_s0nid"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_su511"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kqg8x"]
+font = ExtResource("1_qw6eu")
+font_size = 40
+
+[sub_resource type="Resource" id="Resource_l5p4l"]
+script = ExtResource("4_su511")
+node_path = NodePath("../menu/Start")
+code = "main_menu.start"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_s0nid"]
+script = ExtResource("4_su511")
+node_path = NodePath("../menu/Settings")
+code = "main_menu.settings"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_su511"]
+script = ExtResource("4_su511")
+node_path = NodePath("../menu/Exit")
+code = "main_menu.exit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kqg8x")
+
+[node name="menu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -180.0
+offset_right = 360.0
+offset_bottom = 124.0
+grow_vertical = 2
+
+[node name="gameLabel" type="Label" parent="menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 32.0
+offset_right = -32.0
+offset_bottom = 88.0
+grow_horizontal = 2
+text = "The Bartender"
+label_settings = SubResource("LabelSettings_kqg8x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -32.0
+offset_right = 88.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="Settings" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings
+"
+
+[node name="Exit" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 64.0
+offset_right = 88.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[node name="settingsPanel" parent="menu" instance=ExtResource("3_orms5")]
+layout_mode = 1
+
+[node name="divider" type="ColorRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 56.0
+offset_top = 72.0
+offset_right = -64.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("3_s0nid")
+nodes = Array[ExtResource("4_su511")]([SubResource("Resource_l5p4l"), SubResource("Resource_s0nid"), SubResource("Resource_su511")])
+
+[connection signal="pressed" from="menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="menu/Exit" to="." method="_on_exit_pressed"]

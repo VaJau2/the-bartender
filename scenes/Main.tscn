@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=109 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -72,6 +72,9 @@
 [ext_resource type="Script" uid="uid://cnidhjflx64kr" path="res://assets/scripts/handlers/time/timeGlobalLight.gd" id="66_aqa1v"]
 [ext_resource type="Script" uid="uid://it2xbqym4xol" path="res://assets/scripts/handlers/time/timeHandler.gd" id="66_gcaob"]
 [ext_resource type="Script" uid="uid://ketfgqpierd8" path="res://assets/scripts/handlers/time/timeLightData.gd" id="67_8t8ul"]
+[ext_resource type="PackedScene" uid="uid://qimmp16brh26" path="res://objects/interface/gameMenus/mainMenu.tscn" id="70_ugmlg"]
+[ext_resource type="PackedScene" uid="uid://m433kj61gret" path="res://objects/interface/gameMenus/pauseMenu.tscn" id="71_qd1pt"]
+[ext_resource type="Script" uid="uid://br8h0f8q71gqi" path="res://assets/scripts/system/gameManager.gd" id="73_mou0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebg2g"]
 texture = ExtResource("3_yxlcp")
@@ -623,7 +626,7 @@ tile_set = SubResource("TileSet_2ofn6")
 navigation_enabled = false
 
 [node name="player" parent="." instance=ExtResource("1_0bbpv")]
-position = Vector2(102, 49)
+position = Vector2(137, -28)
 
 [node name="ponies" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -2327,6 +2330,27 @@ position = Vector2(-4544, -2165)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_8t8ul"), SubResource("Resource_1x1rp"), SubResource("Resource_ylqph"), SubResource("Resource_fcv70"), SubResource("Resource_mou0d"), SubResource("Resource_ugmlg"), SubResource("Resource_qd1pt")])
 delivery_price = 2
 
+[node name="menu" type="CanvasLayer" parent="."]
+
+[node name="inputHandler" type="Node" parent="menu"]
+script = ExtResource("1_elqb8")
+
+[node name="interface" parent="menu" instance=ExtResource("48_oa6sj")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="mainMenu" parent="menu" node_paths=PackedStringArray("game_interface", "time_handler", "pause_menu") instance=ExtResource("70_ugmlg")]
+game_interface = NodePath("../interface")
+time_handler = NodePath("../../timeHandler")
+pause_menu = NodePath("../pauseMenu")
+
+[node name="camera" type="Camera2D" parent="menu/mainMenu"]
+position = Vector2(204, 6)
+zoom = Vector2(1.5, 1.5)
+
+[node name="pauseMenu" parent="menu" instance=ExtResource("71_qd1pt")]
+visible = false
+
 [node name="timeHandler" type="Node" parent="."]
 script = ExtResource("66_gcaob")
 hour = 12
@@ -2337,10 +2361,5 @@ blend_mode = 2
 script = ExtResource("66_aqa1v")
 lights_data = Array[ExtResource("67_8t8ul")]([SubResource("Resource_gia1l"), SubResource("Resource_aw8hi"), SubResource("Resource_cm7k6"), SubResource("Resource_csfbn"), SubResource("Resource_sj5fg"), SubResource("Resource_1xgkc"), SubResource("Resource_x1gp3"), SubResource("Resource_le2d2"), SubResource("Resource_gexia")])
 
-[node name="menu" type="CanvasLayer" parent="."]
-
-[node name="inputHandler" type="Node" parent="menu"]
-script = ExtResource("1_elqb8")
-
-[node name="interface" parent="menu" instance=ExtResource("48_oa6sj")]
-metadata/_edit_lock_ = true
+[node name="gameManager" type="Node" parent="."]
+script = ExtResource("73_mou0d")

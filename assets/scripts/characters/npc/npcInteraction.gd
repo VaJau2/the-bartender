@@ -26,8 +26,10 @@ func interact() -> void:
 		dialogue.show_item_icon(ordered_drink)
 	else:
 		if G.glasses_count > 0: G.glasses_count -= 1
+		G.statistics.drinks_sold += 1
 		player_drink.queue_free()
 		interaction_controller.update_holding_item(null)
+		dialogue.set_transparency(1)
 		dialogue.show_thanks_icon()
 		
 		if bar_state.ordered_price > 0:

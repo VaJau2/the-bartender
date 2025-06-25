@@ -30,6 +30,10 @@ func spawn_items() -> void:
 			var item = ItemSpawner.spawn_item(code, point.global_position, self)
 			item.taken.connect(_on_item_taken)
 			spawned_items.append(item)
+	
+	if spawned_items.is_empty():
+		spawn_timer = randf_range(SPAWN_TIME_MIN, SPAWN_TIME_MAX)
+		set_process(true)
 
 
 func _on_item_taken(item: Item) -> void:

@@ -79,6 +79,11 @@ func _find_new_point() -> void:
 
 func _on_came() -> void:
 	if !is_processing(): return
+	
+	if temp_walk_point == null: 
+		is_walking = false
+		return
+	
 	animation_controller.set_flip(temp_walk_point.is_flip)
 	movement_controller.load_state(temp_walk_point.movement_state_name)
 	wait_timer = randf_range(temp_walk_point.wait_min_time, temp_walk_point.wait_max_time)

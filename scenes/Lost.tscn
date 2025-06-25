@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://2o7xsmu4juqc"]
+
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_i6p6l"]
+[ext_resource type="Script" uid="uid://b3yfvus4eded8" path="res://assets/scripts/interface/winMenu/continueButton.gd" id="2_305fp"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="2_empph"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="3_305fp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_24ius"]
+font_size = 30
+
+[sub_resource type="GDScript" id="GDScript_i6p6l"]
+script/source = "extends Node
+
+
+func _ready() -> void:
+	Engine.time_scale = 1
+"
+
+[sub_resource type="Resource" id="Resource_empph"]
+script = ExtResource("3_305fp")
+node_path = NodePath("../header")
+code = "lost.header"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_305fp"]
+script = ExtResource("3_305fp")
+node_path = NodePath("../text")
+code = "lost.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_bb320"]
+script = ExtResource("3_305fp")
+node_path = NodePath("../continue")
+code = "lost.continue"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="Lost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i6p6l")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 40.0
+offset_right = 195.0
+offset_bottom = 128.0
+grow_horizontal = 2
+text = "You've successfully lost"
+label_settings = SubResource("LabelSettings_24ius")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -4.0
+offset_right = 256.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You didn't have time to save enough money on time, and you had to sell the bar :с"
+horizontal_alignment = 1
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -104.0
+offset_right = 64.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+script = ExtResource("2_305fp")
+
+[node name="timeScaleReturn" type="Node" parent="."]
+script = SubResource("GDScript_i6p6l")
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("2_empph")
+nodes = Array[ExtResource("3_305fp")]([SubResource("Resource_empph"), SubResource("Resource_305fp"), SubResource("Resource_bb320")])

@@ -115,7 +115,7 @@
 		"texture": "assets/sprites/items/cappuccino.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [25, 30],
+		"prices": [25, 35],
 	},
 	"latte": {
 		"type": "glass",
@@ -123,7 +123,7 @@
 		"texture": "assets/sprites/items/latte.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [35, 40],
+		"prices": [35, 50],
 	},
 	
 	"apple": {
