@@ -81,7 +81,8 @@ func interact() -> void:
 
 
 func _on_item_taken(item: Item) -> void:
+	item.taken.disconnect(_on_item_taken)
+	if item.code == "apple":
+		G.statistics.apples_stolen += 1
 	if spawned_items.has(item):
 		spawned_items.erase(item)
-		if item.code == "apple":
-			G.statistics.apples_stolen += 1

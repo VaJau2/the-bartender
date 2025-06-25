@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ddnv5nfyid8"]
+
+[ext_resource type="Texture2D" uid="uid://csgdcn6i3xocf" path="res://assets/sprites/items/glass-water.png" id="1_lsmi2"]
+[ext_resource type="Script" uid="uid://4suqi3ljxrto" path="res://assets/scripts/interface/recipes/recipeIcon.gd" id="2_wre7c"]
+
+[node name="recipe" type="TextureRect"]
+custom_minimum_size = Vector2(30, 30)
+texture = ExtResource("1_lsmi2")
+script = ExtResource("2_wre7c")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -32,6 +32,9 @@
 		"not_money": "Not enough money :c",
 		"not_space": "Not enough space :c"
 	},
+	"recipes": {
+		"header": "Recipes"
+	},
 	"bar_menu": {
 		"header": "Bar menu",
 		"drinks": "Drinks",

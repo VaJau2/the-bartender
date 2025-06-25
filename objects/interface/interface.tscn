@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=23 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="PackedScene" uid="uid://b0vda7f1r2ivw" path="res://objects/interface/itemIcon.tscn" id="3_2dkr1"]
@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cuacambctgeos" path="res://assets/sprites/interface/bag_icon.png" id="5_hryqi"]
 [ext_resource type="PackedScene" uid="uid://bohrnxbwka51t" path="res://objects/interface/shop/shopMenu.tscn" id="5_oxl46"]
 [ext_resource type="Texture2D" uid="uid://d4crp3m13wevf" path="res://assets/sprites/interface/bag_icon_hover.png" id="6_25ur3"]
+[ext_resource type="Texture2D" uid="uid://caesb61d5f7hg" path="res://assets/sprites/interface/book_icon/book_icon.png" id="6_73icx"]
+[ext_resource type="PackedScene" uid="uid://bghg0muxadbts" path="res://objects/interface/recipesMenu/recipesMenu.tscn" id="6_eljf0"]
 [ext_resource type="Script" uid="uid://oi345nxxx8yq" path="res://assets/scripts/interface/bagIcon.gd" id="7_25ur3"]
+[ext_resource type="Texture2D" uid="uid://bb5yl3xrjo2w7" path="res://assets/sprites/interface/book_icon/book_icon_hover.png" id="7_eljf0"]
 [ext_resource type="Script" uid="uid://b5v785lhs3jwb" path="res://assets/scripts/interface/moneyPanel.gd" id="8_3ewrv"]
+[ext_resource type="Script" uid="uid://dsy3kdrnx5u5p" path="res://assets/scripts/interface/recipes/recipesButton.gd" id="9_2xida"]
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
 [ext_resource type="Script" uid="uid://byqw1g5bfju7b" path="res://assets/scripts/interface/daysLeft.gd" id="11_1mtbf"]
@@ -88,7 +92,7 @@ offset_right = 192.0
 offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
-other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu")]
+other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu"), NodePath("../recipesMenu")]
 
 [node name="shopMenu" parent="." instance=ExtResource("5_oxl46")]
 visible = false
@@ -120,6 +124,53 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="recipesMenu" parent="." node_paths=PackedStringArray("other_menus") instance=ExtResource("6_eljf0")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -136.0
+offset_right = 188.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu")]
+
+[node name="recipesIcon" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 164.0
+offset_right = -4.0
+offset_bottom = 236.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("6_73icx")
+texture_hover = ExtResource("7_eljf0")
+stretch_mode = 5
+script = ExtResource("9_2xida")
+
+[node name="Label" type="Label" parent="recipesIcon"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -88.0
+offset_right = 56.0
+offset_bottom = -65.0
+grow_vertical = 0
+text = "R"
+horizontal_alignment = 1
+
 [node name="bagIcon" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -127,10 +178,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -152.0
+offset_left = -72.0
+offset_top = -248.0
 offset_right = -16.0
-offset_bottom = -104.0
+offset_bottom = -192.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("5_hryqi")
@@ -140,9 +191,10 @@ script = ExtResource("7_25ur3")
 
 [node name="Label" type="Label" parent="bagIcon"]
 layout_mode = 0
-offset_top = -24.0
-offset_right = 40.0
-offset_bottom = -1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 48.0
+offset_bottom = -9.0
 text = "Tab"
 horizontal_alignment = 1
 
@@ -264,4 +316,5 @@ offset_right = 128.0
 offset_bottom = 24.0
 mouse_filter = 1
 
+[connection signal="pressed" from="recipesIcon" to="recipesIcon" method="_on_pressed"]
 [connection signal="pressed" from="bagIcon" to="bagIcon" method="_on_pressed"]

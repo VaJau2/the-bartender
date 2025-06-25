@@ -88,7 +88,7 @@ func _try_craft_item(item1: Item, item2: Item) -> bool:
 			interaction_controller.update_holding_item(null)
 			
 		item2.queue_free()
-		
+	
 	return true
 
 func _load_icon() -> void:

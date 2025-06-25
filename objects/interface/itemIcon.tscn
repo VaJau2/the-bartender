@@ -37,6 +37,7 @@ offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.5, 2.552)
+expand_mode = 2
 
 [node name="put-hint" type="TextureRect" parent="."]
 visible = false

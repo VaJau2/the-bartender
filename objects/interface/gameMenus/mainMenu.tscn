@@ -138,6 +138,18 @@ grow_horizontal = 2
 script = ExtResource("3_s0nid")
 nodes = Array[ExtResource("4_su511")]([SubResource("Resource_l5p4l"), SubResource("Resource_s0nid"), SubResource("Resource_su511")])
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -40.0
+offset_right = 169.0
+offset_bottom = -17.0
+grow_vertical = 0
+text = "by VaJa72 & McFord"
+
 [connection signal="pressed" from="menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="menu/Exit" to="." method="_on_exit_pressed"]

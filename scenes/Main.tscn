@@ -720,6 +720,8 @@ navigation_enabled = false
 
 [node name="player" parent="." instance=ExtResource("1_0bbpv")]
 position = Vector2(137, -28)
+using_storage = true
+has_storage = true
 
 [node name="ponies" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -934,6 +936,34 @@ wait_max_time = 10.0
 
 [node name="townIdle8" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(-198, -1280)
+script = ExtResource("63_e2bht")
+wait_min_time = 1.0
+wait_max_time = 10.0
+is_flip = true
+
+[node name="townIdle9" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
+position = Vector2(1035, -1089)
+script = ExtResource("63_e2bht")
+wait_min_time = 1.0
+wait_max_time = 10.0
+is_flip = true
+
+[node name="townIdle10" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
+position = Vector2(1784, -989)
+script = ExtResource("63_e2bht")
+wait_min_time = 1.0
+wait_max_time = 10.0
+is_flip = true
+
+[node name="townIdle11" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
+position = Vector2(-479, -760)
+script = ExtResource("63_e2bht")
+wait_min_time = 1.0
+wait_max_time = 10.0
+is_flip = true
+
+[node name="townIdle12" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
+position = Vector2(-1789, -1221)
 script = ExtResource("63_e2bht")
 wait_min_time = 1.0
 wait_max_time = 10.0
@@ -2173,7 +2203,7 @@ position = Vector2(-2210, -2609)
 position = Vector2(-1999, -2608)
 
 [node name="appleTree12" parent="props/navRegion/farm-props/trees" instance=ExtResource("35_hq6as")]
-position = Vector2(-1760, -2624)
+position = Vector2(-286, -186)
 
 [node name="appleTree30" parent="props/navRegion/farm-props/trees" instance=ExtResource("35_hq6as")]
 position = Vector2(-1876, -2895)

@@ -1,4 +1,7 @@
 {
+	"sink": {
+		"empty-glass": "glass-water"
+	},
 	"juicer": {
 		"apple": "apple-juice",
 		"banana": "banana-juice",

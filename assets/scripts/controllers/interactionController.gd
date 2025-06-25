@@ -24,6 +24,7 @@ signal open_crafting_menu(crafting: CraftingBase)
 signal open_storage_menu(storage: StorageHandler)
 signal open_shop_menu(shop: MarketStand)
 signal open_bar_menu(menu: BarMenu)
+signal open_recepies_menu
 
 var interacting_item: Item # костыль для того, чтобы игнорировать putArea, когда на ней Item
 var interaction_cooldown: float
@@ -80,6 +81,7 @@ func interact(item) -> void:
 func try_get_item(item: Item) -> bool:
 	if G.player.using_storage:
 		if G.player.storage_handler.can_put_item(item):
+			item.taken.emit(item)
 			item.disable()
 			G.player.storage_handler.put_item(item)
 			return true
