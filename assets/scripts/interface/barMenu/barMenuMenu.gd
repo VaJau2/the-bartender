@@ -9,7 +9,7 @@ class_name BarMenuMenu
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 
 @onready var items_parent: VBoxContainer = get_node("drinksScroll/vbox")
-@onready var receipts_parent: VBoxContainer = get_node("receiptsScroll/vbox")
+@onready var recipes_parent: VBoxContainer = get_node("receiptsScroll/vbox")
 @onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
 var temp_menu: BarMenu
@@ -31,7 +31,7 @@ func _on_open_menu(menu: BarMenu) -> void:
 	pause_menu.may_pause = true
 	movement_controller.may_move = false
 	temp_menu = menu
-	_load_receipt_items()
+	_load_recipe_items()
 	_load_menu_items()
 
 
@@ -39,18 +39,19 @@ func _on_close_pressed() -> void:
 	visible = false
 	movement_controller.may_move = true
 	for item in items_parent.get_children(): item.queue_free()
-	for item in receipts_parent.get_children(): item.queue_free()
+	for item in recipes_parent.get_children(): item.queue_free()
 	await get_tree().process_frame
 	pause_menu.may_pause = true
 
 
-func _load_receipt_items() -> void:
-	var receipt_items = temp_menu.get_receipt_items()
+func _load_recipe_items() -> void:
+	var receipt_items = temp_menu.get_recipe_items()
 	for item in receipt_items:
 		if temp_menu.has_item(item): continue
+		if !G.game_manager.knowed_recipes.has(item): continue
 		
 		var menu_item: ReceiptBarMenuItem = drink_receipt_item.instantiate()
-		receipts_parent.add_child(menu_item)
+		recipes_parent.add_child(menu_item)
 		menu_item.set_code(item)
 		menu_item.on_click.connect(_on_receipt_item_click)
 
@@ -77,5 +78,5 @@ func _on_menu_item_click(clicked_drink: BarDrinkMenuItem) -> void:
 	temp_menu.remove_item(clicked_drink.item)
 	clicked_drink.queue_free()
 	
-	for item in receipts_parent.get_children(): item.queue_free()
-	_load_receipt_items()
+	for item in recipes_parent.get_children(): item.queue_free()
+	_load_recipe_items()

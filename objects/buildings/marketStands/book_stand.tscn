@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqpxt4kyx6bx1"]
+
+[ext_resource type="PackedScene" uid="uid://ckdwwp3um3c5l" path="res://objects/buildings/marketStands/market_stand.tscn" id="1_eyxy1"]
+[ext_resource type="Texture2D" uid="uid://coh8o8lgoqmpb" path="res://assets/sprites/buildings/town/market_assets.png" id="2_v5usu"]
+
+[node name="bookStand" instance=ExtResource("1_eyxy1")]
+
+[node name="sprite" parent="." index="1"]
+region_rect = Rect2(268.709, 7.8208, 84.1409, 95.7399)
+
+[node name="sign" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, -46)
+texture = ExtResource("2_v5usu")
+region_enabled = true
+region_rect = Rect2(366.717, 36.273, 15.4352, 17.5434)
+
+[node name="book" type="Sprite2D" parent="." index="3"]
+position = Vector2(25, -11)
+texture = ExtResource("2_v5usu")
+region_enabled = true
+region_rect = Rect2(36.9072, 298.497, 19.8564, 21.8708)
+
+[node name="book2" type="Sprite2D" parent="." index="4"]
+position = Vector2(11, -11)
+texture = ExtResource("2_v5usu")
+region_enabled = true
+region_rect = Rect2(36.9072, 298.497, 19.8564, 21.8708)

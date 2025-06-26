@@ -35,6 +35,9 @@
 	"recipes": {
 		"header": "Рецепты"
 	},
+	"recipe_opened": {
+		"header": "Открыт рецепт!"
+	},
 	"bar_menu": {
 		"header": "Меню бара",
 		"drinks": "Напитки",

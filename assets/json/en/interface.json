@@ -35,6 +35,9 @@
 	"recipes": {
 		"header": "Recipes"
 	},
+	"recipe_opened": {
+		"header": "Recipe opened!"
+	},
 	"bar_menu": {
 		"header": "Bar menu",
 		"drinks": "Drinks",

@@ -196,6 +196,10 @@
 	"mailpost": {
 		"name": "Mail post"
 	},
+	"recipes-shop": {
+		"name": "Recipes shop"
+	},
+	
 	"menu": {
 		"name": "Menu"
 	},

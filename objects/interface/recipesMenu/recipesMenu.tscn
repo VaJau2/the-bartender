@@ -27,8 +27,8 @@ code = "recipes.header"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="recipesMenu" type="Panel"]
-offset_right = 376.0
-offset_bottom = 272.0
+offset_right = 448.0
+offset_bottom = 320.0
 theme = ExtResource("1_0ddd0")
 script = ExtResource("2_0t0aj")
 recipe_prefab = ExtResource("2_d61e2")
@@ -80,6 +80,7 @@ text = "close"
 
 [node name="hint" type="Panel" parent="." groups=["item_hint"]]
 visible = false
+layout_mode = 0
 offset_right = 216.0
 offset_bottom = 72.0
 mouse_filter = 1
@@ -108,6 +109,7 @@ offset_top = 24.0
 offset_right = 56.0
 offset_bottom = 64.0
 texture = ExtResource("5_ko32n")
+stretch_mode = 5
 
 [node name="+" type="Label" parent="hint"]
 layout_mode = 0
@@ -124,6 +126,7 @@ offset_top = 24.0
 offset_right = 120.0
 offset_bottom = 64.0
 texture = ExtResource("6_vkfu8")
+stretch_mode = 5
 
 [node name="=" type="Label" parent="hint"]
 layout_mode = 0
@@ -140,6 +143,7 @@ offset_top = 24.0
 offset_right = 200.0
 offset_bottom = 64.0
 texture = ExtResource("7_xjwmp")
+stretch_mode = 5
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("4_ko32n")

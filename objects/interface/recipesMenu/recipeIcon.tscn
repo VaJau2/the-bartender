@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://4suqi3ljxrto" path="res://assets/scripts/interface/recipes/recipeIcon.gd" id="2_wre7c"]
 
 [node name="recipe" type="TextureRect"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(32, 32)
 texture = ExtResource("1_lsmi2")
 script = ExtResource("2_wre7c")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=32 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="PackedScene" uid="uid://b0vda7f1r2ivw" path="res://objects/interface/itemIcon.tscn" id="3_2dkr1"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="11_oxl46"]
 [ext_resource type="Script" uid="uid://b5ch322cr0q0e" path="res://assets/scripts/interface/timeClock.gd" id="13_11rc7"]
 [ext_resource type="PackedScene" uid="uid://b4hl7qvavoi52" path="res://objects/interface/barMenu/barMenuMenu.tscn" id="13_qawhh"]
+[ext_resource type="Texture2D" uid="uid://b6u70blr3nx0q" path="res://assets/sprites/items/cider.png" id="20_153si"]
+[ext_resource type="Script" uid="uid://d4iiiwm7dyu8k" path="res://assets/scripts/interface/recipeOpenedHint.gd" id="20_vdm2n"]
 
 [sub_resource type="GDScript" id="GDScript_1mtbf"]
 script/source = "extends Label
@@ -39,6 +41,73 @@ script = ExtResource("11_oxl46")
 node_path = NodePath("../daysLeftLabel")
 code = "money.days_left"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdm2n"]
+font_size = 17
+outline_size = 2
+outline_color = Color(0.661364, 0.27996, 0.266865, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fe67l"]
+
+[sub_resource type="Resource" id="Resource_153si"]
+script = ExtResource("11_oxl46")
+node_path = NodePath("../header")
+code = "recipe_opened.header"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Animation" id="Animation_vdm2n"]
+resource_name = "show"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 704), Vector2(16, 576)]
+}
+
+[sub_resource type="Animation" id="Animation_fe67l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 704)]
+}
+
+[sub_resource type="Animation" id="Animation_oc68s"]
+resource_name = "hide"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 576), Vector2(16, 704)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ndcw"]
+_data = {
+&"RESET": SubResource("Animation_fe67l"),
+&"hide": SubResource("Animation_oc68s"),
+&"show": SubResource("Animation_vdm2n")
+}
 
 [node name="interface" type="Control"]
 layout_mode = 3
@@ -315,6 +384,68 @@ layout_mode = 0
 offset_right = 128.0
 offset_bottom = 24.0
 mouse_filter = 1
+
+[node name="recipeOpened" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 312.0
+offset_bottom = 112.0
+grow_vertical = 0
+script = ExtResource("20_vdm2n")
+metadata/_edit_group_ = true
+
+[node name="header" type="Label" parent="recipeOpened"]
+modulate = Color(0.94692, 0.796122, 0.758937, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 4.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Открыт рецепт:"
+label_settings = SubResource("LabelSettings_vdm2n")
+vertical_alignment = 1
+
+[node name="item" type="Label" parent="recipeOpened"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Сидор"
+label_settings = SubResource("LabelSettings_fe67l")
+
+[node name="icon" type="TextureRect" parent="recipeOpened"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -20.0
+offset_right = 43.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("20_153si")
+
+[node name="translate" type="Node" parent="recipeOpened"]
+script = ExtResource("10_wyfr1")
+nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_153si")])
+
+[node name="anim" type="AnimationPlayer" parent="recipeOpened"]
+libraries = {
+&"": SubResource("AnimationLibrary_4ndcw")
+}
 
 [connection signal="pressed" from="recipesIcon" to="recipesIcon" method="_on_pressed"]
 [connection signal="pressed" from="bagIcon" to="bagIcon" method="_on_pressed"]

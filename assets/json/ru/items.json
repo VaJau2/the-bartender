@@ -196,6 +196,10 @@
 	"mailpost": {
 		"name": "Почта"
 	},
+	"recipes-shop": {
+		"name": "Магазин рецептов"
+	},
+	
 	"menu": {
 		"name": "Меню"
 	},

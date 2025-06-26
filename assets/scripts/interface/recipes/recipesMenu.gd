@@ -11,8 +11,12 @@ class_name RecipesMenu
 
 @onready var recipes_parent: GridContainer = get_node("scroll/vbox")
 
+@onready var sink_icon: Texture = preload("res://assets/sprites/props/furn/sink.png")
+@onready var coffee_icon: Texture = preload("res://assets/sprites/props/furn/Coffee Machine.png")
+@onready var juicer_icon: Texture = preload("res://assets/sprites/props/furn/juicer.png")
 
-signal show_hint(code: String)
+
+signal show_hint(data: RecipeData)
 signal hide_hint
 
 
@@ -24,14 +28,19 @@ func _ready() -> void:
 	
 	for category in recipes:
 		for item_data in recipes[category]:
-			var item_code = ""
+			var recipe_data = RecipeData.new()
+			
 			if category == "tool":
-				item_code = item_data.result
-			else: 
-				item_code = recipes[category][item_data]
+				recipe_data.item = item_data.item
+				recipe_data.holding_item = item_data.holding_item
+				recipe_data.result = item_data.result
+			else:
+				recipe_data.custom_item_texture = _get_category_icon(category)
+				recipe_data.holding_item = item_data
+				recipe_data.result = recipes[category][item_data]
 			
 			var recipe: RecipeIcon = recipe_prefab.instantiate()
-			recipe.set_item_code(item_code)
+			recipe.set_item_data(recipe_data)
 			recipe.menu = self
 			recipes_parent.add_child(recipe)
 
@@ -49,6 +58,9 @@ func _on_open_menu() -> void:
 		_on_close_pressed()
 		return
 	
+	for item: RecipeIcon in recipes_parent.get_children():
+		item.check_opened()
+	
 	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	visible = true
@@ -58,3 +70,11 @@ func _on_close_pressed() -> void:
 	pause_menu.may_pause = true
 	movement_controller.may_move = true
 	visible = false
+
+
+func _get_category_icon(category: String) -> Texture:
+	match category:
+		"sink": return sink_icon
+		"juicer": return juicer_icon
+		"coffee-machine": return coffee_icon
+	return null

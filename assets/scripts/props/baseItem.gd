@@ -76,6 +76,7 @@ func _try_craft_item(item1: Item, item2: Item) -> bool:
 	var result = RecepiesHandler.get_tool_result(item1.code, item2.code)
 	if result == "": return false
 	item1.code = result
+	G.game_manager.try_know_recipe.emit(result)
 	item1._ready()
 	if item1 == interaction_controller.holding_item:
 		interaction_controller.update_holding_item(item1)

@@ -79,7 +79,7 @@ func has_item(code: String) -> bool:
 	return false
 
 
-func get_receipt_items() -> Array[String]:
+func get_recipe_items() -> Array[String]:
 	var json_data = JsonParse.read("res://assets/json/data/items.json")
 	var result: Array[String] = []
 	
