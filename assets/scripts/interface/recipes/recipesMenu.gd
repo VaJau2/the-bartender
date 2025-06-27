@@ -51,6 +51,8 @@ func _process(_delta: float) -> void:
 
 
 func _on_open_menu() -> void:
+	interaction_controller.hide_item_hint.emit()
+	
 	for menu in other_menus:
 		if menu.visible: return
 	

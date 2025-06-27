@@ -2,7 +2,7 @@ extends Panel
 
 @onready var movement_controller: MovementController = G.player.movement_controller
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
-@onready var buttons_parent: GridContainer = get_node("grid")
+@onready var buttons_parent: GridContainer = get_node("scroll/grid")
 @onready var delivery_button: CheckBox = get_node("delivery")
 @onready var empty_label: Label = get_node("empty")
 @onready var header: Label = get_node("header")
@@ -32,6 +32,7 @@ func _on_open_menu(shop: MarketStand) -> void:
 	if temp_shop.hide_delivery:
 		delivery_button.visible = false
 	else:
+		delivery_button.visible = true
 		delivery_button.disabled = temp_shop.fixed_delivery
 		delivery_button.button_pressed  = temp_shop.is_delivery
 		delivery_button.text = Loc.trans("interface.shop.delivery") \

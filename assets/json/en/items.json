@@ -47,6 +47,18 @@
 	"latte": {
 		"name": "Latte"
 	},
+	"mocha-latte": {
+		"name": "Mocha latte"
+	},
+	"banana-smoothie": {
+		"name": "Banana smoothie"
+	},
+	"strawberry-smoothie": {
+		"name": "Strawberry smoothie"
+	},
+	"chocolate-milk": {
+		"name": "Chocolate milk"
+	},
 	"cola": {
 		"name": "Cola"
 	},
@@ -76,6 +88,36 @@
 	},
 	"gin": {
 		"name": "Gin"
+	},
+	"whiskey-cola": {
+		"name": "Whiskey cola"
+	},
+	"applejack": {
+		"name": "Applejack"
+	},
+	"screwdriver": {
+		"name": "Screwdriver"
+	},
+	"blood-mary": {
+		"name": "Blood Mary"
+	},
+	"mulled-wine": {
+		"name": "Mulled wine"
+	},
+	"hoofington-cream": {
+		"name": "Hoofington cream"
+	},
+	"hoofington-coffee": {
+		"name": "Hoofington coffee"
+	},
+	"vampiro": {
+		"name": "Vampiro"
+	},
+	"b-52": {
+		"name": "B-52"
+	},
+	"atomic-bomb": {
+		"name": "Atomic Bomb",
 	},
 	
 	"apple": {
@@ -114,10 +156,13 @@
 	"coffee-beans": {
 		"name": "Coffee Beans"
 	},
-	
+	"chocolate": {
+		"name": "Chocolate"
+	},
 	"milk": {
 		"name": "Milk"
 	},
+	
 	"beer-bottle": {
 		"name": "Beer"
 	},

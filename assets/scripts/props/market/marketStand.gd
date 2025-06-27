@@ -25,19 +25,14 @@ func _ready() -> void:
 		var json_data = JsonParse.read("res://assets/json/data/items.json")
 		var recipes = JsonParse.read("res://assets/json/data/recipes.json")
 		for category in recipes:
-			if category == "sink": continue
+			if category != "tool": continue
 			
 			for item_data in recipes[category]:
+				if item_data.has("hide_shop"): continue
 				var shop_item = ShopItem.new()
 				shop_item.type = Enums.ShopItemType.recipe
-				
-				if category == "tool":
-					shop_item.code = item_data.result
-					shop_item.price = 8
-				else:
-					shop_item.code = recipes[category][item_data]
-					shop_item.price = 4
-				
+				shop_item.code = item_data.result
+				shop_item.price = 8
 				shop_item.icon = load(json_data[shop_item.code].texture)
 				items.append(shop_item)
 

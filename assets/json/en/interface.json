@@ -56,7 +56,8 @@
 		"vegetable": "Vegetable",
 		"berry": "Berries",
 		"liquid": "Liquids",
-		"tool": "Tools"
+		"tool": "Tools",
+		"misc": "Misc"
 	},
 	"win": {
 		"header": "You've successfully won",

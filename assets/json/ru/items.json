@@ -47,6 +47,18 @@
 	"latte": {
 		"name": "Латте"
 	},
+	"mocha-latte": {
+		"name": "Моккачино"
+	},
+	"banana-smoothie": {
+		"name": "Банановое смузи"
+	},
+	"strawberry-smoothie": {
+		"name": "Клубничное смузи"
+	},
+	"chocolate-milk": {
+		"name": "Шоколадное молоко"
+	},
 	"cola": {
 		"name": "Кола"
 	},
@@ -114,10 +126,13 @@
 	"coffee-beans": {
 		"name": "Кофейные зёрна"
 	},
-	
 	"milk": {
 		"name": "Молоко"
 	},
+	"chocolate": {
+		"name": "Шоколад"
+	},
+	
 	"beer-bottle": {
 		"name": "Пиво"
 	},
@@ -147,6 +162,36 @@
 	},
 	"gin-bottle": {
 		"name": "Джин"
+	},
+	"whiskey-cola": {
+		"name": "Виски кола"
+	},
+	"applejack": {
+		"name": "Эпплджек"
+	},
+	"screwdriver": {
+		"name": "Отвертка"
+	},
+	"blood-mary": {
+		"name": "Кровавая Мэри"
+	},
+	"mulled-wine": {
+		"name": "Глинтвейн"
+	},
+	"hoofington-cream": {
+		"name": "Хуфингтонские сливки"
+	},
+	"hoofington-coffee": {
+		"name": "Хуфингтонское кофе"
+	},
+	"vampiro": {
+		"name": "Вампиро"
+	},
+	"b-52": {
+		"name": "Б-52"
+	},
+	"atomic-bomb": {
+		"name": "Атомная бомба",
 	},
 	
 	"knife": {

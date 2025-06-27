@@ -20,17 +20,34 @@
 		{
 			"item": "empty-glass",
 			"holding_item": "milk",
-			"result": "glass-milk"
+			"result": "glass-milk",
+			"hide_shop": 1,
 		},
 		{
 			"item": "coconut",
 			"holding_item": "knife",
-			"result": "sliced-coconut"
+			"result": "sliced-coconut",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "sliced-coconut",
 			"result": "coconut-juice"
+		},
+		{
+			"item": "banana-juice",
+			"holding_item": "milk",
+			"result": "banana-smoothie"
+		},
+		{
+			"item": "strawberry-juice",
+			"holding_item": "milk",
+			"result": "strawberry-smoothie"
+		},
+		{
+			"item": "glass-milk",
+			"holding_item": "chocolate",
+			"result": "chocolate-milk"
 		},
 		{
 			"item": "espresso",
@@ -43,54 +60,119 @@
 			"result": "latte"
 		},
 		{
+			"item": "latte",
+			"holding_item": "chocolate",
+			"result": "mocha-latte"
+		},
+		{
 			"item": "empty-glass",
 			"holding_item": "cola-bottle",
-			"result": "cola"
+			"result": "cola",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "beer-bottle",
-			"result": "beer"
+			"result": "beer",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "cider-bottle",
-			"result": "cider"
+			"result": "cider",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "vodka-bottle",
-			"result": "vodka"
+			"result": "vodka",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "whiskey-bottle",
-			"result": "whiskey"
+			"result": "whiskey",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "wine-bottle",
-			"result": "wine"
+			"result": "wine",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "tequila-bottle",
-			"result": "tequila"
+			"result": "tequila",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "rum-bottle",
-			"result": "rum"
+			"result": "rum",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "absinthe-bottle",
-			"result": "absinthe"
+			"result": "absinthe",
+			"hide_shop": 1,
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "gin-bottle",
-			"result": "gin"
+			"result": "gin",
+			"hide_shop": 1,
 		},
+		{
+			"item": "whiskey",
+			"holding_item": "cola-bottle",
+			"result": "whiskey-cola"
+		},
+		{
+			"item": "cider",
+			"holding_item": "vodka-bottle",
+			"result": "applejack"
+		},
+		{
+			"item": "orange-juice",
+			"holding_item": "vodka-bottle",
+			"result": "screwdriver"
+		},
+		{
+			"item": "tomato-juice",
+			"holding_item": "vodka-bottle",
+			"result": "blood-mary"
+		},
+		{
+			"item": "apple-juice",
+			"holding_item": "wine",
+			"result": "mulled-wine"
+		},
+		{
+			"item": "whiskey",
+			"holding_item": "milk",
+			"result": "hoofington-cream"
+		},
+		{
+			"item": "hoofington-cream",
+			"holding_item": "espresso",
+			"result": "hoofington-coffee"
+		},
+		{
+			"item": "tomato-juice",
+			"holding_item": "tequila",
+			"result": "vampiro"
+		},
+		{
+			"item": "whiskey-cola",
+			"holding_item": "applejack",
+			"result": "b-52"
+		},
+		{
+			"item": "b-52",
+			"holding_item": "hoofington-coffee",
+			"result": "atomic-bomb"
+		}
 	]
 }
