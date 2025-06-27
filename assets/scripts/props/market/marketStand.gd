@@ -11,11 +11,35 @@ class_name MarketStand
 
 @export var code: String = "shop"
 @export var items: Array[ShopItem]
+@export var load_recipes: bool
 @export var delivery_price: int = 10
 @export var fixed_delivery: bool
+@export var hide_delivery: bool
 
 var is_open: bool
 var is_delivery: bool
+
+
+func _ready() -> void:
+	if load_recipes:
+		var json_data = JsonParse.read("res://assets/json/data/items.json")
+		var recipes = JsonParse.read("res://assets/json/data/recipes.json")
+		for category in recipes:
+			if category == "sink": continue
+			
+			for item_data in recipes[category]:
+				var shop_item = ShopItem.new()
+				shop_item.type = Enums.ShopItemType.recipe
+				
+				if category == "tool":
+					shop_item.code = item_data.result
+					shop_item.price = 8
+				else:
+					shop_item.code = recipes[category][item_data]
+					shop_item.price = 4
+				
+				shop_item.icon = load(json_data[shop_item.code].texture)
+				items.append(shop_item)
 
 
 func start_trading(npc: CharacterBody2D) -> void:
@@ -31,45 +55,53 @@ func stop_trading() -> void:
 	is_open = false
 
 
-func buy_item(item: ShopItem) -> void:
+func try_buy_item(item: ShopItem) -> bool:
 	if M.money < item.price: 
 		_show_text("not_money")
-		return
+		return false
 	
-	if item.type == Enums.ShopItemType.bag:
-		if G.player.has_storage: return
-		G.player.has_storage = true
-		G.player.set_using_storage(true)
-		_show_text("success")
-		audi.stream = buy_sound
-		audi.play()
-	
-	elif item.type == Enums.ShopItemType.item:
-		var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
-		new_item.disable()
+	match item.type:
+		Enums.ShopItemType.recipe:
+			G.game_manager.try_know_recipe.emit(item.code)
+			_show_text("success")
+			audi.stream = buy_sound
+			audi.play()
 		
-		if is_delivery:
-			if M.money < item.price + delivery_price:
-				_show_text("not_money")
-				return
+		Enums.ShopItemType.bag:
+			if G.player.has_storage: return false
+			G.player.has_storage = true
+			G.player.set_using_storage(true)
+			_show_text("success")
+			audi.stream = buy_sound
+			audi.play()
+	
+		Enums.ShopItemType.item:
+			var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
+			new_item.disable()
+			
+			if is_delivery:
+				if M.money < item.price + delivery_price:
+					_show_text("not_money")
+					return false
+				else:
+					_deliver_item(new_item)
+					M.remove_money(delivery_price)
+					_show_text("success")
+					audi.stream = delivery_buy_sound
+					audi.play()
 			else:
-				_deliver_item(new_item)
-				M.remove_money(delivery_price)
-				_show_text("success")
-				audi.stream = delivery_buy_sound
-				audi.play()
-		else:
-			var get_item_result = interaction_controller.try_get_item(new_item)
-			if get_item_result:
-				_show_text("success")
-				audi.stream = buy_sound
-				audi.play()
-			else:
-				_show_text("not_space")
-				new_item.queue_free()
-				return
+				var get_item_result = interaction_controller.try_get_item(new_item)
+				if get_item_result:
+					_show_text("success")
+					audi.stream = buy_sound
+					audi.play()
+				else:
+					_show_text("not_space")
+					new_item.queue_free()
+					return false
 	
 	M.remove_money(item.price)
+	return true
 
 
 func _show_text(_code: String) -> void:

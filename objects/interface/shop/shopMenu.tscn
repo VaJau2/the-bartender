@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bohrnxbwka51t"]
+[gd_scene load_steps=10 format=3 uid="uid://bohrnxbwka51t"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_jgcyp"]
 [ext_resource type="Script" uid="uid://ovipc7k4mug7" path="res://assets/scripts/interface/shop/shopMenu.gd" id="2_rync5"]
@@ -22,9 +22,15 @@ node_path = NodePath("../close")
 code = "shop.close"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
+[sub_resource type="Resource" id="Resource_1tkwp"]
+script = ExtResource("6_1pspb")
+node_path = NodePath("../empty")
+code = "storage.empty"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
 [node name="shopMenu" type="Panel"]
 offset_right = 384.0
-offset_bottom = 256.0
+offset_bottom = 288.0
 theme = ExtResource("1_jgcyp")
 script = ExtResource("2_rync5")
 button_prefab = ExtResource("3_1tkwp")
@@ -44,6 +50,23 @@ label_settings = SubResource("LabelSettings_rync5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="empty" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = -8.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Empty
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="grid" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -52,9 +75,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -156.0
-offset_top = -80.0
+offset_top = -88.0
 offset_right = 156.0
-offset_bottom = 72.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 7
@@ -65,9 +88,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = -40.0
+offset_top = -32.0
 offset_right = 96.0
-offset_bottom = -20.0
+offset_bottom = -12.0
 grow_vertical = 0
 text = "close"
 
@@ -79,16 +102,16 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -176.0
-offset_top = -40.0
+offset_top = -32.0
 offset_right = -29.0
-offset_bottom = -16.0
+offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "delivery (+10 bit)"
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("5_ielyl")
-nodes = Array[ExtResource("6_1pspb")]([SubResource("Resource_234wi"), SubResource("Resource_7xxgi")])
+nodes = Array[ExtResource("6_1pspb")]([SubResource("Resource_234wi"), SubResource("Resource_7xxgi"), SubResource("Resource_1tkwp")])
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
 [connection signal="toggled" from="delivery" to="." method="_on_delivery_toggled"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=133 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -68,7 +68,6 @@
 [ext_resource type="PackedScene" uid="uid://fgpblr75kert" path="res://objects/props/plants/bush2.tscn" id="43_oa6sj"]
 [ext_resource type="PackedScene" uid="uid://3mwjuv02mmvb" path="res://objects/props/plants/carrot_plant.tscn" id="44_0f1tp"]
 [ext_resource type="PackedScene" uid="uid://cqpxt4kyx6bx1" path="res://objects/buildings/marketStands/book_stand.tscn" id="44_4pegn"]
-[ext_resource type="Texture2D" uid="uid://caesb61d5f7hg" path="res://assets/sprites/interface/book_icon/book_icon.png" id="45_iarty"]
 [ext_resource type="Texture2D" uid="uid://c221h8oh71co5" path="res://assets/sprites/buildings/town/mail_sign.png" id="47_gia1l"]
 [ext_resource type="PackedScene" uid="uid://bfcgmnrkxurab" path="res://objects/buildings/marketStands/mailpost_stand.tscn" id="47_vwcyu"]
 [ext_resource type="PackedScene" uid="uid://do7flv2k02fwo" path="res://objects/interface/interface.tscn" id="48_oa6sj"]
@@ -307,14 +306,6 @@ code = "bag"
 type = 1
 icon = ExtResource("38_lfilp")
 price = 15
-metadata/_custom_type_script = "uid://dcywvgx0phtap"
-
-[sub_resource type="Resource" id="Resource_p6l88"]
-script = ExtResource("21_0qimb")
-code = "orange"
-type = 0
-icon = ExtResource("45_iarty")
-price = 1
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_4pegn"]
@@ -1675,7 +1666,9 @@ region_rect = Rect2(367.379, 16.5539, 15.194, 15.1296)
 [node name="bookStand" parent="props/navRegion/market-props/stands" instance=ExtResource("44_4pegn")]
 position = Vector2(510, -21)
 code = "recipes-shop"
-items = Array[ExtResource("21_0qimb")]([SubResource("Resource_p6l88")])
+load_recipes = true
+delivery_price = 0
+hide_delivery = true
 
 [node name="town-props" type="Node2D" parent="props/navRegion"]
 y_sort_enabled = true

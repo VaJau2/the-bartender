@@ -27,5 +27,6 @@ enum StorageType {
 
 enum ShopItemType {
 	item,
-	bag
+	bag,
+	recipe
 }
