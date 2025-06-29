@@ -2,6 +2,8 @@ extends StaticBody2D
 
 class_name MarketStand
 
+const RECIPE_COST: int = 20
+
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var interaction: MarketStandInteraction = get_node("interaction")
 @onready var audi: AudioStreamPlayer2D = get_node("audi")
@@ -32,7 +34,7 @@ func _ready() -> void:
 				var shop_item = ShopItem.new()
 				shop_item.type = Enums.ShopItemType.recipe
 				shop_item.code = item_data.result
-				shop_item.price = 8
+				shop_item.price = RECIPE_COST
 				shop_item.icon = load(json_data[shop_item.code].texture)
 				items.append(shop_item)
 
@@ -107,6 +109,13 @@ func _show_text(_code: String) -> void:
 func _deliver_item(item: Item) -> void:
 	var storages = get_tree().get_nodes_in_group("bar_storage")
 	for storage: StorageHandler in storages:
-		if !item.needs_fridge and storage.storage_type == Enums.StorageType.fridge: continue
-		if item.needs_fridge and storage.storage_type != Enums.StorageType.fridge: continue
+		var storage_type = storage.storage_type
+		var glass_locker = item.category == "liquid"
+		var needs_fridge = item.needs_fridge
+		
+		if needs_fridge and storage_type != Enums.StorageType.fridge: continue
+		if !needs_fridge and storage_type == Enums.StorageType.fridge: continue
+		
+		if glass_locker and storage_type != Enums.StorageType.drinksLocker: continue
+		if !glass_locker and storage_type == Enums.StorageType.drinksLocker: continue
 		storage.put_item(item)

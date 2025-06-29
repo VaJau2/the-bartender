@@ -441,7 +441,6 @@
 		"texture": "assets/sprites/items/beer-bottle.png",
 		"weight": 1,
 		"limit": 4,
-		"need_fridge": 1
 	},
 	"cola-bottle": {
 		"type": "tool",
@@ -449,7 +448,6 @@
 		"texture": "assets/sprites/items/cola-bottle.png",
 		"weight": 1,
 		"limit": 3,
-		"need_fridge": 1
 	},
 	"cider-bottle": {
 		"type": "tool",
@@ -457,7 +455,6 @@
 		"texture": "assets/sprites/items/cider-bottle.png",
 		"weight": 1,
 		"limit": 4,
-		"need_fridge": 1
 	},
 	"vodka-bottle": {
 		"type": "tool",
@@ -465,7 +462,6 @@
 		"texture": "assets/sprites/items/vodka-bottle.png",
 		"weight": 1,
 		"limit": 6,
-		"need_fridge": 1
 	},
 	"whiskey-bottle": {
 		"type": "tool",
@@ -473,7 +469,6 @@
 		"texture": "assets/sprites/items/whiskey-bottle.png",
 		"weight": 1,
 		"limit": 4,
-		"need_fridge": 1
 	},
 	"wine-bottle": {
 		"type": "tool",
@@ -481,7 +476,6 @@
 		"texture": "assets/sprites/items/wine-bottle.png",
 		"weight": 1,
 		"limit": 5,
-		"need_fridge": 1
 	},
 	"tequila-bottle": {
 		"type": "tool",
@@ -489,7 +483,6 @@
 		"texture": "assets/sprites/items/tequila-bottle.png",
 		"weight": 1,
 		"limit": 7,
-		"need_fridge": 1
 	},
 	"rum-bottle": {
 		"type": "tool",
@@ -497,7 +490,6 @@
 		"texture": "assets/sprites/items/rum-bottle.png",
 		"weight": 1,
 		"limit": 5,
-		"need_fridge": 1
 	},
 	"absinthe-bottle": {
 		"type": "tool",
@@ -505,7 +497,6 @@
 		"texture": "assets/sprites/items/absinthe-bottle.png",
 		"weight": 1,
 		"limit": 6,
-		"need_fridge": 1
 	},
 	"gin-bottle": {
 		"type": "tool",
@@ -513,6 +504,5 @@
 		"texture": "assets/sprites/items/gin-bottle.png",
 		"weight": 1,
 		"limit": 4,
-		"need_fridge": 1
 	},
 }

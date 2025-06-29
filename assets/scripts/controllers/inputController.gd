@@ -15,12 +15,14 @@ func _ready() -> void:
 
 
 func _on_start_running() -> void:
+	if movement_controller.current_state.name == "drunk": return
 	movement_controller.load_state("run")
 
 
 func _on_stop_running() -> void:
+	if movement_controller.current_state.name == "drunk": return
 	movement_controller.load_state("walk")
-	
+
 
 func _physics_process(_delta: float) -> void:
 	if input_handler.get_dir().length() > 0:

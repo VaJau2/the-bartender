@@ -45,7 +45,7 @@ func _on_open_menu(storage: StorageHandler) -> void:
 	weight_parent.visible = storage.weight > 0
 	if weight_parent.visible:
 		weight_bar.max_value = storage.weight
-		_update_weight()
+		weight_bar.set_weight(temp_storage.get_items_weight())
 	
 	empty_label.visible = storage.items.is_empty()
 	if storage.items.is_empty():
@@ -74,7 +74,7 @@ func _on_close_pressed() -> void:
 func _sort_items(items: Array) -> Dictionary:
 	var result = {} 
 	
-	items.sort_custom(func(a: StorageItem, b: StorageItem): return a.category > b.category)
+	items.sort_custom(func(a: StorageItem, b: StorageItem): return a.category + a.code > b.category + b.code)
 	var categories_count = {}
 	
 	for item: StorageItem in items:
@@ -104,10 +104,15 @@ func _create_item_button(item_data: Dictionary, create_category: bool) -> void:
 		categories_codes.erase(item.category)
 		
 	var button: StorageItemButton = button_prefab.instantiate()
+	
+	var json_data = JsonParse.read("res://assets/json/data/items.json")
+	button.set_icon(load(json_data[item.code].texture))
+	
 	button.item = item
 	button.text = Loc.trans("items." + item.code + ".name")
 	if item_data.count > 1:
 		button.text += " x" + str(item_data.count)
+		
 	buttons_parent.add_child(button)
 	button.on_click.connect(_on_item_button_click)
 
@@ -124,7 +129,3 @@ func _create_category(code: String) -> void:
 	label.text = Loc.trans("interface.categories." + code)
 	buttons_parent.add_child(label)
 	buttons_parent.add_child(HSeparator.new())
-
-
-func _update_weight() -> void:
-	weight_bar.value = temp_storage.get_items_weight()

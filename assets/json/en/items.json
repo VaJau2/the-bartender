@@ -216,6 +216,9 @@
 	"glass-locker": {
 		"name": "Glass cabinet"
 	},
+	"drinks-locker": {
+		"name": "Drinks locker"
+	},
 	"lockers": {
 		"name": "Lockers"
 	},

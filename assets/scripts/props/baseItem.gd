@@ -48,12 +48,16 @@ func disable() -> void:
 
 
 func on_mouse_entered() -> void:
-	if interaction_controller.holding_item != null: return
-	interaction_controller.show_item_hint.emit(self)
+	if interaction_controller.holding_item != null: 
+		if _may_show_craft_hint(interaction_controller.holding_item):
+			interaction_controller.show_craft_hint.emit()
+	else:
+		interaction_controller.show_item_hint.emit(self)
 
 
 func on_mouse_exited() -> void:
 	interaction_controller.hide_item_hint.emit()
+	interaction_controller.hide_craft_hint.emit()
 
 
 func get_limit_percent() -> String:
@@ -61,6 +65,8 @@ func get_limit_percent() -> String:
 
 
 func interact() -> void:
+	interaction_controller.hide_craft_hint.emit()
+	
 	if interaction_controller.try_get_item(self):
 		interaction_controller.hide_item_hint.emit()
 		return
@@ -91,6 +97,15 @@ func _try_craft_item(item1: Item, item2: Item) -> bool:
 		item2.queue_free()
 	
 	return true
+
+
+func _may_show_craft_hint(holding_item: Item) -> bool:
+	if RecepiesHandler.get_tool_result(code, holding_item.code) != "":
+		return true
+	if RecepiesHandler.get_tool_result(holding_item.code, code) != "":
+		return true
+	return false
+
 
 func _load_icon() -> void:
 	var texture_path = item_data.texture

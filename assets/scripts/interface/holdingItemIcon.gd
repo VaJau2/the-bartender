@@ -1,9 +1,9 @@
 extends Panel
 
-
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var icon: TextureRect = get_node("icon")
 @onready var put_hint: TextureRect = get_node("put-hint")
+@onready var craft_hint: Control = get_node("craft-hint")
 
 
 func _ready() -> void:
@@ -11,6 +11,8 @@ func _ready() -> void:
 	interaction_controller.clear_item.connect(_on_clear_item)
 	interaction_controller.show_put_hint.connect(_on_show_put_hint)
 	interaction_controller.hide_put_hint.connect(_on_hide_put_hint)
+	interaction_controller.show_craft_hint.connect(_on_show_craft_hint)
+	interaction_controller.hide_craft_hint.connect(_on_hide_craft_hint)
 
 
 func _on_show_put_hint() -> void:
@@ -28,3 +30,11 @@ func _on_pickup_item(item: Item) -> void:
 func _on_clear_item() -> void:
 	icon.texture = null
 	put_hint.visible = false
+
+
+func _on_show_craft_hint() -> void:
+	craft_hint.visible = true
+
+
+func _on_hide_craft_hint() -> void:
+	craft_hint.visible = false

@@ -772,6 +772,11 @@ position = Vector2(-2582, -1214)
 code = "pony5"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house16/door")
 
+[node name="pony6" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-2229, -1440)
+code = "fancy_pants"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house17/door")
+
 [node name="ponyGpt" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(1043, -504)
 code = "pony_gpt"
@@ -794,10 +799,11 @@ code = "derpy"
 work_place = NodePath("../../props/navRegion/town-props/houses/house5/mailpostStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house5/door")
 
-[node name="twilight" parent="ponies" node_paths=PackedStringArray("work_place") instance=ExtResource("9_0qimb")]
+[node name="twilight" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-43, -1459)
 code = "twilight"
 work_place = NodePath("../../props/navRegion/market-props/stands/bookStand")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
 
 [node name="props" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1707,6 +1713,9 @@ position = Vector2(-11, 60)
 [node name="house4" parent="props/navRegion/town-props/houses" instance=ExtResource("22_ebg2g")]
 position = Vector2(-33, -46)
 
+[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house4"]
+position = Vector2(10, 58)
+
 [node name="house14" parent="props/navRegion/town-props/houses" instance=ExtResource("22_ebg2g")]
 position = Vector2(-333, 139)
 
@@ -1790,6 +1799,9 @@ position = Vector2(-42, 60)
 
 [node name="house17" parent="props/navRegion/town-props/houses" instance=ExtResource("29_gsxep")]
 position = Vector2(-1205, -143)
+
+[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house17"]
+position = Vector2(-40, 62)
 
 [node name="fountain" parent="props/navRegion/town-props" instance=ExtResource("30_v0vrg")]
 position = Vector2(-1539, -69)

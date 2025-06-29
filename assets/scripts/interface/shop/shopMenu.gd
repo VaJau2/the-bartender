@@ -18,6 +18,12 @@ func _ready() -> void:
 	interaction_controller.close_menu.connect(_on_close_pressed)
 
 
+func _process(_delta: float) -> void:
+	if !visible: return
+	if Input.is_action_just_pressed("ui_cancel"):
+		_on_close_pressed()
+
+
 func _on_open_menu(shop: MarketStand) -> void:
 	if visible:
 		_on_close_pressed()
@@ -40,6 +46,9 @@ func _on_open_menu(shop: MarketStand) -> void:
 			+ Loc.get_plural(temp_shop.delivery_price, "bits") + ")"
 	
 	for item in temp_shop.items:
+		if item.type == Enums.ShopItemType.bag:
+			if G.player.has_storage: 
+				continue
 		if item.type == Enums.ShopItemType.recipe:
 			if G.game_manager.knowed_recipes.has(item.code):
 				continue
@@ -58,7 +67,7 @@ func _on_open_menu(shop: MarketStand) -> void:
 func _on_button_click(item: ShopItem) -> void:
 	var result = temp_shop.try_buy_item(item)
 	if result:
-		if item.type == Enums.ShopItemType.recipe:
+		if item.type == Enums.ShopItemType.bag or item.type == Enums.ShopItemType.recipe:
 			for button in buttons_parent.get_children():
 				if button.item == item:
 					button.queue_free()

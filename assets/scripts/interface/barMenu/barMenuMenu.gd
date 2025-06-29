@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 
 func _on_open_menu(menu: BarMenu) -> void:
 	visible = true
-	pause_menu.may_pause = true
+	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	temp_menu = menu
 	_load_recipe_items()

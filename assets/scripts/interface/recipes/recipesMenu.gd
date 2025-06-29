@@ -48,6 +48,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_recepies"):
 		_on_open_menu()
+	
+	if !visible: return
+	if Input.is_action_just_pressed("ui_cancel"):
+		_on_close_pressed()
 
 
 func _on_open_menu() -> void:
@@ -62,16 +66,18 @@ func _on_open_menu() -> void:
 	
 	for item: RecipeIcon in recipes_parent.get_children():
 		item.check_opened()
-	
+
 	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	visible = true
 
 
 func _on_close_pressed() -> void:
-	pause_menu.may_pause = true
 	movement_controller.may_move = true
 	visible = false
+	
+	await get_tree().process_frame
+	pause_menu.may_pause = true
 
 
 func _get_category_icon(category: String) -> Texture:

@@ -4,6 +4,7 @@ class_name StorageItemButton
 
 var item: StorageItem
 
+
 signal on_click(item: StorageItem)
 
 
@@ -13,3 +14,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	on_click.emit(item)
+
+
+func set_icon(texture: Texture) -> void:
+	get_node("icon").texture = texture

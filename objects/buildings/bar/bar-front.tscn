@@ -1,12 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtgfl4038lfdi"]
+[gd_scene load_steps=14 format=3 uid="uid://dtgfl4038lfdi"]
 
 [ext_resource type="Texture2D" uid="uid://b70di15i7pkoa" path="res://assets/sprites/buildings/bar/bar-front.png" id="1_jxwi2"]
+[ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/bar/storageArea.gd" id="2_6h332"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_a02bt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_xyso0"]
 [ext_resource type="PackedScene" uid="uid://brqbgo141gdix" path="res://objects/props/furn/radio.tscn" id="4_7vtbw"]
+[ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storage/storageHandler.gd" id="4_36lme"]
 [ext_resource type="Texture2D" uid="uid://c0nxhoacik726" path="res://assets/sprites/buildings/bar/girlanda.png" id="5_thfa3"]
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="6_grxcm"]
 [ext_resource type="Script" uid="uid://b6jatwgmnlu7x" path="res://assets/scripts/handlers/time/timeLight.gd" id="7_7nvx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc8bf"]
+size = Vector2(39, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5ixf"]
 size = Vector2(282, 42)
@@ -23,6 +28,28 @@ size = Vector2(156, 21)
 position = Vector2(0, -30)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_jxwi2")
+
+[node name="storageArea" type="Area2D" parent="."]
+position = Vector2(-113, -35)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_6h332")
+
+[node name="shape" type="CollisionShape2D" parent="storageArea"]
+position = Vector2(-0.5, -9.5)
+shape = SubResource("RectangleShape2D_gc8bf")
+
+[node name="interactionHandler" type="Node" parent="storageArea"]
+script = ExtResource("3_xyso0")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
+max_distance = 500.0
+
+[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area") groups=["bar_storage"]]
+script = ExtResource("4_36lme")
+storage_type = 3
+area = NodePath("..")
+code = "drinks-locker"
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -3)

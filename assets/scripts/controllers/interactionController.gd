@@ -26,6 +26,9 @@ signal open_shop_menu(shop: MarketStand)
 signal open_bar_menu(menu: BarMenu)
 signal open_recepies_menu
 
+signal show_craft_hint
+signal hide_craft_hint
+
 var interacting_item: Item # костыль для того, чтобы игнорировать putArea, когда на ней Item
 var interaction_cooldown: float
 var holding_item: Item
@@ -34,6 +37,9 @@ var holding_item: Item
 func _process(delta: float) -> void:
 	if interaction_cooldown > 0:
 		interaction_cooldown -= delta
+	
+	if holding_item != null and Input.is_action_just_pressed("ui_drop"):
+		drop_item()
 
 
 func update_holding_item(item: Item) -> void:
@@ -93,3 +99,17 @@ func try_get_item(item: Item) -> bool:
 		return true
 	
 	return false
+
+
+func drop_item() -> void:
+	holding_item.enable()
+	holding_item.get_parent().remove_child(holding_item)
+	get_node("/root/main").add_child(holding_item)
+	holding_item.global_position = get_parent().global_position
+	holding_item.moving.set_velocity(Vector2(_rand_speed(), _rand_speed()))
+	update_holding_item(null)
+
+
+func _rand_speed() -> float:
+	var speed = randf_range(40, 60)
+	return speed if randf() > 0.5 else -speed

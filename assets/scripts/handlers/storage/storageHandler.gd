@@ -82,10 +82,15 @@ func _on_move_items_to_bag() -> void:
 	var json_data = JsonParse.read("res://assets/json/data/items.json")
 	
 	for item: StorageItem in G.player.storage_handler.items:
+		var glass_locker = json_data[item.code].category == "liquid"
 		var needs_fridge = json_data[item.code].has("need_fridge")
 		
 		if needs_fridge and storage_type != Enums.StorageType.fridge: continue
 		if !needs_fridge and storage_type == Enums.StorageType.fridge: continue
+		
+		if glass_locker and storage_type != Enums.StorageType.drinksLocker: continue
+		if !glass_locker and storage_type == Enums.StorageType.drinksLocker: continue
+		
 		items_moved.append(item)
 		items.append(item)
 	

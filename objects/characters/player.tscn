@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd3mnq7v4cljx"]
+[gd_scene load_steps=16 format=3 uid="uid://dd3mnq7v4cljx"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_h3hc8"]
 [ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player.png" id="2_ho5yc"]
@@ -9,6 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://cc7nxo1fbw1l3" path="res://assets/audio/ui_items_takeall.wav" id="7_g87t3"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="8_m8dop"]
 [ext_resource type="Script" uid="uid://dsfagr5v63f6a" path="res://assets/scripts/characters/playerLighter.gd" id="9_m8dop"]
+[ext_resource type="Script" uid="uid://brynr11itj587" path="res://assets/scripts/characters/playerInteractionArea.gd" id="10_0xcfp"]
+[ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="10_4tsrb"]
+[ext_resource type="Script" uid="uid://dvs0d4ofhm5lm" path="res://assets/scripts/characters/npc/drunkHandler.gd" id="11_ch64r"]
+[ext_resource type="AudioStream" uid="uid://b4mjnhru82bog" path="res://assets/audio/drink.ogg" id="12_w0sbo"]
 
 [sub_resource type="GDScript" id="GDScript_s7pd4"]
 script/source = "extends Sprite2D
@@ -22,6 +26,9 @@ func _ready() -> void:
 func _on_update_using_storage(value: bool):
 	visible = value
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0sbo"]
+size = Vector2(19, 21)
 
 [node name="player" instance=ExtResource("1_h3hc8")]
 script = ExtResource("2_ssmtf")
@@ -75,3 +82,26 @@ script = ExtResource("9_m8dop")
 sprite = NodePath("../../sprite")
 pos_l = NodePath("../posL")
 pos_r = NodePath("../posR")
+
+[node name="interactionArea" type="Area2D" parent="." index="13" node_paths=PackedStringArray("drunk_handler", "interaction_controller")]
+collision_layer = 2
+collision_mask = 0
+monitorable = false
+script = ExtResource("10_0xcfp")
+drunk_handler = NodePath("../drunkHandler")
+interaction_controller = NodePath("../interactionController")
+
+[node name="shape" type="CollisionShape2D" parent="interactionArea" index="0"]
+position = Vector2(-0.5, -9.5)
+shape = SubResource("RectangleShape2D_w0sbo")
+
+[node name="interactionHandler" type="Node" parent="interactionArea" index="1"]
+script = ExtResource("10_4tsrb")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="interactionArea" index="2"]
+stream = ExtResource("12_w0sbo")
+max_distance = 500.0
+
+[node name="drunkHandler" type="Node" parent="." index="14" node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("11_ch64r")
+movement_controller = NodePath("../movementController")

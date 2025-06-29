@@ -161,7 +161,7 @@
 		},
 		{
 			"item": "tomato-juice",
-			"holding_item": "tequila",
+			"holding_item": "tequila-bottle",
 			"result": "vampiro"
 		},
 		{

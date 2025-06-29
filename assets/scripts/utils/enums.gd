@@ -22,7 +22,8 @@ enum ItemType {
 enum StorageType {
 	bag,
 	fridge,
-	locker
+	locker,
+	drinksLocker
 }
 
 enum ShopItemType {

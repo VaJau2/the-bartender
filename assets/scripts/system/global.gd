@@ -2,10 +2,10 @@ extends Node
 
 class_name Global
 
-const DAYS_GOAL: int = 7
-const MONEY_GOAL: int = 1000
+const DAYS_GOAL: int = 5
+const MONEY_GOAL: int = 2000
 
-const GLASS_MAX_COUNT = 50
+const GLASS_MAX_COUNT = 150
 var glasses_count: int = 0
 
 var settings: Settings = Settings.new()

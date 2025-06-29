@@ -1,9 +1,9 @@
 extends State
 
-const WAKE_CHANCE = 0.3
+const WAKE_CHANCE = 0.4
 
-const CHECK_BAR_TIME: float = 60
-const CHECK_BAR_CHANCE: float = 0.05
+const CHECK_BAR_TIME: float = 50
+const CHECK_BAR_CHANCE: float = 0.1
 
 @onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
 @onready var bar_radio: Radio = get_tree().get_first_node_in_group("bar_radio")
@@ -47,6 +47,7 @@ func _on_came() -> void:
 
 func _on_hour_tick() -> void:
 	if !is_processing(): return
+	# нпц просыпается в утреннее время
 	if G.time.hour >= WAKE_TIME and G.time.hour < SLEEP_TIME:
 		if randf() < WAKE_CHANCE:
 			state_machine.set_state("idle")
