@@ -9,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gg33v"]
 shader = ExtResource("2_0n8ap")
-shader_parameter/lod = 1.0
+shader_parameter/lod = 3.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kqg8x"]
 font = ExtResource("1_qw6eu")

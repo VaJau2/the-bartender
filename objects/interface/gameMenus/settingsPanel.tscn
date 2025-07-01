@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://f2lpxwck6hrt"]
+[gd_scene load_steps=11 format=3 uid="uid://f2lpxwck6hrt"]
 
 [ext_resource type="Script" uid="uid://bqd16cp123gq" path="res://assets/scripts/interface/gameMenus/settingsMenu.gd" id="1_gobyd"]
-[ext_resource type="FontFile" uid="uid://dh7j8o2l35way" path="res://assets/materials/JosefinSans-Bold.ttf" id="2_upf1o"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_7q68d"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_n5rji"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qw6eu"]
-font = ExtResource("2_upf1o")
 font_size = 20
+outline_size = 1
 
 [sub_resource type="Resource" id="Resource_w51w7"]
 script = ExtResource("4_n5rji")

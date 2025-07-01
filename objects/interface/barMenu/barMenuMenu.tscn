@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4hl7qvavoi52"]
+[gd_scene load_steps=15 format=3 uid="uid://b4hl7qvavoi52"]
 
-[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_p41gu"]
 [ext_resource type="Script" uid="uid://bdt8ekx1qooxg" path="res://assets/scripts/interface/barMenu/barMenuMenu.gd" id="2_di1ju"]
 [ext_resource type="PackedScene" uid="uid://ddif36437muxt" path="res://objects/interface/barMenu/drinkItem.tscn" id="3_f5kws"]
 [ext_resource type="PackedScene" uid="uid://brkio33oocad4" path="res://objects/interface/barMenu/receiptItem.tscn" id="4_dr1h5"]
@@ -10,6 +9,15 @@
 [sub_resource type="LabelSettings" id="LabelSettings_wdmpy"]
 font_size = 18
 outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_di1ju"]
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_f5kws"]
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_dr1h5"]
+font_size = 13
 
 [sub_resource type="Resource" id="Resource_y877m"]
 script = ExtResource("6_dr1h5")
@@ -44,7 +52,6 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 [node name="barMenu" type="Panel"]
 offset_right = 512.0
 offset_bottom = 384.0
-theme = ExtResource("1_p41gu")
 script = ExtResource("2_di1ju")
 drink_receipt_item = ExtResource("4_dr1h5")
 drink_item = ExtResource("3_f5kws")
@@ -55,9 +62,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -60.0
-offset_top = 8.0
 offset_right = 60.0
-offset_bottom = 32.0
+offset_bottom = 34.0
 grow_horizontal = 2
 text = "Menu"
 label_settings = SubResource("LabelSettings_wdmpy")
@@ -79,19 +85,21 @@ text = "close"
 [node name="drinksLabel" type="Label" parent="."]
 layout_mode = 2
 offset_left = 24.0
-offset_top = 48.0
-offset_right = 72.0
-offset_bottom = 60.0
+offset_top = 40.0
+offset_right = 75.0
+offset_bottom = 63.0
 text = "Drinks"
+label_settings = SubResource("LabelSettings_di1ju")
 horizontal_alignment = 1
 
 [node name="priceLabel" type="Label" parent="."]
 layout_mode = 2
 offset_left = 168.0
-offset_top = 48.0
+offset_top = 40.0
 offset_right = 213.0
-offset_bottom = 60.0
+offset_bottom = 63.0
 text = "Price"
+label_settings = SubResource("LabelSettings_f5kws")
 horizontal_alignment = 1
 
 [node name="drinksScroll" type="ScrollContainer" parent="."]
@@ -125,10 +133,11 @@ grow_vertical = 2
 [node name="availableLabel" type="Label" parent="."]
 layout_mode = 2
 offset_left = 296.0
-offset_top = 48.0
-offset_right = 341.0
-offset_bottom = 60.0
+offset_top = 40.0
+offset_right = 367.0
+offset_bottom = 63.0
 text = "Available"
+label_settings = SubResource("LabelSettings_dr1h5")
 horizontal_alignment = 1
 
 [node name="receiptsScroll" type="ScrollContainer" parent="."]

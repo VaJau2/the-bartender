@@ -32,4 +32,4 @@ func set_sleeping(value: bool):
 	is_sleeping = value
 	G.player.movement_controller.may_move = !is_sleeping
 	G.player.movement_controller.load_state("sleep" if value else "walk")
-	Engine.time_scale = 18 if is_sleeping else 1
+	Engine.time_scale = 20 if is_sleeping else 1
