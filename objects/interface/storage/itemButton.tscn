@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk2hulhun3t45"]
+[gd_scene load_steps=3 format=3 uid="uid://bk2hulhun3t45"]
 
+[ext_resource type="Theme" uid="uid://dj0p4qf74vctf" path="res://assets/materials/small_theme.tres" id="1_dhu0g"]
 [ext_resource type="Script" uid="uid://53b37yc5h1wy" path="res://assets/scripts/interface/storage/itemButton.gd" id="1_fyq7m"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(340, 20)
 offset_right = 328.0
 offset_bottom = 31.0
+theme = ExtResource("1_dhu0g")
 script = ExtResource("1_fyq7m")
 
 [node name="icon" type="TextureRect" parent="."]

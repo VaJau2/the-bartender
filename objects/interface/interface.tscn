@@ -223,15 +223,15 @@ other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../sto
 
 [node name="recipesIcon" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -80.0
-offset_top = 164.0
+offset_top = -160.0
 offset_right = -4.0
-offset_bottom = 236.0
+offset_bottom = -88.0
 grow_horizontal = 0
 grow_vertical = 2
 texture_normal = ExtResource("6_73icx")

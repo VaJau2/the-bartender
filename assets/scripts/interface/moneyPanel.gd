@@ -9,6 +9,7 @@ var update_cooldown: float
 
 
 func _ready() -> void:
+	M._ready()
 	temp_money = M.money
 	_update_money_text()
 	M.money_updated.connect(_on_money_updated)
