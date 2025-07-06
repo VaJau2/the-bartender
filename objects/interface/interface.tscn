@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=33 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
+[ext_resource type="Theme" uid="uid://ccdfkuiy7gnf3" path="res://assets/materials/hud.tres" id="1_oc68s"]
 [ext_resource type="PackedScene" uid="uid://b0vda7f1r2ivw" path="res://objects/interface/itemIcon.tscn" id="3_2dkr1"]
 [ext_resource type="PackedScene" uid="uid://deo4bi0lfym01" path="res://objects/interface/storage/storageMenu.tscn" id="4_2dkr1"]
 [ext_resource type="PackedScene" uid="uid://ncde73ege2b2" path="res://objects/interface/craftMenu.tscn" id="4_tyci0"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bghg0muxadbts" path="res://objects/interface/recipesMenu/recipesMenu.tscn" id="6_eljf0"]
 [ext_resource type="Script" uid="uid://oi345nxxx8yq" path="res://assets/scripts/interface/bagIcon.gd" id="7_25ur3"]
 [ext_resource type="Texture2D" uid="uid://bb5yl3xrjo2w7" path="res://assets/sprites/interface/book_icon/book_icon_hover.png" id="7_eljf0"]
+[ext_resource type="PackedScene" uid="uid://dvo3xsnywhfal" path="res://objects/interface/radioMenu.tscn" id="7_fe67l"]
 [ext_resource type="Script" uid="uid://b5v785lhs3jwb" path="res://assets/scripts/interface/moneyPanel.gd" id="8_3ewrv"]
 [ext_resource type="Script" uid="uid://dsy3kdrnx5u5p" path="res://assets/scripts/interface/recipes/recipesButton.gd" id="9_2xida"]
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
@@ -32,14 +34,8 @@ func _ready() -> void:
 
 [sub_resource type="Resource" id="Resource_qawhh"]
 script = ExtResource("11_oxl46")
-node_path = NodePath("../goalLabel")
+node_path = NodePath("../../moneyPanel/goalLabel")
 code = "money.goal"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_11rc7"]
-script = ExtResource("11_oxl46")
-node_path = NodePath("../daysLeftLabel")
-code = "money.days_left"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="LabelSettings" id="LabelSettings_vdm2n"]
@@ -117,6 +113,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_oc68s")
 
 [node name="itemIcon" parent="." instance=ExtResource("3_2dkr1")]
 layout_mode = 1
@@ -125,10 +122,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -72.0
-offset_right = -14.0
-offset_bottom = -22.0
+offset_left = -66.0
+offset_top = -65.0
+offset_right = -16.0
+offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -137,9 +134,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -74.0
-offset_right = 40.0
-offset_bottom = -51.0
+offset_left = -20.0
+offset_top = -38.0
+offset_right = -2.0
+offset_bottom = -15.0
 grow_vertical = 0
 text = "G"
 horizontal_alignment = 1
@@ -221,6 +219,21 @@ grow_horizontal = 2
 grow_vertical = 2
 other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu")]
 
+[node name="radioMenu" parent="." instance=ExtResource("7_fe67l")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -52.0
+offset_right = 104.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="recipesIcon" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -228,10 +241,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -160.0
-offset_right = -4.0
-offset_bottom = -88.0
+offset_left = -79.0
+offset_top = -132.0
+offset_right = -3.0
+offset_bottom = -60.0
 grow_horizontal = 0
 grow_vertical = 2
 texture_normal = ExtResource("6_73icx")
@@ -244,10 +257,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -88.0
-offset_right = 56.0
-offset_bottom = -65.0
+offset_left = -5.0
+offset_top = -52.0
+offset_right = 11.0
+offset_bottom = -29.0
 grow_vertical = 0
 text = "R"
 horizontal_alignment = 1
@@ -259,10 +272,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -248.0
-offset_right = -16.0
-offset_bottom = -192.0
+offset_left = -71.0
+offset_top = -184.0
+offset_right = -15.0
+offset_bottom = -128.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("5_hryqi")
@@ -272,20 +285,24 @@ script = ExtResource("7_25ur3")
 
 [node name="Label" type="Label" parent="bagIcon"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = -32.0
-offset_right = 48.0
-offset_bottom = -9.0
+offset_left = 13.0
+offset_top = -22.0
+offset_right = 42.0
+offset_bottom = 1.0
 text = "Tab"
 horizontal_alignment = 1
 
 [node name="moneyPanel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.694118)
-layout_mode = 0
-offset_left = 960.0
-offset_top = 24.0
-offset_right = 1136.0
-offset_bottom = 56.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 48.0
+grow_horizontal = 0
 script = ExtResource("8_3ewrv")
 metadata/_edit_group_ = true
 
@@ -331,51 +348,24 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 128.0
+offset_left = 134.0
 offset_top = 8.0
-offset_right = 168.0
+offset_right = 175.0
 offset_bottom = 31.0
 grow_vertical = 0
 text = "0"
-horizontal_alignment = 1
 script = SubResource("GDScript_1mtbf")
-
-[node name="daysLeftLabel" type="Label" parent="moneyPanel"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 32.0
-offset_right = 128.0
-offset_bottom = 55.0
-grow_vertical = 0
-text = "Days Left:"
-horizontal_alignment = 2
-
-[node name="daysLeft" type="Label" parent="moneyPanel"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 128.0
-offset_top = 32.0
-offset_right = 168.0
-offset_bottom = 55.0
-grow_vertical = 0
-text = "7"
-horizontal_alignment = 1
-script = ExtResource("11_1mtbf")
 
 [node name="translation" type="Node" parent="moneyPanel"]
 script = ExtResource("10_wyfr1")
-nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh"), SubResource("Resource_11rc7")])
+nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh")])
 
 [node name="clock" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 24.0
+offset_top = 16.0
 offset_right = 80.0
-offset_bottom = 56.0
+offset_bottom = 48.0
 script = ExtResource("13_11rc7")
 metadata/_edit_group_ = true
 
@@ -389,6 +379,15 @@ grow_vertical = 2
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="daysLeft" type="Label" parent="clock"]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 39.0
+offset_right = 134.0
+offset_bottom = 62.0
+text = "Days left: 7"
+script = ExtResource("11_1mtbf")
 
 [node name="hint" parent="." instance=ExtResource("1_icbsn")]
 visible = false
