@@ -45,11 +45,12 @@ script = ExtResource("3_xyso0")
 [node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
 max_distance = 500.0
 
-[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area") groups=["bar_storage"]]
+[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area")]
 script = ExtResource("4_36lme")
 storage_type = 3
 area = NodePath("..")
 code = "drinks-locker"
+use_in_moving_items = false
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -3)

@@ -7,6 +7,7 @@ class_name StorageHandler
 @export var area: StorageArea
 @export var code: String
 @export var weight: int
+@export var use_in_moving_items: bool = true
 
 var items: Array[StorageItem]
 
@@ -14,7 +15,8 @@ var items: Array[StorageItem]
 func _ready() -> void:
 	if interaction_controller == null:
 		interaction_controller = G.player.interaction_controller
-	G.player.move_items_from_bag.connect(_on_move_items_to_bag)
+	if use_in_moving_items:
+		G.player.move_items_from_bag.connect(_on_move_items_to_bag)
 
 
 func put_holding_item() -> void:

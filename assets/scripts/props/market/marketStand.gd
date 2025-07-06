@@ -110,12 +110,9 @@ func _deliver_item(item: Item) -> void:
 	var storages = get_tree().get_nodes_in_group("bar_storage")
 	for storage: StorageHandler in storages:
 		var storage_type = storage.storage_type
-		var glass_locker = item.category == "liquid"
 		var needs_fridge = item.needs_fridge
 		
 		if needs_fridge and storage_type != Enums.StorageType.fridge: continue
 		if !needs_fridge and storage_type == Enums.StorageType.fridge: continue
 		
-		if glass_locker and storage_type != Enums.StorageType.drinksLocker: continue
-		if !glass_locker and storage_type == Enums.StorageType.drinksLocker: continue
 		storage.put_item(item)
