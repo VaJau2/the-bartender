@@ -1,3 +1,3 @@
 class_name Settings
 
-var music_volume: float = 0.8
+var music_volume: float = 0

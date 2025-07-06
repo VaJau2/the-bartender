@@ -20,6 +20,7 @@ signal pickup_item(item: Item)
 signal clear_item()
 
 signal close_menu()
+signal show_radio_menu()
 signal open_crafting_menu(crafting: CraftingBase)
 signal open_storage_menu(storage: StorageHandler)
 signal open_shop_menu(shop: MarketStand)

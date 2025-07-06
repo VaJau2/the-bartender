@@ -99,7 +99,7 @@
 		"texture": "assets/sprites/items/orange-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [14, 20],
+		"prices": [14, 20]
 	},
 	"espresso": {
 		"type": "glass",
@@ -107,7 +107,7 @@
 		"texture": "assets/sprites/items/espresso.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [15, 20],
+		"prices": [15, 20]
 	},
 	"cappuccino": {
 		"type": "glass",
@@ -115,7 +115,7 @@
 		"texture": "assets/sprites/items/cappuccino.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [25, 35],
+		"prices": [25, 35]
 	},
 	"latte": {
 		"type": "glass",
@@ -123,7 +123,7 @@
 		"texture": "assets/sprites/items/latte.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [35, 50],
+		"prices": [35, 50]
 	},
 	"mocha-latte": {
 		"type": "glass",
@@ -131,7 +131,7 @@
 		"texture": "assets/sprites/items/mocha.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [85, 90],
+		"prices": [85, 90]
 	},
 	"banana-smoothie": {
 		"type": "glass",
@@ -139,7 +139,7 @@
 		"texture": "assets/sprites/items/banana-smoothie.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [40, 55],
+		"prices": [40, 55]
 	},
 	"strawberry-smoothie": {
 		"type": "glass",
@@ -147,7 +147,7 @@
 		"texture": "assets/sprites/items/strawberry-smoothie.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [65, 75],
+		"prices": [65, 75]
 	},
 	"chocolate-milk": {
 		"type": "glass",
@@ -155,7 +155,7 @@
 		"texture": "assets/sprites/items/chocolate-milk.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [50, 60],
+		"prices": [50, 60]
 	},
 	"cola": {
 		"type": "glass",
@@ -163,7 +163,7 @@
 		"texture": "assets/sprites/items/cola.png",
 		"weight": 1,
 		"need_fridge": 1,
-		"prices": [5, 10],
+		"prices": [5, 10]
 	},
 	"beer": {
 		"type": "glass",
@@ -172,7 +172,7 @@
 		"weight": 2,
 		"need_fridge": 1,
 		"booze_time": 5,
-		"prices": [10, 20],
+		"prices": [10, 20]
 	},
 	"cider": {
 		"type": "glass",
@@ -181,7 +181,7 @@
 		"weight": 2,
 		"need_fridge": 1,
 		"booze_time": 4,
-		"prices": [11, 21],
+		"prices": [11, 21]
 	},
 	"vodka": {
 		"type": "glass",
@@ -190,7 +190,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 15,
-		"prices": [20, 30],
+		"prices": [20, 30]
 	},
 	"whiskey": {
 		"type": "glass",
@@ -199,7 +199,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 14,
-		"prices": [30, 45],
+		"prices": [30, 45]
 	},
 	"wine": {
 		"type": "glass",
@@ -208,7 +208,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 5,
-		"prices": [60, 80],
+		"prices": [60, 80]
 	},
 	"tequila": {
 		"type": "glass",
@@ -217,7 +217,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 18,
-		"prices": [22, 32],
+		"prices": [22, 32]
 	},
 	"rum": {
 		"type": "glass",
@@ -226,7 +226,7 @@
 		"weight": 0.3,
 		"need_fridge": 1,
 		"booze_time": 13,
-		"prices": [25, 40],
+		"prices": [25, 40]
 	},
 	"absinthe": {
 		"type": "glass",
@@ -235,7 +235,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 16,
-		"prices": [30, 42],
+		"prices": [30, 42]
 	},
 	"gin": {
 		"type": "glass",
@@ -244,7 +244,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 16,
-		"prices": [15, 25],
+		"prices": [15, 25]
 	},
 	"whiskey-cola": {
 		"type": "glass",
@@ -253,7 +253,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 50,
-		"prices": [95, 105],
+		"prices": [95, 105]
 	},
 	"applejack": {
 		"type": "glass",
@@ -262,7 +262,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 40,
-		"prices": [80, 90],
+		"prices": [80, 90]
 	},
 	"screwdriver": {
 		"type": "glass",
@@ -271,7 +271,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 40,
-		"prices": [70, 80],
+		"prices": [70, 80]
 	},
 	"blood-mary": {
 		"type": "glass",
@@ -280,7 +280,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 60,
-		"prices": [94, 105],
+		"prices": [94, 105]
 	},
 	"mulled-wine": {
 		"type": "glass",
@@ -289,7 +289,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 60,
-		"prices": [94, 105],
+		"prices": [94, 105]
 	},
 	"hoofington-cream": {
 		"type": "glass",
@@ -298,7 +298,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 30,
-		"prices": [42, 55],
+		"prices": [42, 55]
 	},
 	"hoofington-coffee": {
 		"type": "glass",
@@ -307,7 +307,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 42,
-		"prices": [75, 110],
+		"prices": [75, 110]
 	},
 	"vampiro": {
 		"type": "glass",
@@ -316,7 +316,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 50,
-		"prices": [85, 99],
+		"prices": [85, 99]
 	},
 	"b-52": {
 		"type": "glass",
@@ -325,7 +325,7 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 100,
-		"prices": [250, 300],
+		"prices": [250, 300]
 	},
 	"atomic-bomb": {
 		"type": "glass",
@@ -334,7 +334,7 @@
 		"weight": 0.4,
 		"need_fridge": 1,
 		"booze_time": 150,
-		"prices": [450, 500],
+		"prices": [450, 500]
 	},
 	
 	"apple": {
@@ -396,7 +396,7 @@
 		"type": "ingredient",
 		"category": "vegetable",
 		"texture": "assets/sprites/items/tomato.png",
-		"weight": 0.2,
+		"weight": 0.2
 	},
 	"carrot": {
 		"type": "ingredient",
@@ -409,7 +409,7 @@
 		"category": "misc",
 		"texture": "assets/sprites/items/coffee-beans.png",
 		"weight": 0.5,
-		"limit": 5,
+		"limit": 5
 	},
 	
 	"knife": {
@@ -417,7 +417,7 @@
 		"category": "tool",
 		"texture": "assets/sprites/items/knife.png",
 		"weight": 1,
-		"limit": -1,
+		"limit": -1
 	},
 	"chocolate": {
 		"type": "tool",
@@ -514,5 +514,5 @@
 		"weight": 1,
 		"limit": 4,
 		"need_fridge": 1
-	},
+	}
 }

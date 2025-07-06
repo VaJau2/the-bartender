@@ -1,4 +1,4 @@
-﻿extends Area2D
+extends Area2D
 
 class_name Radio
 
@@ -8,6 +8,7 @@ class_name Radio
 @export var noise: AudioStream
 
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
+@onready var radio_menu: RadioMenu = get_node("/root/main/menu/interface/radioMenu")
 @onready var song_player: AudioStreamPlayer2D = get_node("song")
 @onready var noise_player: AudioStreamPlayer2D = get_node("noise")
 
@@ -17,19 +18,12 @@ var song_index: int
 func _ready() -> void:
 	_randomize_songs()
 	_play_song()
-	song_player.volume_linear = 0
+	radio_menu.changed_volume.connect(_on_music_volume_changed)
 
 
 func interact() -> void:
 	interaction_controller.hide_item_hint.emit()
-	
-	if is_playing:
-		anim.play("RESET")
-	else:
-		anim.play("play")
-	
-	noise_player.stream = switch;
-	noise_player.play()
+	interaction_controller.show_radio_menu.emit()
 
 
 func on_mouse_entered() -> void:
@@ -38,6 +32,17 @@ func on_mouse_entered() -> void:
 
 func on_mouse_exited() -> void:
 	interaction_controller.hide_item_hint.emit()
+
+
+func _on_music_volume_changed() -> void:
+	if G.settings.music_volume == 0 && is_playing:
+		noise_player.stream = switch
+		noise_player.play()
+		is_playing = false
+	elif G.settings.music_volume > 0 && !is_playing:
+		noise_player.stream = switch
+		noise_player.play()
+		is_playing = true
 
 
 func _on_song_finished() -> void:
@@ -65,14 +70,10 @@ func _on_noise_finished() -> void:
 		return
 	
 	if is_playing:
-		anim.play("RESET")
-		song_player.volume_linear = 0
-		
-	else:
 		anim.play("play")
-		song_player.volume_linear = G.settings.music_volume
 		noise_player.stream = noise
 		noise_player.play()
-	
-	is_playing = !is_playing
+				
+	else:
+		anim.play("RESET")
 		

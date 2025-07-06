@@ -15,6 +15,7 @@
 	},
 	"craft": {
 		"start": "Start",
+		"replace": "Replace",
 		"cancel": "Cancel",
 		"ingredient": "Ingredient:",
 		"glass": "Glass:"
@@ -63,7 +64,7 @@
 		"header": "You've successfully won",
 		"text": "You have saved up enough money to pay off the debt for the purchase of the bar c:",
 		"statistics": "Statistics:",
-		"continue": "Continue",
+		"continue": "Continue"
 	},
 	"statistics": {
 		"drinks_sold": "Drinks sold:",
@@ -77,9 +78,9 @@
 	"lost": {
 		"header": "You've successfully lost",
 		"text": "You didn't have time to save enough money on time, and you had to sell the bar :с",
-		"continue": "Continue",
+		"continue": "Continue"
 	},
 	"plural": {
 		"bits": "bit|bits|bits"
-	},
+	}
 }
