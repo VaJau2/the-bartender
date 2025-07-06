@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceuphapxaecl3"
-path="res://.godot/imported/pony1.png-86384c944b501cf7b882eb18da605d05.ctex"
+uid="uid://7rj06yru2dpe"
+path="res://.godot/imported/carrot_top.png-55d6519abf43f22bbd335701e6893f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/pony1.png"
-dest_files=["res://.godot/imported/pony1.png-86384c944b501cf7b882eb18da605d05.ctex"]
+source_file="res://assets/sprites/characters/carrot_top.png"
+dest_files=["res://.godot/imported/carrot_top.png-55d6519abf43f22bbd335701e6893f4b.ctex"]
 
 [params]
 

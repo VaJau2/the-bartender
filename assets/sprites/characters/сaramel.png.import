@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw0iciuaqld7"
-path="res://.godot/imported/pony5.png-581ec22348a81de4ffa8877a1208da56.ctex"
+uid="uid://dxmociuu5rmcy"
+path="res://.godot/imported/сaramel.png-71c9f054e03128665b76130a7c1bce6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/pony5.png"
-dest_files=["res://.godot/imported/pony5.png-581ec22348a81de4ffa8877a1208da56.ctex"]
+source_file="res://assets/sprites/characters/сaramel.png"
+dest_files=["res://.godot/imported/сaramel.png-71c9f054e03128665b76130a7c1bce6e.ctex"]
 
 [params]
 

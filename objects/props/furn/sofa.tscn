@@ -22,4 +22,4 @@ shape = SubResource("RectangleShape2D_i0iiw")
 script = ExtResource("3_c1s3r")
 
 [node name="sleepPos" type="Node2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 9)

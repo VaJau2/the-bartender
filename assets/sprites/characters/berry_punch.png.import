@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hudktfuoc35t"
-path="res://.godot/imported/chief1.png-9be95678c00a83eebe6bd707c7d807b4.ctex"
+path="res://.godot/imported/berry_punch.png-172cd43204d776a9655b19d900985ad5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/chief1.png"
-dest_files=["res://.godot/imported/chief1.png-9be95678c00a83eebe6bd707c7d807b4.ctex"]
+source_file="res://assets/sprites/characters/berry_punch.png"
+dest_files=["res://.godot/imported/berry_punch.png-172cd43204d776a9655b19d900985ad5.ctex"]
 
 [params]
 

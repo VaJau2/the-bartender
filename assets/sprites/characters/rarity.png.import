@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqemc4vejwqko"
-path="res://.godot/imported/pony3.png-8a24ab2f9cdec8214a8481eed8c96c1a.ctex"
+uid="uid://bgkmioepq4sh6"
+path="res://.godot/imported/rarity.png-ba3e301d8ced12802ab8af1fbefdfff6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/pony3.png"
-dest_files=["res://.godot/imported/pony3.png-8a24ab2f9cdec8214a8481eed8c96c1a.ctex"]
+source_file="res://assets/sprites/characters/rarity.png"
+dest_files=["res://.godot/imported/rarity.png-ba3e301d8ced12802ab8af1fbefdfff6.ctex"]
 
 [params]
 

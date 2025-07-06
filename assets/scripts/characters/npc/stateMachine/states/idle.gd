@@ -2,8 +2,8 @@ extends State
 
 class_name IdleState
 
-const CHECK_BAR_TIME: float = 10
-const CHECK_BAR_CHANCE: float = 0.4
+const CHECK_BAR_TIME: float = 20
+const CHECK_BAR_CHANCE: float = 0.3
 
 var npc: NPC
 

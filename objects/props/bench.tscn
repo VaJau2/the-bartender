@@ -27,7 +27,7 @@ position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_hx3lh")
 
 [node name="putArea" type="Area2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-1, 0)
 collision_layer = 4
 collision_mask = 0
 collision_priority = 0.0
@@ -36,7 +36,7 @@ script = ExtResource("2_g6ijv")
 metadata/_edit_group_ = true
 
 [node name="shape" type="CollisionShape2D" parent="putArea"]
-position = Vector2(2, 0.5)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_twqa3")
 
 [node name="interactionHandler" type="Node" parent="putArea"]

@@ -137,19 +137,19 @@ position = Vector2(3, 119)
 script = ExtResource("19_j358a")
 
 [node name="1" type="Node2D" parent="queueHandler"]
-position = Vector2(1, -54)
+position = Vector2(1, -50)
 
 [node name="2" type="Node2D" parent="queueHandler"]
-position = Vector2(-44, -54)
+position = Vector2(-44, -50)
 
 [node name="3" type="Node2D" parent="queueHandler"]
-position = Vector2(-93, -53)
+position = Vector2(-93, -49)
 
 [node name="4" type="Node2D" parent="queueHandler"]
-position = Vector2(53, -54)
+position = Vector2(53, -50)
 
 [node name="5" type="Node2D" parent="queueHandler"]
-position = Vector2(99, -54)
+position = Vector2(99, -50)
 
 [connection signal="body_entered" from="working-area" to="working-area" method="_on_body_entered"]
 [connection signal="body_exited" from="working-area" to="working-area" method="_on_body_exited"]
