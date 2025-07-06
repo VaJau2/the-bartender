@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch524jl716ati"
-path="res://.godot/imported/pony2.png-42d2edf7f8cf1bdb7df53084260e30d4.ctex"
+path="res://.godot/imported/filthy_rich.png-a1819eb2cca0fed1ec3e516b75199c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/pony2.png"
-dest_files=["res://.godot/imported/pony2.png-42d2edf7f8cf1bdb7df53084260e30d4.ctex"]
+source_file="res://assets/sprites/characters/filthy_rich.png"
+dest_files=["res://.godot/imported/filthy_rich.png-a1819eb2cca0fed1ec3e516b75199c17.ctex"]
 
 [params]
 

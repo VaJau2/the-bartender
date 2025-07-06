@@ -734,48 +734,91 @@ position = Vector2(137, -28)
 [node name="ponies" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="trader1" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-300, -1460)
-code = "chief1"
-work_place = NodePath("../../props/navRegion/market-props/stands/marketStand")
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house1/door")
+[node name="appleTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-4645, -2338)
+code = "applejack"
+work_place = NodePath("../../props/navRegion/farm-props/farmMarketStand")
+sleep_place = NodePath("../../props/navRegion/farm-props/houses/house18/door")
 
-[node name="trader2" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+[node name="fruitTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-300, -1460)
+code = "berry_punch"
+work_place = NodePath("../../props/navRegion/market-props/stands/marketStand")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
+
+[node name="vegetableTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-384, -1464)
-code = "chief2"
+code = "carrot_top"
 work_place = NodePath("../../props/navRegion/market-props/stands/marketStand3")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house8/door")
 
-[node name="trader3" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+[node name="coffeeTrader" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-118, -1459)
+code = "pinkie"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house8/door")
+
+[node name="itemTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-492, -1464)
-code = "pony2"
+code = "filthy_rich"
 work_place = NodePath("../../props/navRegion/market-props/stands/marketStand5")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house2/door")
 
-[node name="pony1" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+[node name="recipesTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-43, -1459)
+code = "twilight"
+work_place = NodePath("../../props/navRegion/market-props/stands/bookStand")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house1/door")
+
+[node name="postmare" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-2552, -1560)
+code = "derpy"
+work_place = NodePath("../../props/navRegion/town-props/houses/house5/mailpostStand")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house5/door")
+
+[node name="rainbow_dash" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-2198, -1934)
+code = "rainbow_dash"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house11/door")
+
+[node name="rarity" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-1897, -1543)
+code = "rarity"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house17/door")
+
+[node name="fluttershy" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-2460, -1940)
+code = "fluttershy"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house7/door")
+
+[node name="octavia" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2102, -1626)
-code = "pony1"
+code = "octavia"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house3/door")
 
-[node name="pony3" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+[node name="vinyl" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-2582, -1214)
+code = "vinyl"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
+
+[node name="nurse" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2288, -1614)
-code = "pony3"
+code = "nurse"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house13/door")
 
-[node name="pony4" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+[node name="roseluck" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(886, -1300)
-code = "pony4"
+code = "roseluck"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
 
-[node name="pony5" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-2582, -1214)
-code = "pony5"
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house16/door")
-
-[node name="pony6" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+[node name="doctor" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2229, -1440)
-code = "fancy_pants"
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house17/door")
+code = "doctor"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
+
+[node name="caramel" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-984, -1265)
+code = "сaramel"
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house14/door")
 
 [node name="ponyGpt" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(1043, -504)
@@ -786,24 +829,6 @@ sleep_place = NodePath("../../props/navRegion/town-props/houses/house14/door")
 position = Vector2(-1988, -1212)
 code = "wonderbolt"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house15/door")
-
-[node name="applejack" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-4645, -2338)
-code = "applejack"
-work_place = NodePath("../../props/navRegion/farm-props/farmMarketStand")
-sleep_place = NodePath("../../props/navRegion/farm-props/houses/house19/door")
-
-[node name="derpy" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-2552, -1560)
-code = "derpy"
-work_place = NodePath("../../props/navRegion/town-props/houses/house5/mailpostStand")
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house5/door")
-
-[node name="twilight" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-43, -1459)
-code = "twilight"
-work_place = NodePath("../../props/navRegion/market-props/stands/bookStand")
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
 
 [node name="props" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -820,63 +845,63 @@ position = Vector2(-446, -100)
 script = ExtResource("63_e2bht")
 wait_min_time = 20.0
 wait_max_time = 60.0
-movement_state_name = "sit"
+movement_state_name = "lay"
 is_flip = true
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/beachSit1"]
-position = Vector2(2, 39)
+position = Vector2(2, 42)
 
 [node name="beachSit2" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(-68, 199)
 script = ExtResource("63_e2bht")
 wait_min_time = 20.0
 wait_max_time = 60.0
-movement_state_name = "sit"
+movement_state_name = "lay"
 is_flip = true
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/beachSit2"]
-position = Vector2(1, -30)
+position = Vector2(1, -27)
 
 [node name="beachSit3" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(676, 162)
 script = ExtResource("63_e2bht")
 wait_min_time = 20.0
 wait_max_time = 60.0
-movement_state_name = "sit"
+movement_state_name = "lay"
 is_flip = true
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/beachSit3"]
-position = Vector2(6, 40)
+position = Vector2(6, 43)
 
 [node name="beachSit4" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(1209, 299)
 script = ExtResource("63_e2bht")
 wait_min_time = 20.0
 wait_max_time = 60.0
-movement_state_name = "sit"
+movement_state_name = "lay"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/beachSit4"]
-position = Vector2(-1, -31)
+position = Vector2(-1, -28)
 
 [node name="beachSit5" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(1316, -50)
 script = ExtResource("63_e2bht")
 wait_min_time = 20.0
 wait_max_time = 60.0
-movement_state_name = "sit"
+movement_state_name = "lay"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/beachSit5"]
-position = Vector2(-3, -32)
+position = Vector2(-3, -29)
 
 [node name="beachSit6" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(2047, -185)
 script = ExtResource("63_e2bht")
 wait_min_time = 20.0
 wait_max_time = 60.0
-movement_state_name = "sit"
+movement_state_name = "lay"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/beachSit6"]
-position = Vector2(-4, -31)
+position = Vector2(-4, -28)
 
 [node name="beachSit7" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(830, -277)
@@ -996,7 +1021,7 @@ wait_max_time = 40.0
 movement_state_name = "sit"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/townSit"]
-position = Vector2(-3, -31)
+position = Vector2(-3, -29)
 
 [node name="townSit2" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(-2061, -1651)
@@ -1006,7 +1031,7 @@ wait_max_time = 40.0
 movement_state_name = "sit"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/townSit2"]
-position = Vector2(1, -31)
+position = Vector2(1, -29)
 
 [node name="townSit3" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(-1396, -1544)
@@ -1016,7 +1041,7 @@ wait_max_time = 40.0
 movement_state_name = "sit"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/townSit3"]
-position = Vector2(-3, -30)
+position = Vector2(-3, -28)
 
 [node name="townSit4" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(-755, -1286)
@@ -1026,7 +1051,7 @@ wait_max_time = 40.0
 movement_state_name = "sit"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/townSit4"]
-position = Vector2(0, -34)
+position = Vector2(0, -32)
 
 [node name="townSit5" type="Node2D" parent="props/navRegion/walkPoints" groups=["walk_point"]]
 position = Vector2(-684, -1286)
@@ -1036,7 +1061,7 @@ wait_max_time = 40.0
 movement_state_name = "sit"
 
 [node name="point" type="Node2D" parent="props/navRegion/walkPoints/townSit5"]
-position = Vector2(-3, -33)
+position = Vector2(-3, -31)
 
 [node name="bar" parent="props/navRegion" instance=ExtResource("8_8gny2")]
 position = Vector2(336, 0)
@@ -1758,6 +1783,9 @@ position = Vector2(-6, 57)
 [node name="house7" parent="props/navRegion/town-props/houses" instance=ExtResource("23_2ofn6")]
 position = Vector2(-1795, -517)
 
+[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house7"]
+position = Vector2(-8, 49)
+
 [node name="house8" parent="props/navRegion/town-props/houses" instance=ExtResource("24_xa025")]
 position = Vector2(349, -43)
 
@@ -1767,14 +1795,17 @@ position = Vector2(6, 60)
 [node name="house9" parent="props/navRegion/town-props/houses" instance=ExtResource("24_xa025")]
 position = Vector2(-230, -46)
 
+[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house9"]
+position = Vector2(10, 52)
+
 [node name="house10" parent="props/navRegion/town-props/houses" instance=ExtResource("25_36rkl")]
 position = Vector2(-428, -48)
 
 [node name="house11" parent="props/navRegion/town-props/houses" instance=ExtResource("25_36rkl")]
 position = Vector2(-1549, -521)
 
-[node name="house18" parent="props/navRegion/town-props/houses" instance=ExtResource("25_36rkl")]
-position = Vector2(-1549, -521)
+[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house11"]
+position = Vector2(10, 51)
 
 [node name="house12" parent="props/navRegion/town-props/houses" instance=ExtResource("26_fs0b5")]
 position = Vector2(-1302, -522)
@@ -2192,10 +2223,10 @@ position = Vector2(-4802, -2552)
 [node name="barn2" parent="props/navRegion/farm-props/houses" instance=ExtResource("30_g6wdg")]
 position = Vector2(-5060, -2551)
 
-[node name="house19" parent="props/navRegion/farm-props/houses" instance=ExtResource("28_e2s0e")]
+[node name="house18" parent="props/navRegion/farm-props/houses" instance=ExtResource("28_e2s0e")]
 position = Vector2(-4394, -2471)
 
-[node name="door" type="Node2D" parent="props/navRegion/farm-props/houses/house19"]
+[node name="door" type="Node2D" parent="props/navRegion/farm-props/houses/house18"]
 position = Vector2(-39, 60)
 
 [node name="trees" type="Node2D" parent="props/navRegion/farm-props"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2cd0ckro75lk"
-path="res://.godot/imported/pony4.png-d9eb1bc49b940d4719d1f1a182ab89e7.ctex"
+uid="uid://cr6rfj827lq24"
+path="res://.godot/imported/rainbow_dash.png-7d566425cd2bfc1d61a148b1483bbe60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/pony4.png"
-dest_files=["res://.godot/imported/pony4.png-d9eb1bc49b940d4719d1f1a182ab89e7.ctex"]
+source_file="res://assets/sprites/characters/rainbow_dash.png"
+dest_files=["res://.godot/imported/rainbow_dash.png-7d566425cd2bfc1d61a148b1483bbe60.ctex"]
 
 [params]
 
