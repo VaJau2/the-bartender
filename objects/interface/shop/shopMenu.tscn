@@ -3,12 +3,9 @@
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_jgcyp"]
 [ext_resource type="Script" uid="uid://ovipc7k4mug7" path="res://assets/scripts/interface/shop/shopMenu.gd" id="2_rync5"]
 [ext_resource type="PackedScene" uid="uid://bjlfik2xqyd0m" path="res://objects/interface/shop/shopButton.tscn" id="3_1tkwp"]
+[ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="4_ielyl"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="5_ielyl"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="6_1pspb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_rync5"]
-font_size = 18
-outline_size = 1
 
 [sub_resource type="Resource" id="Resource_234wi"]
 script = ExtResource("6_1pspb")
@@ -46,7 +43,7 @@ offset_right = 60.0
 offset_bottom = 34.0
 grow_horizontal = 2
 text = "Shop"
-label_settings = SubResource("LabelSettings_rync5")
+label_settings = ExtResource("4_ielyl")
 horizontal_alignment = 1
 vertical_alignment = 1
 

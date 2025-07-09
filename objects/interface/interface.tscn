@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=32 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="Theme" uid="uid://ccdfkuiy7gnf3" path="res://assets/materials/hud.tres" id="1_oc68s"]
@@ -17,10 +17,11 @@
 [ext_resource type="Script" uid="uid://dsy3kdrnx5u5p" path="res://assets/scripts/interface/recipes/recipesButton.gd" id="9_2xida"]
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
-[ext_resource type="Script" uid="uid://byqw1g5bfju7b" path="res://assets/scripts/interface/daysLeft.gd" id="11_1mtbf"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="11_oxl46"]
 [ext_resource type="Script" uid="uid://b5ch322cr0q0e" path="res://assets/scripts/interface/timeClock.gd" id="13_11rc7"]
 [ext_resource type="PackedScene" uid="uid://b4hl7qvavoi52" path="res://objects/interface/barMenu/barMenuMenu.tscn" id="13_qawhh"]
+[ext_resource type="Script" uid="uid://dmcexjiqq3ynf" path="res://assets/scripts/interface/calendar.gd" id="19_4ndcw"]
+[ext_resource type="PackedScene" uid="uid://cv8gqwgeywxfm" path="res://objects/interface/dayIcon.tscn" id="19_oc68s"]
 [ext_resource type="Texture2D" uid="uid://b6u70blr3nx0q" path="res://assets/sprites/items/cider.png" id="20_153si"]
 [ext_resource type="Script" uid="uid://d4iiiwm7dyu8k" path="res://assets/scripts/interface/recipeOpenedHint.gd" id="20_vdm2n"]
 
@@ -37,13 +38,6 @@ script = ExtResource("11_oxl46")
 node_path = NodePath("../../moneyPanel/goalLabel")
 code = "money.goal"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="LabelSettings" id="LabelSettings_vdm2n"]
-font_size = 17
-outline_size = 2
-outline_color = Color(0.661364, 0.27996, 0.266865, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_fe67l"]
 
 [sub_resource type="Resource" id="Resource_153si"]
 script = ExtResource("11_oxl46")
@@ -150,10 +144,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -104.0
+offset_left = -96.0
 offset_top = -100.0
-offset_right = 104.0
-offset_bottom = 100.0
+offset_right = 96.0
+offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -360,12 +354,59 @@ script = SubResource("GDScript_1mtbf")
 script = ExtResource("10_wyfr1")
 nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh")])
 
+[node name="calendar" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+script = ExtResource("19_4ndcw")
+
+[node name="mondey" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+
+[node name="tuesday" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 72.0
+code = "tu"
+
+[node name="wednesday" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 112.0
+code = "we"
+
+[node name="thursday" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 152.0
+code = "th"
+
+[node name="friday" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 192.0
+code = "fr"
+
+[node name="saturaday" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 232.0
+code = "sa"
+
+[node name="sunday" parent="calendar" instance=ExtResource("19_oc68s")]
+layout_mode = 0
+offset_left = 240.0
+offset_right = 272.0
+code = "su"
+
 [node name="clock" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 16.0
+offset_top = 56.0
 offset_right = 80.0
-offset_bottom = 48.0
+offset_bottom = 88.0
 script = ExtResource("13_11rc7")
 metadata/_edit_group_ = true
 
@@ -379,15 +420,6 @@ grow_vertical = 2
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="daysLeft" type="Label" parent="clock"]
-layout_mode = 1
-offset_left = 1.0
-offset_top = 39.0
-offset_right = 134.0
-offset_bottom = 62.0
-text = "Days left: 7"
-script = ExtResource("11_1mtbf")
 
 [node name="hint" parent="." instance=ExtResource("1_icbsn")]
 visible = false
@@ -411,7 +443,7 @@ script = ExtResource("20_vdm2n")
 metadata/_edit_group_ = true
 
 [node name="header" type="Label" parent="recipeOpened"]
-modulate = Color(0.94692, 0.796122, 0.758937, 1)
+modulate = Color(0.905843, 0.497936, 0.247716, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -422,7 +454,6 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Открыт рецепт:"
-label_settings = SubResource("LabelSettings_vdm2n")
 vertical_alignment = 1
 
 [node name="item" type="Label" parent="recipeOpened"]
@@ -435,7 +466,6 @@ offset_top = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Сидор"
-label_settings = SubResource("LabelSettings_fe67l")
 
 [node name="icon" type="TextureRect" parent="recipeOpened"]
 layout_mode = 1

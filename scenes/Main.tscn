@@ -2551,7 +2551,7 @@ region_enabled = true
 region_rect = Rect2(16.1601, -0.936382, 13.77, 18.5183)
 
 [node name="appleStand" parent="props/navRegion/farm-props" instance=ExtResource("19_nfivy")]
-position = Vector2(-4544, -2155)
+position = Vector2(-4544, -2158)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_8t8ul"), SubResource("Resource_1x1rp"), SubResource("Resource_ylqph"), SubResource("Resource_fcv70"), SubResource("Resource_mou0d"), SubResource("Resource_ugmlg"), SubResource("Resource_qd1pt")])
 delivery_price = 2
 

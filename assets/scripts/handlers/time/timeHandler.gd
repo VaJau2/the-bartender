@@ -4,7 +4,7 @@ class_name TimeHandler
 
 @export var hour: int
 @export var minute: int
-@export var day: int
+@export var day: int # max 7 days
 
 var minute_delta: float
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv8gqwgeywxfm"]
+
+[ext_resource type="Script" uid="uid://k7idnj6rxykn" path="res://assets/scripts/interface/dayIcon.gd" id="1_im3bi"]
+[ext_resource type="Texture2D" uid="uid://d1rld4xlqvf7p" path="res://assets/sprites/interface/X.png" id="2_kvgyg"]
+
+[node name="dayIcon" type="Panel"]
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_im3bi")
+code = "mo"
+
+[node name="label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_kvgyg")

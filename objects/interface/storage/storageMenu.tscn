@@ -1,15 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://deo4bi0lfym01"]
 
 [ext_resource type="Script" uid="uid://bbqh0uth48udr" path="res://assets/scripts/interface/storage/storageMenu.gd" id="2_dqpl8"]
+[ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="3_6ilx7"]
 [ext_resource type="PackedScene" uid="uid://bk2hulhun3t45" path="res://objects/interface/storage/itemButton.tscn" id="3_qm6x6"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_vsb81"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_schpk"]
 [ext_resource type="Script" uid="uid://dv145101viuul" path="res://assets/scripts/interface/storage/weightBar.gd" id="6_upfr7"]
 [ext_resource type="Script" uid="uid://c6iw112sre23d" path="res://assets/scripts/interface/storage/weightBarColor.gd" id="7_6ilx7"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_tpkvh"]
-font_size = 18
-outline_size = 1
 
 [sub_resource type="Resource" id="Resource_sljo8"]
 script = ExtResource("4_schpk")
@@ -73,7 +70,7 @@ offset_right = 60.0
 offset_bottom = 32.0
 grow_horizontal = 2
 text = "Storage"
-label_settings = SubResource("LabelSettings_tpkvh")
+label_settings = ExtResource("3_6ilx7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -127,7 +124,6 @@ script = ExtResource("3_vsb81")
 nodes = Array[ExtResource("4_schpk")]([SubResource("Resource_sljo8"), SubResource("Resource_bkyq0"), SubResource("Resource_qm6x6")])
 
 [node name="weight" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -162,11 +158,11 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 16.0
-offset_top = -4.0
-offset_right = 57.0
-offset_bottom = 8.0
+offset_top = -12.0
+offset_right = 55.0
+offset_bottom = 11.0
 grow_vertical = 2
 text = "Weight"
+horizontal_alignment = 2
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
