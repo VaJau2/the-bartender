@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddif36437muxt"]
 
 [ext_resource type="Script" uid="uid://cd3fw4rfy7p7a" path="res://assets/scripts/interface/barMenu/drinkItem.gd" id="1_t1rqa"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_t1rqa"]
-font_size = 13
+[ext_resource type="LabelSettings" uid="uid://kheimmpcibvt" path="res://assets/materials/regular_text_theme.tres" id="2_rc7e7"]
 
 [node name="drink" type="Panel"]
 custom_minimum_size = Vector2(200, 32)
@@ -21,7 +19,7 @@ offset_right = -50.144
 grow_horizontal = 2
 grow_vertical = 2
 text = "Drink item"
-label_settings = SubResource("LabelSettings_t1rqa")
+label_settings = ExtResource("2_rc7e7")
 vertical_alignment = 1
 
 [node name="button" type="Button" parent="."]

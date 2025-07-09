@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://brkio33oocad4"]
 
 [ext_resource type="Script" uid="uid://r482qf07oewf" path="res://assets/scripts/interface/barMenu/receiptItem.gd" id="1_oacry"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_oacry"]
-font_size = 13
+[ext_resource type="LabelSettings" uid="uid://kheimmpcibvt" path="res://assets/materials/regular_text_theme.tres" id="2_5te60"]
 
 [node name="drink" type="Panel"]
 custom_minimum_size = Vector2(200, 32)
@@ -21,7 +19,7 @@ offset_left = 0.0239983
 grow_horizontal = 2
 grow_vertical = 2
 text = "Receipt item"
-label_settings = SubResource("LabelSettings_oacry")
+label_settings = ExtResource("2_5te60")
 vertical_alignment = 1
 
 [node name="button" type="Button" parent="."]

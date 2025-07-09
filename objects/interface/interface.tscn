@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=32 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="Theme" uid="uid://ccdfkuiy7gnf3" path="res://assets/materials/hud.tres" id="1_oc68s"]
@@ -38,13 +38,6 @@ script = ExtResource("11_oxl46")
 node_path = NodePath("../../moneyPanel/goalLabel")
 code = "money.goal"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="LabelSettings" id="LabelSettings_vdm2n"]
-font_size = 17
-outline_size = 2
-outline_color = Color(0.661364, 0.27996, 0.266865, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_fe67l"]
 
 [sub_resource type="Resource" id="Resource_153si"]
 script = ExtResource("11_oxl46")
@@ -151,10 +144,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -104.0
+offset_left = -96.0
 offset_top = -100.0
-offset_right = 104.0
-offset_bottom = 100.0
+offset_right = 96.0
+offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -450,7 +443,7 @@ script = ExtResource("20_vdm2n")
 metadata/_edit_group_ = true
 
 [node name="header" type="Label" parent="recipeOpened"]
-modulate = Color(0.94692, 0.796122, 0.758937, 1)
+modulate = Color(0.905843, 0.497936, 0.247716, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -461,7 +454,6 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Открыт рецепт:"
-label_settings = SubResource("LabelSettings_vdm2n")
 vertical_alignment = 1
 
 [node name="item" type="Label" parent="recipeOpened"]
@@ -474,7 +466,6 @@ offset_top = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Сидор"
-label_settings = SubResource("LabelSettings_fe67l")
 
 [node name="icon" type="TextureRect" parent="recipeOpened"]
 layout_mode = 1

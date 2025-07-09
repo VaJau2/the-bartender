@@ -126,6 +126,8 @@ text = "Exit"
 
 [node name="settingsPanel" parent="menu" instance=ExtResource("3_c11wu")]
 layout_mode = 1
+offset_top = -56.0
+offset_bottom = 116.0
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("4_6ob7q")

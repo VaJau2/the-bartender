@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cav6x5cugqeox"]
 
 [ext_resource type="Script" uid="uid://cnq5wj06rh63d" path="res://assets/scripts/interface/itemHint.gd" id="1_0hgeo"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0uf37"]
-font_size = 13
-outline_size = 1
+[ext_resource type="LabelSettings" uid="uid://kheimmpcibvt" path="res://assets/materials/regular_text_theme.tres" id="2_0hgeo"]
 
 [node name="hint" type="Panel" groups=["item_hint"]]
 offset_right = 88.0
@@ -21,6 +18,6 @@ offset_right = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "тест"
-label_settings = SubResource("LabelSettings_0uf37")
+label_settings = ExtResource("2_0hgeo")
 horizontal_alignment = 1
 vertical_alignment = 1
