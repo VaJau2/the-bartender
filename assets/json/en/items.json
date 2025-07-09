@@ -1,12 +1,12 @@
 {
 	"empty-glass": {
-		"name": "Empty glass",
+		"name": "Empty glass"
 	},
 	"glass-water": {
-		"name": "Glass of water",
+		"name": "Glass of water"
 	},
 	"glass-milk": {
-		"name": "Glass of milk",
+		"name": "Glass of milk"
 	},
 	"apple-juice": {
 		"name": "Apple juice"
@@ -117,11 +117,11 @@
 		"name": "B-52"
 	},
 	"atomic-bomb": {
-		"name": "Atomic Bomb",
+		"name": "Atomic Bomb"
 	},
 	
 	"apple": {
-		"name": "Apple",
+		"name": "Apple"
 	},
 	"banana": {
 		"name": "Banana"
@@ -133,7 +133,7 @@
 		"name": "Sliced coconut"
 	},
 	"blueberry": {
-		"name": "Blueberry",
+		"name": "Blueberry"
 	},
 	"strawberry": {
 		"name": "Strawberry"
@@ -239,7 +239,7 @@
 	},
 	
 	"shop": {
-		"name": "Shop",
+		"name": "Shop"
 	},
 	"mailpost": {
 		"name": "Mail post"

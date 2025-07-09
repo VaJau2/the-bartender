@@ -21,13 +21,13 @@
 			"item": "empty-glass",
 			"holding_item": "milk",
 			"result": "glass-milk",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "coconut",
 			"holding_item": "knife",
 			"result": "sliced-coconut",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
@@ -68,61 +68,61 @@
 			"item": "empty-glass",
 			"holding_item": "cola-bottle",
 			"result": "cola",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "beer-bottle",
 			"result": "beer",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "cider-bottle",
 			"result": "cider",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "vodka-bottle",
 			"result": "vodka",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "whiskey-bottle",
 			"result": "whiskey",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "wine-bottle",
 			"result": "wine",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "tequila-bottle",
 			"result": "tequila",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "rum-bottle",
 			"result": "rum",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "absinthe-bottle",
 			"result": "absinthe",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "empty-glass",
 			"holding_item": "gin-bottle",
 			"result": "gin",
-			"hide_shop": 1,
+			"hide_shop": 1
 		},
 		{
 			"item": "whiskey",

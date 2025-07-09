@@ -48,8 +48,16 @@
 		"is_empty": "Bar menu is empty"
 	},
 	"money": {
-		"goal": "Goal:",
-		"days_left": "Days Left:"
+		"goal": "Goal:"
+	},
+	"time": {
+		"mo": "Mn",
+		"tu": "Tu",
+		"we": "We",
+		"th": "Th",
+		"fr": "Fr",
+		"sa": "Sa",
+		"su": "Su"
 	},
 	"categories": {
 		"glass": "Glasses",
