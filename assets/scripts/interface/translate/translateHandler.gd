@@ -1,5 +1,6 @@
 extends Node
 
+@export var file: String = "interface"
 @export var nodes: Array[TranslateData]
 
 
@@ -12,4 +13,4 @@ func load_text() -> void:
 	for node_data in nodes:
 		var node = get_node(node_data.node_path)
 		if node.get("text"):
-			node.text = Loc.trans("interface." + node_data.code)
+			node.text = Loc.trans(file + "." + node_data.code)

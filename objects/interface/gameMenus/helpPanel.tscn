@@ -1,0 +1,198 @@
+[gd_scene load_steps=18 format=3 uid="uid://c3ybovnufvg4t"]
+
+[ext_resource type="Theme" uid="uid://dj0p4qf74vctf" path="res://assets/materials/small_theme.tres" id="1_ifwwy"]
+[ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="2_cud1c"]
+[ext_resource type="Script" uid="uid://cmrjvlck482wr" path="res://assets/scripts/interface/gameMenus/helpCategoryButton.gd" id="3_cud1c"]
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="3_m6oh8"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="5_0ebty"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="6_pdcoo"]
+
+[sub_resource type="Resource" id="Resource_iyehu"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../header")
+code = "header"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_0ebty"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/controls")
+code = "categories.controls.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_pdcoo"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/controlsText")
+code = "categories.controls.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_wt653"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/craft")
+code = "categories.craft.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ssg54"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/craftText")
+code = "categories.craft.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_xd3lq"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/opening")
+code = "categories.opening.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_335e6"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/openingText")
+code = "categories.opening.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_a8hu0"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/selling")
+code = "categories.selling.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_r3xk5"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/sellingText")
+code = "categories.selling.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qtq3e"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/radio")
+code = "categories.radio.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_avcws"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/radioText")
+code = "categories.radio.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="helpPanel" type="Panel"]
+offset_right = 384.0
+offset_bottom = 320.0
+theme = ExtResource("1_ifwwy")
+metadata/_edit_lock_ = true
+
+[node name="header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Help"
+label_settings = ExtResource("2_cud1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -112.0
+offset_right = 160.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="container" type="VBoxContainer" parent="scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="controls" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Управление"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../controlsText")
+
+[node name="controlsText" type="Label" parent="scroll/container"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "WASD — передвижение
+ЛКМ — взаимодействие c поньками, предметами и инструментами
+R — открыть меню рецептов
+Tab — открыть меню сумки (сначала её нужно купить)
+G — выбросить предмет"
+autowrap_mode = 2
+
+[node name="craft" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Крафт напитков"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../craftText")
+
+[node name="craftText" type="Label" parent="scroll/container"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Для получения соков нужно купить и использовать соковыжималку
+Для получения кофе нужно купить и использовать кофемашину
+Для создания коктейлей нужно смешивать их составные части через ЛКМ
+Рецепты коктейлей можно купить у Твайлайт Спаркл (сиреневая единорожка)
+Базовые простые рецепты (соки и кофе) не покупаются и открываются опытным путем
+"
+autowrap_mode = 2
+
+[node name="opening" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Открытие бара"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../openingText")
+
+[node name="openingText" type="Label" parent="scroll/container"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Для открытия бара нужно добавить в меню хотя бы один напиток и кликнуть на табличку \"Closed\".
+Если в меню будут убраны все напитки, бар автоматически закроется.
+Если выйти из бара, он автоматически закроется через минуту."
+autowrap_mode = 2
+
+[node name="selling" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Продажа напитков"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../sellingText")
+
+[node name="sellingText" type="Label" parent="scroll/container"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Стоимость напитков подбирается вручную опытным путем. Если клиенты не покупают твои напитки, попробуй снизить цену.
+Когда клиент выбирает, какой напиток хочет купить, над ним появляется иконка выбранного им напитка. Для продажи напитка нужно кликнуть им на клиента.
+Также продать напиток можно, положив его на стойку. Если клиент выберет напиток, который уже лежит на стойке, он автоматически его купит."
+autowrap_mode = 2
+
+[node name="radio" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Радио"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../radioText")
+
+[node name="radioText" type="Label" parent="scroll/container"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Радио продается на рынке в городе.
+Включенное в баре радио повышает шанс прихода клиентов"
+autowrap_mode = 2
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("5_0ebty")
+file = "help"
+nodes = Array[ExtResource("6_pdcoo")]([SubResource("Resource_iyehu"), SubResource("Resource_0ebty"), SubResource("Resource_pdcoo"), SubResource("Resource_wt653"), SubResource("Resource_ssg54"), SubResource("Resource_xd3lq"), SubResource("Resource_335e6"), SubResource("Resource_a8hu0"), SubResource("Resource_r3xk5"), SubResource("Resource_qtq3e"), SubResource("Resource_avcws")])

@@ -10,6 +10,7 @@ const ZOOM_SPEED: float = 1
 
 @onready var menu_camera: Camera2D = get_node("camera")
 @onready var settings_panel: Panel = get_node("menu/settingsPanel")
+@onready var help_panel: Panel = get_node("menu/helpPanel")
 @onready var player_camera: Camera2D = G.player.get_node("camera")
 @onready var blur: ColorRect = get_node("back")
 
@@ -47,7 +48,13 @@ func _on_start_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
+	help_panel.visible = false
 	settings_panel.visible = !settings_panel.visible
+
+
+func _on_help_pressed() -> void:
+	settings_panel.visible = false
+	help_panel.visible = !help_panel.visible
 
 
 func _on_exit_pressed() -> void:

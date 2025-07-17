@@ -1,0 +1,38 @@
+{
+	"header": "Help",
+	"categories": {
+		"controls": {
+			"title": "Controls",
+			"text": "WASD or arrows — to move
+LMB — Interact with items and tools by clicking at them
+R — to open recipes menu
+Tab — to open bag (you need to buy it)
+G — to drop holding item"
+		},
+		"craft": {
+			"title": "Drinks crafting",
+			"text": "To make juices you need to buy and use juice machine
+To make coffee you need to buy and use coffee machine
+To make cocktails you need to to mix the ingredients by clicking at them with LMB
+You can buy recipes for cocktails from Twilight Sparkle (the purple one)
+Basic simple recipes (juices and coffee) are not bought and are discovered experimentally"
+		},
+		"opening": {
+			"title": "Bar opening",
+			"text": "To open the bar you need to add to the bar menu at least one drink and press \"Closed\" sign.
+If bar menu is empty, the bar will be automatically closed.
+If you leave the bar, it will be automatically closed in minute."
+		},
+		"selling": {
+			"title": "Drinks selling",
+			"text": "The cost of drinks is selected manually experimentally. If customers don't buy your drinks, try to lower the price.
+When a customer chooses which drink they want to buy, an icon of their chosen drink appears above it. To sell a drink, you need to click on the customer.
+You can also sell a drink by placing it on the counter. If a customer chooses a drink that is already on the counter, they will automatically buy it."
+		},
+		"radio": {
+			"title": "Radio",
+			"text": "The radio is sold on the market in the city.
+The radio turned on in the bar increases the chance of customers coming."
+		}
+	}
+}
