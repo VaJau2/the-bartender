@@ -6,6 +6,8 @@ class_name PutArea
 @onready var main: Node2D = get_node("/root/main")
 var may_interact: bool
 
+signal put_item(item: Item)
+
 
 func on_mouse_entered() -> void:
 	if interaction_controller.holding_item == null: return
@@ -22,8 +24,17 @@ func interact() -> void:
 		return
 	var temp_scale = item_to_put.global_scale
 	item_to_put.get_parent().remove_child(item_to_put)
-	get_parent().add_child(item_to_put)
+	add_child(item_to_put)
 	item_to_put.global_scale = temp_scale
 	item_to_put.enable()
 	item_to_put.global_position = main.get_global_mouse_position()
 	interaction_controller.update_holding_item(null)
+	put_item.emit(item_to_put)
+
+
+func find_item(code: String) -> Item:
+	for child in get_children():
+		if !child is Item: continue
+		if child.code == code:
+			return child
+	return null

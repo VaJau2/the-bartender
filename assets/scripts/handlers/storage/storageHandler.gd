@@ -37,13 +37,15 @@ func can_put_item(item: Item) -> bool:
 	return weight > (get_items_weight() + item.weight)
 
 
-func get_item(item_code: String) -> void:
+func get_item(storage_item: StorageItem) -> void:
 	for i in range(len(items)):
-		if items[i].code == item_code:
+		if items[i].code == storage_item.code:
 			items.remove_at(i)
 			break
 	
-	var item = ItemSpawner.spawn_item(item_code, get_parent().global_position, get_node("/root/main"))
+	var item = ItemSpawner.spawn_item(storage_item.code, get_parent().global_position, get_node("/root/main"))
+	if storage_item.limit > 0:
+		item.limit = storage_item.limit
 	
 	if storage_type == Enums.StorageType.bag:
 		item.get_parent().remove_child(item)
@@ -84,14 +86,10 @@ func _on_move_items_to_bag() -> void:
 	var json_data = JsonParse.read("res://assets/json/data/items.json")
 	
 	for item: StorageItem in G.player.storage_handler.items:
-		var glass_locker = json_data[item.code].category == "liquid"
 		var needs_fridge = json_data[item.code].has("need_fridge")
 		
 		if needs_fridge and storage_type != Enums.StorageType.fridge: continue
 		if !needs_fridge and storage_type == Enums.StorageType.fridge: continue
-		
-		if glass_locker and storage_type != Enums.StorageType.drinksLocker: continue
-		if !glass_locker and storage_type == Enums.StorageType.drinksLocker: continue
 		
 		items_moved.append(item)
 		items.append(item)

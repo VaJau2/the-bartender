@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ciqnnujnwh8w0" path="res://assets/scripts/characters/npc/stateMachine/states/idle.gd" id="6_5npa1"]
 [ext_resource type="Script" uid="uid://cpky7eevqjtay" path="res://assets/scripts/characters/npc/stateMachine/states/work.gd" id="7_dotrs"]
 [ext_resource type="Script" uid="uid://b0nw6xfh8f3ul" path="res://assets/scripts/characters/npc/stateMachine/states/bar.gd" id="8_46d5v"]
-[ext_resource type="Script" uid="uid://d1gq2afulobr4" path="res://assets/scripts/characters/npc/npcDialogue.gd" id="9_hdnwl"]
+[ext_resource type="Script" uid="uid://d1gq2afulobr4" path="res://assets/scripts/characters/npc/npcDialogueIcons.gd" id="9_hdnwl"]
 [ext_resource type="Texture2D" uid="uid://8pejvgklhiif" path="res://assets/sprites/interface/dialogue/bubble.png" id="9_wmg46"]
 [ext_resource type="Script" uid="uid://yibmj6g0m3jh" path="res://assets/scripts/characters/npc/stateMachine/states/sleep.gd" id="9_xuxqs"]
 [ext_resource type="Texture2D" uid="uid://bodoc5fg6jgu0" path="res://assets/sprites/interface/dialogue/thinking.png" id="10_msbil"]
@@ -51,16 +51,19 @@ movement_controller = NodePath("../../movementController")
 script = ExtResource("7_dotrs")
 movement_controller = NodePath("../../movementController")
 
-[node name="bar" type="Node" parent="stateMachine" index="2" node_paths=PackedStringArray("dialogue", "movement_controller")]
+[node name="bar" type="Node" parent="stateMachine" index="2" node_paths=PackedStringArray("dialogue_icons", "drunk_handler", "sale_audi", "movement_controller")]
 script = ExtResource("8_46d5v")
-dialogue = NodePath("../../dialogue")
+dialogue_icons = NodePath("../../dialogueIcons")
+drunk_handler = NodePath("../../drunkHandler")
+sale_audi = NodePath("../../interactionArea/audi")
+sale_sound = ExtResource("17_x6edk")
 movement_controller = NodePath("../../movementController")
 
 [node name="sleep" type="Node" parent="stateMachine" index="3" node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("9_xuxqs")
 movement_controller = NodePath("../../movementController")
 
-[node name="dialogue" type="Node2D" parent="." index="10"]
+[node name="dialogueIcons" type="Node2D" parent="." index="10"]
 visible = false
 position = Vector2(0, -55)
 script = ExtResource("9_hdnwl")
@@ -68,22 +71,21 @@ thinking_texture = ExtResource("10_msbil")
 thanks_textures = Array[Texture]([ExtResource("11_yafal"), ExtResource("12_ay7hr")])
 wrong_texture = ExtResource("13_ay7hr")
 
-[node name="bubble" type="Sprite2D" parent="dialogue" index="0"]
+[node name="bubble" type="Sprite2D" parent="dialogueIcons" index="0"]
 texture = ExtResource("9_wmg46")
 
-[node name="icon" type="Sprite2D" parent="dialogue" index="1"]
+[node name="icon" type="Sprite2D" parent="dialogueIcons" index="1"]
 position = Vector2(0, -3)
 texture = ExtResource("11_msbil")
 
-[node name="interactionArea" type="Area2D" parent="." index="11" node_paths=PackedStringArray("bar_state", "drunk_handler", "dialogue")]
+[node name="interactionArea" type="Area2D" parent="." index="11" node_paths=PackedStringArray("bar_state", "drunk_handler", "dialogue_icons")]
 collision_layer = 2
 collision_mask = 0
 monitorable = false
 script = ExtResource("16_xfs8l")
 bar_state = NodePath("../stateMachine/bar")
 drunk_handler = NodePath("../drunkHandler")
-dialogue = NodePath("../dialogue")
-sale_sound = ExtResource("17_x6edk")
+dialogue_icons = NodePath("../dialogueIcons")
 
 [node name="shape" type="CollisionShape2D" parent="interactionArea" index="0"]
 position = Vector2(1, -11.5)

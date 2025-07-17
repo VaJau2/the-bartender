@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func interact() -> void:
-	if !may_interact():return
+	if !may_interact(): return
 	
 	var item = interaction_controller.holding_item
 	audi.play()
@@ -28,6 +28,6 @@ func may_interact() -> bool:
 	if item == null:
 		return false
 	
-	if item.name == "empty-glass" or item.type != Enums.ItemType.glass:
+	if item.code == "empty-glass" or item.type != Enums.ItemType.glass:
 		return false
 	return true

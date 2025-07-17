@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_a02bt")
 position = Vector2(91, 19)
 shape = SubResource("RectangleShape2D_a02bt")
 
-[node name="putArea" type="Area2D" parent="."]
+[node name="putArea" type="Area2D" parent="." groups=["bar_front_area"]]
 position = Vector2(0, -31)
 collision_layer = 4
 collision_mask = 0

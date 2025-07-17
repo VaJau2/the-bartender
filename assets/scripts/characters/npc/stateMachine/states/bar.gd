@@ -7,7 +7,12 @@ const ORDER_WAITING_TIME = 100
 
 @onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
 @onready var bar_queue: BarQueueHandler = get_tree().get_first_node_in_group("bar_queue")
-@export var dialogue: NpcDialogue
+@onready var bar_front_area: PutArea = get_tree().get_first_node_in_group("bar_front_area")
+
+@export var dialogue_icons: NpcDialogueIcons
+@export var drunk_handler: DrunkHandler
+@export var sale_audi: AudioStreamPlayer2D
+@export var sale_sound: AudioStream
 
 var npc: NPC
 
@@ -39,7 +44,7 @@ func enable() -> void:
 
 
 func disable() -> void:
-	npc.dialogue.hide_icon()
+	npc.dialogue_icons.hide_icon()
 	
 	if bar_queue.ordering_npc == npc:
 		bar_queue.ordering_npc = null
@@ -63,7 +68,7 @@ func _process(delta: float) -> void:
 	if ordered_drink != "":
 		if order_timer > 0:
 			order_timer -= delta
-			npc.dialogue.set_transparency(order_timer / ORDER_WAITING_TIME)
+			npc.dialogue_icons.set_transparency(order_timer / ORDER_WAITING_TIME)
 		else:
 			state_machine.set_state("idle")
 			return
@@ -104,15 +109,23 @@ func _get_queue_land_position() -> Vector2:
 
 
 func _make_order() -> void:
-	npc.dialogue.show_thinking_icon()
+	npc.dialogue_icons.show_thinking_icon()
 	await get_tree().create_timer(randf_range(1, 2)).timeout
 	
-	if !is_processing(): return
+	if bar_queue.ordering_npc != null or !is_processing(): 
+		state_machine.set_state("idle")
+		return
 	
 	var result = _try_choose_drink()
 	if result:
+		# Ищем напиток на стойке и сразу пьем, если он есть
+		var front_drink = bar_front_area.find_item(ordered_drink)
+		if front_drink:
+			have_drink(front_drink)
+			return
+		
 		bar_queue.ordering_npc = npc
-		npc.dialogue.show_item_icon(ordered_drink)
+		npc.dialogue_icons.show_item_icon(ordered_drink)
 		order_timer = ORDER_WAITING_TIME
 	else:
 		state_machine.set_state("idle")
@@ -138,3 +151,31 @@ func _try_choose_drink() -> bool:
 func _on_queue_updated() -> void:
 	if bar_queue.ordering_npc == null and bar_queue.is_first_in_queue(npc):
 		_make_order()
+
+
+func have_drink(drink_item: Item) -> void:
+	if G.glasses_count > 0: G.glasses_count -= 1
+	G.statistics.drinks_sold += 1
+	
+	var booze_time = drink_item.booze_time
+	
+	drink_item.queue_free()
+	
+	dialogue_icons.set_transparency(1)
+	dialogue_icons.show_thanks_icon()
+	
+	if ordered_price > 0:
+		M.add_money(ordered_price)
+		sale_audi.stream = sale_sound
+		sale_audi.play()
+	
+	ordered_drink = ""
+	
+	await get_tree().create_timer(1).timeout
+	if !is_processing(): return
+	
+	if booze_time > 0:
+		drunk_handler.add_drunk_time(booze_time)
+		G.statistics.ponies_drunk += 1
+	
+	state_machine.set_state("idle")

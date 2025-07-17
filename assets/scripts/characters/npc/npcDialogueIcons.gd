@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name NpcDialogue
+class_name NpcDialogueIcons
 
 @onready var bubble: Sprite2D = get_node("bubble")
 @onready var icon: Sprite2D = get_node("icon")
