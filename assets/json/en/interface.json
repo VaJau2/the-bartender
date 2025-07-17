@@ -34,6 +34,11 @@
 		"not_money": "Not enough money :c",
 		"not_space": "Not enough space :c"
 	},
+	"bank": {
+		"take": "Take",
+		"return": "Return",
+		"close": "Close"
+	},
 	"recipes": {
 		"header": "Recipes"
 	},
@@ -49,7 +54,9 @@
 		"is_empty": "Bar menu is empty"
 	},
 	"money": {
-		"goal": "Goal:"
+		"goal": "Goal:",
+		"debt": "Debt:",
+		"days_left": "Days left:"
 	},
 	"time": {
 		"mo": "Mn",

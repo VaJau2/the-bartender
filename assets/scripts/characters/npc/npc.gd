@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name NPC
 
 @export var code: String
-@export var work_place: MarketStand
+@export var work_place: StandBase
 @export var sleep_place: Node2D
 
 @onready var dialogue_icons: NpcDialogueIcons = get_node("dialogueIcons")

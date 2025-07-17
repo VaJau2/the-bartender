@@ -1,24 +1,18 @@
-extends StaticBody2D
+extends StandBase
 
 class_name MarketStand
 
 const RECIPE_COST: int = 20
 
-@onready var interaction_controller: InteractionController = G.player.interaction_controller
-@onready var interaction: MarketStandInteraction = get_node("interaction")
-@onready var audi: AudioStreamPlayer2D = get_node("audi")
-
 @onready var buy_sound: AudioStream = load("res://assets/audio/buying/buy.wav")
 @onready var delivery_buy_sound: AudioStream = load("res://assets/audio/buying/delivery_buy.wav")
 
-@export var code: String = "shop"
 @export var items: Array[ShopItem]
 @export var load_recipes: bool
 @export var delivery_price: int = 10
 @export var fixed_delivery: bool
 @export var hide_delivery: bool
 
-var is_open: bool
 var is_delivery: bool
 
 
@@ -41,16 +35,9 @@ func _ready() -> void:
 
 
 func start_trading(npc: CharacterBody2D) -> void:
-	npc.global_position = interaction.get_stand_pos()
-	interaction.set_open(true)
-	is_open = true
+	super(npc)
 	if fixed_delivery:
 		is_delivery = true
-
-
-func stop_trading() -> void:
-	interaction.set_open(false)
-	is_open = false
 
 
 func try_buy_item(item: ShopItem) -> bool:

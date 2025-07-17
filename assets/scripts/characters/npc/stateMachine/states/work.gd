@@ -7,7 +7,7 @@ const CHECK_BAR_CHANCE: float = 0.1
 
 @onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
 
-var work_place: MarketStand
+var work_place: StandBase
 
 var check_bar_timer: float
 

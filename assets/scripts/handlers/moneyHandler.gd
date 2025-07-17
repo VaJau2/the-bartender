@@ -1,11 +1,18 @@
 extends Node
 
+const DEBT_DAYS: int = 2
+
 var money: int = 0
+var debt: int = 0
+var debt_days: int = DEBT_DAYS
 
 signal money_updated
+signal debt_updated
+
 
 func _ready() -> void:
 	money = 0
+	debt = 0
 
 
 func _process(_delta: float) -> void:
@@ -26,3 +33,14 @@ func remove_money(value: int) -> void:
 	G.statistics.money_spent += value
 	money -= value
 	money_updated.emit()
+
+
+func add_debt(value: int) -> void:
+	debt += value
+	debt_days = DEBT_DAYS
+	debt_updated.emit()
+
+
+func remove_debt() -> void:
+	debt = 0
+	debt_updated.emit()

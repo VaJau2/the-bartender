@@ -2,7 +2,6 @@ extends Panel
 
 class_name RadioMenu
 
-signal changed_volume
 
 @onready var movement_controller: MovementController = G.player.movement_controller
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
@@ -11,6 +10,8 @@ signal changed_volume
 @onready var volume_slider: Slider = get_node("volume")
 
 var current_radio: Radio
+
+signal changed_volume
 
 
 func _ready() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=38 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="Theme" uid="uid://ccdfkuiy7gnf3" path="res://assets/materials/hud.tres" id="1_oc68s"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bb5yl3xrjo2w7" path="res://assets/sprites/interface/book_icon/book_icon_hover.png" id="7_eljf0"]
 [ext_resource type="PackedScene" uid="uid://dvo3xsnywhfal" path="res://objects/interface/radioMenu.tscn" id="7_fe67l"]
 [ext_resource type="Script" uid="uid://b5v785lhs3jwb" path="res://assets/scripts/interface/moneyPanel.gd" id="8_3ewrv"]
+[ext_resource type="PackedScene" uid="uid://dtdoy8popmryu" path="res://objects/interface/bankMenu.tscn" id="8_g8u8v"]
 [ext_resource type="Script" uid="uid://dsy3kdrnx5u5p" path="res://assets/scripts/interface/recipes/recipesButton.gd" id="9_2xida"]
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
@@ -33,10 +34,62 @@ func _ready() -> void:
 	text = str(G.MONEY_GOAL)
 "
 
+[sub_resource type="GDScript" id="GDScript_g8u8v"]
+script/source = "extends Control
+
+# Debt parent
+
+
+func _ready() -> void:
+	M.debt_updated.connect(_on_debt_updated)
+
+
+func _on_debt_updated() -> void:
+	visible = M.debt > 0
+"
+
+[sub_resource type="GDScript" id="GDScript_owlnv"]
+script/source = "extends Label
+
+# Debt Label
+
+func _ready() -> void:
+	M.debt_updated.connect(_on_debt_updated)
+
+
+func _on_debt_updated() -> void:
+	text = str(M.debt)
+"
+
+[sub_resource type="GDScript" id="GDScript_nas6y"]
+script/source = "extends Label
+
+# Days Left label
+
+func _ready() -> void:
+	M.debt_updated.connect(_on_debt_updated)
+
+
+func _on_debt_updated() -> void:
+	text = str(M.debt_days)
+"
+
 [sub_resource type="Resource" id="Resource_qawhh"]
 script = ExtResource("11_oxl46")
 node_path = NodePath("../../moneyPanel/goalLabel")
 code = "money.goal"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_g8u8v"]
+script = ExtResource("11_oxl46")
+node_path = NodePath("../debt/debtLabel")
+code = "money.debt"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_owlnv"]
+script = ExtResource("11_oxl46")
+node_path = NodePath("../debt/daysLeftLabel")
+code = "money.days_left"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_153si"]
@@ -165,7 +218,7 @@ offset_right = 192.0
 offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
-other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu"), NodePath("../recipesMenu")]
+other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu"), NodePath("../recipesMenu"), NodePath("../bankMenu")]
 
 [node name="shopMenu" parent="." instance=ExtResource("5_oxl46")]
 visible = false
@@ -211,7 +264,22 @@ offset_right = 188.0
 offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
-other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu")]
+other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu"), NodePath("../bankMenu")]
+
+[node name="bankMenu" parent="." instance=ExtResource("8_g8u8v")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -108.0
+offset_right = 160.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="radioMenu" parent="." instance=ExtResource("7_fe67l")]
 visible = false
@@ -298,7 +366,6 @@ offset_right = -16.0
 offset_bottom = 48.0
 grow_horizontal = 0
 script = ExtResource("8_3ewrv")
-metadata/_edit_group_ = true
 
 [node name="money" type="Label" parent="moneyPanel"]
 layout_mode = 1
@@ -350,9 +417,66 @@ grow_vertical = 0
 text = "0"
 script = SubResource("GDScript_1mtbf")
 
+[node name="debt" type="Control" parent="moneyPanel"]
+visible = false
+anchors_preset = 0
+offset_right = 176.0
+offset_bottom = 128.0
+script = SubResource("GDScript_g8u8v")
+
+[node name="debtLabel" type="Label" parent="moneyPanel/debt"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+offset_right = 128.0
+offset_bottom = -33.0
+grow_vertical = 0
+text = "Debt:"
+horizontal_alignment = 2
+
+[node name="debt" type="Label" parent="moneyPanel/debt"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = -56.0
+offset_right = 177.0
+offset_bottom = -33.0
+grow_vertical = 0
+text = "0"
+script = SubResource("GDScript_owlnv")
+
+[node name="daysLeftLabel" type="Label" parent="moneyPanel/debt"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = -9.0
+grow_vertical = 0
+text = "Days Left:"
+horizontal_alignment = 2
+
+[node name="daysLeft" type="Label" parent="moneyPanel/debt"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = -32.0
+offset_right = 177.0
+offset_bottom = -9.0
+grow_vertical = 0
+text = "0"
+script = SubResource("GDScript_nas6y")
+
 [node name="translation" type="Node" parent="moneyPanel"]
 script = ExtResource("10_wyfr1")
-nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh")])
+nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh"), SubResource("Resource_g8u8v"), SubResource("Resource_owlnv")])
 
 [node name="calendar" type="Control" parent="."]
 anchors_preset = 0

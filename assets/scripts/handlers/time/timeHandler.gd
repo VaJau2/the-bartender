@@ -4,7 +4,7 @@ class_name TimeHandler
 
 @export var hour: int
 @export var minute: int
-@export var day: int # max 7 days
+@export var day: int # max 5 days
 
 var minute_delta: float
 
@@ -14,7 +14,7 @@ signal day_tick
 
 
 func _ready() -> void:
-	set_process(false)
+	set_process(false) # процесс включается в начале игры из менюшки
 
 
 func _process(delta: float) -> void:

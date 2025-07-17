@@ -3,7 +3,7 @@ extends Area2D
 class_name MarketStandInteraction
 
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
-@onready var stand: MarketStand = get_node("../")
+@onready var stand: StandBase = get_node("../")
 
 @export var open_sign: Sprite2D
 @export var stand_point: Node2D
@@ -31,4 +31,8 @@ func on_mouse_exited() -> void:
 func interact() -> void:
 	if !stand.is_open: return
 	interaction_controller.hide_item_hint.emit()
-	interaction_controller.open_shop_menu.emit(stand)
+	
+	if stand.code == "bank":
+		interaction_controller.open_bank_menu.emit(stand)
+	else:
+		interaction_controller.open_shop_menu.emit(stand)

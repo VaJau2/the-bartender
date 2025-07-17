@@ -247,6 +247,9 @@
 	"recipes-shop": {
 		"name": "Recipes shop"
 	},
+	"bank": {
+		"name": "Bank"
+	},
 	
 	"menu": {
 		"name": "Menu"

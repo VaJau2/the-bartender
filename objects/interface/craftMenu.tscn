@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ncde73ege2b2"]
+[gd_scene load_steps=10 format=3 uid="uid://ncde73ege2b2"]
 
 [ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="2_1qdbn"]
 [ext_resource type="Script" uid="uid://bb5nwsne5e1rb" path="res://assets/scripts/interface/craftMenu.gd" id="2_b0vtf"]
@@ -27,6 +27,12 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 script = ExtResource("4_8esil")
 node_path = NodePath("../glassLabel")
 code = "craft.glass"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_1qdbn"]
+script = ExtResource("4_8esil")
+node_path = NodePath("../take")
+code = "craft.take"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="craftMenu" type="Panel"]
@@ -155,7 +161,7 @@ expand_icon = true
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("3_r8unt")
-nodes = Array[ExtResource("4_8esil")]([SubResource("Resource_6ybga"), SubResource("Resource_bkyq0"), SubResource("Resource_0pi0o"), SubResource("Resource_8esil")])
+nodes = Array[ExtResource("4_8esil")]([SubResource("Resource_6ybga"), SubResource("Resource_bkyq0"), SubResource("Resource_0pi0o"), SubResource("Resource_8esil"), SubResource("Resource_1qdbn")])
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="take" to="." method="_on_take_pressed"]

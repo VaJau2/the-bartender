@@ -15,6 +15,14 @@ func _ready() -> void:
 
 
 func _on_day_tick() -> void:
+	if M.debt > 0:
+		if M.debt_days > 1:
+			M.debt_days -= 1
+			M.debt_updated.emit()
+		else:
+			S.goto_scene("Lost")
+			return
+	
 	var days_left = G.DAYS_GOAL - G.time.day
 	if days_left == 0:
 		if M.money >= G.MONEY_GOAL:

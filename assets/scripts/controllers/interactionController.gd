@@ -26,6 +26,7 @@ signal open_storage_menu(storage: StorageHandler)
 signal open_shop_menu(shop: MarketStand)
 signal open_bar_menu(menu: BarMenu)
 signal open_recepies_menu
+signal open_bank_menu
 
 signal show_craft_hint
 signal hide_craft_hint

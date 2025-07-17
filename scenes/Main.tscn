@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=143 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -92,6 +92,8 @@
 [ext_resource type="Script" uid="uid://ketfgqpierd8" path="res://assets/scripts/handlers/time/timeLightData.gd" id="67_8t8ul"]
 [ext_resource type="PackedScene" uid="uid://qimmp16brh26" path="res://objects/interface/gameMenus/mainMenu.tscn" id="70_ugmlg"]
 [ext_resource type="PackedScene" uid="uid://m433kj61gret" path="res://objects/interface/gameMenus/pauseMenu.tscn" id="71_qd1pt"]
+[ext_resource type="Texture2D" uid="uid://d180sjx2ni601" path="res://assets/sprites/buildings/town/bank_sign.png" id="72_nc5fr"]
+[ext_resource type="PackedScene" uid="uid://c35hji52dpn3r" path="res://objects/buildings/marketStands/bankpost_stand.tscn" id="73_3fqo2"]
 [ext_resource type="Script" uid="uid://br8h0f8q71gqi" path="res://assets/scripts/system/gameManager.gd" id="73_mou0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebg2g"]
@@ -803,31 +805,31 @@ work_place = NodePath("../../props/navRegion/farm-props/appleStand")
 sleep_place = NodePath("../../props/navRegion/farm-props/houses/house18/door")
 
 [node name="fruitTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-300, -1460)
+position = Vector2(-678, -1466)
 code = "berry_punch"
 work_place = NodePath("../../props/navRegion/market-props/stands/fruitStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
 
 [node name="vegetableTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-384, -1464)
+position = Vector2(-484, -1457)
 code = "carrot_top"
 work_place = NodePath("../../props/navRegion/market-props/stands/vegitableStand")
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house8/door")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
 
 [node name="coffeeTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-118, -1459)
+position = Vector2(-271, -1463)
 code = "pinkie"
 work_place = NodePath("../../props/navRegion/market-props/stands/coffeeStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house8/door")
 
-[node name="itemTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-492, -1464)
-code = "filthy_rich"
+[node name="doctor" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-1480, -1544)
+code = "doctor"
 work_place = NodePath("../../props/navRegion/market-props/stands/itemStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house2/door")
 
 [node name="recipesTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-43, -1459)
+position = Vector2(-87, -1459)
 code = "twilight"
 work_place = NodePath("../../props/navRegion/market-props/stands/bookStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house1/door")
@@ -844,9 +846,9 @@ code = "rainbow_dash"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house11/door")
 
 [node name="rarity" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-1897, -1543)
+position = Vector2(-2369, -1220)
 code = "rarity"
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house17/door")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house16/door")
 
 [node name="fluttershy" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2460, -1940)
@@ -854,14 +856,14 @@ code = "fluttershy"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house7/door")
 
 [node name="octavia" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-2102, -1626)
+position = Vector2(-2142, -1672)
 code = "octavia"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house3/door")
 
 [node name="vinyl" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-2582, -1214)
+position = Vector2(-2095, -1623)
 code = "vinyl"
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house3/door")
 
 [node name="nurse" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2288, -1614)
@@ -873,9 +875,10 @@ position = Vector2(886, -1300)
 code = "roseluck"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
 
-[node name="doctor" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-2229, -1440)
-code = "doctor"
+[node name="banker" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-1871, -1560)
+code = "filthy_rich"
+work_place = NodePath("../../props/navRegion/town-props/houses/house17/bankpostStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
 
 [node name="caramel" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
@@ -1733,6 +1736,10 @@ position = Vector2(-490, -1324)
 [node name="vegitableStand" parent="props/navRegion/market-props/stands" instance=ExtResource("18_bb450")]
 position = Vector2(109, 2)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_57f5r"), SubResource("Resource_84vju")])
+load_recipes = null
+fixed_delivery = null
+hide_delivery = null
+code = null
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/vegitableStand"]
 position = Vector2(2, -46)
@@ -1744,6 +1751,10 @@ region_rect = Rect2(367, 135, 16, 16)
 [node name="fruitStand" parent="props/navRegion/market-props/stands" instance=ExtResource("19_nfivy")]
 position = Vector2(250, 2)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_dyyw8"), SubResource("Resource_gjpm3"), SubResource("Resource_siyqs"), SubResource("Resource_vwcyu"), SubResource("Resource_pb578"), SubResource("Resource_o1tg2"), SubResource("Resource_hyu0y"), SubResource("Resource_lfilp")])
+load_recipes = null
+fixed_delivery = null
+hide_delivery = null
+code = null
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/fruitStand"]
 position = Vector2(1, -45)
@@ -1755,6 +1766,10 @@ region_rect = Rect2(365.957, 55.9795, 17.3845, 17.6649)
 [node name="itemStand" parent="props/navRegion/market-props/stands" instance=ExtResource("20_1nqs0")]
 position = Vector2(-44, 2)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_gcaob"), SubResource("Resource_aqa1v"), SubResource("Resource_ps7y1"), SubResource("Resource_4c8xy"), SubResource("Resource_jhuvt")])
+load_recipes = null
+fixed_delivery = null
+hide_delivery = null
+code = null
 
 [node name="sign2" type="Sprite2D" parent="props/navRegion/market-props/stands/itemStand"]
 position = Vector2(0, -46)
@@ -1766,6 +1781,10 @@ region_rect = Rect2(367.379, 16.5539, 15.194, 15.1296)
 [node name="coffeeStand" parent="props/navRegion/market-props/stands" instance=ExtResource("18_bb450")]
 position = Vector2(511, -109)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_rsknx"), SubResource("Resource_4pegn"), SubResource("Resource_p6l88")])
+load_recipes = null
+fixed_delivery = null
+hide_delivery = null
+code = null
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/coffeeStand"]
 position = Vector2(2, -46)
@@ -1776,10 +1795,12 @@ region_rect = Rect2(367, 115, 16, 16)
 
 [node name="bookStand" parent="props/navRegion/market-props/stands" instance=ExtResource("44_4pegn")]
 position = Vector2(511, -15)
-code = "recipes-shop"
-load_recipes = true
 delivery_price = 0
+items = null
+load_recipes = true
+fixed_delivery = null
 hide_delivery = true
+code = "recipes-shop"
 
 [node name="town-props" type="Node2D" parent="props/navRegion"]
 y_sort_enabled = true
@@ -1831,7 +1852,9 @@ position = Vector2(5, 64)
 [node name="mailpostStand" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("47_vwcyu")]
 position = Vector2(-115, 32)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_4pmbt"), SubResource("Resource_fun0h"), SubResource("Resource_oqdxe"), SubResource("Resource_iarty"), SubResource("Resource_csdio"), SubResource("Resource_tcd68"), SubResource("Resource_nc5fr"), SubResource("Resource_3fqo2"), SubResource("Resource_nlgwl"), SubResource("Resource_3mhcn")])
+load_recipes = null
 fixed_delivery = true
+hide_delivery = null
 
 [node name="box3" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("23_xa025")]
 position = Vector2(-51, 40)
@@ -1900,10 +1923,32 @@ position = Vector2(-1690, 199)
 position = Vector2(-42, 60)
 
 [node name="house17" parent="props/navRegion/town-props/houses" instance=ExtResource("29_gsxep")]
+y_sort_enabled = true
 position = Vector2(-1205, -143)
 
 [node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house17"]
 position = Vector2(-40, 62)
+
+[node name="BankSign" type="Sprite2D" parent="props/navRegion/town-props/houses/house17"]
+position = Vector2(-39, -32)
+texture = ExtResource("72_nc5fr")
+
+[node name="bankpostStand" parent="props/navRegion/town-props/houses/house17" instance=ExtResource("73_3fqo2")]
+position = Vector2(86, 24)
+
+[node name="bag" type="Sprite2D" parent="props/navRegion/town-props/houses/house17/bankpostStand"]
+position = Vector2(23, -12)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("25_knagv")
+region_enabled = true
+region_rect = Rect2(83.2041, 197.3, 31.7472, 39.1626)
+
+[node name="bag2" type="Sprite2D" parent="props/navRegion/town-props/houses/house17/bankpostStand"]
+position = Vector2(15, -10)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("25_knagv")
+region_enabled = true
+region_rect = Rect2(83.2041, 197.3, 31.7472, 39.1626)
 
 [node name="fountain" parent="props/navRegion/town-props" instance=ExtResource("30_v0vrg")]
 position = Vector2(-1539, -69)
@@ -2614,8 +2659,12 @@ region_rect = Rect2(16.1601, -0.936382, 13.77, 18.5183)
 
 [node name="appleStand" parent="props/navRegion/farm-props" instance=ExtResource("19_nfivy")]
 position = Vector2(-4544, -2158)
-items = Array[ExtResource("21_0qimb")]([SubResource("Resource_8t8ul"), SubResource("Resource_1x1rp"), SubResource("Resource_ylqph"), SubResource("Resource_fcv70"), SubResource("Resource_mou0d"), SubResource("Resource_ugmlg"), SubResource("Resource_qd1pt")])
 delivery_price = 2
+items = Array[ExtResource("21_0qimb")]([SubResource("Resource_8t8ul"), SubResource("Resource_1x1rp"), SubResource("Resource_ylqph"), SubResource("Resource_fcv70"), SubResource("Resource_mou0d"), SubResource("Resource_ugmlg"), SubResource("Resource_qd1pt")])
+load_recipes = null
+fixed_delivery = null
+hide_delivery = null
+code = null
 
 [node name="apples" parent="props/navRegion/farm-props/appleStand" instance=ExtResource("24_36rkl")]
 position = Vector2(22, -9)
