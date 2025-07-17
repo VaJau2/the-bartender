@@ -6,3 +6,4 @@ class_name ShopItem
 @export var type: Enums.ShopItemType
 @export var icon: Texture
 @export var price: int
+@export var one_time: bool

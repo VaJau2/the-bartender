@@ -20,7 +20,7 @@ signal pickup_item(item: Item)
 signal clear_item()
 
 signal close_menu()
-signal show_radio_menu()
+signal show_radio_menu(radio: Radio)
 signal open_crafting_menu(crafting: CraftingBase)
 signal open_storage_menu(storage: StorageHandler)
 signal open_shop_menu(shop: MarketStand)
@@ -107,7 +107,8 @@ func drop_item() -> void:
 	holding_item.get_parent().remove_child(holding_item)
 	get_node("/root/main").add_child(holding_item)
 	holding_item.global_position = get_parent().global_position
-	holding_item.moving.set_velocity(Vector2(_rand_speed(), _rand_speed()))
+	if !holding_item.try_spawn_furn():
+		holding_item.moving.set_velocity(Vector2(_rand_speed(), _rand_speed()))
 	update_holding_item(null)
 
 

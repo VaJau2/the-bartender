@@ -78,6 +78,24 @@ func interact() -> void:
 			_try_craft_item(holding_item, self)
 
 
+func try_spawn_furn() -> bool:
+	if type != Enums.ItemType.furn:
+		return false
+	
+	var furn: Node2D = get_tree().get_first_node_in_group(code)
+	var old_scale = furn.global_scale
+	furn.get_parent().remove_child(furn)
+	get_parent().add_child(furn)
+	furn.global_scale = old_scale
+	furn.global_position = global_position
+	furn.process_mode = Node.PROCESS_MODE_INHERIT
+	furn.visible = true
+	if furn.name == "radio":
+		furn.get_node("interactArea").check_inside_bar()
+	queue_free()
+	return true
+
+
 func _try_craft_item(item1: Item, item2: Item) -> bool:
 	var result = RecepiesHandler.get_tool_result(item1.code, item2.code)
 	if result == "": return false

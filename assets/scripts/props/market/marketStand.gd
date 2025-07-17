@@ -36,6 +36,7 @@ func _ready() -> void:
 				shop_item.code = item_data.result
 				shop_item.price = RECIPE_COST
 				shop_item.icon = load(json_data[shop_item.code].texture)
+				shop_item.one_time = true
 				items.append(shop_item)
 
 
@@ -60,7 +61,7 @@ func try_buy_item(item: ShopItem) -> bool:
 	match item.type:
 		Enums.ShopItemType.recipe:
 			G.game_manager.try_know_recipe.emit(item.code)
-			_show_text("success")
+			interaction_controller.hide_item_hint.emit()
 			audi.stream = buy_sound
 			audi.play()
 		
@@ -68,7 +69,7 @@ func try_buy_item(item: ShopItem) -> bool:
 			if G.player.has_storage: return false
 			G.player.has_storage = true
 			G.player.set_using_storage(true)
-			_show_text("success")
+			interaction_controller.hide_item_hint.emit()
 			audi.stream = buy_sound
 			audi.play()
 	
@@ -83,13 +84,13 @@ func try_buy_item(item: ShopItem) -> bool:
 				else:
 					_deliver_item(new_item)
 					M.remove_money(delivery_price)
-					_show_text("success")
+					interaction_controller.hide_item_hint.emit()
 					audi.stream = delivery_buy_sound
 					audi.play()
 			else:
 				var get_item_result = interaction_controller.try_get_item(new_item)
 				if get_item_result:
-					_show_text("success")
+					interaction_controller.hide_item_hint.emit()
 					audi.stream = buy_sound
 					audi.play()
 				else:

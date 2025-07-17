@@ -62,7 +62,7 @@ func _on_ingredient_icon_pressed() -> void:
 
 func _on_mouse_entered_to_ingredient() -> void:
 	if temp_crarfting.ingredient != null:
-		interaction_controller.show_item_hint.emit(temp_crarfting.ingredient)	
+		interaction_controller.show_item_hint.emit(temp_crarfting.ingredient)
 
 
 func _on_mouse_entered_to_glass() -> void:
@@ -77,3 +77,14 @@ func _on_mouse_exited() -> void:
 func _on_start_pressed() -> void:
 	temp_crarfting.start()
 	_on_cancel_pressed()
+
+
+func _on_take_pressed() -> void:
+	var item = ItemSpawner.spawn_item(temp_crarfting.code, temp_crarfting.global_position, temp_crarfting.get_parent())
+	var result = interaction_controller.try_get_item(item)
+	if result:
+		temp_crarfting.process_mode = Node.PROCESS_MODE_DISABLED
+		temp_crarfting.visible = false
+		_on_cancel_pressed()
+	else:
+		item.queue_free()

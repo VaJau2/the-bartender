@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Radio
 
+const INSIDE_BAR_DISTANCE: int = 200
+
 @export var anim: AnimationPlayer
 @export var songs: Array[AudioStream]
 @export var switch: AudioStream
@@ -12,8 +14,11 @@ class_name Radio
 @onready var song_player: AudioStreamPlayer2D = get_node("song")
 @onready var noise_player: AudioStreamPlayer2D = get_node("noise")
 
+
 var is_playing: bool
+var is_inside_bar: bool
 var song_index: int
+
 
 func _ready() -> void:
 	_randomize_songs()
@@ -23,7 +28,17 @@ func _ready() -> void:
 
 func interact() -> void:
 	interaction_controller.hide_item_hint.emit()
-	interaction_controller.show_radio_menu.emit()
+	interaction_controller.show_radio_menu.emit(self)
+
+
+func check_inside_bar() -> void:
+	var bar: Node2D = get_tree().get_first_node_in_group("bar")
+	var distance = bar.global_position.distance_to(global_position)
+	is_inside_bar = distance < INSIDE_BAR_DISTANCE
+
+
+func is_working() -> bool:
+	return is_playing and is_inside_bar
 
 
 func on_mouse_entered() -> void:
@@ -76,4 +91,3 @@ func _on_noise_finished() -> void:
 				
 	else:
 		anim.play("RESET")
-		

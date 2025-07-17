@@ -46,13 +46,6 @@ func _on_open_menu(shop: MarketStand) -> void:
 			+ Loc.get_plural(temp_shop.delivery_price, "bits") + ")"
 	
 	for item in temp_shop.items:
-		if item.type == Enums.ShopItemType.bag:
-			if G.player.has_storage: 
-				continue
-		if item.type == Enums.ShopItemType.recipe:
-			if G.game_manager.knowed_recipes.has(item.code):
-				continue
-		
 		var button: ShopButton = button_prefab.instantiate()
 		button.icon = item.icon
 		button.item = item
@@ -67,7 +60,9 @@ func _on_open_menu(shop: MarketStand) -> void:
 func _on_button_click(item: ShopItem) -> void:
 	var result = temp_shop.try_buy_item(item)
 	if result:
-		if item.type == Enums.ShopItemType.bag or item.type == Enums.ShopItemType.recipe:
+		if item.one_time:
+			temp_shop.items.erase(item)
+			
 			for button in buttons_parent.get_children():
 				if button.item == item:
 					button.queue_free()

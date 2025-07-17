@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=141 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -65,9 +65,12 @@
 [ext_resource type="Texture2D" uid="uid://ci5rns0xmjti6" path="res://assets/sprites/items/bag-item.png" id="38_lfilp"]
 [ext_resource type="PackedScene" uid="uid://bkjwqra0munmw" path="res://objects/props/trees/tree_3.tscn" id="38_pdwbg"]
 [ext_resource type="Texture2D" uid="uid://dv8wkij25cti2" path="res://assets/sprites/items/chocolate.png" id="41_4pegn"]
+[ext_resource type="Texture2D" uid="uid://c3ylhi1c11rbv" path="res://assets/sprites/props/furn/juicer.png" id="42_3mhcn"]
 [ext_resource type="PackedScene" uid="uid://b0dnu1ngdistm" path="res://objects/props/plants/bush.tscn" id="42_gdcyb"]
+[ext_resource type="Texture2D" uid="uid://cevaktefc4r0b" path="res://assets/sprites/props/furn/coffee-machine.png" id="43_nc5fr"]
 [ext_resource type="PackedScene" uid="uid://fgpblr75kert" path="res://objects/props/plants/bush2.tscn" id="43_oa6sj"]
 [ext_resource type="PackedScene" uid="uid://3mwjuv02mmvb" path="res://objects/props/plants/carrot_plant.tscn" id="44_0f1tp"]
+[ext_resource type="Texture2D" uid="uid://ccn3db6d4knsg" path="res://assets/sprites/items/radio.png" id="44_3fqo2"]
 [ext_resource type="PackedScene" uid="uid://cqpxt4kyx6bx1" path="res://objects/buildings/marketStands/book_stand.tscn" id="44_4pegn"]
 [ext_resource type="Texture2D" uid="uid://c221h8oh71co5" path="res://assets/sprites/buildings/town/mail_sign.png" id="47_gia1l"]
 [ext_resource type="PackedScene" uid="uid://bfcgmnrkxurab" path="res://objects/buildings/marketStands/mailpost_stand.tscn" id="47_vwcyu"]
@@ -211,6 +214,7 @@ code = "carrot"
 type = 0
 icon = ExtResource("33_hyu0y")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_84vju"]
@@ -219,6 +223,7 @@ code = "tomato"
 type = 0
 icon = ExtResource("32_o1tg2")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_dyyw8"]
@@ -227,6 +232,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 5
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_gjpm3"]
@@ -235,6 +241,7 @@ code = "banana"
 type = 0
 icon = ExtResource("23_in2eo")
 price = 4
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_siyqs"]
@@ -243,6 +250,7 @@ code = "sliced-coconut"
 type = 0
 icon = ExtResource("24_gjpm3")
 price = 6
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_vwcyu"]
@@ -251,6 +259,7 @@ code = "orange"
 type = 0
 icon = ExtResource("30_nu61c")
 price = 8
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_pb578"]
@@ -259,6 +268,7 @@ code = "blueberry"
 type = 0
 icon = ExtResource("25_siyqs")
 price = 1
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_o1tg2"]
@@ -267,6 +277,7 @@ code = "strawberry"
 type = 0
 icon = ExtResource("26_vshs7")
 price = 3
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_hyu0y"]
@@ -275,6 +286,7 @@ code = "raspberry"
 type = 0
 icon = ExtResource("27_2ki8c")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_lfilp"]
@@ -283,6 +295,7 @@ code = "blackberry"
 type = 0
 icon = ExtResource("28_0owt5")
 price = 3
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_gcaob"]
@@ -291,6 +304,7 @@ code = "knife"
 type = 0
 icon = ExtResource("36_hyu0y")
 price = 10
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_aqa1v"]
@@ -299,6 +313,34 @@ code = "bag"
 type = 1
 icon = ExtResource("38_lfilp")
 price = 15
+one_time = true
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_ps7y1"]
+script = ExtResource("21_0qimb")
+code = "juicer"
+type = 0
+icon = ExtResource("42_3mhcn")
+price = 200
+one_time = true
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_4c8xy"]
+script = ExtResource("21_0qimb")
+code = "coffee-machine"
+type = 0
+icon = ExtResource("43_nc5fr")
+price = 300
+one_time = true
+metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="Resource" id="Resource_jhuvt"]
+script = ExtResource("21_0qimb")
+code = "radio"
+type = 0
+icon = ExtResource("44_3fqo2")
+price = 100
+one_time = true
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_rsknx"]
@@ -307,6 +349,7 @@ code = "coffee-beans"
 type = 0
 icon = ExtResource("37_e2bht")
 price = 10
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_4pegn"]
@@ -315,6 +358,7 @@ code = "milk"
 type = 0
 icon = ExtResource("34_lfilp")
 price = 10
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_p6l88"]
@@ -323,6 +367,7 @@ code = "chocolate"
 type = 0
 icon = ExtResource("41_4pegn")
 price = 8
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_4pmbt"]
@@ -331,6 +376,7 @@ code = "cola-bottle"
 type = 0
 icon = ExtResource("51_1xgkc")
 price = 10
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_fun0h"]
@@ -339,6 +385,7 @@ code = "beer-bottle"
 type = 0
 icon = ExtResource("49_csfbn")
 price = 15
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_oqdxe"]
@@ -347,6 +394,7 @@ code = "cider-bottle"
 type = 0
 icon = ExtResource("50_sj5fg")
 price = 16
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_iarty"]
@@ -355,6 +403,7 @@ code = "vodka-bottle"
 type = 0
 icon = ExtResource("52_x1gp3")
 price = 35
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_csdio"]
@@ -363,6 +412,7 @@ code = "gin-bottle"
 type = 0
 icon = ExtResource("58_oqdxe")
 price = 30
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_tcd68"]
@@ -371,6 +421,7 @@ code = "whiskey-bottle"
 type = 0
 icon = ExtResource("53_le2d2")
 price = 50
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_nc5fr"]
@@ -379,6 +430,7 @@ code = "tequila-bottle"
 type = 0
 icon = ExtResource("55_le2d2")
 price = 38
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_3fqo2"]
@@ -387,6 +439,7 @@ code = "rum-bottle"
 type = 0
 icon = ExtResource("56_gexia")
 price = 45
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_nlgwl"]
@@ -395,6 +448,7 @@ code = "absinthe-bottle"
 type = 0
 icon = ExtResource("57_fun0h")
 price = 60
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_3mhcn"]
@@ -403,6 +457,7 @@ code = "wine-bottle"
 type = 0
 icon = ExtResource("54_gexia")
 price = 100
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_8t8ul"]
@@ -411,6 +466,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_1x1rp"]
@@ -419,6 +475,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_ylqph"]
@@ -427,6 +484,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_fcv70"]
@@ -435,6 +493,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_mou0d"]
@@ -443,6 +502,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_ugmlg"]
@@ -451,6 +511,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_qd1pt"]
@@ -459,6 +520,7 @@ code = "apple"
 type = 0
 icon = ExtResource("22_in2eo")
 price = 2
+one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_gia1l"]
@@ -1692,7 +1754,7 @@ region_rect = Rect2(365.957, 55.9795, 17.3845, 17.6649)
 
 [node name="itemStand" parent="props/navRegion/market-props/stands" instance=ExtResource("20_1nqs0")]
 position = Vector2(-44, 2)
-items = Array[ExtResource("21_0qimb")]([SubResource("Resource_gcaob"), SubResource("Resource_aqa1v")])
+items = Array[ExtResource("21_0qimb")]([SubResource("Resource_gcaob"), SubResource("Resource_aqa1v"), SubResource("Resource_ps7y1"), SubResource("Resource_4c8xy"), SubResource("Resource_jhuvt")])
 
 [node name="sign2" type="Sprite2D" parent="props/navRegion/market-props/stands/itemStand"]
 position = Vector2(0, -46)

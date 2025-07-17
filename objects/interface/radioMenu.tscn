@@ -7,8 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_6ybga"]
 script = ExtResource("3_t8ycy")
-node_path = NodePath("../replace")
-code = "craft.replace"
+node_path = NodePath("../take")
+code = "craft.take"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_bkyq0"]
@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="radioMenu" type="Panel"]
 offset_right = 208.0
-offset_bottom = 104.0
+offset_bottom = 152.0
 script = ExtResource("1_22gbj")
 
 [node name="name" type="Label" parent="."]
@@ -46,23 +46,17 @@ max_value = 1.0
 step = 0.01
 value = 0.8
 
-[node name="replace" type="Button" parent="."]
-visible = false
+[node name="take" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -32.0
-offset_right = -8.0
-offset_bottom = -12.0
-grow_horizontal = 0
+offset_left = 64.0
+offset_top = -80.0
+offset_right = 152.0
+offset_bottom = -49.0
 grow_vertical = 0
-disabled = true
-text = "Replace
-"
+text = "Take"
 
 [node name="cancel" type="Button" parent="."]
 layout_mode = 1
@@ -81,4 +75,5 @@ script = ExtResource("2_qbsv6")
 nodes = Array[ExtResource("3_t8ycy")]([SubResource("Resource_6ybga"), SubResource("Resource_bkyq0")])
 
 [connection signal="value_changed" from="volume" to="." method="_on_volume_value_changed"]
+[connection signal="pressed" from="take" to="." method="_on_take_pressed"]
 [connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]

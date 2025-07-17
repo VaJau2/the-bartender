@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cevaktefc4r0b"
-path="res://.godot/imported/Coffee Machine.png-9d3c32391e4949e42fc3a10d65ec4635.ctex"
+uid="uid://ccn3db6d4knsg"
+path="res://.godot/imported/radio.png-271fc4b3c01ddee883ce0a5f37b9046f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/props/furn/Coffee Machine.png"
-dest_files=["res://.godot/imported/Coffee Machine.png-9d3c32391e4949e42fc3a10d65ec4635.ctex"]
+source_file="res://assets/sprites/items/radio.png"
+dest_files=["res://.godot/imported/radio.png-271fc4b3c01ddee883ce0a5f37b9046f.ctex"]
 
 [params]
 

@@ -16,10 +16,10 @@
 	},
 	"craft": {
 		"start": "Start",
-		"replace": "Replace",
+		"take": "Take",
 		"cancel": "Cancel",
 		"ingredient": "Ingredient:",
-		"glass": "Glass:"
+		"glass": "Glass:",
 	},
 	"storage": {
 		"empty": "Empty",

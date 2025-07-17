@@ -12,7 +12,7 @@ class_name RecipesMenu
 @onready var recipes_parent: GridContainer = get_node("scroll/vbox")
 
 @onready var sink_icon: Texture = preload("res://assets/sprites/props/furn/sink.png")
-@onready var coffee_icon: Texture = preload("res://assets/sprites/props/furn/Coffee Machine.png")
+@onready var coffee_icon: Texture = preload("res://assets/sprites/props/furn/coffee-machine.png")
 @onready var juicer_icon: Texture = preload("res://assets/sprites/props/furn/juicer.png")
 
 

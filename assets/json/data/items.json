@@ -412,6 +412,24 @@
 		"limit": 5
 	},
 	
+	"juicer": {
+		"type": "furn",
+		"category": "tool",
+		"texture": "assets/sprites/props/furn/juicer.png",
+		"weight": 5,
+	},
+	"coffee-machine": {
+		"type": "furn",
+		"category": "tool",
+		"texture": "assets/sprites/props/furn/coffee-machine.png",
+		"weight": 6,
+	},
+	"radio": {
+		"type": "furn",
+		"category": "tool",
+		"texture": "assets/sprites/items/radio.png",
+		"weight": 4,
+	},
 	"knife": {
 		"type": "tool",
 		"category": "tool",

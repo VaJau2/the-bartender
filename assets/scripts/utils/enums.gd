@@ -16,7 +16,8 @@ enum Lang {
 enum ItemType {
 	glass,
 	ingredient,
-	tool
+	tool,
+	furn,
 }
 
 enum StorageType {

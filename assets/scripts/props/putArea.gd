@@ -29,7 +29,8 @@ func interact() -> void:
 	item_to_put.enable()
 	item_to_put.global_position = main.get_global_mouse_position()
 	interaction_controller.update_holding_item(null)
-	put_item.emit(item_to_put)
+	if !item_to_put.try_spawn_furn():
+		put_item.emit(item_to_put)
 
 
 func find_item(code: String) -> Item:

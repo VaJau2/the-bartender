@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm0rfpspa728k"]
 
 [ext_resource type="Script" uid="uid://de5gkr10fgewt" path="res://assets/scripts/props/bar/juicer.gd" id="1_or87b"]
-[ext_resource type="Texture2D" uid="uid://cevaktefc4r0b" path="res://assets/sprites/props/furn/Coffee Machine.png" id="2_or87b"]
+[ext_resource type="Texture2D" uid="uid://cevaktefc4r0b" path="res://assets/sprites/props/furn/coffee-machine.png" id="2_or87b"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_rs34m"]
 [ext_resource type="AudioStream" uid="uid://dhqwji0tcw5e6" path="res://assets/audio/props/CofeeMachine.wav" id="4_or87b"]
 

@@ -14,7 +14,7 @@ var is_walking: bool
 
 @export var animation_controller: AnimationController
 @onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
-@onready var bar_radio: Radio = get_tree().get_first_node_in_group("bar_radio")
+@onready var bar_radio: Radio = get_tree().get_first_node_in_group("radio").get_node("interactArea")
 
 
 func init() -> void:
@@ -98,7 +98,7 @@ func _check_bar(delta: float) -> bool:
 			check_bar_timer -= delta
 		else:
 			var check_chance = CHECK_BAR_CHANCE
-			if bar_radio.is_playing: check_chance = check_chance + 0.2
+			if bar_radio.is_working(): check_chance = check_chance + 0.2
 			if randf() < check_chance:
 				state_machine.set_state("bar")
 				return true

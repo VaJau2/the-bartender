@@ -6,7 +6,7 @@ const CHECK_BAR_TIME: float = 50
 const CHECK_BAR_CHANCE: float = 0.1
 
 @onready var bar_menu: BarMenu = get_tree().get_first_node_in_group("bar_menu")
-@onready var bar_radio: Radio = get_tree().get_first_node_in_group("bar_radio")
+@onready var bar_radio: Radio = get_tree().get_first_node_in_group("radio").get_node("interactArea")
 
 var npc: NPC
 
@@ -59,7 +59,7 @@ func _check_bar(delta: float) -> bool:
 			check_bar_timer -= delta
 		else:
 			var check_chance = CHECK_BAR_CHANCE
-			if bar_radio.is_playing: check_chance = check_chance + 0.05
+			if bar_radio.is_working(): check_chance = check_chance + 0.05
 			if randf() < check_chance:
 				state_machine.set_state("bar")
 				return true
