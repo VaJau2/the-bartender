@@ -3,9 +3,10 @@ extends Area2D
 class_name Radio
 
 const INSIDE_BAR_DISTANCE: int = 200
+const SONGS_PATH: String = "res://assets/audio/radio/songs"
 
 @export var anim: AnimationPlayer
-@export var songs: Array[AudioStream]
+
 @export var switch: AudioStream
 @export var noise: AudioStream
 
@@ -13,14 +14,20 @@ const INSIDE_BAR_DISTANCE: int = 200
 @onready var radio_menu: RadioMenu = get_node("/root/main/menu/interface/radioMenu")
 @onready var song_player: AudioStreamPlayer2D = get_node("song")
 @onready var noise_player: AudioStreamPlayer2D = get_node("noise")
+@onready var songsFileNames: PackedStringArray = DirAccess.get_files_at(SONGS_PATH)
 
-
+var songs: Array[AudioStream]
 var is_playing: bool
 var is_inside_bar: bool
 var song_index: int
 
 
-func _ready() -> void:
+func _ready() -> void:	
+	for filename in songsFileNames:
+		if filename.contains(".import"): continue
+		var song: AudioStream = load(SONGS_PATH + "/" + filename)
+		songs.push_back(song)
+	
 	_randomize_songs()
 	_play_song()
 	radio_menu.changed_volume.connect(_on_music_volume_changed)

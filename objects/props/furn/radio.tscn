@@ -1,18 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://brqbgo141gdix"]
+[gd_scene load_steps=10 format=3 uid="uid://brqbgo141gdix"]
 
 [ext_resource type="Texture2D" uid="uid://cd2qk14vr6gfm" path="res://assets/sprites/props/furn/Radio.png" id="1_0uj6y"]
 [ext_resource type="Script" uid="uid://cb7umtmvgxs48" path="res://assets/scripts/props/bar/radio.gd" id="2_b5mjt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_tst2n"]
-[ext_resource type="AudioStream" uid="uid://dfm87wto8dn5c" path="res://assets/audio/radio/Chubby Checker - Let's Twist Again.ogg" id="3_yj7wk"]
-[ext_resource type="AudioStream" uid="uid://b2dw7mp3l3d0s" path="res://assets/audio/radio/Link Wray - Switchblade.ogg" id="4_fg3pt"]
-[ext_resource type="AudioStream" uid="uid://biidbu681o7ni" path="res://assets/audio/radio/Little Eva - The Loco Motion.ogg" id="5_881ol"]
-[ext_resource type="AudioStream" uid="uid://dlk8uguobwakx" path="res://assets/audio/radio/Little Walter - Come Back Baby.ogg" id="6_ano3l"]
-[ext_resource type="AudioStream" uid="uid://cyny0dx3ibhyx" path="res://assets/audio/radio/Perry Como - Magic Moments.ogg" id="7_xrjjv"]
-[ext_resource type="AudioStream" uid="uid://mr1hdt2jcfqm" path="res://assets/audio/radio/The Belmonts - I Wonder Why.ogg" id="8_nkplk"]
-[ext_resource type="AudioStream" uid="uid://liliphcs1cyt" path="res://assets/audio/radio/The Contours - Do You Love Me.ogg" id="9_gp20a"]
-[ext_resource type="AudioStream" uid="uid://kdgp1wqsa8t5" path="res://assets/audio/radio/The Marvelettes - Please Mr. Postman.ogg" id="10_yvbkf"]
-[ext_resource type="AudioStream" uid="uid://crpwjhq5bafq2" path="res://assets/audio/radio/The Trashmen - Surfin Bird.ogg" id="11_dtqoh"]
-[ext_resource type="AudioStream" uid="uid://ir7nmdnqqs5w" path="res://assets/audio/radio/The Twilights - Sea Of Love.ogg" id="12_aegqn"]
 [ext_resource type="AudioStream" uid="uid://ce65ecms2fq38" path="res://assets/audio/radio/Switch.ogg" id="13_fg3pt"]
 [ext_resource type="AudioStream" uid="uid://1jt8etg8h5ls" path="res://assets/audio/radio/Noise.ogg" id="14_881ol"]
 
@@ -78,7 +68,6 @@ collision_mask = 0
 monitorable = false
 script = ExtResource("2_b5mjt")
 anim = NodePath("../anim")
-songs = Array[AudioStream]([ExtResource("3_yj7wk"), ExtResource("4_fg3pt"), ExtResource("5_881ol"), ExtResource("6_ano3l"), ExtResource("7_xrjjv"), ExtResource("8_nkplk"), ExtResource("9_gp20a"), ExtResource("10_yvbkf"), ExtResource("11_dtqoh"), ExtResource("12_aegqn")])
 switch = ExtResource("13_fg3pt")
 noise = ExtResource("14_881ol")
 

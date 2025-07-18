@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyny0dx3ibhyx"
+path="res://.godot/imported/Perry Como - Magic Moments.ogg-91bc4c41afdbfbccdbf573d79f18c041.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/radio/songs/Perry Como - Magic Moments.ogg"
+dest_files=["res://.godot/imported/Perry Como - Magic Moments.ogg-91bc4c41afdbfbccdbf573d79f18c041.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
