@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q4p3clec3lbb"
+path="res://.godot/imported/Dick Dale - Misirlou.mp3-552a91c5958f5751fed774a15469344c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/radio/songs/Dick Dale - Misirlou.mp3"
+dest_files=["res://.godot/imported/Dick Dale - Misirlou.mp3-552a91c5958f5751fed774a15469344c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
