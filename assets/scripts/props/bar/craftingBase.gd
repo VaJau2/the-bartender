@@ -28,3 +28,7 @@ func get_ingredient() -> void:
 
 func start() -> void:
 	pass
+
+
+func interact() -> void:
+	pass

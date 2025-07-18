@@ -46,6 +46,10 @@ func _on_open_menu(shop: MarketStand) -> void:
 			+ Loc.get_plural(temp_shop.delivery_price, "bits") + ")"
 	
 	for item in temp_shop.items:
+		if item.type == Enums.ShopItemType.recipe:
+			if G.game_manager.knowed_recipes.has(item.code):
+				continue
+		
 		var button: ShopButton = button_prefab.instantiate()
 		button.icon = item.icon
 		button.item = item

@@ -63,7 +63,7 @@ shape = SubResource("RectangleShape2D_xcqxp")
 script = ExtResource("3_rs34m")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(39, 21)
+position = Vector2(-2, -10)
 stream = ExtResource("4_or87b")
 max_distance = 800.0
 

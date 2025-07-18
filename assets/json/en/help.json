@@ -33,6 +33,13 @@ You can also sell a drink by placing it on the counter. If a customer chooses a 
 			"title": "Radio",
 			"text": "The radio is sold on the market in the city.
 The radio turned on in the bar increases the chance of customers coming."
+		},
+		"bank": {
+			"title": "Bank",
+			"text": "There is a bank in town where you can borrow money without interest for two days. 
+You can take any amount from 1 to 1000 bits.
+You can have only one bank debt at a time.
+If you do not repay the debt within two days, the game will automatically end."
 		}
 	}
 }

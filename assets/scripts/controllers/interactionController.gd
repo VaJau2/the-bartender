@@ -32,6 +32,7 @@ signal show_craft_hint
 signal hide_craft_hint
 
 var interacting_item: Item # костыль для того, чтобы игнорировать putArea, когда на ней Item
+var interacting_crafting: CraftingBase # такой же костыль, но для соковыжималки и кофемашины
 var interaction_cooldown: float
 var holding_item: Item
 
@@ -63,6 +64,8 @@ func mouse_entered_item(item: CollisionObject2D) -> void:
 		item.on_mouse_entered()
 	if item is Item:
 		interacting_item = item
+	if item is CraftingBase and item.may_interact:
+		interacting_crafting = item
 
 
 func mouse_exited_item(item: CollisionObject2D) -> void:
@@ -71,6 +74,8 @@ func mouse_exited_item(item: CollisionObject2D) -> void:
 		item.on_mouse_exited()
 	if item == interacting_item:
 		interacting_item = null
+	if item == interacting_crafting:
+		interacting_crafting = null
 
 
 func interact(item) -> void:
@@ -80,6 +85,12 @@ func interact(item) -> void:
 	if interacting_item != null:
 		interacting_item.interact()
 		interacting_item = null
+		interaction_cooldown = INTERACTION_COOLDOWN
+		return
+	
+	if interacting_crafting != null and interacting_crafting.may_interact:
+		interacting_crafting.interact()
+		interacting_crafting = null
 		interaction_cooldown = INTERACTION_COOLDOWN
 		return
 	

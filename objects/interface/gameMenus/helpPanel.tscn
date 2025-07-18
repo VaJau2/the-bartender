@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3ybovnufvg4t"]
+[gd_scene load_steps=20 format=3 uid="uid://c3ybovnufvg4t"]
 
 [ext_resource type="Theme" uid="uid://dj0p4qf74vctf" path="res://assets/materials/small_theme.tres" id="1_ifwwy"]
 [ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="2_cud1c"]
@@ -71,6 +71,18 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 script = ExtResource("6_pdcoo")
 node_path = NodePath("../scroll/container/radioText")
 code = "categories.radio.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_3auwm"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/bank")
+code = "categories.bank.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_lviaw"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/bankText")
+code = "categories.bank.text"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="helpPanel" type="Panel"]
@@ -192,7 +204,24 @@ text = "Радио продается на рынке в городе.
 Включенное в баре радио повышает шанс прихода клиентов"
 autowrap_mode = 2
 
+[node name="bank" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Банк"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../bankText")
+
+[node name="bankText" type="Label" parent="scroll/container"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "В банке в городе можно взять деньги с долг без процентов на два дня. 
+Можно взять любую сумму от 1 до 1000 битов.
+Одновременно можно иметь только один долг у банка.
+Если не вернуть долг в течение двух дней, игра автоматически закончится."
+autowrap_mode = 2
+
 [node name="translation" type="Node" parent="."]
 script = ExtResource("5_0ebty")
 file = "help"
-nodes = Array[ExtResource("6_pdcoo")]([SubResource("Resource_iyehu"), SubResource("Resource_0ebty"), SubResource("Resource_pdcoo"), SubResource("Resource_wt653"), SubResource("Resource_ssg54"), SubResource("Resource_xd3lq"), SubResource("Resource_335e6"), SubResource("Resource_a8hu0"), SubResource("Resource_r3xk5"), SubResource("Resource_qtq3e"), SubResource("Resource_avcws")])
+nodes = Array[ExtResource("6_pdcoo")]([SubResource("Resource_iyehu"), SubResource("Resource_0ebty"), SubResource("Resource_pdcoo"), SubResource("Resource_wt653"), SubResource("Resource_ssg54"), SubResource("Resource_xd3lq"), SubResource("Resource_335e6"), SubResource("Resource_a8hu0"), SubResource("Resource_r3xk5"), SubResource("Resource_qtq3e"), SubResource("Resource_avcws"), SubResource("Resource_3auwm"), SubResource("Resource_lviaw")])
