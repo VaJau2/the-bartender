@@ -793,7 +793,7 @@ tile_set = SubResource("TileSet_2ofn6")
 navigation_enabled = false
 
 [node name="player" parent="." instance=ExtResource("1_0bbpv")]
-position = Vector2(137, -28)
+position = Vector2(98, -10)
 
 [node name="ponies" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -803,6 +803,7 @@ position = Vector2(-4645, -2338)
 code = "applejack"
 work_place = NodePath("../../props/navRegion/farm-props/appleStand")
 sleep_place = NodePath("../../props/navRegion/farm-props/houses/house18/door")
+dialogue_code = "suspend"
 
 [node name="fruitTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-678, -1466)
@@ -878,10 +879,12 @@ code = "roseluck"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
 
 [node name="banker" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-1871, -1560)
+position = Vector2(153, -46)
 code = "filthy_rich"
 work_place = NodePath("../../props/navRegion/town-props/houses/house17/bankpostStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
+dialogue_code = "welcome"
+talk_on_start = true
 
 [node name="caramel" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-984, -1265)

@@ -1,0 +1,76 @@
+{
+	"welcome": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "I congratulate you on purchasing this bar."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Thank you very much! A dream is finally coming true!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "serious",
+				"text": "Don't forget that you have exactly 5 days to prove your profitability, otherwise I will be forced to close the bar."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "You must show profitability of at least two thousand bits, then you will prove the profitability of the bar. Quite a lifting amount, in my opinion."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Okay. I guess it won't be difficult."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Try not to sell too much alcohol to the locals. And even more so, do not drink it in the workplace."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "serious",
+				"text": "Also, please don't turn on loud music in the middle of the night."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Yes, of course с:"
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Good luck in your new job."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "If you need money, you can find me in the town. I can provide you with special conditions on an interest-free basis."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Thanks again. Goodbye!"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

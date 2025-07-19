@@ -1,0 +1,76 @@
+{
+	"welcome": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Поздравляю вас с приобретением этого бара."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Спасибо большое! Наконец-то мечта исполняется!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "serious",
+				"text": "Не забывайте, что вам дано ровно 5 дней на то, чтобы доказать вашу прибыльность, иначе я буду вынужден закрыть бар."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Вы должны показать прибыльность хотя бы в две тысячи битов, тогда вы докажете рентабельность бара. Вполне подъемная сумма, на мой взгляд."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Хорошо. Думаю, это будет не сложно."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Постарайтесь не продавать много алкоголя местным. И уж тем более не распивать его на рабочем месте."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "serious",
+				"text": "И ещё - прошу не включайте громкую музыку посреди ночи."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Да, конечно с:"
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Удачи вам в работе."
+			},
+			{
+				"type": "phrase",
+				"speaker": "filthy_rich",
+				"avatar": "idle",
+				"text": "Если вам потребуются деньги, можете найти меня в городе. Я могу представить вам особые условия на беспроцентной основе."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Спасибо ещё раз. До свидания!"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

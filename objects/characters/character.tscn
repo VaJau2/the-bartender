@@ -615,7 +615,7 @@ speed = 80
 
 [node name="animationController" type="Node" parent="." node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("4_o4xot")
-sprites = [NodePath("../sprite"), NodePath("../bag")]
+sprites = [NodePath("../sprite"), NodePath("../bag"), NodePath("../mouth")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movementController")
 

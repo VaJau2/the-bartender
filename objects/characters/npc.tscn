@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://864ql456evru"]
+[gd_scene load_steps=24 format=3 uid="uid://864ql456evru"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_y63yl"]
 [ext_resource type="Script" uid="uid://cvjt8u00s6ytm" path="res://assets/scripts/characters/npc/npc.gd" id="2_bcxtt"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://grof8c4roh23" path="res://assets/scripts/characters/npc/stateMachine/states/talk.gd" id="11_y1bos"]
 [ext_resource type="Texture2D" uid="uid://mtbr028t0ygf" path="res://assets/sprites/interface/dialogue/thanks1.png" id="11_yafal"]
 [ext_resource type="Texture2D" uid="uid://c36wk5diq5idu" path="res://assets/sprites/interface/dialogue/thanks2.png" id="12_ay7hr"]
+[ext_resource type="Script" uid="uid://dohs7d04fmb4b" path="res://assets/scripts/characters/npc/stateMachine/states/startTalking.gd" id="12_t5lbb"]
 [ext_resource type="Texture2D" uid="uid://cks0fdquck40x" path="res://assets/sprites/interface/dialogue/wronk_drink.png" id="13_ay7hr"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="16_43ndy"]
 [ext_resource type="Script" uid="uid://dfvjjbydbnb6c" path="res://assets/scripts/characters/npc/npcInteraction.gd" id="16_xfs8l"]
@@ -70,6 +71,10 @@ movement_controller = NodePath("../../movementController")
 
 [node name="talk" type="Node" parent="stateMachine" index="4" node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("11_y1bos")
+movement_controller = NodePath("../../movementController")
+
+[node name="startTalking" type="Node" parent="stateMachine" index="5" node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("12_t5lbb")
 movement_controller = NodePath("../../movementController")
 
 [node name="dialogueIcons" type="Node2D" parent="." index="10"]

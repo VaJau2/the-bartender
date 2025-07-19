@@ -40,4 +40,24 @@
 		"max_pitch": "1",
 		"chars_to_sound": "3",
 	},
+	"filthy_rich": {
+		"sounds": [
+			"beeps/sound_u.wav",
+			"beeps/sound_o.wav",
+			"beeps/sound_y.wav",
+		],
+		"min_pitch": "0.3",
+		"max_pitch": "0.6",
+		"chars_to_sound": "4",
+	},
+	"applejack": {
+		"sounds": [
+			"beeps/sound_i.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.4",
+		"max_pitch": "1.9",
+		"chars_to_sound": "4",
+	},
 }

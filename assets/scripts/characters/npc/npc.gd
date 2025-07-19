@@ -6,6 +6,7 @@ class_name NPC
 @export var work_place: StandBase
 @export var sleep_place: Node2D
 @export var dialogue_code: String = ""
+@export var talk_on_start: bool = false
 
 @onready var dialogue_icons: NpcDialogueIcons = get_node("dialogueIcons")
 @onready var state_machine: StateMachine = get_node("stateMachine")
@@ -14,6 +15,12 @@ class_name NPC
 
 
 var walk_state: String = "walk"
+
+
+func _ready() -> void:
+	if talk_on_start:
+		await get_tree().create_timer(0.2).timeout
+		state_machine.set_state("startTalking")
 
 
 func animate_mouth(time: float = 0):

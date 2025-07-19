@@ -1,0 +1,64 @@
+{
+	"suspend": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "applejack",
+				"avatar": "idle",
+				"text": "Какая-то пони повалидась воровать яблоки у меня на ферме. Ты случаем не видела её?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "itsnotme",
+				"text": "Э... нет."
+			},
+			{
+				"type": "phrase",
+				"speaker": "applejack",
+				"avatar": "suspend",
+				"text": "Точно?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Да. Я тут совсем недавно."
+			},
+			{
+				"type": "phrase",
+				"speaker": "applejack",
+				"avatar": "more-suspend",
+				"text": "Ну они не могли же убежать сами по себе, верно?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Честно, я ничего не знаю."
+			},
+			{
+				"type": "phrase",
+				"speaker": "applejack",
+				"avatar": "idle",
+				"text": "Ладно. если увидишь её, передай ей, что яблок у нас конечно много, но лучше все-таки их покупать."
+			},
+			{
+				"type": "phrase",
+				"speaker": "applejack",
+				"avatar": "sad",
+				"text": "Я и так продаю их практически забесплатно."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Хорошо, передам."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}
