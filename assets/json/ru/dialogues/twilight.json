@@ -1,0 +1,62 @@
+{
+	"hello": [
+		{
+			"type": "phrase",
+			"speaker": "twilight",
+			"avatar": "idle",
+			"text": "Привет, я Твайлайт Спаркл, местный библиотекарь."
+		},
+		{
+			"type": "phrase",
+			"speaker": "player",
+			"avatar": "idle",
+			"text": "Привет. А я тогда местный бармен. Может у тебя есть какие-нибудь рецепты на продажу?"
+		},
+		{
+			"type": "phrase",
+			"speaker": "twilight",
+			"avatar": "blink",
+			"text": "Да, есть несколько книжек на стойке.",
+		},
+		{
+			"type": "phrase",
+			"speaker": "twilight",
+			"avatar": "smile",
+			"text": "У меня где-то тут должна быть библиотека - там их гораздо больше - но я никак не могу её найти.",
+		},
+		{
+			"type": "phrase",
+			"speaker": "player",
+			"avatar": "surprised",
+			"text": "Как это не можешь? А где ты живешь?"
+		},
+		{
+			"type": "phrase",
+			"speaker": "twilight",
+			"avatar": "smile",
+			"text": "Сама удивляюсь. Дерево просто взяло и куда-то исчезло."
+		},
+		{
+			"type": "phrase",
+			"speaker": "twilight",
+			"avatar": "idle",
+			"text": "Я временно живу у подруги, пока ... проблема с моей библиотекой не решится."
+		},
+		{
+			"type": "phrase",
+			"speaker": "twilight",
+			"avatar": "blink",
+			"text": "Не беспокойся за меня. Рано или поздно оно должно вернуться."
+		},
+		{
+			"type": "phrase",
+			"speaker": "player",
+			"avatar": "surprised",
+			"text": "Ладно..."
+		},
+		{
+			"type": "change_code",
+			"value": "",
+		}
+	]
+}

@@ -42,7 +42,7 @@ func _on_open_menu(stand: StandBase) -> void:
 	movement_controller.may_move = false
 	name_label.text = Loc.trans("items.bank.name")
 	debt_label.text = Loc.trans("interface.money.debt") \
-		+ str(M.debt) + " " \
+		+ " " + str(M.debt) + " " \
 		+ Loc.get_plural(M.debt, "bits")
 	return_button.disabled = M.debt <= 0 and M.money >= M.debt
 	take_button.disabled = !_may_take_debt()

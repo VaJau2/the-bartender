@@ -1,0 +1,43 @@
+{
+	"player": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.5",
+		"max_pitch": "2",
+		"chars_to_sound": "3",
+	},
+	"twilight": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1",
+		"max_pitch": "2",
+		"chars_to_sound": "4",
+	},
+	"pinkie": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "2",
+		"max_pitch": "3",
+		"chars_to_sound": "3",
+	},
+	"pony_gpt": {
+		"sounds": [
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "0.8",
+		"max_pitch": "1",
+		"chars_to_sound": "3",
+	},
+}

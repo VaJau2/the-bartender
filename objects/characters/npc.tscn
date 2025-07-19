@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://864ql456evru"]
+[gd_scene load_steps=23 format=3 uid="uid://864ql456evru"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_y63yl"]
 [ext_resource type="Script" uid="uid://cvjt8u00s6ytm" path="res://assets/scripts/characters/npc/npc.gd" id="2_bcxtt"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://yibmj6g0m3jh" path="res://assets/scripts/characters/npc/stateMachine/states/sleep.gd" id="9_xuxqs"]
 [ext_resource type="Texture2D" uid="uid://bodoc5fg6jgu0" path="res://assets/sprites/interface/dialogue/thinking.png" id="10_msbil"]
 [ext_resource type="Texture2D" uid="uid://dl45iltjx5fks" path="res://assets/sprites/items/default.png" id="11_msbil"]
+[ext_resource type="Script" uid="uid://grof8c4roh23" path="res://assets/scripts/characters/npc/stateMachine/states/talk.gd" id="11_y1bos"]
 [ext_resource type="Texture2D" uid="uid://mtbr028t0ygf" path="res://assets/sprites/interface/dialogue/thanks1.png" id="11_yafal"]
 [ext_resource type="Texture2D" uid="uid://c36wk5diq5idu" path="res://assets/sprites/interface/dialogue/thanks2.png" id="12_ay7hr"]
 [ext_resource type="Texture2D" uid="uid://cks0fdquck40x" path="res://assets/sprites/interface/dialogue/wronk_drink.png" id="13_ay7hr"]
@@ -22,7 +23,7 @@
 [ext_resource type="Script" uid="uid://dvs0d4ofhm5lm" path="res://assets/scripts/characters/npc/drunkHandler.gd" id="20_fbupb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs8l"]
-size = Vector2(22, 25)
+size = Vector2(24, 44)
 
 [node name="npc" instance=ExtResource("1_y63yl")]
 collision_mask = 0
@@ -31,10 +32,14 @@ script = ExtResource("2_bcxtt")
 [node name="sprite" parent="." index="2"]
 script = ExtResource("3_a7t21")
 
+[node name="mouth" parent="." index="3"]
+script = ExtResource("3_a7t21")
+add_name = "_mouth"
+
 [node name="navAgent" type="NavigationAgent2D" parent="." index="5"]
 target_desired_distance = 20.0
 
-[node name="movementController" parent="." index="6" node_paths=PackedStringArray("nav_agent")]
+[node name="movementController" parent="." index="7" node_paths=PackedStringArray("nav_agent")]
 script = ExtResource("3_c2sos")
 nav_agent = NodePath("../navAgent")
 
@@ -63,6 +68,10 @@ movement_controller = NodePath("../../movementController")
 script = ExtResource("9_xuxqs")
 movement_controller = NodePath("../../movementController")
 
+[node name="talk" type="Node" parent="stateMachine" index="4" node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("11_y1bos")
+movement_controller = NodePath("../../movementController")
+
 [node name="dialogueIcons" type="Node2D" parent="." index="10"]
 visible = false
 position = Vector2(0, -55)
@@ -88,7 +97,7 @@ drunk_handler = NodePath("../drunkHandler")
 dialogue_icons = NodePath("../dialogueIcons")
 
 [node name="shape" type="CollisionShape2D" parent="interactionArea" index="0"]
-position = Vector2(1, -11.5)
+position = Vector2(1, -21)
 shape = SubResource("RectangleShape2D_xfs8l")
 
 [node name="interactionHandler" type="Node" parent="interactionArea" index="1"]

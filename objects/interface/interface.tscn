@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene load_steps=39 format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="Theme" uid="uid://ccdfkuiy7gnf3" path="res://assets/materials/hud.tres" id="1_oc68s"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dtdoy8popmryu" path="res://objects/interface/bankMenu.tscn" id="8_g8u8v"]
 [ext_resource type="Script" uid="uid://dsy3kdrnx5u5p" path="res://assets/scripts/interface/recipes/recipesButton.gd" id="9_2xida"]
 [ext_resource type="Texture2D" uid="uid://bcveq1k217x2s" path="res://assets/sprites/interface/bit.png" id="9_whndr"]
+[ext_resource type="PackedScene" uid="uid://j7o35ogyi17k" path="res://objects/interface/dialoguePanel.tscn" id="10_owlnv"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="10_wyfr1"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="11_oxl46"]
 [ext_resource type="Script" uid="uid://b5ch322cr0q0e" path="res://assets/scripts/interface/timeClock.gd" id="13_11rc7"]
@@ -218,7 +219,7 @@ offset_right = 192.0
 offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
-other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu"), NodePath("../recipesMenu"), NodePath("../bankMenu")]
+other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu"), NodePath("../recipesMenu"), NodePath("../bankMenu"), NodePath("../dialoguePanel")]
 
 [node name="shopMenu" parent="." instance=ExtResource("5_oxl46")]
 visible = false
@@ -264,7 +265,7 @@ offset_right = 188.0
 offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
-other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu"), NodePath("../bankMenu")]
+other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu"), NodePath("../bankMenu"), NodePath("../dialoguePanel")]
 
 [node name="bankMenu" parent="." instance=ExtResource("8_g8u8v")]
 visible = false
@@ -295,6 +296,12 @@ offset_right = 104.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="dialoguePanel" parent="." instance=ExtResource("10_owlnv")]
+visible = false
+layout_mode = 1
+offset_top = -104.0
+offset_bottom = -16.0
 
 [node name="recipesIcon" type="TextureButton" parent="."]
 layout_mode = 1

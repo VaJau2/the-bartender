@@ -16,9 +16,9 @@ static func trans(code: String) -> String:
 	if len(path) == 0: 
 		push_error("file path is empty")
 		
-	var fileName = path[0]
+	var file_name = path[0]
 	
-	var json_path = "res://assets/json/" + str(Enums.Lang.keys()[current_lang]) + "/" + fileName + ".json"
+	var json_path = "res://assets/json/" + str(Enums.Lang.keys()[current_lang]) + "/" + file_name + ".json"
 	
 	var json_data = JsonParse.read(json_path)
 	path.remove_at(0)

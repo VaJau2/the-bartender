@@ -1,0 +1,20 @@
+{
+	"hello": [
+		{
+			"type": "phrase",
+			"speaker": "pony_gpt",
+			"avatar": "idle",
+			"text": "Три икс в кубе поделить на константу... Как же там было?"
+		},
+		{
+			"type": "phrase",
+			"speaker": "player",
+			"avatar": "idle",
+			"text": "На меня не смотри, я в этой математике ни в зуб."
+		},
+		{
+			"type": "change_code",
+			"value": "",
+		}
+	]
+}

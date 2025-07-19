@@ -7,6 +7,7 @@ class_name Player
 @onready var movement_controller: MovementController = get_node("movementController")
 @onready var storage_handler: StorageHandler = get_node("storageHandler")
 @onready var drunk_handler: DrunkHandler = get_node("drunkHandler")
+@onready var mouth: Sprite2D = get_node("mouth")
 
 @export var using_storage: bool
 @export var has_storage: bool = false
@@ -21,3 +22,10 @@ func set_using_storage(value: bool):
 	using_storage = value
 	update_using_storage.emit(value)
 	if !value: move_items_from_bag.emit()
+
+
+func animate_mouth(time: float = 0):
+	if time > 0:
+		mouth.visible = true
+		await get_tree().create_timer(time).timeout
+		mouth.visible = false

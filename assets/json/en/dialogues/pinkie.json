@@ -1,0 +1,44 @@
+{
+	"hello": [
+		{
+			"type": "phrase",
+			"speaker": "pinkie",
+			"avatar": "idle",
+			"text": "Oh, hi! You are new here?"
+		},
+		{
+			"type": "phrase",
+			"speaker": "player",
+			"avatar": "happy",
+			"text": "Yes I'm new! Hi!"
+		},
+		{
+			"type": "phrase",
+			"speaker": "pinkie",
+			"avatar": "idle",
+			"text": "I sell coffee, milk and chocolate here. You can mix them together and get delicious drinks."
+		},
+		{
+			"type": "phrase",
+			"speaker": "pinkie",
+			"avatar": "smile",
+			"text": "To then sell them to me at a super inflated price."
+		},
+		{
+			"type": "phrase",
+			"speaker": "player",
+			"avatar": "itsnotme",
+			"text": "Of course not, no overpricing!"
+		},
+		{
+			"type": "phrase",
+			"speaker": "pinkie",
+			"avatar": "suspect",
+			"text": "We'll see."
+		},
+		{
+			"type": "change_code",
+			"value": "",
+		}
+	]
+}

@@ -821,6 +821,7 @@ position = Vector2(-271, -1463)
 code = "pinkie"
 work_place = NodePath("../../props/navRegion/market-props/stands/coffeeStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house8/door")
+dialogue_code = "hello"
 
 [node name="doctor" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-1480, -1544)
@@ -833,6 +834,7 @@ position = Vector2(-87, -1459)
 code = "twilight"
 work_place = NodePath("../../props/navRegion/market-props/stands/bookStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house1/door")
+dialogue_code = "hello"
 
 [node name="postmare" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2552, -1560)
@@ -890,6 +892,7 @@ sleep_place = NodePath("../../props/navRegion/town-props/houses/house14/door")
 position = Vector2(1043, -504)
 code = "pony_gpt"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house14/door")
+dialogue_code = "hello"
 
 [node name="wonderbolt" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-1988, -1212)

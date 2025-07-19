@@ -3,10 +3,12 @@ extends Area2D
 @export var bar_state: BarState
 @export var drunk_handler: DrunkHandler
 @export var dialogue_icons: NpcDialogueIcons
-@onready var bar_front_area: PutArea = get_tree().get_first_node_in_group("bar_front_area")
 
+@onready var bar_front_area: PutArea = get_tree().get_first_node_in_group("bar_front_area")
+@onready var dialogue_menu: DialogueMenu = get_tree().get_first_node_in_group("dialogue_menu")
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var audi: AudioStreamPlayer2D = get_node("audi")
+@onready var npc: NPC = get_parent()
 
 
 func _ready() -> void:
@@ -16,6 +18,9 @@ func _ready() -> void:
 func interact() -> void:
 	if bar_state.is_processing():
 		check_ordered_drink(interaction_controller.holding_item)
+		return
+	if npc.dialogue_code != null and npc.dialogue_code != "":
+		dialogue_menu.start_dialogue(npc, npc.dialogue_code)
 
 
 func _on_put_front_item(item: Item) -> void:

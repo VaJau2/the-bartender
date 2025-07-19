@@ -58,6 +58,9 @@
 		"debt": "Debt:",
 		"days_left": "Days left:"
 	},
+	"dialogue": {
+		"continue": "Space to continue"
+	},
 	"time": {
 		"mo": "Mn",
 		"tu": "Tu",
