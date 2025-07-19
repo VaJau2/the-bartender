@@ -5,55 +5,55 @@
 				"type": "phrase",
 				"speaker": "applejack",
 				"avatar": "idle",
-				"text": "Какая-то пони повадилась воровать яблоки у меня на ферме. Ты случаем не видела её?"
+				"text": "Somepony got into the habit of stealing apples from my farm. Have you seen her by any chance?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "itsnotme",
-				"text": "Э... нет."
+				"text": "Am... nope."
 			},
 			{
 				"type": "phrase",
 				"speaker": "applejack",
 				"avatar": "suspend",
-				"text": "Точно?"
+				"text": "You're sure 'bout that?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "sorry",
-				"text": "Да. Я тут совсем недавно."
+				"text": "Yes. I'm new here."
 			},
 			{
 				"type": "phrase",
 				"speaker": "applejack",
 				"avatar": "more-suspend",
-				"text": "Ну они не могли же убежать сами по себе, верно?"
+				"text": "Well, it couldn't have run away on its own, right?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "sorry",
-				"text": "Честно, я ничего не знаю."
+				"text": "Honestly, I don't know anything."
 			},
 			{
 				"type": "phrase",
 				"speaker": "applejack",
 				"avatar": "idle",
-				"text": "Ладно. если увидишь её, передай ей, что яблок у нас конечно много, но лучше все-таки их покупать."
+				"text": "Okay. If you see her, tell her that of course we have a lot of apples, but it's better to buy it anyway."
 			},
 			{
 				"type": "phrase",
 				"speaker": "applejack",
 				"avatar": "sad",
-				"text": "Я и так продаю их практически забесплатно."
+				"text": "I'm already selling it almost for free."
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "idle",
-				"text": "Хорошо, передам."
+				"text": "Okay, I'll tell her."
 			},
 			{
 				"type": "change_code",
