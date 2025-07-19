@@ -1,20 +1,22 @@
 {
-	"hello": [
-		{
-			"type": "phrase",
-			"speaker": "pony_gpt",
-			"avatar": "idle",
-			"text": "Divide the three x's in a cube by a constant... How was it there?"
-		},
-		{
-			"type": "phrase",
-			"speaker": "player",
-			"avatar": "idle",
-			"text": "Don't look at me, I'm not good at math."
-		},
-		{
-			"type": "change_code",
-			"value": "",
-		}
-	]
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "idle",
+				"text": "Divide the three x's in a cube by a constant... How was it there?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Don't look at me, I'm not good at math."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
 }

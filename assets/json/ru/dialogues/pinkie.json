@@ -1,44 +1,46 @@
 {
-	"hello": [
-		{
-			"type": "phrase",
-			"speaker": "pinkie",
-			"avatar": "idle",
-			"text": "О привет, ты новенькая?"
-		},
-		{
-			"type": "phrase",
-			"speaker": "player",
-			"avatar": "happy",
-			"text": "Да, я новенькая, привет!"
-		},
-		{
-			"type": "phrase",
-			"speaker": "pinkie",
-			"avatar": "idle",
-			"text": "Я тут торгую кофе, молоком и шоколадом. Можешь смешать их вместе и получить вкусные напитки."
-		},
-		{
-			"type": "phrase",
-			"speaker": "pinkie",
-			"avatar": "smile",
-			"text": "Чтобы затем продать их мне по супер завышенной стоимости."
-		},
-		{
-			"type": "phrase",
-			"speaker": "player",
-			"avatar": "itsnotme",
-			"text": "Конечно нет, никаких завышенных стоимостей!"
-		},
-		{
-			"type": "phrase",
-			"speaker": "pinkie",
-			"avatar": "suspect",
-			"text": "Посмотрим."
-		},
-		{
-			"type": "change_code",
-			"value": "",
-		}
-	]
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pinkie",
+				"avatar": "idle",
+				"text": "О привет, ты новенькая?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Да, я новенькая, привет!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pinkie",
+				"avatar": "idle",
+				"text": "Я тут торгую кофе, молоком и шоколадом. Можешь смешать их вместе и получить вкусные напитки."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pinkie",
+				"avatar": "smile",
+				"text": "Чтобы затем продать их мне по супер завышенной стоимости."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "itsnotme",
+				"text": "Конечно нет, никаких завышенных стоимостей!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pinkie",
+				"avatar": "suspect",
+				"text": "Посмотрим."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
 }

@@ -109,5 +109,5 @@ func _get_dialogue_data(file_name: String, dialogue_name: String) -> Array:
 	
 	var json_data: Dictionary = JsonParse.read(json_path)
 	if json_data.has(dialogue_name):
-		return json_data[dialogue_name]
+		return json_data[dialogue_name].nodes
 	return []

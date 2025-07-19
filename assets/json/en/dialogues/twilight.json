@@ -1,62 +1,64 @@
 {
-	"hello": [
-		{
-			"type": "phrase",
-			"speaker": "twilight",
-			"avatar": "idle",
-			"text": "Hi, I'm Twilight Sparkle, the local librarian."
-		},
-		{
-			"type": "phrase",
-			"speaker": "player",
-			"avatar": "idle",
-			"text": "Hi. And then I'm the local bartender. Do you have any recipes for sale?"
-		},
-		{
-			"type": "phrase",
-			"speaker": "twilight",
-			"avatar": "blink",
-			"text": "Yes, there are several books on the counter.",
-		},
-		{
-			"type": "phrase",
-			"speaker": "twilight",
-			"avatar": "smile",
-			"text": "I must have more at my library here somewhere, but I can't find it.",
-		},
-		{
-			"type": "phrase",
-			"speaker": "player",
-			"avatar": "surprised",
-			"text": "Can't find your own library? Where do you live then?"
-		},
-		{
-			"type": "phrase",
-			"speaker": "twilight",
-			"avatar": "smile",
-			"text": "I'm surprised myself. The tree just disappeared."
-		},
-		{
-			"type": "phrase",
-			"speaker": "twilight",
-			"avatar": "idle",
-			"text": "I'm temporarily staying with a friend until... the problem with my library won't be solved."
-		},
-		{
-			"type": "phrase",
-			"speaker": "twilight",
-			"avatar": "blink",
-			"text": "Don't worry about me. Sooner or later it must come back."
-		},
-		{
-			"type": "phrase",
-			"speaker": "player",
-			"avatar": "surprised",
-			"text": "Okay..."
-		},
-		{
-			"type": "change_code",
-			"value": "",
-		}
-	]
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "twilight",
+				"avatar": "idle",
+				"text": "Hi, I'm Twilight Sparkle, the local librarian."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Hi. And then I'm the local bartender. Do you have any recipes for sale?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "twilight",
+				"avatar": "blink",
+				"text": "Yes, there are several books on the counter.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "twilight",
+				"avatar": "smile",
+				"text": "I must have more at my library here somewhere, but I can't find it.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Can't find your own library? Where do you live then?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "twilight",
+				"avatar": "smile",
+				"text": "I'm surprised myself. The tree just disappeared."
+			},
+			{
+				"type": "phrase",
+				"speaker": "twilight",
+				"avatar": "idle",
+				"text": "I'm temporarily staying with a friend until... the problem with my library won't be solved."
+			},
+			{
+				"type": "phrase",
+				"speaker": "twilight",
+				"avatar": "blink",
+				"text": "Don't worry about me. Sooner or later it must come back."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Okay..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
 }
