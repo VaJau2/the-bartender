@@ -149,6 +149,7 @@ func _try_choose_drink() -> bool:
 
 
 func _on_queue_updated() -> void:
+	if !is_processing(): return
 	if bar_queue.ordering_npc == null and bar_queue.is_first_in_queue(npc):
 		_make_order()
 

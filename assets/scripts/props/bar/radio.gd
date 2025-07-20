@@ -14,7 +14,7 @@ const SONGS_PATH: String = "res://assets/audio/radio/songs"
 @onready var radio_menu: RadioMenu = get_node("/root/main/menu/interface/radioMenu")
 @onready var song_player: AudioStreamPlayer2D = get_node("song")
 @onready var noise_player: AudioStreamPlayer2D = get_node("noise")
-@onready var songsFileNames: PackedStringArray = DirAccess.get_files_at(SONGS_PATH)
+@onready var songsFileNames: PackedStringArray = ResourceLoader.list_directory(SONGS_PATH)
 
 var songs: Array[AudioStream]
 var is_playing: bool
