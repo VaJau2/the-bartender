@@ -1,0 +1,66 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi, I'm a new barpony here!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "surprised",
+				"text": "Oh, Celestia! Such a small filly, and already selling alcohol?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "angry",
+				"text": "I'm not small! I'm an adult wealthy pony!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "happy",
+				"text": "Oh, I'm sorry for that reaction. Welcome!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "idle",
+				"text": "Even though you're an adult, I hope you won't sell us too much alcohol."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Of course, don't worry."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "idle",
+				"text": "Of course, I'm not forbidding you to sell such drinks at all. I understand that alcohol is... or will be the basis of your earnings."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "idle",
+				"text": "I'll support you myself in this case and sacrifice my sobriety for you and your bar."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "satisfied",
+				"text": "Just try not to turn us all into alcoholics."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "I'll take that into consideration."
+			},
+		]
+	}
+}

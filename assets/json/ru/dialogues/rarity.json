@@ -1,0 +1,66 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет, я теперь ваш новый бармен!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "surprised",
+				"text": "О, Селестия! Такая маленькая кобылка, и уже продаешь алкоголь?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "angry",
+				"text": "Я не маленькая! Я взрослая состоятельная личность!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "happy",
+				"text": "О, прости меня за такую реакцию. Добро пожаловать!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "idle",
+				"text": "Хоть ты и взрослая, надеюсь все же, что ты не будешь продавать нам слишком много алкоголя."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Конечно, не беспокойтесь."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "idle",
+				"text": "Я конечно не запрещаю тебе продавать такие напитки вообще. Я понимаю, что на алкоголе держится... или будет держаться основа твоего заработка."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "idle",
+				"text": "Я и сама поддержу тебя в таком случае и пожертвую своей трезвостью ради тебя и твоего бара."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rarity",
+				"avatar": "satisfied",
+				"text": "Просто постарайся не превращать нас всех ВЫв алкоголиков."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Приму это к сведению."
+			},
+		]
+	}
+}
