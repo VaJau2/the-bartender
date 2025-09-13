@@ -1743,10 +1743,6 @@ position = Vector2(-490, -1324)
 [node name="vegitableStand" parent="props/navRegion/market-props/stands" instance=ExtResource("18_bb450")]
 position = Vector2(109, 2)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_57f5r"), SubResource("Resource_84vju")])
-load_recipes = null
-fixed_delivery = null
-hide_delivery = null
-code = null
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/vegitableStand"]
 position = Vector2(2, -46)
@@ -1758,10 +1754,6 @@ region_rect = Rect2(367, 135, 16, 16)
 [node name="fruitStand" parent="props/navRegion/market-props/stands" instance=ExtResource("19_nfivy")]
 position = Vector2(250, 2)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_dyyw8"), SubResource("Resource_gjpm3"), SubResource("Resource_siyqs"), SubResource("Resource_vwcyu"), SubResource("Resource_pb578"), SubResource("Resource_o1tg2"), SubResource("Resource_hyu0y"), SubResource("Resource_lfilp")])
-load_recipes = null
-fixed_delivery = null
-hide_delivery = null
-code = null
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/fruitStand"]
 position = Vector2(1, -45)
@@ -1773,10 +1765,6 @@ region_rect = Rect2(365.957, 55.9795, 17.3845, 17.6649)
 [node name="itemStand" parent="props/navRegion/market-props/stands" instance=ExtResource("20_1nqs0")]
 position = Vector2(-44, 2)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_gcaob"), SubResource("Resource_aqa1v"), SubResource("Resource_ps7y1"), SubResource("Resource_4c8xy"), SubResource("Resource_jhuvt")])
-load_recipes = null
-fixed_delivery = null
-hide_delivery = null
-code = null
 
 [node name="sign2" type="Sprite2D" parent="props/navRegion/market-props/stands/itemStand"]
 position = Vector2(0, -46)
@@ -1788,10 +1776,6 @@ region_rect = Rect2(367.379, 16.5539, 15.194, 15.1296)
 [node name="coffeeStand" parent="props/navRegion/market-props/stands" instance=ExtResource("18_bb450")]
 position = Vector2(511, -109)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_rsknx"), SubResource("Resource_4pegn"), SubResource("Resource_p6l88")])
-load_recipes = null
-fixed_delivery = null
-hide_delivery = null
-code = null
 
 [node name="sign" type="Sprite2D" parent="props/navRegion/market-props/stands/coffeeStand"]
 position = Vector2(2, -46)
@@ -1802,10 +1786,8 @@ region_rect = Rect2(367, 115, 16, 16)
 
 [node name="bookStand" parent="props/navRegion/market-props/stands" instance=ExtResource("44_4pegn")]
 position = Vector2(511, -15)
-items = null
 load_recipes = true
 delivery_price = 0
-fixed_delivery = null
 hide_delivery = true
 code = "recipes-shop"
 
@@ -1859,9 +1841,7 @@ position = Vector2(5, 64)
 [node name="mailpostStand" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("47_vwcyu")]
 position = Vector2(-115, 32)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_4pmbt"), SubResource("Resource_fun0h"), SubResource("Resource_oqdxe"), SubResource("Resource_iarty"), SubResource("Resource_csdio"), SubResource("Resource_tcd68"), SubResource("Resource_nc5fr"), SubResource("Resource_3fqo2"), SubResource("Resource_nlgwl"), SubResource("Resource_3mhcn")])
-load_recipes = null
 fixed_delivery = true
-hide_delivery = null
 
 [node name="box3" parent="props/navRegion/town-props/houses/house5" instance=ExtResource("23_xa025")]
 position = Vector2(-51, 40)
@@ -2667,11 +2647,7 @@ region_rect = Rect2(16.1601, -0.936382, 13.77, 18.5183)
 [node name="appleStand" parent="props/navRegion/farm-props" instance=ExtResource("19_nfivy")]
 position = Vector2(-4544, -2158)
 items = Array[ExtResource("21_0qimb")]([SubResource("Resource_8t8ul"), SubResource("Resource_1x1rp"), SubResource("Resource_ylqph"), SubResource("Resource_fcv70"), SubResource("Resource_mou0d"), SubResource("Resource_ugmlg"), SubResource("Resource_qd1pt")])
-load_recipes = null
 delivery_price = 2
-fixed_delivery = null
-hide_delivery = null
-code = null
 
 [node name="apples" parent="props/navRegion/farm-props/appleStand" instance=ExtResource("24_36rkl")]
 position = Vector2(22, -9)

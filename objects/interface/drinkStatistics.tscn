@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu251v4y7206c"]
+
+[ext_resource type="Script" uid="uid://cli4ie4kl2jyh" path="res://assets/scripts/interface/endMenu/drinkStatistics.gd" id="1_ms7wx"]
+[ext_resource type="Texture2D" uid="uid://csgdcn6i3xocf" path="res://assets/sprites/items/glass-water.png" id="2_vewqx"]
+
+[node name="drinkStatistics" type="Control"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 309.0
+offset_bottom = 16.0
+script = ExtResource("1_ms7wx")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = -1.0
+offset_right = 16.0
+offset_bottom = 15.0
+texture = ExtResource("2_vewqx")
+stretch_mode = 2
+
+[node name="name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -1.0
+offset_right = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Water"
+vertical_alignment = 1
+
+[node name="soldCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 175.0
+offset_top = -1.0
+offset_right = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="profit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = -1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1000 B"
+horizontal_alignment = 1
+vertical_alignment = 1

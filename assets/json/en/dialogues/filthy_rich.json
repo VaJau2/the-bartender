@@ -5,7 +5,7 @@
 				"type": "phrase",
 				"speaker": "filthy_rich",
 				"avatar": "idle",
-				"text": "I congratulate you on purchasing this bar."
+				"text": "I congratulate you on opening this bar."
 			},
 			{
 				"type": "phrase",
@@ -17,13 +17,7 @@
 				"type": "phrase",
 				"speaker": "filthy_rich",
 				"avatar": "serious",
-				"text": "Don't forget that you have exactly 5 days to prove your profitability, otherwise I will be forced to close the bar."
-			},
-			{
-				"type": "phrase",
-				"speaker": "filthy_rich",
-				"avatar": "idle",
-				"text": "You must show profitability of at least two thousand bits, then you will prove the profitability of the bar. Quite a lifting amount, in my opinion."
+				"text": "Remember, that you have exactly 5 days to repay the 2000 bit construction loan. Otherwise I will be forced to put your bar under external administration."
 			},
 			{
 				"type": "phrase",
@@ -69,7 +63,7 @@
 			},
 			{
 				"type": "change_code",
-				"value": "",
+				"value": ""
 			}
 		]
 	}

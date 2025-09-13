@@ -341,68 +341,79 @@
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/apple.png",
-		"weight": 1.5
+		"weight": 1.5,
+		"prices": [2, 5]
 	},
 	"banana": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/banana.png",
-		"weight": 1
+		"weight": 1,
+		"prices": [4]
 	},
 	"coconut": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/coconut.png",
-		"weight": 1.5
+		"weight": 1.5,
+		"prices": [6]
 	},
 	"sliced-coconut": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/sliced-coconut.png",
 		"weight": 0.5,
-		"limit": 3
+		"limit": 3,
+		"prices": [6]
 	},
 	"orange": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/orange.png",
-		"weight": 0.6
+		"weight": 0.6,
+		"prices": [8]
 	},
 	"blueberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/blueberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [1]
 	},
 	"strawberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/strawberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [3]
 	},
 	"raspberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/raspberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [2]
 	},
 	"blackberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/blackberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [3]
 	},
 	"tomato": {
 		"type": "ingredient",
 		"category": "vegetable",
 		"texture": "assets/sprites/items/tomato.png",
-		"weight": 0.2
+		"weight": 0.2,
+		"prices": [2]
 	},
 	"carrot": {
 		"type": "ingredient",
 		"category": "vegetable",
 		"texture": "assets/sprites/items/carrot.png",
-		"weight": 0.2
+		"weight": 0.2,
+		"prices": [2]
 	},
 	"coffee-beans": {
 		"type": "ingredient",
@@ -416,19 +427,19 @@
 		"type": "furn",
 		"category": "tool",
 		"texture": "assets/sprites/props/furn/juicer.png",
-		"weight": 5,
+		"weight": 5
 	},
 	"coffee-machine": {
 		"type": "furn",
 		"category": "tool",
 		"texture": "assets/sprites/props/furn/coffee-machine.png",
-		"weight": 6,
+		"weight": 6
 	},
 	"radio": {
 		"type": "furn",
 		"category": "tool",
 		"texture": "assets/sprites/items/radio.png",
-		"weight": 4,
+		"weight": 4
 	},
 	"knife": {
 		"type": "tool",

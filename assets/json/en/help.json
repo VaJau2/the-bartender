@@ -36,10 +36,10 @@ The radio turned on in the bar increases the chance of customers coming."
 		},
 		"bank": {
 			"title": "Bank",
-			"text": "There is a bank in town where you can borrow money without interest for two days. 
+			"text": "You can take out an interest-free loan for two days at the bank in town. 
 You can take any amount from 1 to 1000 bits.
-You can have only one bank debt at a time.
-If you do not repay the debt within two days, the game will automatically end."
+You can have only one bank loan at a time.
+If you do not repay the loan within two days, the game will automatically end."
 		}
 	}
 }

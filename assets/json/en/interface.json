@@ -19,7 +19,7 @@
 		"take": "Take",
 		"cancel": "Cancel",
 		"ingredient": "Ingredient:",
-		"glass": "Glass:",
+		"glass": "Glass:"
 	},
 	"storage": {
 		"empty": "Empty",
@@ -55,7 +55,9 @@
 	},
 	"money": {
 		"goal": "Goal:",
-		"debt": "Debt:",
+		"debt": "Debt",
+		"shortTermLoan": "Short term loan:",
+		"constractionLoan": "Constraction loan:",
 		"days_left": "Days left:"
 	},
 	"dialogue": {
@@ -79,25 +81,43 @@
 		"tool": "Tools",
 		"misc": "Misc"
 	},
-	"win": {
-		"header": "You've successfully won",
-		"text": "You have saved up enough money to pay off the debt for the purchase of the bar c:",
-		"statistics": "Statistics:",
-		"continue": "Continue"
-	},
-	"statistics": {
-		"drinks_sold": "Drinks sold:",
-		"drinks_spilled": "Drinks spilled:",
-		"juices_made": "Juices made:",
-		"coffee_made": "Coffee made:",
-		"money_spent": "Money spent:",
-		"apples_stolen": "Apples stolen:",
-		"ponies_drunk": "Ponies made drunk:"
-	},
-	"lost": {
-		"header": "You've successfully lost",
-		"text": "You didn't have time to save enough money on time, and you had to sell the bar :с",
-		"continue": "Continue"
+	"resume": {
+		"total_earned": "Total earned:",
+		"juices_sold": "Juices sold:",
+		"coffee_sold": "Coffee sold:",
+		"alcohol_sold": "Alcohol_sold:",
+		"other_sold": "Other sold:",
+		"avg_profit": "Average profit per day:",
+
+		"total_spent": "Total spent:",
+		"ingredients": "Ingredients:",
+		"deliveries": "Deliveries",
+		"tools_and_recipes": "Tools & Recipes",
+		"furns": "Furns",
+		"avg_spent": "Average spent per day:",
+
+		"total_clients_served": "Total clients served:",
+		"max_clients_served": "Max clients served per day:",
+		"avg_clients_served": "Average clients served per day:",
+		"avg_order_time": "Average order fulfillment time:",
+		"most_sold_drink": "Most sold drink:",
+		"most_profit_drink": "Most profit drink",
+
+		"seconds": "sec",
+
+		"fruits": "Fruits",
+		"berries": "Berries",
+		"vegetables": "Vegetables",
+
+		"bought": "bought",
+		"stolen": "stolen",
+		"collected": "collected",
+
+		"loan": "Bar construction loan:",
+
+		"continue": "Continue",
+		"financial_results": "Financial Results",
+		"statistics": "Statistics"
 	},
 	"plural": {
 		"bits": "bit|bits|bits"

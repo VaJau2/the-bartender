@@ -51,6 +51,7 @@ func try_buy_item(item: ShopItem) -> bool:
 			interaction_controller.hide_item_hint.emit()
 			audi.stream = buy_sound
 			audi.play()
+			G.statistics.tools_spent += item.price
 		
 		Enums.ShopItemType.bag:
 			if G.player.has_storage: return false
@@ -59,6 +60,7 @@ func try_buy_item(item: ShopItem) -> bool:
 			interaction_controller.hide_item_hint.emit()
 			audi.stream = buy_sound
 			audi.play()
+			G.statistics.tools_spent += item.price
 	
 		Enums.ShopItemType.item:
 			var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
@@ -71,6 +73,8 @@ func try_buy_item(item: ShopItem) -> bool:
 				else:
 					_deliver_item(new_item)
 					M.remove_money(delivery_price)
+					G.statistics.deliveries_spent += delivery_price
+					G.statistics.add_day_stats(G.statistics.spent_per_day, delivery_price)
 					interaction_controller.hide_item_hint.emit()
 					audi.stream = delivery_buy_sound
 					audi.play()
@@ -84,7 +88,27 @@ func try_buy_item(item: ShopItem) -> bool:
 					_show_text("not_space")
 					new_item.queue_free()
 					return false
+			
+			match new_item.category:
+				"fruit":
+					G.statistics.fruits_bought.amount += 1
+					G.statistics.fruits_bought.profit += item.price
+				"berry":
+					G.statistics.berries_bought.amount += 1
+					G.statistics.berries_bought.profit += item.price
+				"vegetable":
+					G.statistics.vegetables_bought.amount += 1
+					G.statistics.vegetables_bought.profit += item.price
 	
+	match item.type:
+		Enums.ItemType.ingredient:
+			G.statistics.ingredients_spent += item.price
+		Enums.ItemType.tool:
+			G.statistics.tools_spent += item.price
+		Enums.ItemType.furn:
+			G.statistics.furns_spent += item.price
+	
+	G.statistics.add_day_stats(G.statistics.spent_per_day, item.price)
 	M.remove_money(item.price)
 	return true
 

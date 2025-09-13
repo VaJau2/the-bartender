@@ -37,6 +37,7 @@ func spawn_items() -> void:
 
 
 func _on_item_taken(item: Item) -> void:
+	G.statistics.ingredient_stolen(item.code)
 	spawned_items.erase(item)
 	if spawned_items.is_empty():
 		spawn_timer = randf_range(SPAWN_TIME_MIN, SPAWN_TIME_MAX)

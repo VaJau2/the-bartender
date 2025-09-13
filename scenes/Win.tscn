@@ -1,16 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://dra84nwloiwru"]
+[gd_scene load_steps=43 format=3 uid="uid://dra84nwloiwru"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_pnk8a"]
-[ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/winMenu/statisticsCountLabel.gd" id="2_24ius"]
+[ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/endMenu/statisticsCountLabel.gd" id="2_24ius"]
+[ext_resource type="Texture2D" uid="uid://2xirgdv1wfyd" path="res://assets/sprites/interface/tablet.png" id="2_ob58s"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_npi8v"]
-[ext_resource type="Script" uid="uid://b3yfvus4eded8" path="res://assets/scripts/interface/winMenu/continueButton.gd" id="3_tgfro"]
+[ext_resource type="Script" uid="uid://b3yfvus4eded8" path="res://assets/scripts/interface/endMenu/continueButton.gd" id="3_tgfro"]
+[ext_resource type="Script" uid="uid://wqx46ls1rdhe" path="res://assets/scripts/interface/endMenu/drinksTable.gd" id="4_qi1iy"]
+[ext_resource type="Texture2D" uid="uid://cjqpihjo8g11k" path="res://assets/sprites/interface/Unpaid.png" id="4_raq4n"]
+[ext_resource type="Texture2D" uid="uid://bjkge66m6kowc" path="res://assets/sprites/interface/paper.png" id="4_svj81"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_tgfro"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_24ius"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_gq6tj"]
-font_size = 20
+[ext_resource type="Texture2D" uid="uid://dycgvod55j68l" path="res://assets/sprites/interface/paper_holder.png" id="6_7kxht"]
+[ext_resource type="Script" uid="uid://dgjx2p4nn5o1q" path="res://assets/scripts/interface/endMenu/paidMark.gd" id="7_a4oae"]
+[ext_resource type="Texture2D" uid="uid://lbhiftsye26v" path="res://assets/sprites/interface/Paid.png" id="8_qi1iy"]
+[ext_resource type="Script" uid="uid://cte5jm31m2vey" path="res://assets/scripts/interface/endMenu/resumeButton.gd" id="11_qi1iy"]
 
 [sub_resource type="GDScript" id="GDScript_pnk8a"]
 script/source = "extends Node
@@ -20,70 +22,172 @@ func _ready() -> void:
 	Engine.time_scale = 1
 "
 
-[sub_resource type="Resource" id="Resource_ob58s"]
+[sub_resource type="Resource" id="Resource_tgfro"]
 script = ExtResource("4_tgfro")
-node_path = NodePath("../header")
-code = "win.header"
+node_path = NodePath("../statisticsHeader")
+code = "resume.statistics"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_svj81"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/totalClientsServed/label")
+code = "resume.total_clients_served"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_7kxht"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/maxClientsPerDay/label")
+code = "resume.max_clients_served"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_sv55w"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/avgClientsPerDay/label")
+code = "resume.avg_clients_served"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_mbcvx"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/avgOrderTime/label")
+code = "resume.avg_order_time"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_a4oae"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/mostSoldDrink/label")
+code = "resume.most_sold_drink"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qi1iy"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/mostProfitDrink/label")
+code = "resume.most_profit_drink"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ukgp0"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/table/bought")
+code = "resume.bought"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_tqmt7"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/table/stolen")
+code = "resume.stolen"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_17uhj"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/table/collected")
+code = "resume.collected"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ibus1"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/fruits/label")
+code = "resume.fruits"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_wc5pl"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/berries/label")
+code = "resume.berries"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_83prw"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../scroll/Statistics/vegetables/label")
+code = "resume.vegetables"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_npi8v"]
 script = ExtResource("4_tgfro")
-node_path = NodePath("../text")
-code = "win.text"
+node_path = NodePath("../FinancePage/financeHeader")
+code = "resume.financial_results"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[sub_resource type="Resource" id="Resource_tgfro"]
+[sub_resource type="Resource" id="Resource_re1lo"]
 script = ExtResource("4_tgfro")
-node_path = NodePath("../staticticHeader")
-code = "win.statistics"
+node_path = NodePath("../FinancePage/Finanсe/totalEarned/label")
+code = "resume.total_earned"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_upxml"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/juicesSold/label")
+code = "resume.juices_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_8wsly"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/coffeeSold/label")
+code = "resume.coffee_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_s6aau"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/alcoholSold/label")
+code = "resume.alcohol_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qnits"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/otherSold/label")
+code = "resume.other_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qr0lv"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/averageProfit/label")
+code = "resume.avg_profit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ju3qx"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/totalSpent/label")
+code = "resume.total_spent"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_uttjn"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/ingredietsSpent/label")
+code = "resume.ingredients"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_tkkke"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/deliveriesSpent/label")
+code = "resume.deliveries"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_rb0l4"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/toolsSpent/label")
+code = "resume.tools_and_recipes"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_6yuqr"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/furnsSpent/label")
+code = "resume.furns"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_hitgy"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Finanсe/averageSpent/label")
+code = "resume.avg_spent"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_x4psh"]
+script = ExtResource("4_tgfro")
+node_path = NodePath("../FinancePage/Loan/label")
+code = "resume.loan"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_raq4n"]
 script = ExtResource("4_tgfro")
 node_path = NodePath("../continue")
-code = "win.continue"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_svj81"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/drinksSold/label")
-code = "statistics.drinks_sold"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_7kxht"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/drinksSpilled/label")
-code = "statistics.drinks_spilled"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_sv55w"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/juicesMade/label")
-code = "statistics.juices_made"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_mbcvx"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/coffeeMade/label")
-code = "statistics.coffee_made"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_a4oae"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/moneySpent/label")
-code = "statistics.money_spent"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_qi1iy"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/applesStolen/label")
-code = "statistics.apples_stolen"
-metadata/_custom_type_script = "uid://kbfv44blqaag"
-
-[sub_resource type="Resource" id="Resource_ukgp0"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../VBoxContainer/poniesDrunk/label")
-code = "statistics.ponies_drunk"
+code = "resume.continue"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="Win" type="Control"]
@@ -104,37 +208,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="header" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -184.0
-offset_top = 16.0
-offset_right = 183.0
-offset_bottom = 104.0
-grow_horizontal = 2
-text = "You've successfully won"
-label_settings = SubResource("LabelSettings_24ius")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="text" type="Label" parent="."]
+[node name="tabletBackground" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = -172.0
-offset_right = 214.0
-offset_bottom = -140.0
+offset_left = -198.0
+offset_top = -258.0
+offset_right = 198.0
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You have saved up enough money to pay off the debt for the purchase of the bar c:"
+texture = ExtResource("2_ob58s")
 
-[node name="staticticHeader" type="Label" parent="."]
+[node name="statisticsHeader" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -142,13 +231,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -92.0
+offset_top = -181.0
 offset_right = 256.0
-offset_bottom = -60.0
+offset_bottom = -142.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Statistics:"
-label_settings = SubResource("LabelSettings_gq6tj")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Statistics"
 horizontal_alignment = 1
 
 [node name="divider" type="ColorRect" parent="."]
@@ -158,14 +248,542 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -60.0
-offset_right = 192.0
-offset_bottom = -52.0
+offset_left = -140.0
+offset_top = -142.0
+offset_right = 140.0
+offset_bottom = -139.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(140, 2)
+color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -123.0
+offset_right = 154.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Statistics" type="VBoxContainer" parent="scroll"]
+custom_minimum_size = Vector2(309, 0)
+layout_mode = 2
+
+[node name="totalClientsServed" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/totalClientsServed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total clients served:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/totalClientsServed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "clients_served_per_day"
+method = 1
+
+[node name="maxClientsPerDay" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Max clients served per day:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "clients_served_per_day"
+method = 3
+
+[node name="avgClientsPerDay" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_right = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average clients served per day:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "clients_served_per_day"
+method = 2
+
+[node name="avgOrderTime" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/avgOrderTime"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average order fulfillment time:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/avgOrderTime"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 sec"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "avg_order_fulfillment_time"
+method = 2
+unit = 3
+
+[node name="mostSoldDrink" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Most sold drink:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+method = 4
+unit = 4
+
+[node name="mostProfitDrink" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/mostProfitDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Most profit drink:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="scroll/Statistics/mostProfitDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+method = 5
+unit = 4
+
+[node name="space" type="Label" parent="scroll/Statistics"]
+layout_mode = 2
+
+[node name="table" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="bought" type="Label" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 234.0
+offset_top = -1.0
+offset_right = -218.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "bought"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stolen" type="Label" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_right = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "stolen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line" type="ColorRect" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 85.0
+offset_right = 143.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 2)
+color = Color(0.898039, 0.109804, 0.109804, 1)
+
+[node name="collected" type="Label" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 338.0
+offset_top = -8.0
+offset_right = -114.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.234531
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
+text = "collected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fruits" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/fruits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fruits:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boughtCount" type="Label" parent="scroll/Statistics/fruits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_right = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "fruits_bought"
+unit = 2
+
+[node name="stolenCount" type="Label" parent="scroll/Statistics/fruits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "fruits_stolen"
+unit = 2
+
+[node name="berries" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/berries"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Berries:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boughtCount" type="Label" parent="scroll/Statistics/berries"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_right = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "berries_bought"
+unit = 2
+
+[node name="stolenCount" type="Label" parent="scroll/Statistics/berries"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "berries_stolen"
+unit = 2
+
+[node name="vegetables" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/vegetables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vegetables:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boughtCount" type="Label" parent="scroll/Statistics/vegetables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_right = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "vegetables_bought"
+unit = 2
+
+[node name="stolenCount" type="Label" parent="scroll/Statistics/vegetables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "vegetables_stolen"
+unit = 2
+
+[node name="DrinksTable" type="VBoxContainer" parent="scroll/Statistics"]
+layout_mode = 2
+script = ExtResource("4_qi1iy")
+
+[node name="title" type="Label" parent="scroll/Statistics/DrinksTable"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+
+Drinks Statistics"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="headers" type="Control" parent="scroll/Statistics/DrinksTable"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="nameLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -1.0
+offset_right = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+vertical_alignment = 1
+
+[node name="soldLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 175.0
+offset_top = -1.0
+offset_right = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProfitLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = -1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Profit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinancePage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -258.0
+offset_right = 198.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_svj81")
+
+[node name="financeHeader" type="Label" parent="FinancePage"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -173,228 +791,517 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -36.0
+offset_top = -181.0
 offset_right = 256.0
-offset_bottom = 116.0
+offset_bottom = -142.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Financial Results"
+horizontal_alignment = 1
 
-[node name="drinksSold" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/drinksSold"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drinks sold:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/drinksSold"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "drinks_sold"
-
-[node name="drinksSpilled" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/drinksSpilled"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drinks spilled:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/drinksSpilled"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "drinks_spilled"
-
-[node name="juicesMade" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/juicesMade"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Juices made:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/juicesMade"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "juices_made"
-
-[node name="coffeeMade" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/coffeeMade"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Coffee made:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/coffeeMade"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "coffee_made"
-
-[node name="moneySpent" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/moneySpent"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Money sold:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/moneySpent"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "money_spent"
-
-[node name="applesStolen" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/applesStolen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Apples stolen:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/applesStolen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "apples_stolen"
-
-[node name="poniesDrunk" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="label" type="Label" parent="VBoxContainer/poniesDrunk"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Ponies made drunk:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="count" type="Label" parent="VBoxContainer/poniesDrunk"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0"
-vertical_alignment = 1
-script = ExtResource("2_24ius")
-code = "ponies_drunk"
-
-[node name="divider2" type="ColorRect" parent="."]
+[node name="divider" type="ColorRect" parent="FinancePage"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = 134.0
-offset_right = 192.0
-offset_bottom = 142.0
+offset_left = -140.0
+offset_top = -142.0
+offset_right = 140.0
+offset_bottom = -139.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(140, 2)
+color = Color(0, 0, 0, 1)
+
+[node name="Finanсe" type="VBoxContainer" parent="FinancePage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -133.0
+offset_right = 256.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="totalEarned" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/totalEarned"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total earned:"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/totalEarned"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "profit_per_day"
+method = 1
+unit = 1
+
+[node name="juicesSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/juicesSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Juices sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/juicesSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "juices_sold"
+unit = 2
+
+[node name="coffeeSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Coffee sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "coffee_sold"
+unit = 2
+
+[node name="alcoholSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Alcohol sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "alcohol_sold"
+unit = 2
+
+[node name="otherSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/otherSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Other sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/otherSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "other_sold"
+unit = 2
+
+[node name="averageProfit" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/averageProfit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average profit per day:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/averageProfit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "profit_per_day"
+method = 2
+unit = 1
+
+[node name="Control" type="Label" parent="FinancePage/Finanсe"]
+layout_mode = 2
+
+[node name="totalSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/totalSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total spent:"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/totalSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "spent_per_day"
+method = 1
+unit = 1
+
+[node name="ingredietsSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/ingredietsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ingredients:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/ingredietsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "ingredients_spent"
+unit = 1
+
+[node name="deliveriesSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/deliveriesSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Deliveries:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/deliveriesSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "deliveries_spent"
+unit = 1
+
+[node name="toolsSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/toolsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tools & Recepies:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/toolsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "tools_spent"
+unit = 1
+
+[node name="furnsSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/furnsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Furns:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/furnsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "furns_spent"
+unit = 1
+
+[node name="averageSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average spent per day:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("2_24ius")
+code = "spent_per_day"
+method = 2
+unit = 1
+
+[node name="Loan" type="Control" parent="FinancePage"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+anchors_preset = 0
+offset_left = -58.0
+offset_top = 442.0
+offset_right = 454.0
+offset_bottom = 462.0
+
+[node name="label" type="Label" parent="FinancePage/Loan"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Bar construction loan:"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="count" type="TextureRect" parent="FinancePage/Loan"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 312.0
+offset_top = -52.0
+offset_right = -124.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_raq4n")
+expand_mode = 2
+script = ExtResource("7_a4oae")
+paid_mark = ExtResource("8_qi1iy")
+unpaid_mark = ExtResource("4_raq4n")
+
+[node name="paper_holder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -258.0
+offset_right = 198.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_7kxht")
+metadata/_edit_lock_ = true
 
 [node name="continue" type="Button" parent="."]
 layout_mode = 1
@@ -403,18 +1310,35 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -136.0
-offset_right = 64.0
-offset_bottom = -104.0
+offset_left = -144.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Continue"
 script = ExtResource("3_tgfro")
+
+[node name="resumeButton" type="Button" parent="." node_paths=PackedStringArray("financePage")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 144.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Statistics"
+script = ExtResource("11_qi1iy")
+financePage = NodePath("../FinancePage")
 
 [node name="timeScaleReturn" type="Node" parent="."]
 script = SubResource("GDScript_pnk8a")
 
 [node name="translation" type="Node" parent="."]
 script = ExtResource("3_npi8v")
-nodes = Array[ExtResource("4_tgfro")]([SubResource("Resource_ob58s"), SubResource("Resource_npi8v"), SubResource("Resource_tgfro"), SubResource("Resource_raq4n"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0")])
+nodes = Array[ExtResource("4_tgfro")]([SubResource("Resource_tgfro"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0"), SubResource("Resource_tqmt7"), SubResource("Resource_17uhj"), SubResource("Resource_ibus1"), SubResource("Resource_wc5pl"), SubResource("Resource_83prw"), SubResource("Resource_npi8v"), SubResource("Resource_re1lo"), SubResource("Resource_upxml"), SubResource("Resource_8wsly"), SubResource("Resource_s6aau"), SubResource("Resource_qnits"), SubResource("Resource_qr0lv"), SubResource("Resource_ju3qx"), SubResource("Resource_uttjn"), SubResource("Resource_tkkke"), SubResource("Resource_rb0l4"), SubResource("Resource_6yuqr"), SubResource("Resource_hitgy"), SubResource("Resource_x4psh"), SubResource("Resource_raq4n")])

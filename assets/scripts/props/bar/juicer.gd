@@ -56,11 +56,6 @@ func start() -> void:
 	
 	anim.stop()
 	
-	if code == "juicer":
-		G.statistics.juices_made += 1
-	elif code == "coffee-machine":
-		G.statistics.coffee_made += 1
-	
 	G.game_manager.try_know_recipe.emit(result_code)
 	var result = ItemSpawner.spawn_item(result_code, spawn_point.global_position, get_parent())
 	result.moving.set_velocity(result_velocity)

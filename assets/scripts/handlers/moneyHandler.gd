@@ -26,12 +26,19 @@ func _process(_delta: float) -> void:
 
 func add_money(value: int) -> void:
 	money += value
+	
+	if money >= G.MONEY_GOAL && !G.statistics.is_loan_paid:
+		G.statistics.is_loan_paid = true 
+	
 	money_updated.emit()
 
 
 func remove_money(value: int) -> void:
-	G.statistics.money_spent += value
 	money -= value
+	
+	if money < G.MONEY_GOAL && G.statistics.is_loan_paid:
+		G.statistics.is_loan_paid = false 
+	
 	money_updated.emit()
 
 
