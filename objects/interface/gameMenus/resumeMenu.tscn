@@ -1,18 +1,22 @@
-[gd_scene load_steps=43 format=3 uid="uid://dra84nwloiwru"]
+[gd_scene load_steps=48 format=3 uid="uid://dra84nwloiwru"]
 
-[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_pnk8a"]
-[ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/endMenu/statisticsCountLabel.gd" id="2_24ius"]
-[ext_resource type="Texture2D" uid="uid://2xirgdv1wfyd" path="res://assets/sprites/interface/tablet.png" id="2_ob58s"]
-[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="3_npi8v"]
-[ext_resource type="Script" uid="uid://b3yfvus4eded8" path="res://assets/scripts/interface/endMenu/continueButton.gd" id="3_tgfro"]
-[ext_resource type="Script" uid="uid://wqx46ls1rdhe" path="res://assets/scripts/interface/endMenu/drinksTable.gd" id="4_qi1iy"]
-[ext_resource type="Texture2D" uid="uid://cjqpihjo8g11k" path="res://assets/sprites/interface/Unpaid.png" id="4_raq4n"]
-[ext_resource type="Texture2D" uid="uid://bjkge66m6kowc" path="res://assets/sprites/interface/paper.png" id="4_svj81"]
-[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="4_tgfro"]
-[ext_resource type="Texture2D" uid="uid://dycgvod55j68l" path="res://assets/sprites/interface/paper_holder.png" id="6_7kxht"]
-[ext_resource type="Script" uid="uid://dgjx2p4nn5o1q" path="res://assets/scripts/interface/endMenu/paidMark.gd" id="7_a4oae"]
-[ext_resource type="Texture2D" uid="uid://lbhiftsye26v" path="res://assets/sprites/interface/Paid.png" id="8_qi1iy"]
-[ext_resource type="Script" uid="uid://cte5jm31m2vey" path="res://assets/scripts/interface/endMenu/resumeButton.gd" id="11_qi1iy"]
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_wsvqf"]
+[ext_resource type="Script" uid="uid://ccvy1pb1xvnld" path="res://assets/scripts/interface/endMenu/resumeMenu.gd" id="2_ppf3d"]
+[ext_resource type="Texture2D" uid="uid://2xirgdv1wfyd" path="res://assets/sprites/interface/tablet.png" id="3_m7wrt"]
+[ext_resource type="Shader" uid="uid://dw2vcknsfkjvj" path="res://assets/materials/blur.gdshader" id="3_ppf3d"]
+[ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/endMenu/statisticsCountLabel.gd" id="4_cpupi"]
+[ext_resource type="Script" uid="uid://wqx46ls1rdhe" path="res://assets/scripts/interface/endMenu/drinksTable.gd" id="5_tempj"]
+[ext_resource type="Texture2D" uid="uid://bjkge66m6kowc" path="res://assets/sprites/interface/paper.png" id="6_7x0ta"]
+[ext_resource type="Texture2D" uid="uid://cjqpihjo8g11k" path="res://assets/sprites/interface/Unpaid.png" id="7_at28u"]
+[ext_resource type="Script" uid="uid://dgjx2p4nn5o1q" path="res://assets/scripts/interface/endMenu/paidMark.gd" id="8_bd3no"]
+[ext_resource type="Texture2D" uid="uid://lbhiftsye26v" path="res://assets/sprites/interface/Paid.png" id="9_o3uty"]
+[ext_resource type="Texture2D" uid="uid://dycgvod55j68l" path="res://assets/sprites/interface/paper_holder.png" id="10_sh44t"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="13_i11jm"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="14_sbs1r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7wrt"]
+shader = ExtResource("3_ppf3d")
+shader_parameter/lod = 3.0
 
 [sub_resource type="GDScript" id="GDScript_pnk8a"]
 script/source = "extends Node
@@ -23,190 +27,221 @@ func _ready() -> void:
 "
 
 [sub_resource type="Resource" id="Resource_tgfro"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../statisticsHeader")
 code = "resume.statistics"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_svj81"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/totalClientsServed/label")
 code = "resume.total_clients_served"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_7kxht"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/maxClientsPerDay/label")
 code = "resume.max_clients_served"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_sv55w"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/avgClientsPerDay/label")
 code = "resume.avg_clients_served"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_mbcvx"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/avgOrderTime/label")
 code = "resume.avg_order_time"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_a4oae"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/mostSoldDrink/label")
 code = "resume.most_sold_drink"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_qi1iy"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/mostProfitDrink/label")
 code = "resume.most_profit_drink"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_ukgp0"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/table/bought")
 code = "resume.bought"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_tqmt7"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/table/stolen")
 code = "resume.stolen"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_17uhj"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/table/collected")
 code = "resume.collected"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_ibus1"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/fruits/label")
 code = "resume.fruits"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_wc5pl"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/berries/label")
 code = "resume.berries"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_83prw"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../scroll/Statistics/vegetables/label")
 code = "resume.vegetables"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_npi8v"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/financeHeader")
 code = "resume.financial_results"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_re1lo"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/totalEarned/label")
 code = "resume.total_earned"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_upxml"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/juicesSold/label")
 code = "resume.juices_sold"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_8wsly"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/coffeeSold/label")
 code = "resume.coffee_sold"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_s6aau"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/alcoholSold/label")
 code = "resume.alcohol_sold"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_qnits"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/otherSold/label")
 code = "resume.other_sold"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_qr0lv"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/averageProfit/label")
 code = "resume.avg_profit"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_ju3qx"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/totalSpent/label")
 code = "resume.total_spent"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_uttjn"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/ingredietsSpent/label")
 code = "resume.ingredients"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_tkkke"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/deliveriesSpent/label")
 code = "resume.deliveries"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_rb0l4"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/toolsSpent/label")
 code = "resume.tools_and_recipes"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_6yuqr"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/furnsSpent/label")
 code = "resume.furns"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_hitgy"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Finanсe/averageSpent/label")
 code = "resume.avg_spent"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_x4psh"]
-script = ExtResource("4_tgfro")
+script = ExtResource("14_sbs1r")
 node_path = NodePath("../FinancePage/Loan/label")
 code = "resume.loan"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_raq4n"]
-script = ExtResource("4_tgfro")
-node_path = NodePath("../continue")
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../continueButton")
 code = "resume.continue"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="Win" type="Control"]
+[sub_resource type="Resource" id="Resource_05bw0"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/title")
+code = "resume.drinksStats"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_wsvqf"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/headers/nameLabel")
+code = "resume.name"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ppf3d"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/headers/soldLabel")
+code = "resume.sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_m7wrt"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/headers/ProfitLabel")
+code = "resume.profit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="resumeMenu" type="Control" node_paths=PackedStringArray("statistics_count_labels", "paid_mark", "drinks_table", "finance_page", "continue_button", "resume_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_pnk8a")
+theme = ExtResource("1_wsvqf")
+script = ExtResource("2_ppf3d")
+statistics_count_labels = [NodePath("scroll/Statistics/totalClientsServed/count"), NodePath("scroll/Statistics/maxClientsPerDay/count"), NodePath("scroll/Statistics/avgClientsPerDay/count"), NodePath("scroll/Statistics/avgOrderTime/count"), NodePath("scroll/Statistics/mostSoldDrink/count"), NodePath("scroll/Statistics/mostProfitDrink/name"), NodePath("scroll/Statistics/fruits/boughtCount"), NodePath("scroll/Statistics/fruits/stolenCount"), NodePath("scroll/Statistics/berries/boughtCount"), NodePath("scroll/Statistics/berries/stolenCount"), NodePath("scroll/Statistics/vegetables/boughtCount"), NodePath("scroll/Statistics/vegetables/stolenCount"), NodePath("FinancePage/Finanсe/totalEarned/count"), NodePath("FinancePage/Finanсe/juicesSold/count"), NodePath("FinancePage/Finanсe/coffeeSold/count"), NodePath("FinancePage/Finanсe/alcoholSold/count"), NodePath("FinancePage/Finanсe/otherSold/count"), NodePath("FinancePage/Finanсe/averageProfit/count"), NodePath("FinancePage/Finanсe/totalSpent/count"), NodePath("FinancePage/Finanсe/ingredietsSpent/count"), NodePath("FinancePage/Finanсe/deliveriesSpent/count"), NodePath("FinancePage/Finanсe/toolsSpent/count"), NodePath("FinancePage/Finanсe/furnsSpent/count"), NodePath("FinancePage/Finanсe/averageSpent/count")]
+paid_mark = NodePath("FinancePage/Loan/count")
+drinks_table = NodePath("scroll/Statistics/DrinksTable")
+finance_page = NodePath("FinancePage")
+continue_button = NodePath("continueButton")
+resume_button = NodePath("resumeButton")
 
 [node name="background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_m7wrt")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="tabletBackground" type="TextureRect" parent="."]
 layout_mode = 1
@@ -221,7 +256,7 @@ offset_right = 198.0
 offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ob58s")
+texture = ExtResource("3_m7wrt")
 
 [node name="statisticsHeader" type="Label" parent="."]
 layout_mode = 1
@@ -285,13 +320,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_right = -160.0
+offset_left = 7.0
+offset_right = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Total clients served:"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="count" type="Label" parent="scroll/Statistics/totalClientsServed"]
@@ -299,14 +333,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 360.0
-offset_right = -95.0
+offset_left = 271.0
+offset_top = 1.0
+offset_right = -24.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "clients_served_per_day"
 method = 1
 
@@ -319,13 +355,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_right = -160.0
+offset_left = 7.0
+offset_right = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Max clients served per day:"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="count" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
@@ -333,14 +368,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 360.0
-offset_right = -95.0
+offset_left = 271.0
+offset_top = 1.0
+offset_right = -24.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "clients_served_per_day"
 method = 3
 
@@ -353,13 +390,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 88.0
-offset_right = -160.0
+offset_left = 7.0
+offset_right = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Average clients served per day:"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="count" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
@@ -367,14 +403,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 360.0
-offset_right = -96.0
+offset_left = 270.5
+offset_top = 1.0
+offset_right = -24.5
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "clients_served_per_day"
 method = 2
 
@@ -387,13 +425,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_right = -160.0
+offset_left = 7.0
+offset_right = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Average order fulfillment time:"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="count" type="Label" parent="scroll/Statistics/avgOrderTime"]
@@ -401,14 +438,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 360.0
-offset_right = -96.0
+offset_left = 263.0
+offset_top = 1.0
+offset_right = -17.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 sec"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "avg_order_fulfillment_time"
 method = 2
 unit = 3
@@ -422,13 +461,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_right = -256.0
+offset_left = 7.0
+offset_right = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Most sold drink:"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="count" type="Label" parent="scroll/Statistics/mostSoldDrink"]
@@ -443,7 +481,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 method = 4
 unit = 4
 
@@ -456,13 +494,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_right = -256.0
+offset_left = 7.0
+offset_right = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Most profit drink:"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="name" type="Label" parent="scroll/Statistics/mostProfitDrink"]
@@ -477,7 +514,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 method = 5
 unit = 4
 
@@ -581,7 +618,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "fruits_bought"
 unit = 2
 
@@ -598,7 +635,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "fruits_stolen"
 unit = 2
 
@@ -633,7 +670,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "berries_bought"
 unit = 2
 
@@ -650,7 +687,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "berries_stolen"
 unit = 2
 
@@ -685,7 +722,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "vegetables_bought"
 unit = 2
 
@@ -702,13 +739,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "vegetables_stolen"
 unit = 2
 
 [node name="DrinksTable" type="VBoxContainer" parent="scroll/Statistics"]
 layout_mode = 2
-script = ExtResource("4_qi1iy")
+script = ExtResource("5_tempj")
 
 [node name="title" type="Label" parent="scroll/Statistics/DrinksTable"]
 layout_mode = 2
@@ -743,9 +780,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 175.0
+offset_left = 155.0
 offset_top = -1.0
-offset_right = -56.0
+offset_right = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -781,7 +818,7 @@ offset_right = 198.0
 offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_svj81")
+texture = ExtResource("6_7x0ta")
 
 [node name="financeHeader" type="Label" parent="FinancePage"]
 layout_mode = 1
@@ -841,7 +878,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -852,17 +889,17 @@ uppercase = true
 
 [node name="count" type="Label" parent="FinancePage/Finanсe/totalEarned"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.812
 anchor_bottom = 1.0
-offset_left = 272.0
-offset_right = -95.0
+offset_left = 280.0
+offset_right = 1.25598
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "profit_per_day"
 method = 1
 unit = 1
@@ -877,7 +914,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -887,16 +924,17 @@ vertical_alignment = 1
 
 [node name="count" type="Label" parent="FinancePage/Finanсe/juicesSold"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.812
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
+offset_right = 0.255981
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "juices_sold"
 unit = 2
 
@@ -910,7 +948,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 95.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -920,16 +958,19 @@ vertical_alignment = 1
 
 [node name="count" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 0.812
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
+offset_top = -1.0
+offset_right = 0.255981
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "coffee_sold"
 unit = 2
 
@@ -943,7 +984,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -953,16 +994,17 @@ vertical_alignment = 1
 
 [node name="count" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.812
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
+offset_right = 0.255981
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "alcohol_sold"
 unit = 2
 
@@ -976,7 +1018,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -986,17 +1028,17 @@ vertical_alignment = 1
 
 [node name="count" type="Label" parent="FinancePage/Finanсe/otherSold"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.812
 anchor_bottom = 1.0
-offset_left = 272.0
-offset_right = -95.0
+offset_left = 280.0
+offset_right = 1.25598
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "x0 (0 B)"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "other_sold"
 unit = 2
 
@@ -1010,11 +1052,11 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Average profit per day:"
+text = "Average earn per day:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
@@ -1023,14 +1065,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
-offset_right = -96.0
+offset_left = 280.0
+offset_right = -112.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "profit_per_day"
 method = 2
 unit = 1
@@ -1048,7 +1090,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1062,14 +1104,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
 offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "spent_per_day"
 method = 1
 unit = 1
@@ -1084,7 +1126,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1097,14 +1139,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
 offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "ingredients_spent"
 unit = 1
 
@@ -1118,7 +1160,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1131,14 +1173,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
 offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "deliveries_spent"
 unit = 1
 
@@ -1152,7 +1194,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1165,14 +1207,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
 offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "tools_spent"
 unit = 1
 
@@ -1186,7 +1228,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1199,14 +1241,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
 offset_right = -104.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "furns_spent"
 unit = 1
 
@@ -1220,7 +1262,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -256.0
+offset_right = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1228,19 +1270,19 @@ text = "Average spent per day:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="name" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/averageSpent"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 272.0
+offset_left = 280.0
 offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
-script = ExtResource("2_24ius")
+script = ExtResource("4_cpupi")
 code = "spent_per_day"
 method = 2
 unit = 1
@@ -1260,7 +1302,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 96.0
-offset_right = -232.0
+offset_right = -208.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1274,17 +1316,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 312.0
+offset_left = 320.0
 offset_top = -52.0
-offset_right = -124.0
+offset_right = -116.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_raq4n")
+texture = ExtResource("7_at28u")
 expand_mode = 2
-script = ExtResource("7_a4oae")
-paid_mark = ExtResource("8_qi1iy")
-unpaid_mark = ExtResource("4_raq4n")
+script = ExtResource("8_bd3no")
+paid_mark = ExtResource("9_o3uty")
+unpaid_mark = ExtResource("7_at28u")
 
 [node name="paper_holder" type="TextureRect" parent="."]
 layout_mode = 1
@@ -1300,10 +1342,10 @@ offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("6_7kxht")
+texture = ExtResource("10_sh44t")
 metadata/_edit_lock_ = true
 
-[node name="continue" type="Button" parent="."]
+[node name="continueButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1317,9 +1359,8 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Continue"
-script = ExtResource("3_tgfro")
 
-[node name="resumeButton" type="Button" parent="." node_paths=PackedStringArray("financePage")]
+[node name="resumeButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1333,12 +1374,10 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Statistics"
-script = ExtResource("11_qi1iy")
-financePage = NodePath("../FinancePage")
 
 [node name="timeScaleReturn" type="Node" parent="."]
 script = SubResource("GDScript_pnk8a")
 
 [node name="translation" type="Node" parent="."]
-script = ExtResource("3_npi8v")
-nodes = Array[ExtResource("4_tgfro")]([SubResource("Resource_tgfro"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0"), SubResource("Resource_tqmt7"), SubResource("Resource_17uhj"), SubResource("Resource_ibus1"), SubResource("Resource_wc5pl"), SubResource("Resource_83prw"), SubResource("Resource_npi8v"), SubResource("Resource_re1lo"), SubResource("Resource_upxml"), SubResource("Resource_8wsly"), SubResource("Resource_s6aau"), SubResource("Resource_qnits"), SubResource("Resource_qr0lv"), SubResource("Resource_ju3qx"), SubResource("Resource_uttjn"), SubResource("Resource_tkkke"), SubResource("Resource_rb0l4"), SubResource("Resource_6yuqr"), SubResource("Resource_hitgy"), SubResource("Resource_x4psh"), SubResource("Resource_raq4n")])
+script = ExtResource("13_i11jm")
+nodes = Array[ExtResource("14_sbs1r")]([SubResource("Resource_tgfro"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0"), SubResource("Resource_tqmt7"), SubResource("Resource_17uhj"), SubResource("Resource_ibus1"), SubResource("Resource_wc5pl"), SubResource("Resource_83prw"), SubResource("Resource_npi8v"), SubResource("Resource_re1lo"), SubResource("Resource_upxml"), SubResource("Resource_8wsly"), SubResource("Resource_s6aau"), SubResource("Resource_qnits"), SubResource("Resource_qr0lv"), SubResource("Resource_ju3qx"), SubResource("Resource_uttjn"), SubResource("Resource_tkkke"), SubResource("Resource_rb0l4"), SubResource("Resource_6yuqr"), SubResource("Resource_hitgy"), SubResource("Resource_x4psh"), SubResource("Resource_raq4n"), SubResource("Resource_05bw0"), SubResource("Resource_wsvqf"), SubResource("Resource_ppf3d"), SubResource("Resource_m7wrt")])

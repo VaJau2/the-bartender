@@ -34,6 +34,8 @@ func _process(delta: float) -> void:
 			hour = 0
 			day += 1
 			day_tick.emit()
+			if (day == G.DAYS_GOAL):
+				set_process(false)
 		
 		hour_tick.emit()
 	

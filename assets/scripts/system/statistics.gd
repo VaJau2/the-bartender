@@ -24,8 +24,6 @@ var fruits_stolen: ItemStats = ItemStats.new()
 var berries_stolen: ItemStats = ItemStats.new()
 var vegetables_stolen: ItemStats = ItemStats.new()
 
-var is_loan_paid: bool
-
 
 func reset() -> void:
 	other_sold.reset()

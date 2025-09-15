@@ -8,5 +8,5 @@ extends Control
 func init(code: String) -> void:
 	icon.texture = load("res://assets/sprites/items/" + code + ".png")
 	nameLabel.text = Loc.trans("items." + code + ".name")
-	soldCountLable.text = str(G.statistics.drinks_stats[code].amount)
-	profitLable.text = str(G.statistics.drinks_stats[code].profit)
+	soldCountLable.text = "x" + str(G.statistics.drinks_stats[code].amount)
+	profitLable.text = str(G.statistics.drinks_stats[code].profit) + " B"

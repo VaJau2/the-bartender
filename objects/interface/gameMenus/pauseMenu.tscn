@@ -157,6 +157,7 @@ offset_bottom = 104.0
 
 [node name="helpPanel" parent="menu" instance=ExtResource("3_6t3y8")]
 visible = false
+layout_mode = 0
 offset_left = 328.0
 offset_right = 712.0
 offset_bottom = 328.0

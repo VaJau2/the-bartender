@@ -84,4 +84,4 @@ func _on_short_term_loan_return_pressed() -> void:
 
 
 func _on_contraction_loan_return_pressed() -> void:
-	S.goto_scene("Win")
+	G.game_manager.resume_menu.show_resume()

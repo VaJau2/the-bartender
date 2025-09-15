@@ -182,7 +182,10 @@ func have_drink(drink_item: Item) -> void:
 		if drink_item.code.contains("juice"):
 			G.statistics.juices_sold.amount += 1
 			G.statistics.juices_sold.profit += ordered_price
-		elif drink_item.code == "espresso" || drink_item.code == "cappuccino" || drink_item.code.contains("latte"):
+		elif drink_item.code == "espresso" \
+		|| drink_item.code == "cappuccino" \
+		|| drink_item.code == "latte" \
+		|| drink_item.code == "mocha":
 			G.statistics.coffee_sold.amount += 1
 			G.statistics.coffee_sold.profit += ordered_price
 		elif drink_item.booze_time > 0:

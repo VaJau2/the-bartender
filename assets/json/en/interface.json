@@ -55,7 +55,7 @@
 	},
 	"money": {
 		"goal": "Goal:",
-		"debt": "Debt",
+		"debt": "Debt:",
 		"shortTermLoan": "Short term loan:",
 		"constractionLoan": "Constraction loan:",
 		"days_left": "Days left:"
@@ -87,7 +87,7 @@
 		"coffee_sold": "Coffee sold:",
 		"alcohol_sold": "Alcohol_sold:",
 		"other_sold": "Other sold:",
-		"avg_profit": "Average profit per day:",
+		"avg_profit": "Average earn per day:",
 
 		"total_spent": "Total spent:",
 		"ingredients": "Ingredients:",
@@ -114,6 +114,11 @@
 		"collected": "collected",
 
 		"loan": "Bar construction loan:",
+
+		"drinksStats": "\n\n\nDrinks Statistics",
+		"name": "Name",
+		"sold": "Sold",
+		"profit": "Profit",
 
 		"continue": "Continue",
 		"financial_results": "Financial Results",

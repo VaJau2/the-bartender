@@ -125,7 +125,7 @@
 		"need_fridge": 1,
 		"prices": [35, 50]
 	},
-	"mocha-latte": {
+	"mocha": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/mocha.png",
@@ -321,7 +321,7 @@
 	"b-52": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/b52.png",
+		"texture": "assets/sprites/items/b-52.png",
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 100,

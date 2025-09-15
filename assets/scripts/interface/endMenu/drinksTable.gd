@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+class_name DrinksTable
+
 @onready var drinkStats = load("res://objects/interface/drinkStatistics.tscn")
 
 func _ready() -> void:

@@ -1,11 +1,13 @@
 extends Label
 
+class_name StatisticsCountLabel
+
 @export var code: String
 @export var method: Method
 @export var unit: Unit
 
 
-func _ready() -> void:
+func calculate() -> void:
 	var result_text: String
 	
 	match method:
@@ -17,17 +19,26 @@ func _ready() -> void:
 			result_text = str(G.statistics.get_total(value))
 		Method.GetAverage:
 			var value = G.statistics.get(code)
-			value = snapped(G.statistics.get_average(value), 0.01)
-			result_text = str(value)
+			if value.size() > 0:
+				value = snapped(G.statistics.get_average(value), 0.01)
+				result_text = str(value)
+			else:
+				result_text = str(0.0)
 		Method.GetMax:
 			var value = G.statistics.get(code)
 			result_text = str(G.statistics.get_max(value))
 		Method.GetMostSoldDrink:
 			var value = G.statistics.get_most_sold_drink()
-			result_text = Loc.trans("items." + value + ".name")
+			if value != "":
+				result_text = Loc.trans("items." + value + ".name")
+			else:
+				result_text = "None"
 		Method.GetMostProfitDrink:
 			var value = G.statistics.get_most_profit_drink()
-			result_text = Loc.trans("items." + value + ".name")
+			if value != "":
+				result_text = Loc.trans("items." + value + ".name")
+			else:
+				result_text = "None"
 	
 	match unit:
 		Unit.x:

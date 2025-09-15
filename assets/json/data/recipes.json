@@ -62,7 +62,7 @@
 		{
 			"item": "latte",
 			"holding_item": "chocolate",
-			"result": "mocha-latte"
+			"result": "mocha"
 		},
 		{
 			"item": "empty-glass",

@@ -51,7 +51,6 @@ func try_buy_item(item: ShopItem) -> bool:
 			interaction_controller.hide_item_hint.emit()
 			audi.stream = buy_sound
 			audi.play()
-			G.statistics.tools_spent += item.price
 		
 		Enums.ShopItemType.bag:
 			if G.player.has_storage: return false
@@ -60,7 +59,6 @@ func try_buy_item(item: ShopItem) -> bool:
 			interaction_controller.hide_item_hint.emit()
 			audi.stream = buy_sound
 			audi.play()
-			G.statistics.tools_spent += item.price
 	
 		Enums.ShopItemType.item:
 			var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
@@ -102,6 +100,8 @@ func try_buy_item(item: ShopItem) -> bool:
 	
 	match item.type:
 		Enums.ItemType.ingredient:
+			G.statistics.ingredients_spent += item.price
+		Enums.ItemType.glass:
 			G.statistics.ingredients_spent += item.price
 		Enums.ItemType.tool:
 			G.statistics.tools_spent += item.price

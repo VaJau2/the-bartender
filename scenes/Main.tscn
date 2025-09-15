@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=144 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -95,6 +95,7 @@
 [ext_resource type="Texture2D" uid="uid://d180sjx2ni601" path="res://assets/sprites/buildings/town/bank_sign.png" id="72_nc5fr"]
 [ext_resource type="PackedScene" uid="uid://c35hji52dpn3r" path="res://objects/buildings/marketStands/bankpost_stand.tscn" id="73_3fqo2"]
 [ext_resource type="Script" uid="uid://br8h0f8q71gqi" path="res://assets/scripts/system/gameManager.gd" id="73_mou0d"]
+[ext_resource type="PackedScene" uid="uid://dra84nwloiwru" path="res://objects/interface/gameMenus/resumeMenu.tscn" id="92_nlgwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebg2g"]
 texture = ExtResource("3_yxlcp")
@@ -2673,6 +2674,12 @@ zoom = Vector2(1.5, 1.5)
 [node name="pauseMenu" parent="menu" groups=["pause_menu"] instance=ExtResource("71_qd1pt")]
 visible = false
 
+[node name="resumeMenu" parent="menu" node_paths=PackedStringArray("interface", "pause_menu") instance=ExtResource("92_nlgwl")]
+process_mode = 3
+visible = false
+interface = NodePath("../interface")
+pause_menu = NodePath("../pauseMenu")
+
 [node name="timeHandler" type="Node" parent="."]
 script = ExtResource("66_gcaob")
 hour = 12
@@ -2683,6 +2690,7 @@ blend_mode = 2
 script = ExtResource("66_aqa1v")
 lights_data = Array[ExtResource("67_8t8ul")]([SubResource("Resource_gia1l"), SubResource("Resource_aw8hi"), SubResource("Resource_cm7k6"), SubResource("Resource_csfbn"), SubResource("Resource_sj5fg"), SubResource("Resource_1xgkc"), SubResource("Resource_x1gp3"), SubResource("Resource_le2d2"), SubResource("Resource_gexia")])
 
-[node name="gameManager" type="Node" parent="."]
+[node name="gameManager" type="Node" parent="." node_paths=PackedStringArray("resume_menu")]
 script = ExtResource("73_mou0d")
 knowed_recipes = Array[String](["glass-water"])
+resume_menu = NodePath("../menu/resumeMenu")
