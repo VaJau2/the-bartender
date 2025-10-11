@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=4 uid="uid://brkjnhnwfc1go"]
+[gd_scene load_steps=151 format=4 uid="uid://brkjnhnwfc1go"]
 
 [ext_resource type="PackedScene" uid="uid://dd3mnq7v4cljx" path="res://objects/characters/player.tscn" id="1_0bbpv"]
 [ext_resource type="TileSet" uid="uid://b0t4cwyeyv8n7" path="res://objects/tilesets/MainTileset.tres" id="1_1iba3"]
@@ -95,7 +95,9 @@
 [ext_resource type="Texture2D" uid="uid://d180sjx2ni601" path="res://assets/sprites/buildings/town/bank_sign.png" id="72_nc5fr"]
 [ext_resource type="PackedScene" uid="uid://c35hji52dpn3r" path="res://objects/buildings/marketStands/bankpost_stand.tscn" id="73_3fqo2"]
 [ext_resource type="Script" uid="uid://br8h0f8q71gqi" path="res://assets/scripts/system/gameManager.gd" id="73_mou0d"]
-[ext_resource type="PackedScene" uid="uid://dra84nwloiwru" path="res://objects/interface/gameMenus/resumeMenu.tscn" id="92_nlgwl"]
+[ext_resource type="Shader" uid="uid://dw2vcknsfkjvj" path="res://assets/materials/blur.gdshader" id="89_csdio"]
+[ext_resource type="PackedScene" uid="uid://dra84nwloiwru" path="res://objects/interface/endMenu/resumeMenu.tscn" id="92_nlgwl"]
+[ext_resource type="PackedScene" uid="uid://ccd5hs27hibxx" path="res://objects/interface/skip.tscn" id="94_p6l88"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebg2g"]
 texture = ExtResource("3_yxlcp")
@@ -214,100 +216,78 @@ agent_radius = 15.0
 [sub_resource type="Resource" id="Resource_57f5r"]
 script = ExtResource("21_0qimb")
 code = "carrot"
-type = 0
 icon = ExtResource("33_hyu0y")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_84vju"]
 script = ExtResource("21_0qimb")
 code = "tomato"
-type = 0
 icon = ExtResource("32_o1tg2")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_dyyw8"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 5
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_gjpm3"]
 script = ExtResource("21_0qimb")
 code = "banana"
-type = 0
 icon = ExtResource("23_in2eo")
 price = 4
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_siyqs"]
 script = ExtResource("21_0qimb")
 code = "sliced-coconut"
-type = 0
 icon = ExtResource("24_gjpm3")
 price = 6
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_vwcyu"]
 script = ExtResource("21_0qimb")
 code = "orange"
-type = 0
 icon = ExtResource("30_nu61c")
 price = 8
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_pb578"]
 script = ExtResource("21_0qimb")
 code = "blueberry"
-type = 0
 icon = ExtResource("25_siyqs")
 price = 1
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_o1tg2"]
 script = ExtResource("21_0qimb")
 code = "strawberry"
-type = 0
 icon = ExtResource("26_vshs7")
 price = 3
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_hyu0y"]
 script = ExtResource("21_0qimb")
 code = "raspberry"
-type = 0
 icon = ExtResource("27_2ki8c")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_lfilp"]
 script = ExtResource("21_0qimb")
 code = "blackberry"
-type = 0
 icon = ExtResource("28_0owt5")
 price = 3
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_gcaob"]
 script = ExtResource("21_0qimb")
 code = "knife"
-type = 0
 icon = ExtResource("36_hyu0y")
 price = 10
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_aqa1v"]
@@ -322,7 +302,6 @@ metadata/_custom_type_script = "uid://dcywvgx0phtap"
 [sub_resource type="Resource" id="Resource_ps7y1"]
 script = ExtResource("21_0qimb")
 code = "juicer"
-type = 0
 icon = ExtResource("42_3mhcn")
 price = 200
 one_time = true
@@ -331,7 +310,6 @@ metadata/_custom_type_script = "uid://dcywvgx0phtap"
 [sub_resource type="Resource" id="Resource_4c8xy"]
 script = ExtResource("21_0qimb")
 code = "coffee-machine"
-type = 0
 icon = ExtResource("43_nc5fr")
 price = 300
 one_time = true
@@ -340,7 +318,6 @@ metadata/_custom_type_script = "uid://dcywvgx0phtap"
 [sub_resource type="Resource" id="Resource_jhuvt"]
 script = ExtResource("21_0qimb")
 code = "radio"
-type = 0
 icon = ExtResource("44_3fqo2")
 price = 100
 one_time = true
@@ -349,182 +326,198 @@ metadata/_custom_type_script = "uid://dcywvgx0phtap"
 [sub_resource type="Resource" id="Resource_rsknx"]
 script = ExtResource("21_0qimb")
 code = "coffee-beans"
-type = 0
 icon = ExtResource("37_e2bht")
 price = 10
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_4pegn"]
 script = ExtResource("21_0qimb")
 code = "milk"
-type = 0
 icon = ExtResource("34_lfilp")
 price = 10
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_p6l88"]
 script = ExtResource("21_0qimb")
 code = "chocolate"
-type = 0
 icon = ExtResource("41_4pegn")
 price = 8
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_4pmbt"]
 script = ExtResource("21_0qimb")
 code = "cola-bottle"
-type = 0
 icon = ExtResource("51_1xgkc")
 price = 10
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_fun0h"]
 script = ExtResource("21_0qimb")
 code = "beer-bottle"
-type = 0
 icon = ExtResource("49_csfbn")
 price = 15
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_oqdxe"]
 script = ExtResource("21_0qimb")
 code = "cider-bottle"
-type = 0
 icon = ExtResource("50_sj5fg")
 price = 16
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_iarty"]
 script = ExtResource("21_0qimb")
 code = "vodka-bottle"
-type = 0
 icon = ExtResource("52_x1gp3")
 price = 35
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_csdio"]
 script = ExtResource("21_0qimb")
 code = "gin-bottle"
-type = 0
 icon = ExtResource("58_oqdxe")
 price = 30
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_tcd68"]
 script = ExtResource("21_0qimb")
 code = "whiskey-bottle"
-type = 0
 icon = ExtResource("53_le2d2")
 price = 50
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_nc5fr"]
 script = ExtResource("21_0qimb")
 code = "tequila-bottle"
-type = 0
 icon = ExtResource("55_le2d2")
 price = 38
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_3fqo2"]
 script = ExtResource("21_0qimb")
 code = "rum-bottle"
-type = 0
 icon = ExtResource("56_gexia")
 price = 45
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_nlgwl"]
 script = ExtResource("21_0qimb")
 code = "absinthe-bottle"
-type = 0
 icon = ExtResource("57_fun0h")
 price = 60
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_3mhcn"]
 script = ExtResource("21_0qimb")
 code = "wine-bottle"
-type = 0
 icon = ExtResource("54_gexia")
 price = 100
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_8t8ul"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_1x1rp"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_ylqph"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_fcv70"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_mou0d"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_ugmlg"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
 
 [sub_resource type="Resource" id="Resource_qd1pt"]
 script = ExtResource("21_0qimb")
 code = "apple"
-type = 0
 icon = ExtResource("22_in2eo")
 price = 2
-one_time = false
 metadata/_custom_type_script = "uid://dcywvgx0phtap"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6l88"]
+shader = ExtResource("89_csdio")
+shader_parameter/lod = 3.0
+
+[sub_resource type="Animation" id="Animation_ps7y1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+
+[sub_resource type="Animation" id="Animation_57f5r"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_84vju"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0000001425]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4c8xy"]
+_data = {
+&"RESET": SubResource("Animation_ps7y1"),
+&"hide": SubResource("Animation_57f5r"),
+&"show": SubResource("Animation_84vju")
+}
 
 [sub_resource type="Resource" id="Resource_gia1l"]
 script = ExtResource("67_8t8ul")
@@ -2658,14 +2651,29 @@ position = Vector2(22, -9)
 [node name="inputHandler" type="Node" parent="menu"]
 script = ExtResource("1_elqb8")
 
+[node name="blur" type="ColorRect" parent="menu"]
+process_mode = 3
+material = SubResource("ShaderMaterial_p6l88")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blurAnim" type="AnimationPlayer" parent="menu/blur"]
+libraries = {
+&"": SubResource("AnimationLibrary_4c8xy")
+}
+
 [node name="interface" parent="menu" instance=ExtResource("48_oa6sj")]
 visible = false
 metadata/_edit_lock_ = true
 
-[node name="mainMenu" parent="menu" node_paths=PackedStringArray("game_interface", "time_handler", "pause_menu") instance=ExtResource("70_ugmlg")]
+[node name="mainMenu" parent="menu" node_paths=PackedStringArray("game_interface", "time_handler", "pause_menu", "blur_anim") instance=ExtResource("70_ugmlg")]
 game_interface = NodePath("../interface")
 time_handler = NodePath("../../timeHandler")
 pause_menu = NodePath("../pauseMenu")
+blur_anim = NodePath("../blur/blurAnim")
 
 [node name="camera" type="Camera2D" parent="menu/mainMenu"]
 position = Vector2(204, 6)
@@ -2674,11 +2682,15 @@ zoom = Vector2(1.5, 1.5)
 [node name="pauseMenu" parent="menu" groups=["pause_menu"] instance=ExtResource("71_qd1pt")]
 visible = false
 
-[node name="resumeMenu" parent="menu" node_paths=PackedStringArray("interface", "pause_menu") instance=ExtResource("92_nlgwl")]
-process_mode = 3
+[node name="resumeMenu" parent="menu" node_paths=PackedStringArray("blurAnim", "interface", "pause_menu", "skip") instance=ExtResource("92_nlgwl")]
 visible = false
+blurAnim = NodePath("../blur/blurAnim")
 interface = NodePath("../interface")
 pause_menu = NodePath("../pauseMenu")
+skip = NodePath("../skip")
+
+[node name="skip" parent="menu" instance=ExtResource("94_p6l88")]
+process_mode = 3
 
 [node name="timeHandler" type="Node" parent="."]
 script = ExtResource("66_gcaob")

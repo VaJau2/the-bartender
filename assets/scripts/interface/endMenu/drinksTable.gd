@@ -2,7 +2,7 @@ extends VBoxContainer
 
 class_name DrinksTable
 
-@onready var drinkStats = load("res://objects/interface/drinkStatistics.tscn")
+@onready var drinkStats = load("res://objects/interface/endMenu/drinkStatistics.tscn")
 
 func _ready() -> void:
 	if (G.statistics.drinks_stats.size() < 1):

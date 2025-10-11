@@ -19,7 +19,7 @@ var walk_state: String = "walk"
 
 func _ready() -> void:
 	if talk_on_start:
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(state_machine.DELAY).timeout
 		state_machine.set_state("startTalking")
 
 

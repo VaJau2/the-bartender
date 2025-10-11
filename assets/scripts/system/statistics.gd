@@ -10,8 +10,8 @@ var drinks_stats: Dictionary[String, ItemStats] = {}
 var spent_per_day: Array[int] = []
 var ingredients_spent: int
 var deliveries_spent: int
-var tools_spent: int
-var furns_spent: int
+var tools_and_furns_spent: int
+var recipes_spent: int
 
 var clients_served_per_day: Array[int] = []
 var avg_order_fulfillment_time: Array[float] = []
@@ -34,8 +34,8 @@ func reset() -> void:
 	
 	ingredients_spent = 0
 	deliveries_spent = 0
-	tools_spent = 0
-	furns_spent = 0
+	tools_and_furns_spent = 0
+	recipes_spent = 0
 	
 	_reset_day_stats(profit_per_day)
 	_reset_day_stats(spent_per_day)
@@ -77,13 +77,42 @@ func add_day_stats(array: Array, value) -> void:
 	array[G.time.day] += value
 
 
-func _reset_day_stats(array: Array):
+func _reset_day_stats(array: Array) -> void:
 	array.clear()
 	while array.size() < G.DAYS_GOAL:
 		array.push_back(0)
 
 
-func add_drink_stats(code: String, profit: int):
+func add_buy_stats(shop_item: ShopItem, item: Item) -> void:
+	match shop_item.type:
+		Enums.ShopItemType.bag:
+			tools_and_furns_spent += shop_item.price
+		Enums.ShopItemType.recipe:
+			recipes_spent += shop_item.price
+		Enums.ShopItemType.item:
+			match item.category:
+				"fruit":
+					fruits_bought.amount += 1
+					fruits_bought.profit += shop_item.price
+				"berry":
+					berries_bought.amount += 1
+					berries_bought.profit += shop_item.price
+				"vegetable":
+					vegetables_bought.amount += 1
+					vegetables_bought.profit += shop_item.price
+			
+			match item.type:
+				Enums.ItemType.ingredient:
+					ingredients_spent += shop_item.price
+				Enums.ItemType.glass:
+					ingredients_spent += shop_item.price
+				Enums.ItemType.tool:
+					tools_and_furns_spent += shop_item.price
+				Enums.ItemType.furn:
+					tools_and_furns_spent += shop_item.price
+
+
+func add_drink_stats(code: String, profit: int) -> void:
 	if drinks_stats.has(code):
 		drinks_stats[code].amount += 1
 		drinks_stats[code].profit += profit

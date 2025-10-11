@@ -457,7 +457,7 @@
 		"need_fridge": 1
 	},
 	"milk": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/milk.png",
 		"weight": 2,
@@ -465,7 +465,7 @@
 		"need_fridge": 1
 	},
 	"beer-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/beer-bottle.png",
 		"weight": 1,
@@ -473,7 +473,7 @@
 		"need_fridge": 1
 	},
 	"cola-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/cola-bottle.png",
 		"weight": 1,
@@ -481,7 +481,7 @@
 		"need_fridge": 1
 	},
 	"cider-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/cider-bottle.png",
 		"weight": 1,
@@ -489,7 +489,7 @@
 		"need_fridge": 1
 	},
 	"vodka-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/vodka-bottle.png",
 		"weight": 1,
@@ -497,7 +497,7 @@
 		"need_fridge": 1
 	},
 	"whiskey-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/whiskey-bottle.png",
 		"weight": 1,
@@ -505,7 +505,7 @@
 		"need_fridge": 1
 	},
 	"wine-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/wine-bottle.png",
 		"weight": 1,
@@ -513,7 +513,7 @@
 		"need_fridge": 1
 	},
 	"tequila-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/tequila-bottle.png",
 		"weight": 1,
@@ -521,7 +521,7 @@
 		"need_fridge": 1
 	},
 	"rum-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/rum-bottle.png",
 		"weight": 1,
@@ -529,7 +529,7 @@
 		"need_fridge": 1
 	},
 	"absinthe-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/absinthe-bottle.png",
 		"weight": 1,
@@ -537,7 +537,7 @@
 		"need_fridge": 1
 	},
 	"gin-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/gin-bottle.png",
 		"weight": 1,

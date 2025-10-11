@@ -90,18 +90,18 @@
 		"avg_profit": "Средний заработок в день:",
 
 		"total_spent": "Всего потрачено:",
-		"ingredients": "Ингридиенты:",
+		"ingredients": "Ингредиенты:",
 		"deliveries": "Доставки:",
-		"tools_and_recipes": "Инструменты и рецепты:",
-		"furns": "Оборудывание:",
+		"tools_and_furns": "Инструменты & Приборы:",
+		"recipes": "Рецепты:",
 		"avg_spent": "Средние растраты в день:",
 
 		"total_clients_served": "Всего обслужено клиентов:",
 		"max_clients_served": "Максимум обслужено клиентов в день:",
 		"avg_clients_served": "В среднем обслужено клиентов в день:",
 		"avg_order_time": "Среднее время выполнения заказа:",
-		"most_sold_drink": "Самый продаваемый напиток:",
-		"most_profit_drink": "Самый прибыльный напиток:",
+		"most_sold_drink": "Самое продаваемое:",
+		"most_profit_drink": "Самое прибыльное:",
 
 		"seconds": "cек",
 
@@ -123,6 +123,18 @@
 		"continue": "Продолжить",
 		"financial_results": "Финансовые итоги",
 		"statistics": "Статистика"
+	},
+	"titles": {
+		"skip": "Пропустить",
+		"createdBy": "АВТОР",
+		"programmers": "ПРОГРАММИСТЫ",
+		"artists": "ХУДОЖНИКИ",
+		"testers": "ТЕСТЕРЫ",
+		"music": "МУЗЫКА",
+		"sprecialThanks": "ОСОБЫЕ БЛАГОДАРНОСТИ",
+		"ponies": "Пони с любовью по пикселям перерисованы из [i]Pony Town[/i]",
+		"jam": "Разрабатанно в рамках\n /mlp/con Game Jam: Anon's choice - Pony Hobbies",
+		"copyright": "[i]The Bartender[/i]\n это некоммерческий любительский проект\n\nЛюбое нарушение авторских прав не предполагается\n\n[i]My Little Pony: Friendship is Magic[/i] принадлежит\n © 2025 Hasbro Studios\nВСЕ ПРАВА ЗАЩИЩЕНЫ"
 	},
 	"plural": {
 		"bits": "бит|бита|битов"

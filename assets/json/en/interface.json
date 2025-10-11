@@ -91,9 +91,9 @@
 
 		"total_spent": "Total spent:",
 		"ingredients": "Ingredients:",
-		"deliveries": "Deliveries",
-		"tools_and_recipes": "Tools & Recipes",
-		"furns": "Furns",
+		"deliveries": "Deliveries:",
+		"tools_and_furns": "Tools & Furns:",
+		"recipes": "Recipes:",
 		"avg_spent": "Average spent per day:",
 
 		"total_clients_served": "Total clients served:",
@@ -101,7 +101,7 @@
 		"avg_clients_served": "Average clients served per day:",
 		"avg_order_time": "Average order fulfillment time:",
 		"most_sold_drink": "Most sold drink:",
-		"most_profit_drink": "Most profit drink",
+		"most_profit_drink": "Most profit drink:",
 
 		"seconds": "sec",
 
@@ -123,6 +123,18 @@
 		"continue": "Continue",
 		"financial_results": "Financial Results",
 		"statistics": "Statistics"
+	},
+	"titles": {
+		"skip": "Skip",
+		"createdBy": "CREATED BY",
+		"programmers": "PROGRAMMERS",
+		"artists": "ARTISTS",
+		"testers": "TESTERS",
+		"music": "MUSIC",
+		"sprecialThanks": "SPECIAL THANKS",
+		"ponies": "Ponies lovingly redrawn pixel by pixel from [i]Pony Town[/i]",
+		"jam": "Developed as part of\n /mlp/con Game Jam: Anon's choice - Pony Hobbies",
+		"copyright": "[i]The Bartender[/i]\n is a non-profit fan-made project\n\nAny kind of copyright violation is not intended\n\n[i]My Little Pony: Friendship is Magic[/i] belong to\n © 2025 Hasbro Studios\nALL RIGHTS RESERVED"
 	},
 	"plural": {
 		"bits": "bit|bits|bits"

@@ -1,22 +1,23 @@
-[gd_scene load_steps=48 format=3 uid="uid://dra84nwloiwru"]
+[gd_scene load_steps=58 format=3 uid="uid://dra84nwloiwru"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_wsvqf"]
 [ext_resource type="Script" uid="uid://ccvy1pb1xvnld" path="res://assets/scripts/interface/endMenu/resumeMenu.gd" id="2_ppf3d"]
 [ext_resource type="Texture2D" uid="uid://2xirgdv1wfyd" path="res://assets/sprites/interface/tablet.png" id="3_m7wrt"]
-[ext_resource type="Shader" uid="uid://dw2vcknsfkjvj" path="res://assets/materials/blur.gdshader" id="3_ppf3d"]
+[ext_resource type="AudioStream" uid="uid://g1elpbw7k33m" path="res://assets/audio/music/Nina Simone - Feeling Good.ogg" id="3_oijhr"]
 [ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/endMenu/statisticsCountLabel.gd" id="4_cpupi"]
+[ext_resource type="AudioStream" uid="uid://021psbya4x8s" path="res://assets/audio/music/The Limeliters - Take My True Love By The Hand.ogg" id="4_mshqk"]
 [ext_resource type="Script" uid="uid://wqx46ls1rdhe" path="res://assets/scripts/interface/endMenu/drinksTable.gd" id="5_tempj"]
 [ext_resource type="Texture2D" uid="uid://bjkge66m6kowc" path="res://assets/sprites/interface/paper.png" id="6_7x0ta"]
+[ext_resource type="AudioStream" uid="uid://seb5rjvsfhhx" path="res://assets/audio/interface/Tick 1.ogg" id="6_at28u"]
 [ext_resource type="Texture2D" uid="uid://cjqpihjo8g11k" path="res://assets/sprites/interface/Unpaid.png" id="7_at28u"]
-[ext_resource type="Script" uid="uid://dgjx2p4nn5o1q" path="res://assets/scripts/interface/endMenu/paidMark.gd" id="8_bd3no"]
+[ext_resource type="AudioStream" uid="uid://b5aroo3nbglni" path="res://assets/audio/interface/Tick 2.ogg" id="7_bd3no"]
+[ext_resource type="Script" uid="uid://dgjx2p4nn5o1q" path="res://assets/scripts/interface/endMenu/paidStamp.gd" id="8_bd3no"]
 [ext_resource type="Texture2D" uid="uid://lbhiftsye26v" path="res://assets/sprites/interface/Paid.png" id="9_o3uty"]
 [ext_resource type="Texture2D" uid="uid://dycgvod55j68l" path="res://assets/sprites/interface/paper_holder.png" id="10_sh44t"]
+[ext_resource type="AudioStream" uid="uid://b3k4tynbs4wp4" path="res://assets/audio/interface/Stamp.wav" id="12_wsvqf"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="13_i11jm"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="14_sbs1r"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7wrt"]
-shader = ExtResource("3_ppf3d")
-shader_parameter/lod = 3.0
+[ext_resource type="Script" uid="uid://duol3uqcxjner" path="res://assets/scripts/interface/endMenu/titles.gd" id="16_oijhr"]
 
 [sub_resource type="GDScript" id="GDScript_pnk8a"]
 script/source = "extends Node
@@ -166,14 +167,14 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_rb0l4"]
 script = ExtResource("14_sbs1r")
-node_path = NodePath("../FinancePage/Finanсe/toolsSpent/label")
-code = "resume.tools_and_recipes"
+node_path = NodePath("../FinancePage/Finanсe/toolsAndFurnsSpent/label")
+code = "resume.tools_and_furns"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_6yuqr"]
 script = ExtResource("14_sbs1r")
-node_path = NodePath("../FinancePage/Finanсe/furnsSpent/label")
-code = "resume.furns"
+node_path = NodePath("../FinancePage/Finanсe/recipesSpent/label")
+code = "resume.recipes"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_hitgy"]
@@ -218,30 +219,265 @@ node_path = NodePath("../scroll/Statistics/DrinksTable/headers/ProfitLabel")
 code = "resume.profit"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="resumeMenu" type="Control" node_paths=PackedStringArray("statistics_count_labels", "paid_mark", "drinks_table", "finance_page", "continue_button", "resume_button")]
+[sub_resource type="Animation" id="Animation_mshqk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(432, 592)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 592)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("black:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fcx8a"]
+resource_name = "hide-buttons"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(432, 592), Vector2(432, 542)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 592), Vector2(592, 542)]
+}
+
+[sub_resource type="Animation" id="Animation_m73m3"]
+resource_name = "show-buttons"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.37, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(432, 543), Vector2(432, 592), Vector2(432, 590), Vector2(432, 592)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.37, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(592, 543), Vector2(592, 592), Vector2(592, 590), Vector2(592, 592)]
+}
+
+[sub_resource type="Animation" id="Animation_oijhr"]
+resource_name = "show-resume"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(432, 543)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 543)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [600.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fshaa"]
+resource_name = "show-titles"
+length = 52.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 49.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -2740.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 592), Vector2(592, 540)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("continueButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(432, 592), Vector2(432, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("black:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(49.8, 51.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcx8a"]
+_data = {
+&"RESET": SubResource("Animation_mshqk"),
+&"hide-buttons": SubResource("Animation_fcx8a"),
+&"show-buttons": SubResource("Animation_m73m3"),
+&"show-resume": SubResource("Animation_oijhr"),
+&"show-titles": SubResource("Animation_fshaa")
+}
+
+[node name="resumeMenu" type="Control" node_paths=PackedStringArray("finances_labels", "statistics_labels", "paid_stamp", "drinks_table", "finance_page", "continue_button", "resume_button")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 0.00024414063
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wsvqf")
 script = ExtResource("2_ppf3d")
-statistics_count_labels = [NodePath("scroll/Statistics/totalClientsServed/count"), NodePath("scroll/Statistics/maxClientsPerDay/count"), NodePath("scroll/Statistics/avgClientsPerDay/count"), NodePath("scroll/Statistics/avgOrderTime/count"), NodePath("scroll/Statistics/mostSoldDrink/count"), NodePath("scroll/Statistics/mostProfitDrink/name"), NodePath("scroll/Statistics/fruits/boughtCount"), NodePath("scroll/Statistics/fruits/stolenCount"), NodePath("scroll/Statistics/berries/boughtCount"), NodePath("scroll/Statistics/berries/stolenCount"), NodePath("scroll/Statistics/vegetables/boughtCount"), NodePath("scroll/Statistics/vegetables/stolenCount"), NodePath("FinancePage/Finanсe/totalEarned/count"), NodePath("FinancePage/Finanсe/juicesSold/count"), NodePath("FinancePage/Finanсe/coffeeSold/count"), NodePath("FinancePage/Finanсe/alcoholSold/count"), NodePath("FinancePage/Finanсe/otherSold/count"), NodePath("FinancePage/Finanсe/averageProfit/count"), NodePath("FinancePage/Finanсe/totalSpent/count"), NodePath("FinancePage/Finanсe/ingredietsSpent/count"), NodePath("FinancePage/Finanсe/deliveriesSpent/count"), NodePath("FinancePage/Finanсe/toolsSpent/count"), NodePath("FinancePage/Finanсe/furnsSpent/count"), NodePath("FinancePage/Finanсe/averageSpent/count")]
-paid_mark = NodePath("FinancePage/Loan/count")
+finances_labels = [NodePath("FinancePage/Finanсe/totalEarned/count"), NodePath("FinancePage/Finanсe/juicesSold/count"), NodePath("FinancePage/Finanсe/coffeeSold/count"), NodePath("FinancePage/Finanсe/alcoholSold/count"), NodePath("FinancePage/Finanсe/otherSold/count"), NodePath("FinancePage/Finanсe/averageProfit/count"), NodePath("FinancePage/Finanсe/totalSpent/count"), NodePath("FinancePage/Finanсe/ingredietsSpent/count"), NodePath("FinancePage/Finanсe/deliveriesSpent/count"), NodePath("FinancePage/Finanсe/toolsAndFurnsSpent/count"), NodePath("FinancePage/Finanсe/recipesSpent/count"), NodePath("FinancePage/Finanсe/averageSpent/count")]
+statistics_labels = [NodePath("scroll/Statistics/totalClientsServed/count"), NodePath("scroll/Statistics/maxClientsPerDay/count"), NodePath("scroll/Statistics/avgClientsPerDay/count"), NodePath("scroll/Statistics/avgOrderTime/count"), NodePath("scroll/Statistics/mostSoldDrink/name"), NodePath("scroll/Statistics/mostProfitDrink/name"), NodePath("scroll/Statistics/fruits/boughtCount"), NodePath("scroll/Statistics/fruits/stolenCount"), NodePath("scroll/Statistics/berries/boughtCount"), NodePath("scroll/Statistics/berries/stolenCount"), NodePath("scroll/Statistics/vegetables/boughtCount"), NodePath("scroll/Statistics/vegetables/stolenCount")]
+paid_stamp = NodePath("FinancePage/Loan/stamp")
 drinks_table = NodePath("scroll/Statistics/DrinksTable")
 finance_page = NodePath("FinancePage")
 continue_button = NodePath("continueButton")
 resume_button = NodePath("resumeButton")
+win_music = ExtResource("3_oijhr")
+lose_music = ExtResource("4_mshqk")
+stamp_sound = ExtResource("12_wsvqf")
+ticks_sounds = Array[AudioStream]([ExtResource("6_at28u"), ExtResource("7_bd3no")])
 
-[node name="background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_m7wrt")
+[node name="continueButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -56.000244
+offset_right = -16.0
+offset_bottom = -24.000244
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+text = "Continue"
+
+[node name="resumeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -56.000244
+offset_right = 144.0
+offset_bottom = -24.000244
+grow_horizontal = 2
+grow_vertical = 0
+text = "Statistics"
 
 [node name="tabletBackground" type="TextureRect" parent="."]
 layout_mode = 1
@@ -469,7 +705,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Most sold drink:"
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+[node name="name" type="Label" parent="scroll/Statistics/mostSoldDrink"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -479,7 +715,6 @@ offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Name"
 vertical_alignment = 1
 script = ExtResource("4_cpupi")
 method = 4
@@ -512,7 +747,6 @@ offset_right = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Name"
 vertical_alignment = 1
 script = ExtResource("4_cpupi")
 method = 5
@@ -1184,11 +1418,11 @@ script = ExtResource("4_cpupi")
 code = "deliveries_spent"
 unit = 1
 
-[node name="toolsSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="toolsAndFurnsSpent" type="Control" parent="FinancePage/Finanсe"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/toolsSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1202,7 +1436,7 @@ text = "Tools & Recepies:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/toolsSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1215,14 +1449,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
 script = ExtResource("4_cpupi")
-code = "tools_spent"
+code = "tools_and_furns_spent"
 unit = 1
 
-[node name="furnsSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="recipesSpent" type="Control" parent="FinancePage/Finanсe"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/furnsSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/recipesSpent"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1236,7 +1470,7 @@ text = "Furns:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/furnsSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/recipesSpent"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1249,7 +1483,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0 B"
 vertical_alignment = 1
 script = ExtResource("4_cpupi")
-code = "furns_spent"
+code = "recipes_spent"
 unit = 1
 
 [node name="averageSpent" type="Control" parent="FinancePage/Finanсe"]
@@ -1289,7 +1523,6 @@ unit = 1
 
 [node name="Loan" type="Control" parent="FinancePage"]
 custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
 anchors_preset = 0
 offset_left = -58.0
 offset_top = 442.0
@@ -1311,22 +1544,21 @@ horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
 
-[node name="count" type="TextureRect" parent="FinancePage/Loan"]
+[node name="stamp" type="TextureRect" parent="FinancePage/Loan"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 320.0
+offset_left = 328.0
 offset_top = -52.0
-offset_right = -116.0
+offset_right = -108.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_at28u")
 expand_mode = 2
 script = ExtResource("8_bd3no")
-paid_mark = ExtResource("9_o3uty")
-unpaid_mark = ExtResource("7_at28u")
+paid_stamp = ExtResource("9_o3uty")
+unpaid_stamp = ExtResource("7_at28u")
 
 [node name="paper_holder" type="TextureRect" parent="."]
 layout_mode = 1
@@ -1345,35 +1577,186 @@ mouse_filter = 2
 texture = ExtResource("10_sh44t")
 metadata/_edit_lock_ = true
 
-[node name="continueButton" type="Button" parent="."]
+[node name="titles" type="RichTextLabel" parent="."]
+process_mode = 3
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.98800004
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -144.0
-offset_top = -56.0
-offset_right = -16.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Continue"
+anchor_bottom = 0.98800004
+offset_left = -320.0
+offset_top = 7.7755127
+offset_right = 320.0
+offset_bottom = 2079.7754
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+bbcode_enabled = true
+text = "[font_size=20]CREATED BY[/font_size]
+VaJa72
 
-[node name="resumeButton" type="Button" parent="."]
+[font_size=20]PROGRAMMERS[/font_size]
+VaJa72
+McFord
+
+[font_size=20]ARTISTS[/font_size]
+VaJa72
+McFord
+
+[font_size=20]TESTERS[/font_size]
+StaSyaN
+McFord
+Player Third
+
+[font_size=20]MUSIC[/font_size]
+
+Let's Twist Again
+Chubby Checker
+[font_size=12]ABKCO Music & Records, Inc.[/font_size]
+
+Misirlou
+Dick Dale
+[font_size=12]Lex Records Ltd.[/font_size]
+
+Switchbalde
+Link Wray
+[font_size=12]Country Music Group[/font_size]
+
+The Locomotion
+Little Eva
+[font_size=12]Parlophone Records Ltd[/font_size]
+
+Come Back Baby
+Little Walter
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Feeling Good
+Nina Simone
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Magic Moments
+Perry Cosmo
+[font_size=12]RCA Victor[/font_size]
+
+I Wonder Why
+The Belmonts
+[font_size=12]Capitol Records, LLC[/font_size]
+
+Do You Love Me
+The Contours
+[font_size=12]Gordy Records[/font_size]
+
+Take My True Love By The Hand
+The Limeliters
+[font_size=12]WEA International[/font_size]
+
+Please Mr. Postman
+The Marvelettes
+[font_size=12]Hitsville USA[/font_size]
+
+Surfin Bird
+The Trashmen
+[font_size=12]TP4 Music[/font_size]
+
+Sea Of Love
+The Twilights
+[font_size=12]Fort Knox Music Inc.[/font_size]
+
+
+SPECIAL THANKS
+shadowiq
+RealLifePze
+LittleTinyBit
+Баян Гордыня
+
+
+This game was developed as part of
+/mlp/con Game Jam: Anon's choice - Pony Hobbies
+
+[i]The Bartender[/i]
+is a non-profit fan-made project
+
+Any kind of copyright violation is not intended
+
+[i]My Little Pony: Friendship is Magic[/i] belong to
+© 2025 Hasbro Studios
+ALL RIGHTS RESERVED "
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+script = ExtResource("16_oijhr")
+music = "Let's Twist Again
+Chubby Checker
+[font_size=12]ABKCO Music & Records, Inc.[/font_size]
+
+Misirlou
+Dick Dale
+[font_size=12]Lex Records Ltd.[/font_size]
+
+Switchbalde
+Link Wray
+[font_size=12]Country Music Group[/font_size]
+
+The Locomotion
+Little Eva
+[font_size=12]Parlophone Records Ltd[/font_size]
+
+Come Back Baby
+Little Walter
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Feeling Good
+Nina Simone
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Magic Moments
+Perry Cosmo
+[font_size=12]RCA Victor[/font_size]
+
+I Wonder Why
+The Belmonts
+[font_size=12]Capitol Records, LLC[/font_size]
+
+Do You Love Me
+The Contours
+[font_size=12]Gordy Records[/font_size]
+
+Take My True Love By The Hand
+The Limeliters
+[font_size=12]WEA International[/font_size]
+
+Please Mr. Postman
+The Marvelettes
+[font_size=12]Hitsville USA[/font_size]
+
+Surfin Bird
+The Trashmen
+[font_size=12]TP4 Music[/font_size]
+
+Sea Of Love
+The Twilights
+[font_size=12]Fort Knox Music Inc.[/font_size]"
+
+[node name="black" type="ColorRect" parent="."]
+process_mode = 3
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -56.0
-offset_right = 144.0
-offset_bottom = -24.0
+offset_top = 2740.0
+offset_bottom = 2740.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "Statistics"
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
 
 [node name="timeScaleReturn" type="Node" parent="."]
 script = SubResource("GDScript_pnk8a")
@@ -1381,3 +1764,9 @@ script = SubResource("GDScript_pnk8a")
 [node name="translation" type="Node" parent="."]
 script = ExtResource("13_i11jm")
 nodes = Array[ExtResource("14_sbs1r")]([SubResource("Resource_tgfro"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0"), SubResource("Resource_tqmt7"), SubResource("Resource_17uhj"), SubResource("Resource_ibus1"), SubResource("Resource_wc5pl"), SubResource("Resource_83prw"), SubResource("Resource_npi8v"), SubResource("Resource_re1lo"), SubResource("Resource_upxml"), SubResource("Resource_8wsly"), SubResource("Resource_s6aau"), SubResource("Resource_qnits"), SubResource("Resource_qr0lv"), SubResource("Resource_ju3qx"), SubResource("Resource_uttjn"), SubResource("Resource_tkkke"), SubResource("Resource_rb0l4"), SubResource("Resource_6yuqr"), SubResource("Resource_hitgy"), SubResource("Resource_x4psh"), SubResource("Resource_raq4n"), SubResource("Resource_05bw0"), SubResource("Resource_wsvqf"), SubResource("Resource_ppf3d"), SubResource("Resource_m7wrt")])
+
+[node name="anim" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_fcx8a")
+}

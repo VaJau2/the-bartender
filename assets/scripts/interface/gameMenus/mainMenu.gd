@@ -7,12 +7,12 @@ const ZOOM_SPEED: float = 1
 @export var game_interface: Control
 @export var time_handler: TimeHandler
 @export var pause_menu: PauseMenu
+@export var blur_anim: AnimationPlayer
 
 @onready var menu_camera: Camera2D = get_node("camera")
 @onready var settings_panel: Panel = get_node("menu/settingsPanel")
 @onready var help_panel: Panel = get_node("menu/helpPanel")
 @onready var player_camera: Camera2D = G.player.get_node("camera")
-@onready var blur: ColorRect = get_node("back")
 
 
 func _ready() -> void:
@@ -22,9 +22,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	var blur_value = blur.material.get_shader_parameter("lod")
-	if blur_value > 0:
-		blur.material.set_shader_parameter("lod", blur_value - 2 * delta)
+	blur_anim.play("hide")
 	
 	if menu_camera.zoom.x < player_camera.zoom.x:
 		menu_camera.zoom.x += ZOOM_SPEED * delta

@@ -2,13 +2,16 @@ extends Node
 
 class_name StateMachine
 
+const DELAY: float = 0.5
+
 @onready var npc: NPC = get_parent()
 
 var current_state: State
 
 
 func _ready() -> void:
-	await get_tree().create_timer(0.2).timeout
+	# задержка для успевания прогрузки навигации
+	await get_tree().create_timer(DELAY).timeout
 	
 	for state: State in get_children():
 		state.init()
