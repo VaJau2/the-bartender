@@ -37,6 +37,7 @@ func interact() -> void:
 	if !has_item or interaction_controller.holding_item != null: return
 	
 	var item = ItemSpawner.spawn_item(code, global_position, get_parent())
+	G.statistics.ingredient_stolen(item.code)
 	item.disable()
 	
 	if !interaction_controller.try_get_item(item):

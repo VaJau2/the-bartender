@@ -27,7 +27,6 @@ func interact() -> void:
 		audi.stream = fill_sound
 		item.code = "glass-water"
 	else:
-		G.statistics.drinks_spilled += 1
 		audi.stream = splat_sound
 		item.code = "empty-glass"
 	

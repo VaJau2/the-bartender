@@ -118,6 +118,11 @@ func _make_order() -> void:
 	
 	var result = _try_choose_drink()
 	if result:
+		# Сразу заводим таймер, чтобы и при автоматическом подборе напитка со
+		# стойки, и при ручной выдаче напитка корректно работала статистика
+		# подсчёта времени выполнения заказа (ORDER_WAITING_TIME - order_timer)
+		order_timer = ORDER_WAITING_TIME
+		
 		# Ищем напиток на стойке и сразу пьем, если он есть
 		var front_drink = bar_front_area.find_item(ordered_drink)
 		if front_drink:
@@ -126,7 +131,6 @@ func _make_order() -> void:
 		
 		bar_queue.ordering_npc = npc
 		npc.dialogue_icons.show_item_icon(ordered_drink)
-		order_timer = ORDER_WAITING_TIME
 	else:
 		state_machine.set_state("idle")
 
@@ -156,7 +160,10 @@ func _on_queue_updated() -> void:
 
 func have_drink(drink_item: Item) -> void:
 	if G.glasses_count > 0: G.glasses_count -= 1
-	G.statistics.drinks_sold += 1
+	
+	G.statistics.add_day_stats(G.statistics.clients_served_per_day, 1)
+	G.statistics.add_drink_stats(drink_item.code, ordered_price)
+	G.statistics.avg_order_fulfillment_time.push_back(ORDER_WAITING_TIME - order_timer)
 	
 	var booze_time = drink_item.booze_time
 	
@@ -169,6 +176,24 @@ func have_drink(drink_item: Item) -> void:
 		M.add_money(ordered_price)
 		sale_audi.stream = sale_sound
 		sale_audi.play()
+		
+		G.statistics.add_day_stats(G.statistics.profit_per_day, ordered_price)
+		
+		if drink_item.code.contains("juice"):
+			G.statistics.juices_sold.amount += 1
+			G.statistics.juices_sold.profit += ordered_price
+		elif drink_item.code == "espresso" \
+		|| drink_item.code == "cappuccino" \
+		|| drink_item.code == "latte" \
+		|| drink_item.code == "mocha":
+			G.statistics.coffee_sold.amount += 1
+			G.statistics.coffee_sold.profit += ordered_price
+		elif drink_item.booze_time > 0:
+			G.statistics.alcohol_sold.amount += 1
+			G.statistics.alcohol_sold.profit += ordered_price
+		else:
+			G.statistics.other_sold.amount += 1
+			G.statistics.other_sold.profit += ordered_price
 	
 	ordered_drink = ""
 	
@@ -177,6 +202,5 @@ func have_drink(drink_item: Item) -> void:
 	
 	if booze_time > 0:
 		drunk_handler.add_drunk_time(booze_time)
-		G.statistics.ponies_drunk += 1
 	
 	state_machine.set_state("idle")

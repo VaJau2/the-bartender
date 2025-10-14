@@ -16,7 +16,7 @@ warnings/check_invalid_track_paths=false
 
 config/name="The Bartender"
 run/main_scene="uid://brkjnhnwfc1go"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://cdcp7xf54cq7v"
 config/icon="uid://ufj2roufx5yf"

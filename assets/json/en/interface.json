@@ -19,7 +19,7 @@
 		"take": "Take",
 		"cancel": "Cancel",
 		"ingredient": "Ingredient:",
-		"glass": "Glass:",
+		"glass": "Glass:"
 	},
 	"storage": {
 		"empty": "Empty",
@@ -56,6 +56,8 @@
 	"money": {
 		"goal": "Goal:",
 		"debt": "Debt:",
+		"shortTermLoan": "Short term loan:",
+		"constractionLoan": "Constraction loan:",
 		"days_left": "Days left:"
 	},
 	"dialogue": {
@@ -79,25 +81,60 @@
 		"tool": "Tools",
 		"misc": "Misc"
 	},
-	"win": {
-		"header": "You've successfully won",
-		"text": "You have saved up enough money to pay off the debt for the purchase of the bar c:",
-		"statistics": "Statistics:",
-		"continue": "Continue"
+	"resume": {
+		"total_earned": "Total earned:",
+		"juices_sold": "Juices sold:",
+		"coffee_sold": "Coffee sold:",
+		"alcohol_sold": "Alcohol_sold:",
+		"other_sold": "Other sold:",
+		"avg_profit": "Average earn per day:",
+
+		"total_spent": "Total spent:",
+		"ingredients": "Ingredients:",
+		"deliveries": "Deliveries:",
+		"tools_and_furns": "Tools & Furns:",
+		"recipes": "Recipes:",
+		"avg_spent": "Average spent per day:",
+
+		"total_clients_served": "Total clients served:",
+		"max_clients_served": "Max clients served per day:",
+		"avg_clients_served": "Average clients served per day:",
+		"avg_order_time": "Average order fulfillment time:",
+		"most_sold_drink": "Most sold drink:",
+		"most_profit_drink": "Most profit drink:",
+
+		"seconds": "sec",
+
+		"fruits": "Fruits",
+		"berries": "Berries",
+		"vegetables": "Vegetables",
+
+		"bought": "bought",
+		"stolen": "stolen",
+		"collected": "collected",
+
+		"loan": "Bar construction loan:",
+
+		"drinksStats": "\n\n\nDrinks Statistics",
+		"name": "Name",
+		"sold": "Sold",
+		"profit": "Profit",
+
+		"continue": "Continue",
+		"financial_results": "Financial Results",
+		"statistics": "Statistics"
 	},
-	"statistics": {
-		"drinks_sold": "Drinks sold:",
-		"drinks_spilled": "Drinks spilled:",
-		"juices_made": "Juices made:",
-		"coffee_made": "Coffee made:",
-		"money_spent": "Money spent:",
-		"apples_stolen": "Apples stolen:",
-		"ponies_drunk": "Ponies made drunk:"
-	},
-	"lost": {
-		"header": "You've successfully lost",
-		"text": "You didn't have time to save enough money on time, and you had to sell the bar :с",
-		"continue": "Continue"
+	"titles": {
+		"skip": "Skip",
+		"createdBy": "CREATED BY",
+		"programmers": "PROGRAMMERS",
+		"artists": "ARTISTS",
+		"testers": "TESTERS",
+		"music": "MUSIC",
+		"sprecialThanks": "SPECIAL THANKS",
+		"ponies": "Ponies lovingly redrawn pixel by pixel from [i]Pony Town[/i]",
+		"jam": "Developed as part of\n /mlp/con Game Jam: Anon's choice - Pony Hobbies",
+		"copyright": "[i]The Bartender[/i]\n is a non-profit fan-made project\n\nAny kind of copyright violation is not intended\n\n[i]My Little Pony: Friendship is Magic[/i] belong to\n © 2025 Hasbro Studios\nALL RIGHTS RESERVED"
 	},
 	"plural": {
 		"bits": "bit|bits|bits"

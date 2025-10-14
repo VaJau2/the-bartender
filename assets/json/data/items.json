@@ -125,7 +125,7 @@
 		"need_fridge": 1,
 		"prices": [35, 50]
 	},
-	"mocha-latte": {
+	"mocha": {
 		"type": "glass",
 		"category": "glass",
 		"texture": "assets/sprites/items/mocha.png",
@@ -321,7 +321,7 @@
 	"b-52": {
 		"type": "glass",
 		"category": "glass",
-		"texture": "assets/sprites/items/b52.png",
+		"texture": "assets/sprites/items/b-52.png",
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 100,
@@ -341,68 +341,79 @@
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/apple.png",
-		"weight": 1.5
+		"weight": 1.5,
+		"prices": [2, 5]
 	},
 	"banana": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/banana.png",
-		"weight": 1
+		"weight": 1,
+		"prices": [4]
 	},
 	"coconut": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/coconut.png",
-		"weight": 1.5
+		"weight": 1.5,
+		"prices": [6]
 	},
 	"sliced-coconut": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/sliced-coconut.png",
 		"weight": 0.5,
-		"limit": 3
+		"limit": 3,
+		"prices": [6]
 	},
 	"orange": {
 		"type": "ingredient",
 		"category": "fruit",
 		"texture": "assets/sprites/items/orange.png",
-		"weight": 0.6
+		"weight": 0.6,
+		"prices": [8]
 	},
 	"blueberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/blueberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [1]
 	},
 	"strawberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/strawberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [3]
 	},
 	"raspberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/raspberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [2]
 	},
 	"blackberry": {
 		"type": "ingredient",
 		"category": "berry",
 		"texture": "assets/sprites/items/blackberry.png",
-		"weight": 0.1
+		"weight": 0.1,
+		"prices": [3]
 	},
 	"tomato": {
 		"type": "ingredient",
 		"category": "vegetable",
 		"texture": "assets/sprites/items/tomato.png",
-		"weight": 0.2
+		"weight": 0.2,
+		"prices": [2]
 	},
 	"carrot": {
 		"type": "ingredient",
 		"category": "vegetable",
 		"texture": "assets/sprites/items/carrot.png",
-		"weight": 0.2
+		"weight": 0.2,
+		"prices": [2]
 	},
 	"coffee-beans": {
 		"type": "ingredient",
@@ -416,19 +427,19 @@
 		"type": "furn",
 		"category": "tool",
 		"texture": "assets/sprites/props/furn/juicer.png",
-		"weight": 5,
+		"weight": 5
 	},
 	"coffee-machine": {
 		"type": "furn",
 		"category": "tool",
 		"texture": "assets/sprites/props/furn/coffee-machine.png",
-		"weight": 6,
+		"weight": 6
 	},
 	"radio": {
 		"type": "furn",
 		"category": "tool",
 		"texture": "assets/sprites/items/radio.png",
-		"weight": 4,
+		"weight": 4
 	},
 	"knife": {
 		"type": "tool",
@@ -446,7 +457,7 @@
 		"need_fridge": 1
 	},
 	"milk": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/milk.png",
 		"weight": 2,
@@ -454,7 +465,7 @@
 		"need_fridge": 1
 	},
 	"beer-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/beer-bottle.png",
 		"weight": 1,
@@ -462,7 +473,7 @@
 		"need_fridge": 1
 	},
 	"cola-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/cola-bottle.png",
 		"weight": 1,
@@ -470,7 +481,7 @@
 		"need_fridge": 1
 	},
 	"cider-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/cider-bottle.png",
 		"weight": 1,
@@ -478,7 +489,7 @@
 		"need_fridge": 1
 	},
 	"vodka-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/vodka-bottle.png",
 		"weight": 1,
@@ -486,7 +497,7 @@
 		"need_fridge": 1
 	},
 	"whiskey-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/whiskey-bottle.png",
 		"weight": 1,
@@ -494,7 +505,7 @@
 		"need_fridge": 1
 	},
 	"wine-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/wine-bottle.png",
 		"weight": 1,
@@ -502,7 +513,7 @@
 		"need_fridge": 1
 	},
 	"tequila-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/tequila-bottle.png",
 		"weight": 1,
@@ -510,7 +521,7 @@
 		"need_fridge": 1
 	},
 	"rum-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/rum-bottle.png",
 		"weight": 1,
@@ -518,7 +529,7 @@
 		"need_fridge": 1
 	},
 	"absinthe-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/absinthe-bottle.png",
 		"weight": 1,
@@ -526,7 +537,7 @@
 		"need_fridge": 1
 	},
 	"gin-bottle": {
-		"type": "tool",
+		"type": "ingredient",
 		"category": "liquid",
 		"texture": "assets/sprites/items/gin-bottle.png",
 		"weight": 1,

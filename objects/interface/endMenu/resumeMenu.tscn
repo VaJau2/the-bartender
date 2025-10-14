@@ -1,0 +1,1772 @@
+[gd_scene load_steps=58 format=3 uid="uid://dra84nwloiwru"]
+
+[ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_wsvqf"]
+[ext_resource type="Script" uid="uid://ccvy1pb1xvnld" path="res://assets/scripts/interface/endMenu/resumeMenu.gd" id="2_ppf3d"]
+[ext_resource type="Texture2D" uid="uid://2xirgdv1wfyd" path="res://assets/sprites/interface/tablet.png" id="3_m7wrt"]
+[ext_resource type="AudioStream" uid="uid://g1elpbw7k33m" path="res://assets/audio/music/Nina Simone - Feeling Good.ogg" id="3_oijhr"]
+[ext_resource type="Script" uid="uid://cpyp6fgi0f8m0" path="res://assets/scripts/interface/endMenu/statisticsCountLabel.gd" id="4_cpupi"]
+[ext_resource type="AudioStream" uid="uid://021psbya4x8s" path="res://assets/audio/music/The Limeliters - Take My True Love By The Hand.ogg" id="4_mshqk"]
+[ext_resource type="Script" uid="uid://wqx46ls1rdhe" path="res://assets/scripts/interface/endMenu/drinksTable.gd" id="5_tempj"]
+[ext_resource type="Texture2D" uid="uid://bjkge66m6kowc" path="res://assets/sprites/interface/paper.png" id="6_7x0ta"]
+[ext_resource type="AudioStream" uid="uid://seb5rjvsfhhx" path="res://assets/audio/interface/Tick 1.ogg" id="6_at28u"]
+[ext_resource type="Texture2D" uid="uid://cjqpihjo8g11k" path="res://assets/sprites/interface/Unpaid.png" id="7_at28u"]
+[ext_resource type="AudioStream" uid="uid://b5aroo3nbglni" path="res://assets/audio/interface/Tick 2.ogg" id="7_bd3no"]
+[ext_resource type="Script" uid="uid://dgjx2p4nn5o1q" path="res://assets/scripts/interface/endMenu/paidStamp.gd" id="8_bd3no"]
+[ext_resource type="Texture2D" uid="uid://lbhiftsye26v" path="res://assets/sprites/interface/Paid.png" id="9_o3uty"]
+[ext_resource type="Texture2D" uid="uid://dycgvod55j68l" path="res://assets/sprites/interface/paper_holder.png" id="10_sh44t"]
+[ext_resource type="AudioStream" uid="uid://b3k4tynbs4wp4" path="res://assets/audio/interface/Stamp.wav" id="12_wsvqf"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="13_i11jm"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="14_sbs1r"]
+[ext_resource type="Script" uid="uid://duol3uqcxjner" path="res://assets/scripts/interface/endMenu/titles.gd" id="16_oijhr"]
+
+[sub_resource type="GDScript" id="GDScript_pnk8a"]
+script/source = "extends Node
+
+
+func _ready() -> void:
+	Engine.time_scale = 1
+"
+
+[sub_resource type="Resource" id="Resource_tgfro"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../statisticsHeader")
+code = "resume.statistics"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_svj81"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/totalClientsServed/label")
+code = "resume.total_clients_served"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_7kxht"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/maxClientsPerDay/label")
+code = "resume.max_clients_served"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_sv55w"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/avgClientsPerDay/label")
+code = "resume.avg_clients_served"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_mbcvx"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/avgOrderTime/label")
+code = "resume.avg_order_time"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_a4oae"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/mostSoldDrink/label")
+code = "resume.most_sold_drink"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qi1iy"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/mostProfitDrink/label")
+code = "resume.most_profit_drink"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ukgp0"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/table/bought")
+code = "resume.bought"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_tqmt7"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/table/stolen")
+code = "resume.stolen"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_17uhj"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/table/collected")
+code = "resume.collected"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ibus1"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/fruits/label")
+code = "resume.fruits"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_wc5pl"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/berries/label")
+code = "resume.berries"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_83prw"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/vegetables/label")
+code = "resume.vegetables"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_npi8v"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/financeHeader")
+code = "resume.financial_results"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_re1lo"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/totalEarned/label")
+code = "resume.total_earned"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_upxml"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/juicesSold/label")
+code = "resume.juices_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_8wsly"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/coffeeSold/label")
+code = "resume.coffee_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_s6aau"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/alcoholSold/label")
+code = "resume.alcohol_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qnits"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/otherSold/label")
+code = "resume.other_sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qr0lv"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/averageProfit/label")
+code = "resume.avg_profit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ju3qx"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/totalSpent/label")
+code = "resume.total_spent"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_uttjn"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/ingredietsSpent/label")
+code = "resume.ingredients"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_tkkke"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/deliveriesSpent/label")
+code = "resume.deliveries"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_rb0l4"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/toolsAndFurnsSpent/label")
+code = "resume.tools_and_furns"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_6yuqr"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/recipesSpent/label")
+code = "resume.recipes"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_hitgy"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Finanсe/averageSpent/label")
+code = "resume.avg_spent"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_x4psh"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../FinancePage/Loan/label")
+code = "resume.loan"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_raq4n"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../continueButton")
+code = "resume.continue"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_05bw0"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/title")
+code = "resume.drinksStats"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_wsvqf"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/headers/nameLabel")
+code = "resume.name"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ppf3d"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/headers/soldLabel")
+code = "resume.sold"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_m7wrt"]
+script = ExtResource("14_sbs1r")
+node_path = NodePath("../scroll/Statistics/DrinksTable/headers/ProfitLabel")
+code = "resume.profit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Animation" id="Animation_mshqk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(432, 592)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 592)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("black:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fcx8a"]
+resource_name = "hide-buttons"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(432, 592), Vector2(432, 542)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 592), Vector2(592, 542)]
+}
+
+[sub_resource type="Animation" id="Animation_m73m3"]
+resource_name = "show-buttons"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.37, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(432, 543), Vector2(432, 592), Vector2(432, 590), Vector2(432, 592)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.37, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(592, 543), Vector2(592, 592), Vector2(592, 590), Vector2(592, 592)]
+}
+
+[sub_resource type="Animation" id="Animation_oijhr"]
+resource_name = "show-resume"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continueButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(432, 543)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 543)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [600.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fshaa"]
+resource_name = "show-titles"
+length = 52.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 49.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -2740.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resumeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 592), Vector2(592, 540)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("continueButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(432, 592), Vector2(432, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("black:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(49.8, 51.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcx8a"]
+_data = {
+&"RESET": SubResource("Animation_mshqk"),
+&"hide-buttons": SubResource("Animation_fcx8a"),
+&"show-buttons": SubResource("Animation_m73m3"),
+&"show-resume": SubResource("Animation_oijhr"),
+&"show-titles": SubResource("Animation_fshaa")
+}
+
+[node name="resumeMenu" type="Control" node_paths=PackedStringArray("finances_labels", "statistics_labels", "paid_stamp", "drinks_table", "finance_page", "continue_button", "resume_button")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.00024414063
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wsvqf")
+script = ExtResource("2_ppf3d")
+finances_labels = [NodePath("FinancePage/Finanсe/totalEarned/count"), NodePath("FinancePage/Finanсe/juicesSold/count"), NodePath("FinancePage/Finanсe/coffeeSold/count"), NodePath("FinancePage/Finanсe/alcoholSold/count"), NodePath("FinancePage/Finanсe/otherSold/count"), NodePath("FinancePage/Finanсe/averageProfit/count"), NodePath("FinancePage/Finanсe/totalSpent/count"), NodePath("FinancePage/Finanсe/ingredietsSpent/count"), NodePath("FinancePage/Finanсe/deliveriesSpent/count"), NodePath("FinancePage/Finanсe/toolsAndFurnsSpent/count"), NodePath("FinancePage/Finanсe/recipesSpent/count"), NodePath("FinancePage/Finanсe/averageSpent/count")]
+statistics_labels = [NodePath("scroll/Statistics/totalClientsServed/count"), NodePath("scroll/Statistics/maxClientsPerDay/count"), NodePath("scroll/Statistics/avgClientsPerDay/count"), NodePath("scroll/Statistics/avgOrderTime/count"), NodePath("scroll/Statistics/mostSoldDrink/name"), NodePath("scroll/Statistics/mostProfitDrink/name"), NodePath("scroll/Statistics/fruits/boughtCount"), NodePath("scroll/Statistics/fruits/stolenCount"), NodePath("scroll/Statistics/berries/boughtCount"), NodePath("scroll/Statistics/berries/stolenCount"), NodePath("scroll/Statistics/vegetables/boughtCount"), NodePath("scroll/Statistics/vegetables/stolenCount")]
+paid_stamp = NodePath("FinancePage/Loan/stamp")
+drinks_table = NodePath("scroll/Statistics/DrinksTable")
+finance_page = NodePath("FinancePage")
+continue_button = NodePath("continueButton")
+resume_button = NodePath("resumeButton")
+win_music = ExtResource("3_oijhr")
+lose_music = ExtResource("4_mshqk")
+stamp_sound = ExtResource("12_wsvqf")
+ticks_sounds = Array[AudioStream]([ExtResource("6_at28u"), ExtResource("7_bd3no")])
+
+[node name="continueButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -56.000244
+offset_right = -16.0
+offset_bottom = -24.000244
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+
+[node name="resumeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -56.000244
+offset_right = 144.0
+offset_bottom = -24.000244
+grow_horizontal = 2
+grow_vertical = 0
+text = "Statistics"
+
+[node name="tabletBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -258.0
+offset_right = 198.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_m7wrt")
+
+[node name="statisticsHeader" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -181.0
+offset_right = 256.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Statistics"
+horizontal_alignment = 1
+
+[node name="divider" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -142.0
+offset_right = 140.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 2)
+color = Color(0, 0, 0, 1)
+
+[node name="scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -123.0
+offset_right = 154.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Statistics" type="VBoxContainer" parent="scroll"]
+custom_minimum_size = Vector2(309, 0)
+layout_mode = 2
+
+[node name="totalClientsServed" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/totalClientsServed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total clients served:"
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/totalClientsServed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 271.0
+offset_top = 1.0
+offset_right = -24.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "clients_served_per_day"
+method = 1
+
+[node name="maxClientsPerDay" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Max clients served per day:"
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 271.0
+offset_top = 1.0
+offset_right = -24.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "clients_served_per_day"
+method = 3
+
+[node name="avgClientsPerDay" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average clients served per day:"
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 270.5
+offset_top = 1.0
+offset_right = -24.5
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "clients_served_per_day"
+method = 2
+
+[node name="avgOrderTime" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/avgOrderTime"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average order fulfillment time:"
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="scroll/Statistics/avgOrderTime"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 1.0
+offset_right = -17.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 sec"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "avg_order_fulfillment_time"
+method = 2
+unit = 3
+
+[node name="mostSoldDrink" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Most sold drink:"
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+method = 4
+unit = 4
+
+[node name="mostProfitDrink" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/mostProfitDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Most profit drink:"
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="scroll/Statistics/mostProfitDrink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+method = 5
+unit = 4
+
+[node name="space" type="Label" parent="scroll/Statistics"]
+layout_mode = 2
+
+[node name="table" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="bought" type="Label" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 234.0
+offset_top = -1.0
+offset_right = -218.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "bought"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stolen" type="Label" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_right = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "stolen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line" type="ColorRect" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 85.0
+offset_right = 143.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 2)
+color = Color(0.898039, 0.109804, 0.109804, 1)
+
+[node name="collected" type="Label" parent="scroll/Statistics/table"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 338.0
+offset_top = -8.0
+offset_right = -114.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.234531
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
+text = "collected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fruits" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/fruits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fruits:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boughtCount" type="Label" parent="scroll/Statistics/fruits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_right = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "fruits_bought"
+unit = 2
+
+[node name="stolenCount" type="Label" parent="scroll/Statistics/fruits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "fruits_stolen"
+unit = 2
+
+[node name="berries" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/berries"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Berries:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boughtCount" type="Label" parent="scroll/Statistics/berries"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_right = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "berries_bought"
+unit = 2
+
+[node name="stolenCount" type="Label" parent="scroll/Statistics/berries"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "berries_stolen"
+unit = 2
+
+[node name="vegetables" type="Control" parent="scroll/Statistics"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="scroll/Statistics/vegetables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vegetables:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boughtCount" type="Label" parent="scroll/Statistics/vegetables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_right = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "vegetables_bought"
+unit = 2
+
+[node name="stolenCount" type="Label" parent="scroll/Statistics/vegetables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "vegetables_stolen"
+unit = 2
+
+[node name="DrinksTable" type="VBoxContainer" parent="scroll/Statistics"]
+layout_mode = 2
+script = ExtResource("5_tempj")
+
+[node name="title" type="Label" parent="scroll/Statistics/DrinksTable"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+
+Drinks Statistics"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="headers" type="Control" parent="scroll/Statistics/DrinksTable"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="nameLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -1.0
+offset_right = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+vertical_alignment = 1
+
+[node name="soldLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 155.0
+offset_top = -1.0
+offset_right = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProfitLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = -1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Profit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinancePage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -258.0
+offset_right = 198.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_7x0ta")
+
+[node name="financeHeader" type="Label" parent="FinancePage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -181.0
+offset_right = 256.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Financial Results"
+horizontal_alignment = 1
+
+[node name="divider" type="ColorRect" parent="FinancePage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -142.0
+offset_right = 140.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 2)
+color = Color(0, 0, 0, 1)
+
+[node name="Finanсe" type="VBoxContainer" parent="FinancePage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -133.0
+offset_right = 256.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="totalEarned" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/totalEarned"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total earned:"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/totalEarned"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.812
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = 1.25598
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "profit_per_day"
+method = 1
+unit = 1
+
+[node name="juicesSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/juicesSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Juices sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/juicesSold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.812
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = 0.255981
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "juices_sold"
+unit = 2
+
+[node name="coffeeSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Coffee sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 0.812
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = -1.0
+offset_right = 0.255981
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "coffee_sold"
+unit = 2
+
+[node name="alcoholSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Alcohol sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.812
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = 0.255981
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "alcohol_sold"
+unit = 2
+
+[node name="otherSold" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/otherSold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Other sold:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/otherSold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.812
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = 1.25598
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0 (0 B)"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "other_sold"
+unit = 2
+
+[node name="averageProfit" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/averageProfit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average earn per day:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/averageProfit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "profit_per_day"
+method = 2
+unit = 1
+
+[node name="Control" type="Label" parent="FinancePage/Finanсe"]
+layout_mode = 2
+
+[node name="totalSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/totalSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total spent:"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/totalSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "spent_per_day"
+method = 1
+unit = 1
+
+[node name="ingredietsSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/ingredietsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ingredients:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/ingredietsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "ingredients_spent"
+unit = 1
+
+[node name="deliveriesSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/deliveriesSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Deliveries:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/deliveriesSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "deliveries_spent"
+unit = 1
+
+[node name="toolsAndFurnsSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tools & Recepies:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "tools_and_furns_spent"
+unit = 1
+
+[node name="recipesSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/recipesSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Furns:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/recipesSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "recipes_spent"
+unit = 1
+
+[node name="averageSpent" type="Control" parent="FinancePage/Finanсe"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="label" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Average spent per day:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 B"
+vertical_alignment = 1
+script = ExtResource("4_cpupi")
+code = "spent_per_day"
+method = 2
+unit = 1
+
+[node name="Loan" type="Control" parent="FinancePage"]
+custom_minimum_size = Vector2(0, 20)
+anchors_preset = 0
+offset_left = -58.0
+offset_top = 442.0
+offset_right = 454.0
+offset_bottom = 462.0
+
+[node name="label" type="Label" parent="FinancePage/Loan"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_right = -208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Bar construction loan:"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="stamp" type="TextureRect" parent="FinancePage/Loan"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_top = -52.0
+offset_right = -108.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+script = ExtResource("8_bd3no")
+paid_stamp = ExtResource("9_o3uty")
+unpaid_stamp = ExtResource("7_at28u")
+
+[node name="paper_holder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -258.0
+offset_right = 198.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_sh44t")
+metadata/_edit_lock_ = true
+
+[node name="titles" type="RichTextLabel" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.98800004
+anchor_right = 0.5
+anchor_bottom = 0.98800004
+offset_left = -320.0
+offset_top = 7.7755127
+offset_right = 320.0
+offset_bottom = 2079.7754
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+bbcode_enabled = true
+text = "[font_size=20]CREATED BY[/font_size]
+VaJa72
+
+[font_size=20]PROGRAMMERS[/font_size]
+VaJa72
+McFord
+
+[font_size=20]ARTISTS[/font_size]
+VaJa72
+McFord
+
+[font_size=20]TESTERS[/font_size]
+StaSyaN
+McFord
+Player Third
+
+[font_size=20]MUSIC[/font_size]
+
+Let's Twist Again
+Chubby Checker
+[font_size=12]ABKCO Music & Records, Inc.[/font_size]
+
+Misirlou
+Dick Dale
+[font_size=12]Lex Records Ltd.[/font_size]
+
+Switchbalde
+Link Wray
+[font_size=12]Country Music Group[/font_size]
+
+The Locomotion
+Little Eva
+[font_size=12]Parlophone Records Ltd[/font_size]
+
+Come Back Baby
+Little Walter
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Feeling Good
+Nina Simone
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Magic Moments
+Perry Cosmo
+[font_size=12]RCA Victor[/font_size]
+
+I Wonder Why
+The Belmonts
+[font_size=12]Capitol Records, LLC[/font_size]
+
+Do You Love Me
+The Contours
+[font_size=12]Gordy Records[/font_size]
+
+Take My True Love By The Hand
+The Limeliters
+[font_size=12]WEA International[/font_size]
+
+Please Mr. Postman
+The Marvelettes
+[font_size=12]Hitsville USA[/font_size]
+
+Surfin Bird
+The Trashmen
+[font_size=12]TP4 Music[/font_size]
+
+Sea Of Love
+The Twilights
+[font_size=12]Fort Knox Music Inc.[/font_size]
+
+
+SPECIAL THANKS
+shadowiq
+RealLifePze
+LittleTinyBit
+Баян Гордыня
+
+
+This game was developed as part of
+/mlp/con Game Jam: Anon's choice - Pony Hobbies
+
+[i]The Bartender[/i]
+is a non-profit fan-made project
+
+Any kind of copyright violation is not intended
+
+[i]My Little Pony: Friendship is Magic[/i] belong to
+© 2025 Hasbro Studios
+ALL RIGHTS RESERVED "
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+script = ExtResource("16_oijhr")
+music = "Let's Twist Again
+Chubby Checker
+[font_size=12]ABKCO Music & Records, Inc.[/font_size]
+
+Misirlou
+Dick Dale
+[font_size=12]Lex Records Ltd.[/font_size]
+
+Switchbalde
+Link Wray
+[font_size=12]Country Music Group[/font_size]
+
+The Locomotion
+Little Eva
+[font_size=12]Parlophone Records Ltd[/font_size]
+
+Come Back Baby
+Little Walter
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Feeling Good
+Nina Simone
+[font_size=12]UMG Recordings, Inc.[/font_size]
+
+Magic Moments
+Perry Cosmo
+[font_size=12]RCA Victor[/font_size]
+
+I Wonder Why
+The Belmonts
+[font_size=12]Capitol Records, LLC[/font_size]
+
+Do You Love Me
+The Contours
+[font_size=12]Gordy Records[/font_size]
+
+Take My True Love By The Hand
+The Limeliters
+[font_size=12]WEA International[/font_size]
+
+Please Mr. Postman
+The Marvelettes
+[font_size=12]Hitsville USA[/font_size]
+
+Surfin Bird
+The Trashmen
+[font_size=12]TP4 Music[/font_size]
+
+Sea Of Love
+The Twilights
+[font_size=12]Fort Knox Music Inc.[/font_size]"
+
+[node name="black" type="ColorRect" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2740.0
+offset_bottom = 2740.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+
+[node name="timeScaleReturn" type="Node" parent="."]
+script = SubResource("GDScript_pnk8a")
+
+[node name="translation" type="Node" parent="."]
+script = ExtResource("13_i11jm")
+nodes = Array[ExtResource("14_sbs1r")]([SubResource("Resource_tgfro"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0"), SubResource("Resource_tqmt7"), SubResource("Resource_17uhj"), SubResource("Resource_ibus1"), SubResource("Resource_wc5pl"), SubResource("Resource_83prw"), SubResource("Resource_npi8v"), SubResource("Resource_re1lo"), SubResource("Resource_upxml"), SubResource("Resource_8wsly"), SubResource("Resource_s6aau"), SubResource("Resource_qnits"), SubResource("Resource_qr0lv"), SubResource("Resource_ju3qx"), SubResource("Resource_uttjn"), SubResource("Resource_tkkke"), SubResource("Resource_rb0l4"), SubResource("Resource_6yuqr"), SubResource("Resource_hitgy"), SubResource("Resource_x4psh"), SubResource("Resource_raq4n"), SubResource("Resource_05bw0"), SubResource("Resource_wsvqf"), SubResource("Resource_ppf3d"), SubResource("Resource_m7wrt")])
+
+[node name="anim" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_fcx8a")
+}

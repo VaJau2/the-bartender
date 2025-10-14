@@ -9,9 +9,11 @@ const MAX_MONEY: int = 1000
 @onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 @onready var name_label: Label = get_node("name")
 @onready var take_count: SpinBox = get_node("takeCount")
-@onready var debt_label: Label = get_node("debt")
+@onready var short_term_loan_label: Label = get_node("shortTermLoan")
+@onready var constraction_loan_label: Label = get_node("constractionLoan")
 @onready var take_button: Button = get_node("take")
-@onready var return_button: Button = get_node("return")
+@onready var short_term_loan_return_button: Button = get_node("shortTermLoanReturn")
+@onready var constraction_loan_return_button: Button = get_node("constractionLoanReturn")
 
 @onready var selling_sound: AudioStream = load("res://assets/audio/buying/selling.mp3")
 
@@ -41,11 +43,17 @@ func _on_open_menu(stand: StandBase) -> void:
 	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	name_label.text = Loc.trans("items.bank.name")
-	debt_label.text = Loc.trans("interface.money.debt") \
-		+ " " + str(M.debt) + " " \
-		+ Loc.get_plural(M.debt, "bits")
-	return_button.disabled = M.debt <= 0 and M.money >= M.debt
 	take_button.disabled = !_may_take_debt()
+	
+	short_term_loan_label.text = Loc.trans("interface.money.shortTermLoan") \
+		+ " " + str(M.debt) + " B"
+	
+	short_term_loan_return_button.disabled = M.debt <= 0 and M.money >= M.debt
+	
+	constraction_loan_label.text = Loc.trans("interface.money.constractionLoan") \
+		+ " " + str(G.MONEY_GOAL) + " B"
+	
+	constraction_loan_return_button.disabled = M.money - M.debt < G.MONEY_GOAL
 
 
 func _may_take_debt() -> bool:
@@ -64,7 +72,7 @@ func _on_take_pressed() -> void:
 	_on_close_pressed()
 
 
-func _on_return_pressed() -> void:
+func _on_short_term_loan_return_pressed() -> void:
 	if M.money < M.debt: return
 	M.remove_money(M.debt)
 	M.remove_debt()
@@ -73,3 +81,7 @@ func _on_return_pressed() -> void:
 	bank_stand.audi.play()
 	
 	_on_close_pressed()
+
+
+func _on_contraction_loan_return_pressed() -> void:
+	G.game_manager.resume_menu.show_resume()

@@ -45,6 +45,8 @@ func try_buy_item(item: ShopItem) -> bool:
 		_show_text("not_money")
 		return false
 	
+	var spawned_item: Item = null
+	
 	match item.type:
 		Enums.ShopItemType.recipe:
 			G.game_manager.try_know_recipe.emit(item.code)
@@ -61,30 +63,34 @@ func try_buy_item(item: ShopItem) -> bool:
 			audi.play()
 	
 		Enums.ShopItemType.item:
-			var new_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
-			new_item.disable()
+			spawned_item = ItemSpawner.spawn_item(item.code, global_position, get_parent())
+			spawned_item.disable()
 			
 			if is_delivery:
 				if M.money < item.price + delivery_price:
 					_show_text("not_money")
 					return false
 				else:
-					_deliver_item(new_item)
+					_deliver_item(spawned_item)
 					M.remove_money(delivery_price)
+					G.statistics.deliveries_spent += delivery_price
+					G.statistics.add_day_stats(G.statistics.spent_per_day, delivery_price)
 					interaction_controller.hide_item_hint.emit()
 					audi.stream = delivery_buy_sound
 					audi.play()
 			else:
-				var get_item_result = interaction_controller.try_get_item(new_item)
+				var get_item_result = interaction_controller.try_get_item(spawned_item)
 				if get_item_result:
 					interaction_controller.hide_item_hint.emit()
 					audi.stream = buy_sound
 					audi.play()
 				else:
 					_show_text("not_space")
-					new_item.queue_free()
+					spawned_item.queue_free()
 					return false
 	
+	G.statistics.add_buy_stats(item, spawned_item)
+	G.statistics.add_day_stats(G.statistics.spent_per_day, item.price)
 	M.remove_money(item.price)
 	return true
 
