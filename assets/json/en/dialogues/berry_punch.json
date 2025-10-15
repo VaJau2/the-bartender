@@ -1,0 +1,58 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "idle",
+				"text": "Buy berries and fruits, fresh, sweet, straight from the garden!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Why buy it if it grows for free right here on the ground?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "sarcastic",
+				"text": "It's obvious. My fruits are of the highest quality, grown with love. And this kind of plant collects dust from the roads and is not tasty at all."
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "happy",
+				"text": "Besides, you won't find real oranges anywhere else except at my place."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "Do you also grow berries with \"love in the garden\"?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "suspect",
+				"text": "Do you doubt it?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Okay, okay, fine, I'm convinced."
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "satisfied",
+				"text": "That's right."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

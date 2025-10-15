@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjkge66m6kowc"
-path="res://.godot/imported/paper.png-319c9bbb00cb13d51a720c0682d32efc.ctex"
+uid="uid://dr6n4eriq1eky"
+path="res://.godot/imported/sarcastic.png-88d9a0cd75181d1006e6bba9de77da0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interface/paper.png"
-dest_files=["res://.godot/imported/paper.png-319c9bbb00cb13d51a720c0682d32efc.ctex"]
+source_file="res://assets/sprites/dialogue/berry_punch/sarcastic.png"
+dest_files=["res://.godot/imported/sarcastic.png-88d9a0cd75181d1006e6bba9de77da0e.ctex"]
 
 [params]
 

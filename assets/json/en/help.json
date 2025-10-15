@@ -5,17 +5,19 @@
 			"title": "Controls",
 			"text": "WASD or arrows — to move
 LMB — Interact with items and tools by clicking at them
+RMB - Quickstart for juicer and coffee machine
 R — to open recipes menu
 Tab — to open bag (you need to buy it)
 G — to drop holding item"
 		},
 		"craft": {
 			"title": "Drinks crafting",
-			"text": "To make juices you need to buy and use juice machine
-To make coffee you need to buy and use coffee machine
-To make cocktails you need to to mix the ingredients by clicking at them with LMB
-You can buy recipes for cocktails from Twilight Sparkle (the purple one)
-Basic simple recipes (juices and coffee) are not bought and are discovered experimentally"
+			"text": "To make juices you need to buy and use juice machine.
+To make coffee you need to buy and use coffee machine.
+The juicer and the coffee machine can be started via the menu or by clicking on them with RMB when they have ingredients.
+To make cocktails you need to to mix the ingredients by clicking at them with LMB.
+You can buy recipes for cocktails from Twilight Sparkle (the purple one).
+Basic simple recipes (juices and coffee) are not bought and are discovered experimentally."
 		},
 		"opening": {
 			"title": "Bar opening",

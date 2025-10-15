@@ -40,6 +40,11 @@ func interact() -> void:
 		interaction_controller.clear_item.emit()
 
 
+func interact_alt() -> void:
+	if ingredient != null and glass != null:
+		start()
+
+
 func start() -> void:
 	may_interact = false
 	ingredient.limit -= 1

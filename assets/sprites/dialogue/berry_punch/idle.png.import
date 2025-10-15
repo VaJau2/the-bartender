@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjkge66m6kowc"
-path="res://.godot/imported/paper.png-319c9bbb00cb13d51a720c0682d32efc.ctex"
+uid="uid://px86i7nbx8tg"
+path="res://.godot/imported/idle.png-1f1845ea343da8b8055e3b880c4a33b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interface/paper.png"
-dest_files=["res://.godot/imported/paper.png-319c9bbb00cb13d51a720c0682d32efc.ctex"]
+source_file="res://assets/sprites/dialogue/berry_punch/idle.png"
+dest_files=["res://.godot/imported/idle.png-1f1845ea343da8b8055e3b880c4a33b8.ctex"]
 
 [params]
 

@@ -97,6 +97,14 @@ func interact(item) -> void:
 	item.interact()
 
 
+func interact_alt(item) -> void:
+	if !movement_controller.may_move: return
+	if interaction_cooldown > 0: return
+	
+	if item.has_method("interact_alt"):
+		item.interact_alt()
+
+
 func try_get_item(item: Item) -> bool:
 	if G.player.using_storage:
 		if G.player.storage_handler.can_put_item(item):

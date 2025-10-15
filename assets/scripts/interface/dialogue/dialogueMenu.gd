@@ -31,7 +31,10 @@ func _process(delta: float) -> void:
 	_animate_text(delta)
 	
 	if Input.is_action_just_pressed("ui_select"):
-		_next_node()
+		if text.visible_ratio >= 1:
+			_next_node()
+		else:
+			text.visible_ratio = 1
 
 
 func start_dialogue(npc: NPC, code: String) -> void:

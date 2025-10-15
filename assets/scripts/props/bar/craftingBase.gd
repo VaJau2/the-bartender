@@ -32,3 +32,7 @@ func start() -> void:
 
 func interact() -> void:
 	pass
+
+
+func interact_alt() -> void:
+	pass

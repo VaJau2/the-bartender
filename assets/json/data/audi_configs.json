@@ -71,4 +71,13 @@
 		"max_pitch": "2",
 		"chars_to_sound": "4",
 	},
+	"berry_punch": {
+		"sounds": [
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.1",
+		"max_pitch": "1.6",
+		"chars_to_sound": "3",
+	},
 }

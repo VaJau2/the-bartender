@@ -804,6 +804,7 @@ position = Vector2(-678, -1466)
 code = "berry_punch"
 work_place = NodePath("../../props/navRegion/market-props/stands/fruitStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house4/door")
+dialogue_code = "hello"
 
 [node name="vegetableTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-484, -1457)
