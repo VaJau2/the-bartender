@@ -1,0 +1,94 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "Ох, конские яблоки! Ты же та самая Рейнбоу Деш!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "cool",
+				"text": "Единственная и неповторимая!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "happy",
+				"text": "А что, ты обо мне знаешь?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Самая быстрая из пегасов? Конечно!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "satisfied",
+				"text": "Что ж, всегда приятно встретить фанатов."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Приходи ко мне в бар, сделаю тебе столько сидра, сколько захочешь!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "sarcastic",
+				"text": "Сидра? Ну что за предрассудки! Я не какая-то алкоголичка!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "despair",
+				"text": "Оу..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "think",
+				"text": "Нет, я, конечно, очень люблю сидр..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "pokerface",
+				"text": "Но не потому что я алкоголичка! Мне просто..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "nothappy",
+				"text": "нравится его вкус..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Ох, конечно."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "В любом случае, жду тебя в своем баре."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "idle",
+				"text": "Оки-доки"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

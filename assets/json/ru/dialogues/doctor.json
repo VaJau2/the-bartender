@@ -1,0 +1,70 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "idle",
+				"text": "О, это ты новенький бармен? Выглядишь гораздо милее твоих других альтернативных вариантов."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "shy",
+				"text": "Эм... спасибо?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "satisfied",
+				"text": "Приходи ко мне за оборудованием. У меня есть все, что может представить твое воображение."
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug1",
+				"text": "Вечный двигатель на основе законов квантовой термодинамики,"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug1",
+				"text": "Переносной накопытный компьютер с функцией картографирования и сортировки,"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug2",
+				"text": "Машина времени, встроенная в компактный телефонный автомат, размером всего лишь с комнату,"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug3",
+				"text": "Снаряжение для скрытного проникновения на вражескую базу со стильной повязкой на глаз..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "А для приготовления напитков что-нибудь есть?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "surprised",
+				"text": "А ... ну ..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "sad",
+				"text": "Такие безделушки тоже найдутся ..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

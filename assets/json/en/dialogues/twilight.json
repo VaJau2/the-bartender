@@ -22,38 +22,38 @@
 			{
 				"type": "phrase",
 				"speaker": "twilight",
-				"avatar": "smile",
-				"text": "I must have more at my library here somewhere, but I can't find it.",
-			},
-			{
-				"type": "phrase",
-				"speaker": "player",
-				"avatar": "surprised",
-				"text": "Can't find your own library? Where do you live then?"
+				"avatar": "idle",
+				"text": "I once tried to cook many of the recipes on my own...",
 			},
 			{
 				"type": "phrase",
 				"speaker": "twilight",
 				"avatar": "smile",
-				"text": "I'm surprised myself. The tree just disappeared."
+				"text": "Many ponies will remebrer that night.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Why? What happened?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "twilight",
 				"avatar": "idle",
-				"text": "I'm temporarily staying with a friend until... the problem with my library won't be solved."
+				"text": "Let's just say I took some instructions too literally, which led to a very violent reaction.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "twilight",
 				"avatar": "blink",
-				"text": "Don't worry about me. Sooner or later it must come back."
+				"text": "I'm sure you won't have any problems with that.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "surprised",
-				"text": "Okay..."
+				"text": "Okay"
 			},
 			{
 				"type": "change_code",

@@ -1,0 +1,70 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "idle",
+				"text": "Oh, you are new barpony? You look a lot cuter than your other alternative options."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "shy",
+				"text": "Am... thanks?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "satisfied",
+				"text": "Come to my place for the equipment. I have everything your imagination can imagine."
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug1",
+				"text": "Perpetual motion machine based on the laws of quantum thermodynamics,"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug1",
+				"text": "Portable storage computer with mapping and items sorting function,"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug2",
+				"text": "A time machine built into a compact payphone, only the size of a room,"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "smug3",
+				"text": "Equipment for sneaking into an enemy base with a stylish blindfold..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Is there anything for making drinks?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "surprised",
+				"text": "Oh ... well ..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "doctor",
+				"avatar": "sad",
+				"text": "There are such trinkets too ..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

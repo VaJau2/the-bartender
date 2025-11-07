@@ -1,0 +1,46 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Hi! I don't think we've met..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi, yes, you're right. I'm new bartender here."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Oh, nice to meet you!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "I run the post office here, so if you need to order something with delivery, feel free to contact me."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Free delivery!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Thanks, I'll remember that.."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

@@ -17,7 +17,7 @@ func interact() -> void:
 	if bar_state.is_processing():
 		check_ordered_drink(interaction_controller.holding_item)
 		return
-	if npc.dialogue_code != null and npc.dialogue_code != "":
+	if npc.dialogue_code != null and npc.dialogue_code != "" and drunk_handler.drunk_timer <= 0:
 		dialogue_menu.start_dialogue(npc, npc.dialogue_code)
 
 

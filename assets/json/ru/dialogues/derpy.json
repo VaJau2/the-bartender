@@ -1,0 +1,46 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Привет! Кажется, мы не знакомы..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет, да, ты права. Я ваш новый бармен."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "О, приятно познакомиться!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Я заведую тут почтой, поэтому если тебе нужно что-то заказать с доставкой, смело обращайся."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Доставлю бесплатно!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Спасибо, буду знать."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

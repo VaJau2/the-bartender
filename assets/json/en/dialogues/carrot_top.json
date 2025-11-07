@@ -1,0 +1,52 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "idle",
+				"text": "Hi. You are new here?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi! Yes, I'm your new bartender! Come to my place if you want to drink something."
+			},
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "blink",
+				"text": "I'll come, of course. Especially if you buy something from me."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Good trade. How much would you be willing to pay for what I make from your ingredients?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "thinking",
+				"text": "Let me think... You'll need something to grind it with..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "idle",
+				"text": "I'm willing to pay 2-3 times more than you'd give me for one carrot.."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Oh, I'll remember that, thanks !"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}
