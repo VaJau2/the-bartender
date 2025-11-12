@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	if !visible: return
 	_animate_text(delta)
 	
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select") || Input.is_action_just_pressed("ui_left_mouse"):
 		if text.visible_ratio >= 1:
 			_next_node()
 		else:
