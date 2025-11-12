@@ -60,6 +60,10 @@
 				"speaker": "player",
 				"avatar": "idle",
 				"text": "Приму это к сведению."
+			},
+			{
+				"type": "change_code",
+				"value": "",
 			}
 		]
 	}

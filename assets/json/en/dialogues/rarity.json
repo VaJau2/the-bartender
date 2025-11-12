@@ -60,6 +60,10 @@
 				"speaker": "player",
 				"avatar": "idle",
 				"text": "I'll take that into consideration."
+			},
+			{
+				"type": "change_code",
+				"value": "",
 			}
 		]
 	}
