@@ -1,0 +1,28 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "roseluck",
+				"avatar": "idle",
+				"text": "Привет, хочешь цветочков?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Привет, нет, спасибо, я пока не голодна."
+			},
+			{
+				"type": "phrase",
+				"speaker": "roseluck",
+				"avatar": "thehorror",
+				"text": "..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

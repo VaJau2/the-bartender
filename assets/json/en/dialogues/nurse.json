@@ -1,0 +1,40 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Hi! You are doctor?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "nurse",
+				"avatar": "idle",
+				"text": "Hi! Actually, I'm nurse, but it's any port in a storm."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Great, so I don't have to worry about getting ponies drunk, since you can pump them out!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "nurse",
+				"avatar": "confused",
+				"text": "If it was a joke, it was a stupid one."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Sorry..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

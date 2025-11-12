@@ -1,0 +1,82 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "Не могу поверить, в городе живет самый настоящий вондерболт!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "smile",
+				"text": "Он самый. Звать меня Соарин."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Приятно познакомиться!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "smile-browed",
+				"text": "Если вдруг, не дай Селестия, произойдет какая-нибудь опасность, то теперь ты знаешь, к кому обратиться."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Непременно."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "А если у тебя, не дай Луна, пересохнет в горле, то теперь ты знаешь, в какой бар заглянуть."
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "idle",
+				"text": "О, так ты наш новый бармен?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Она самая."
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "hungry",
+				"text": "А может... может, ты кроме напитков, продаешь еще и пироги?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "К сожалению нет..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "idle",
+				"text": "Подумай над добавлением их в меню. У тебя точно будет как минимум один постоянный клиент."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Подумаю."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

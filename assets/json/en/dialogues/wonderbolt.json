@@ -1,0 +1,82 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "I can't believe there's a real wonderbolt in town!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "smile",
+				"text": "That's the one. My name is Soarin."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Pleasure to meet!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "smile-browed",
+				"text": "If, Celestia forbid, something dangerous happen, you know, who to call."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Certainly."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "And if, Luna forbid, your throat gets dry, now you know which bar to go to."
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "idle",
+				"text": "Oh, so you are our new barpony?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "That's the one."
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "hungry",
+				"text": "May... maybe, you sell pies besides drinks?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Sadly, no..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "wonderbolt",
+				"avatar": "idle",
+				"text": "Think about adding them to the menu. You will definitely have at least one regular customer."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "I'll think."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

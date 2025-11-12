@@ -1,0 +1,48 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет! Я ваш новый бармен! А ты?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "fluttershy",
+				"avatar": "shy1",
+				"text": "П... привет... "
+			},
+			{
+				"type": "phrase",
+				"speaker": "fluttershy",
+				"avatar": "shy2",
+				"text": "а я Ф.... Флаттер...",
+				"fontsize": 13,
+			},
+			{
+				"type": "phrase",
+				"speaker": "fluttershy",
+				"avatar": "shy3",
+				"text": "Флаттершай...",
+				"fontsize": 10,
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "Селестия, как же это очаровательно!"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

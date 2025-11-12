@@ -821,11 +821,11 @@ work_place = NodePath("../../props/navRegion/market-props/stands/coffeeStand")
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house8/door")
 dialogue_code = "hello"
 
-[node name="doctor" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
-position = Vector2(-1480, -1544)
-code = "doctor"
+[node name="toolsTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
+position = Vector2(-897, -1468)
+code = "tools_trader"
 work_place = NodePath("../../props/navRegion/market-props/stands/itemStand")
-sleep_place = NodePath("../../props/navRegion/town-props/houses/house2/door")
+sleep_place = NodePath("../../props/navRegion/town-props/houses/house9/door")
 dialogue_code = "hello"
 
 [node name="recipesTrader" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
@@ -842,7 +842,7 @@ work_place = NodePath("../../props/navRegion/town-props/houses/house5/mailpostSt
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house5/door")
 dialogue_code = "hello"
 
-[node name="rainbow_dash" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
+[node name="rainbowDash" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2198, -1934)
 code = "rainbow_dash"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house11/door")
@@ -858,26 +858,31 @@ dialogue_code = "hello"
 position = Vector2(-2460, -1940)
 code = "fluttershy"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house7/door")
+dialogue_code = "hello"
 
 [node name="octavia" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2142, -1672)
 code = "octavia"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house3/door")
+dialogue_code = "hello"
 
 [node name="vinyl" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2095, -1623)
 code = "vinyl"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house3/door")
+dialogue_code = "hello"
 
 [node name="nurse" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-2288, -1614)
 code = "nurse"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house13/door")
+dialogue_code = "hello"
 
 [node name="roseluck" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(886, -1300)
 code = "roseluck"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house6/door")
+dialogue_code = "hello"
 
 [node name="banker" parent="ponies" node_paths=PackedStringArray("work_place", "sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(153, -46)
@@ -889,8 +894,9 @@ talk_on_start = true
 
 [node name="caramel" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(-984, -1265)
-code = "сaramel"
+code = "caramel"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house14/door")
+dialogue_code = "hello1"
 
 [node name="ponyGpt" parent="ponies" node_paths=PackedStringArray("sleep_place") instance=ExtResource("9_0qimb")]
 position = Vector2(1043, -504)
@@ -902,6 +908,7 @@ dialogue_code = "hello"
 position = Vector2(-1988, -1212)
 code = "wonderbolt"
 sleep_place = NodePath("../../props/navRegion/town-props/houses/house15/door")
+dialogue_code = "hello"
 
 [node name="props" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1793,12 +1800,6 @@ position = Vector2(549, -40)
 
 [node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house1"]
 position = Vector2(-11, 53)
-
-[node name="house2" parent="props/navRegion/town-props/houses" instance=ExtResource("21_yxlcp")]
-position = Vector2(-1826, -846)
-
-[node name="door" type="Node2D" parent="props/navRegion/town-props/houses/house2"]
-position = Vector2(-13, 57)
 
 [node name="house3" parent="props/navRegion/town-props/houses" instance=ExtResource("21_yxlcp")]
 position = Vector2(-1451, -264)

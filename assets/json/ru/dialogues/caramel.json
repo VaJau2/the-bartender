@@ -1,0 +1,102 @@
+{
+	"hello1": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "idle",
+				"text": "Привет. Я поспорил с друзьями, что смогу заговорить с самой красивой кобылкой. Итак, как мы потратим их биты?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Эм... Ну, можешь потратить их у меня в баре."
+			},
+			{
+				"type": "change_code",
+				"value": "hello2",
+			}
+		],
+	},
+	"hello2": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "smug",
+				"text": "Как хорошо, что я купил страховку, потому что когда я увидел тебя, мое сердце остановилось."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "itsnotme",
+				"text": "Эм... может тебе сходить к врачу? Тут точно есть кобылка, которая тебе подойдет."
+			},
+			{
+				"type": "change_code",
+				"value": "hello3",
+			}
+		]
+	},
+	"hello3": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "smug2",
+				"text": "Ты должна мне коктейль, потому что, когда я посмотрел на тебя, я уронил свой."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "angry",
+				"text": "Пожалуйста, относись к стаканам из моего бара более серьёзно. Хоть их у меня и бесконечность, но так ты мое отношение не заработаешь."
+			},
+			{
+				"type": "change_code",
+				"value": "hello4",
+			}
+		]
+	},
+	"hello4": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "glasses",
+				"text": "Ты веришь в любовь с первого взгляда, или мне пройти мимо тебя еще раз?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Для того, чтобы действительно понравиться мне, у тебя недостаточно крыльев на спине..."
+			},
+			{
+				"type": "change_code",
+				"value": "hello5",
+			}
+		]
+	},
+	"hello5": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "sad",
+				"text": "Хотел спросить, нет ли у тебя запасного сердца, потому что мое только что разбили."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Ну, прости. Правда..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

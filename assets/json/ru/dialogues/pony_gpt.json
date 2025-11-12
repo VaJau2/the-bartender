@@ -3,15 +3,63 @@
 		"nodes": [
 			{
 				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет! Я ваш новый бармен, а ты?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "happy",
+				"text": "Приветствую, новый элемент сообщества!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "smile",
+				"text": "Я локальный специалист по анализу данных и случайным разговорам."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Эм... ты типа учёный?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "happy",
+				"text": "Отличный вопрос! Можно и так сказать."
+			},
+			{
+				"type": "phrase",
 				"speaker": "pony_gpt",
 				"avatar": "idle",
-				"text": "Три икс в кубе поделить на константу... Как же там было?"
+				"text": "Моя основная функция — изучение окружающего мира, анализирование и сбор данных."
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "idle",
-				"text": "На меня не смотри, я в этой математике ни в зуб."
+				"text": "Звучит сложно. Ну а я просто наливаю напитки..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "idle",
+				"text": "Ошибочное утверждение! Хороший бармен — это алгоритм радости."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Хм... приятно слышать. Может, зайдёшь как-нибудь, проверим мою \"функцию радости\"?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "smile",
+				"text": "С вероятностью 97% — да. Остальные 3% зависят от погоды и стабильности вайфая."
 			},
 			{
 				"type": "change_code",
