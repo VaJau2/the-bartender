@@ -1,0 +1,82 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "idle",
+				"text": "Ох, привет. Может, ты сможешь мне помочь..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "С чем?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "serious",
+				"text": "Понимаешь, у меня скоро будет выступление в Кантерлоте."
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "sad",
+				"text": "Все ждут от меня чего-то нового, но..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Ты ищешь вдохновения?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "idle",
+				"text": "Да!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "sad",
+				"text": "но его нигде нет..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "despair",
+				"text": "Да, понимаю."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "К сожалению, я вряд ли смогу тебе чем-то помочь. Только если предложить поискать вдохновение в книге рецептов..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "serious",
+				"text": "Книге... рецептов?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Не заморачивайся, это просто была шутка."
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "sad-smile",
+				"text": "Может быть..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

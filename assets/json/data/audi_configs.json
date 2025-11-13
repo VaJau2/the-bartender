@@ -71,4 +71,122 @@
 		"max_pitch": "2",
 		"chars_to_sound": "4",
 	},
+	"berry_punch": {
+		"sounds": [
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.1",
+		"max_pitch": "1.6",
+		"chars_to_sound": "3",
+	},
+	"carrot_top": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.3",
+		"max_pitch": "1.8",
+		"chars_to_sound": "3",
+	},
+	"tools_trader": {
+		"sounds": [
+			"beeps/sound_e.wav",
+			"beeps/sound_u.wav",
+			"beeps/sound_i.wav",
+		],
+		"min_pitch": "0.5",
+		"max_pitch": "0.7",
+		"chars_to_sound": "4",
+	},
+	"derpy": {
+		"sounds": [
+			"beeps/sound_y.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.4",
+		"max_pitch": "1.9",
+		"chars_to_sound": "3",
+	},
+	"rainbow_dash": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.5",
+		"max_pitch": "1.8",
+		"chars_to_sound": "4",
+	},
+	"fluttershy": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_u.wav",
+			"beeps/sound_i.wav",
+		],
+		"min_pitch": "1.9",
+		"max_pitch": "2.6",
+		"chars_to_sound": "4",
+	},
+	"caramel": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_o.wav",
+			"beeps/sound_u.wav",
+			"beeps/sound_y.wav",
+		],
+		"min_pitch": "0.6",
+		"max_pitch": "0.8",
+		"chars_to_sound": "4",
+	},
+	"octavia": {
+		"sounds": [
+			"beeps/sound_o.wav",
+			"beeps/sound_u.wav",
+		],
+		"min_pitch": "1.5",
+		"max_pitch": "2.3",
+		"chars_to_sound": "4",
+	},
+	"vinyl": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_i.wav",
+		],
+		"min_pitch": "1.6",
+		"max_pitch": "2.4",
+		"chars_to_sound": "5",
+	},
+	"nurse": {
+		"sounds": [
+			"beeps/sound_i.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_y.wav",
+		],
+		"min_pitch": "1.4",
+		"max_pitch": "1.6",
+		"chars_to_sound": "4",
+	},
+	"roseluck": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_e.wav",
+		],
+		"min_pitch": "1.6",
+		"max_pitch": "1.8",
+		"chars_to_sound": "4",
+	},
+	"wonderbolt": {
+		"sounds": [
+			"beeps/sound_o.wav",
+			"beeps/sound_u.wav",
+			"beeps/sound_y.wav",
+		],
+		"min_pitch": "0.55",
+		"max_pitch": "0.7",
+		"chars_to_sound": "4",
+	},
 }

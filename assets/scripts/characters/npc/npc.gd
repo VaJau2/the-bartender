@@ -11,6 +11,7 @@ class_name NPC
 @onready var dialogue_icons: NpcDialogueIcons = get_node("dialogueIcons")
 @onready var state_machine: StateMachine = get_node("stateMachine")
 @onready var drunk_handler: DrunkHandler = get_node("drunkHandler")
+@onready var interaction: NpcInteraction = get_node("interactionArea")
 @onready var mouth: Sprite2D = get_node("mouth")
 
 

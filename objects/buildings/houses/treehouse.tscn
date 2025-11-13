@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://lb1bir6qplwq"]
+
+[ext_resource type="Texture2D" uid="uid://d23tf7gsvyqq3" path="res://assets/sprites/buildings/town/treehouse.png" id="1_a7uxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7uxo"]
+size = Vector2(49, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqt60"]
+size = Vector2(148.5, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix8l1"]
+size = Vector2(95, 10)
+
+[node name="treehouse" type="StaticBody2D"]
+
+[node name="Treehouse" type="Sprite2D" parent="."]
+position = Vector2(-11, -113)
+scale = Vector2(1.1181818, 1.1181818)
+texture = ExtResource("1_a7uxo")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 23)
+shape = SubResource("RectangleShape2D_a7uxo")
+
+[node name="shape2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -29)
+shape = SubResource("RectangleShape2D_yqt60")
+
+[node name="shape3" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_ix8l1")

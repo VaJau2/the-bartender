@@ -1,0 +1,82 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет, я ваш новый бармен!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "idle",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "...а ты?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "idle",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "эм...."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "Ты меня вообще слышишь в этих наушниках?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "surprised",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "Может ты их снимешь?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "smug",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "angry",
+				"text": "Ну не хочешь, как хочешь. Можешь вообще ничего не говорить."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Главное - приходи ко мне в бар, и тогда мы подружимся."
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "smile",
+				"text": "..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

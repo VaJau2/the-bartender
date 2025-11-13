@@ -30,7 +30,6 @@ func init() -> void:
 	super()
 	npc = state_machine.npc
 	movement_controller.came_to_point.connect(_on_came)
-	bar_queue.queue_updated.connect(_on_queue_updated)
 
 
 func enable() -> void:
@@ -45,9 +44,6 @@ func enable() -> void:
 
 func disable() -> void:
 	npc.dialogue_icons.hide_icon()
-	
-	if bar_queue.ordering_npc == npc:
-		bar_queue.ordering_npc = null
 	
 	if bar_queue.is_in_queue(npc):
 		bar_queue.erase_from_queue(npc)
@@ -84,8 +80,7 @@ func _on_came() -> void:
 		npc.global_position = queue_point
 		movement_controller.load_state("sit")
 		
-		if bar_queue.is_first_in_queue(npc) and bar_queue.ordering_npc == null:
-			_make_order()
+		_make_order()
 		return
 	
 	if closing_to_bar:
@@ -112,7 +107,7 @@ func _make_order() -> void:
 	npc.dialogue_icons.show_thinking_icon()
 	await get_tree().create_timer(randf_range(1, 2)).timeout
 	
-	if bar_queue.ordering_npc != null or !is_processing(): 
+	if !is_processing(): 
 		state_machine.set_state("idle")
 		return
 	
@@ -129,7 +124,6 @@ func _make_order() -> void:
 			have_drink(front_drink)
 			return
 		
-		bar_queue.ordering_npc = npc
 		npc.dialogue_icons.show_item_icon(ordered_drink)
 	else:
 		state_machine.set_state("idle")
@@ -150,12 +144,6 @@ func _try_choose_drink() -> bool:
 			return true
 	
 	return false
-
-
-func _on_queue_updated() -> void:
-	if !is_processing(): return
-	if bar_queue.ordering_npc == null and bar_queue.is_first_in_queue(npc):
-		_make_order()
 
 
 func have_drink(drink_item: Item) -> void:

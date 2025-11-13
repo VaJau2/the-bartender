@@ -1,0 +1,82 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "idle",
+				"text": "Oh, hi. Maybe you could help me..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "With what?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "serious",
+				"text": "You see, I'll be performing soon in Canterlot."
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "sad",
+				"text": "Everypony are wating for something new from me, but..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "You are looking for inspiration?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "idle",
+				"text": "Yes!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "sad",
+				"text": "but there is no any..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "despair",
+				"text": "Yes, I understand."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Unfortunately I can't really help you. All I can do is to suggest searching an inspiration in recipe book..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "serious",
+				"text": "Recipe... book?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Don't worry, it was just a joke."
+			},
+			{
+				"type": "phrase",
+				"speaker": "octavia",
+				"avatar": "sad-smile",
+				"text": "Maybe..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

@@ -25,10 +25,13 @@ func _on_mouse_exited() -> void:
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and !event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and !event.is_pressed():
 		_check_may_interact()
 		if may_interact:
-			interaction_controller.interact(parent)
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				interaction_controller.interact(parent)
+			elif event.button_index == MOUSE_BUTTON_RIGHT:
+				interaction_controller.interact_alt(parent)
 
 
 func _check_may_interact() -> void:

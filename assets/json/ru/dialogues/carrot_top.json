@@ -1,0 +1,52 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "idle",
+				"text": "Привет. Ты новенькая?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет! Да, я ваш новый бармен! Приходи ко мне, если хочешь выпить чего-нибудь."
+			},
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "blink",
+				"text": "Приду, конечно. Особенно если ты купишь что-нибудь у меня."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Хороший обмен. А за сколько ты готова будешь купить у меня то, что я сделаю на основе твоих ингредиентов?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "thinking",
+				"text": "Дай-ка подумать... Тебе же потребуется чем-нибудь их измельчать..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "carrot_top",
+				"avatar": "idle",
+				"text": "Я готова буду заплатить раза в 2-3 больше, чем ты отдашь мне за одну морковку."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "О, я запомню, спасибо!"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

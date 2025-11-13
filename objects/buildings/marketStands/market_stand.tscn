@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://f2cmt7ywpi5r" path="res://assets/scripts/props/market/marketStand.gd" id="5_byxa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drqof"]
-size = Vector2(68, 21)
+size = Vector2(68, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byxa2"]
 size = Vector2(65, 32)

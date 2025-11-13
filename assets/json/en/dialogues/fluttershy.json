@@ -1,0 +1,48 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi! I'm new barpony here! And you?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "fluttershy",
+				"avatar": "shy1",
+				"text": "H... hello... "
+			},
+			{
+				"type": "phrase",
+				"speaker": "fluttershy",
+				"avatar": "shy2",
+				"text": "I'm F.... Flatter...",
+				"fontsize": 13,
+			},
+			{
+				"type": "phrase",
+				"speaker": "fluttershy",
+				"avatar": "shy3",
+				"text": "Flattershy...",
+				"fontsize": 10,
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "Celestia, you're so adorable!"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

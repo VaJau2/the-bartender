@@ -1,0 +1,40 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Привет! Ты местный доктор?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "nurse",
+				"avatar": "idle",
+				"text": "Привет! Вообще, я медсестра, но на безрыбье и рак рыба."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Отлично, значит я могу не беспокоиться по поводу спаивания понек, раз ты можешь их откачать!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "nurse",
+				"avatar": "confused",
+				"text": "Если это была шутка, то глупая."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Прости..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

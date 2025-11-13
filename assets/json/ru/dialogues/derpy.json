@@ -1,0 +1,122 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Привет! Кажется, мы не знакомы..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Привет, да, ты права. Я ваш новый бармен."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "О, приятно познакомиться!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Я заведую тут почтой, поэтому если тебе нужно что-то заказать с доставкой, смело обращайся."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Доставлю бесплатно!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Спасибо, буду знать."
+			},
+			{
+				"type": "change_code",
+				"value": "goods",
+			}
+		]
+	},
+	"goods": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "А откуда у тебя столько алкоголя в продаже?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Ты не совсем правильно понимаешь, чем я занимаюсь."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Я не продаю вещи, я просто покупаю их за твои деньги доставляю их тебе из различных мест."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Специально для тебя я нашла в одном городке канал поставки с большим количеством алкоголя для твоего бара."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Его у них там так много, что он вряд ли когда-нибудь закончится."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Ох.. спасибо. Что бы я без тебя делала..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Продавала бы только один яблочный сок, ихихи"
+			},
+			{
+				"type": "change_code",
+				"value": "delivery",
+			}
+		]
+	},
+	"delivery": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "А почему ты так быстро доставляешь товары? Я даже до бара добежать не успеваю..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "blink",
+				"text": "Секрет фирмы."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Ладно..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	},
+}

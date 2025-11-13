@@ -30,8 +30,11 @@ func _process(delta: float) -> void:
 	if !visible: return
 	_animate_text(delta)
 	
-	if Input.is_action_just_pressed("ui_select"):
-		_next_node()
+	if Input.is_action_just_pressed("ui_select") || Input.is_action_just_pressed("ui_left_mouse"):
+		if text.visible_ratio >= 1:
+			_next_node()
+		else:
+			text.visible_ratio = 1
 
 
 func start_dialogue(npc: NPC, code: String) -> void:
@@ -42,12 +45,14 @@ func start_dialogue(npc: NPC, code: String) -> void:
 	index = 0
 	_show_node(dialogue_data[index])
 	pause_menu.may_pause = false
+	G.time.set_process(false)
 	movement_controller.may_move = false
 	visible = true
 
 
 func finish_dialogue() -> void:
 	temp_npc.state_machine.set_state("idle")
+	G.time.set_process(true)
 	pause_menu.may_pause = true
 	movement_controller.may_move = true
 	visible = false
@@ -61,7 +66,9 @@ func _show_node(node_data: Dictionary) -> void:
 			audi.set_config(speaker_name)
 			var picture = load("res://assets/sprites/dialogue/" + speaker_name + "/" + node_data.avatar + ".png")
 			avatar.texture = picture
-			text.text = node_data.text
+			text.text = ""
+			if node_data.has("fontsize"): text.text = "[font_size=" + str(node_data.fontsize) + "]"
+			text.text += node_data.text
 			node_timer = node_data.timer if node_data.has("timer") else DEFAULT_TIMER
 			animation_timer = 0
 			text.visible_characters = 0

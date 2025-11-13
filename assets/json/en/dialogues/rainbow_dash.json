@@ -1,0 +1,94 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "amazed",
+				"text": "Oh my gosh! You are Rainbow Dash!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "cool",
+				"text": "The one and only!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "happy",
+				"text": "What, you know me?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "The fastest of all pegasi? Of course!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "satisfied",
+				"text": "Well, it's always a pleasure to meet one of the fans."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Come to my bar, I'll make you as much cider as you want!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "sarcastic",
+				"text": "Cider? What a superstition! I'm not some kind of alcoholic!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "despair",
+				"text": "Oh..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "think",
+				"text": "No, of course I really like cider..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "pokerface",
+				"text": "But not because I'm an alcoholic! I just..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "nothappy",
+				"text": "like it's taste..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Oh, of course."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "evil_smile",
+				"text": "Anyway, I'm waiting for you at my bar."
+			},
+			{
+				"type": "phrase",
+				"speaker": "rainbow_dash",
+				"avatar": "idle",
+				"text": "Okey-dokey"
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

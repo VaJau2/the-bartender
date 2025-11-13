@@ -1,0 +1,122 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Hi! I don't think we've met..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi, yes, you're right. I'm new bartender here."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Oh, nice to meet you!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "I run the post office here, so if you need to order something with delivery, feel free to contact me."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "Free delivery!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "blink",
+				"text": "Thanks, I'll remember that.."
+			},
+			{
+				"type": "change_code",
+				"value": "goods",
+			}
+		]
+	},
+	"goods": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "How did you get so much alcohol on sale?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "You don't quite understand what I'm doing."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "I don't sell things, I just buy them with your money and deliver them to you from various places."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "idle",
+				"text": "Especially for you, I found a supply channel in one town with a lot of alcohol for your bar."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "They have so much of it there that it's unlikely to ever end."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Oh... thanks. What would I do without you..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "happy",
+				"text": "You would only sell an apple juice, lol"
+			},
+			{
+				"type": "change_code",
+				"value": "delivery",
+			}
+		]
+	},
+	"delivery": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "Why are you delivering the goods so quickly? I don't even make it to the bar in time..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "derpy",
+				"avatar": "blink",
+				"text": "Trade secret."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Okay..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	},
+}

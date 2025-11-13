@@ -3,15 +3,63 @@
 		"nodes": [
 			{
 				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi! I'm new barpony here, and you?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "happy",
+				"text": "Greetings, new community element!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "smile",
+				"text": "I'm local data analyst and casual conversation specialist."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Am... you're some kind of scientist?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "happy",
+				"text": "Excellent question! You could say that."
+			},
+			{
+				"type": "phrase",
 				"speaker": "pony_gpt",
 				"avatar": "idle",
-				"text": "Divide the three x's in a cube by a constant... How was it there?"
+				"text": "My main function is exploring the world around us, analyzing and collecting data."
 			},
 			{
 				"type": "phrase",
 				"speaker": "player",
 				"avatar": "idle",
-				"text": "Don't look at me, I'm not good at math."
+				"text": "Sounds complicated. Well, I just pour drinks..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "idle",
+				"text": "Incorrect statement! A good bartender is an algorithm of happiness."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "Hm... nice to hear that. Maybe you should stop by sometime — we’ll test my \"happiness function.\""
+			},
+			{
+				"type": "phrase",
+				"speaker": "pony_gpt",
+				"avatar": "smile",
+				"text": "With a 97% probability — yes. The remaining 3% depend on the weather and Wi-Fi stability."
 			},
 			{
 				"type": "change_code",

@@ -1,0 +1,58 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "idle",
+				"text": "Покупай ягодки и фрукты, свежие, сладкие, прямо с грядки!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "А зачем их покупать, если они бесплатно растут прямо тут на земле?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "sarcastic",
+				"text": "Это же очевидно. Мои фрукты высшего сорта, выращенные с любовью. А это подобие растений собирает пыль с дорог и вообще не вкусное."
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "happy",
+				"text": "К тому же, ты больше нигде не найдешь настоящие апельсины, кроме как у меня."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "А ягоды ты тоже с \"любовью выращиваешь на грядках\"?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "suspect",
+				"text": "А ты сомневаешься?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "Ладно-ладно, убедила."
+			},
+			{
+				"type": "phrase",
+				"speaker": "berry_punch",
+				"avatar": "satisfied",
+				"text": "Вот и славно."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

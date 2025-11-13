@@ -1,0 +1,28 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "roseluck",
+				"avatar": "idle",
+				"text": "Hi, you want some flowers?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "Hi, no, thanks, I'm not hungry yet."
+			},
+			{
+				"type": "phrase",
+				"speaker": "roseluck",
+				"avatar": "thehorror",
+				"text": "..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

@@ -1,0 +1,82 @@
+{
+	"hello": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "happy",
+				"text": "Hi, I'm new barpony here!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "idle",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "...and you?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "idle",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "am...."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "Can you even hear me in these headphones?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "surprised",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "suspect",
+				"text": "You want to take those off, please?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "smug",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "angry",
+				"text": "Well, if you don't want to, whatever you want. You don't have to say anything at all."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "satisfied",
+				"text": "The main thing is to come to my bar, and then we will become friends."
+			},
+			{
+				"type": "phrase",
+				"speaker": "vinyl",
+				"avatar": "smile",
+				"text": "..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}

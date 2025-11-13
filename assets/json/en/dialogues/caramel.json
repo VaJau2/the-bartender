@@ -1,0 +1,102 @@
+{
+	"hello1": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "idle",
+				"text": "Hi. I made a bet with my friends that I could talk to the most beautiful mare. So, how do we spend their bits?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "surprised",
+				"text": "Am... Well, you can spend it at my bar."
+			},
+			{
+				"type": "change_code",
+				"value": "hello2",
+			}
+		],
+	},
+	"hello2": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "smug",
+				"text": "It's a good thing I bought insurance, because when I saw you, my heart stopped."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "itsnotme",
+				"text": "Er... Maybe you should go to the doctor. I saw there just the mare you need."
+			},
+			{
+				"type": "change_code",
+				"value": "hello3",
+			}
+		]
+	},
+	"hello3": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "smug2",
+				"text": "You owe me a cocktail because when I looked at you, I dropped mine."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "angry",
+				"text": "Please take care of the glasses from my bar more seriously. Even though I have an infinity of them, you won't earn my attitude that way."
+			},
+			{
+				"type": "change_code",
+				"value": "hello4",
+			}
+		]
+	},
+	"hello4": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "glasses",
+				"text": "Do you believe in love at first sight, or should I pass you by one more time?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "idle",
+				"text": "In order for me to really like you, you don't have enough wings on your back..."
+			},
+			{
+				"type": "change_code",
+				"value": "hello5",
+			}
+		]
+	},
+	"hello5": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "caramel",
+				"avatar": "sad",
+				"text": "I wanted to ask if you have a spare heart, because mine just got broken."
+			},
+			{
+				"type": "phrase",
+				"speaker": "player",
+				"avatar": "sorry",
+				"text": "I'm sorry. Really..."
+			},
+			{
+				"type": "change_code",
+				"value": "",
+			}
+		]
+	}
+}
