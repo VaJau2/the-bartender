@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jyddje2efq3h"]
+[gd_scene format=3 uid="uid://jyddje2efq3h"]
 
 [ext_resource type="Texture2D" uid="uid://bsfp4yfolxyxc" path="res://assets/sprites/props/furn/kitchen-table.png" id="1_xhfhj"]
 [ext_resource type="Script" uid="uid://bq84dxaq61m2t" path="res://assets/scripts/props/putArea.gd" id="2_8nqib"]
@@ -29,20 +29,20 @@ size = Vector2(23, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omtbk"]
 size = Vector2(88, 20)
 
-[node name="kitchen-table" type="StaticBody2D"]
+[node name="kitchen-table" type="StaticBody2D" unique_id=561864560]
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1831870478]
 texture = ExtResource("1_xhfhj")
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1335432164]
 position = Vector2(-10.5, -3.5)
 shape = SubResource("RectangleShape2D_8nqib")
 
-[node name="shape2" type="CollisionShape2D" parent="."]
+[node name="shape2" type="CollisionShape2D" parent="." unique_id=1902220610]
 position = Vector2(45, 7)
 shape = SubResource("RectangleShape2D_3dqvc")
 
-[node name="putArea" type="Area2D" parent="."]
+[node name="putArea" type="Area2D" parent="." unique_id=1410148364]
 position = Vector2(45, -7)
 collision_layer = 4
 collision_mask = 0
@@ -50,18 +50,18 @@ collision_priority = 0.0
 monitorable = false
 script = ExtResource("2_8nqib")
 
-[node name="shape" type="CollisionShape2D" parent="putArea"]
+[node name="shape" type="CollisionShape2D" parent="putArea" unique_id=1277602458]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_mq3dc")
 
-[node name="shape2" type="CollisionShape2D" parent="putArea"]
+[node name="shape2" type="CollisionShape2D" parent="putArea" unique_id=752322824]
 position = Vector2(-31.5, -14)
 shape = SubResource("RectangleShape2D_pghvc")
 
-[node name="interactionHandler" type="Node" parent="putArea"]
+[node name="interactionHandler" type="Node" parent="putArea" unique_id=2101403672]
 script = ExtResource("3_3dqvc")
 
-[node name="sink" type="Area2D" parent="."]
+[node name="sink" type="Area2D" parent="." unique_id=1723193856]
 position = Vector2(-39, -21)
 collision_layer = 4
 collision_mask = 0
@@ -69,37 +69,37 @@ script = ExtResource("4_mq3dc")
 fill_sound = ExtResource("5_pghvc")
 splat_sound = ExtResource("6_py2cw")
 
-[node name="shape" type="CollisionShape2D" parent="sink"]
+[node name="shape" type="CollisionShape2D" parent="sink" unique_id=920969701]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_py2cw")
 
-[node name="interactionHandler" type="Node" parent="sink"]
+[node name="interactionHandler" type="Node" parent="sink" unique_id=1637779233]
 script = ExtResource("3_3dqvc")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="sink"]
+[node name="audi" type="AudioStreamPlayer2D" parent="sink" unique_id=1535167669]
 position = Vector2(39, 21)
 stream = ExtResource("5_pghvc")
 max_distance = 800.0
 
-[node name="storageArea" type="Area2D" parent="."]
+[node name="storageArea" type="Area2D" parent="." unique_id=435466760]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("7_omtbk")
 open_sound = ExtResource("8_boaa4")
 close_sound = ExtResource("9_w36da")
 
-[node name="shape" type="CollisionShape2D" parent="storageArea"]
+[node name="shape" type="CollisionShape2D" parent="storageArea" unique_id=10801319]
 position = Vector2(-10, -2)
 shape = SubResource("RectangleShape2D_omtbk")
 
-[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area") groups=["bar_storage"]]
+[node name="storageHandler" type="Node" parent="storageArea" unique_id=2124713433 node_paths=PackedStringArray("area") groups=["bar_storage", "save"]]
 script = ExtResource("10_w36da")
 storage_type = 2
 area = NodePath("..")
 code = "lockers"
 
-[node name="interactionHandler" type="Node" parent="storageArea"]
+[node name="interactionHandler" type="Node" parent="storageArea" unique_id=2076898285]
 script = ExtResource("3_3dqvc")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
+[node name="audi" type="AudioStreamPlayer2D" parent="storageArea" unique_id=1585340555]
 max_distance = 500.0

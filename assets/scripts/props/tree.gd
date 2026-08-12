@@ -83,6 +83,32 @@ func interact() -> void:
 func _on_item_taken(item: Item) -> void:
 	item.taken.disconnect(_on_item_taken)
 	G.statistics.ingredient_stolen(item.code)
-		
+	
 	if spawned_items.has(item):
 		spawned_items.erase(item)
+
+
+func get_save_data() -> Dictionary:
+	var fruits_visible = []
+	for fruit in fruit_sprites:
+		fruits_visible.append(fruit.visible)
+	
+	return {
+		"has_fruits": var_to_str(has_fruits),
+		"fruits_visible": var_to_str(fruits_visible),
+		"is_processing": var_to_str(is_processing()),
+		"swawn_timer": var_to_str(spawn_timer),
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	has_fruits = str_to_var(data.has_fruits)
+	
+	var fruits_visible = str_to_var(data.fruits_visible)
+	for i in range(len(fruit_sprites)):
+		var fruit = fruit_sprites[i]
+		fruit.visible = fruits_visible[i]
+	
+	spawn_timer = str_to_var(data.swawn_timer)
+	var processing = str_to_var(data.is_processing)
+	if processing: set_process(true)

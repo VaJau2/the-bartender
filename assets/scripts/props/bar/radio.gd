@@ -22,7 +22,7 @@ var is_inside_bar: bool
 var song_index: int
 
 
-func _ready() -> void:	
+func _ready() -> void:
 	for filename in songsFileNames:
 		if filename.contains(".import"): continue
 		var song: AudioStream = load(SONGS_PATH + "/" + filename)

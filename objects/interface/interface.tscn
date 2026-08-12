@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://do7flv2k02fwo"]
+[gd_scene format=3 uid="uid://do7flv2k02fwo"]
 
 [ext_resource type="PackedScene" uid="uid://cav6x5cugqeox" path="res://objects/interface/hint.tscn" id="1_icbsn"]
 [ext_resource type="Theme" uid="uid://ccdfkuiy7gnf3" path="res://assets/materials/hud.tres" id="1_oc68s"]
@@ -153,7 +153,7 @@ _data = {
 &"show": SubResource("Animation_vdm2n")
 }
 
-[node name="interface" type="Control"]
+[node name="interface" type="Control" unique_id=1012199193]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,7 +163,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_oc68s")
 
-[node name="itemIcon" parent="." instance=ExtResource("3_2dkr1")]
+[node name="itemIcon" parent="." unique_id=1147780009 instance=ExtResource("3_2dkr1")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -177,7 +177,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="itemIcon"]
+[node name="Label" type="Label" parent="itemIcon" unique_id=1395213084]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -190,7 +190,7 @@ grow_vertical = 0
 text = "G"
 horizontal_alignment = 1
 
-[node name="craftMenu" parent="." instance=ExtResource("4_tyci0")]
+[node name="craftMenu" parent="." unique_id=1784759268 instance=ExtResource("4_tyci0")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -205,7 +205,7 @@ offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="storageMenu" parent="." node_paths=PackedStringArray("other_menus") instance=ExtResource("4_2dkr1")]
+[node name="storageMenu" parent="." unique_id=452882488 node_paths=PackedStringArray("other_menus") instance=ExtResource("4_2dkr1")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -221,7 +221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 other_menus = [NodePath("../craftMenu"), NodePath("../shopMenu"), NodePath("../barMenu"), NodePath("../recipesMenu"), NodePath("../bankMenu"), NodePath("../dialoguePanel")]
 
-[node name="shopMenu" parent="." instance=ExtResource("5_oxl46")]
+[node name="shopMenu" parent="." unique_id=1664660561 instance=ExtResource("5_oxl46")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -236,7 +236,7 @@ offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="barMenu" parent="." instance=ExtResource("13_qawhh")]
+[node name="barMenu" parent="." unique_id=1930703187 instance=ExtResource("13_qawhh")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -251,7 +251,7 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="recipesMenu" parent="." node_paths=PackedStringArray("other_menus") instance=ExtResource("6_eljf0")]
+[node name="recipesMenu" parent="." unique_id=1124256479 node_paths=PackedStringArray("other_menus") instance=ExtResource("6_eljf0")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -267,7 +267,7 @@ grow_horizontal = 2
 grow_vertical = 2
 other_menus = [NodePath("../barMenu"), NodePath("../shopMenu"), NodePath("../storageMenu"), NodePath("../craftMenu"), NodePath("../bankMenu"), NodePath("../dialoguePanel")]
 
-[node name="bankMenu" parent="." instance=ExtResource("8_g8u8v")]
+[node name="bankMenu" parent="." unique_id=1643008880 instance=ExtResource("8_g8u8v")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -282,7 +282,7 @@ offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="radioMenu" parent="." instance=ExtResource("7_fe67l")]
+[node name="radioMenu" parent="." unique_id=1320819220 instance=ExtResource("7_fe67l")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -297,13 +297,13 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="dialoguePanel" parent="." instance=ExtResource("10_owlnv")]
+[node name="dialoguePanel" parent="." unique_id=1846954540 instance=ExtResource("10_owlnv")]
 visible = false
 layout_mode = 1
 offset_top = -104.0
 offset_bottom = -16.0
 
-[node name="recipesIcon" type="TextureButton" parent="."]
+[node name="recipesIcon" type="TextureButton" parent="." unique_id=1717424437]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -321,7 +321,7 @@ texture_hover = ExtResource("7_eljf0")
 stretch_mode = 5
 script = ExtResource("9_2xida")
 
-[node name="Label" type="Label" parent="recipesIcon"]
+[node name="Label" type="Label" parent="recipesIcon" unique_id=416170095]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -334,7 +334,7 @@ grow_vertical = 0
 text = "R"
 horizontal_alignment = 1
 
-[node name="bagIcon" type="TextureButton" parent="."]
+[node name="bagIcon" type="TextureButton" parent="." unique_id=1111973895]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -352,7 +352,7 @@ texture_hover = ExtResource("6_25ur3")
 stretch_mode = 5
 script = ExtResource("7_25ur3")
 
-[node name="Label" type="Label" parent="bagIcon"]
+[node name="Label" type="Label" parent="bagIcon" unique_id=597834111]
 layout_mode = 0
 offset_left = 13.0
 offset_top = -22.0
@@ -361,7 +361,7 @@ offset_bottom = 1.0
 text = "Tab"
 horizontal_alignment = 1
 
-[node name="moneyPanel" type="Panel" parent="."]
+[node name="moneyPanel" type="Panel" parent="." unique_id=598086164]
 self_modulate = Color(1, 1, 1, 0.694118)
 layout_mode = 1
 anchors_preset = 1
@@ -374,7 +374,7 @@ offset_bottom = 48.0
 grow_horizontal = 0
 script = ExtResource("8_3ewrv")
 
-[node name="money" type="Label" parent="moneyPanel"]
+[node name="money" type="Label" parent="moneyPanel" unique_id=1989016632]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -387,7 +387,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="bit" type="TextureRect" parent="moneyPanel"]
+[node name="bit" type="TextureRect" parent="moneyPanel" unique_id=1550977695]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -399,7 +399,7 @@ offset_bottom = 30.0
 grow_horizontal = 0
 texture = ExtResource("9_whndr")
 
-[node name="goalLabel" type="Label" parent="moneyPanel"]
+[node name="goalLabel" type="Label" parent="moneyPanel" unique_id=906377658]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -411,7 +411,7 @@ grow_vertical = 0
 text = "Goal:"
 horizontal_alignment = 2
 
-[node name="goal" type="Label" parent="moneyPanel"]
+[node name="goal" type="Label" parent="moneyPanel" unique_id=1557322069]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -424,14 +424,14 @@ grow_vertical = 0
 text = "0"
 script = SubResource("GDScript_1mtbf")
 
-[node name="debt" type="Control" parent="moneyPanel"]
+[node name="debt" type="Control" parent="moneyPanel" unique_id=1320376127]
 visible = false
 anchors_preset = 0
 offset_right = 176.0
 offset_bottom = 128.0
 script = SubResource("GDScript_g8u8v")
 
-[node name="debtLabel" type="Label" parent="moneyPanel/debt"]
+[node name="debtLabel" type="Label" parent="moneyPanel/debt" unique_id=1339131856]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -443,7 +443,7 @@ grow_vertical = 0
 text = "Debt:"
 horizontal_alignment = 2
 
-[node name="debt" type="Label" parent="moneyPanel/debt"]
+[node name="debt" type="Label" parent="moneyPanel/debt" unique_id=1196168259]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -456,7 +456,7 @@ grow_vertical = 0
 text = "0"
 script = SubResource("GDScript_owlnv")
 
-[node name="daysLeftLabel" type="Label" parent="moneyPanel/debt"]
+[node name="daysLeftLabel" type="Label" parent="moneyPanel/debt" unique_id=877326863]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -468,7 +468,7 @@ grow_vertical = 0
 text = "Days Left:"
 horizontal_alignment = 2
 
-[node name="daysLeft" type="Label" parent="moneyPanel/debt"]
+[node name="daysLeft" type="Label" parent="moneyPanel/debt" unique_id=1591899442]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -481,11 +481,11 @@ grow_vertical = 0
 text = "0"
 script = SubResource("GDScript_nas6y")
 
-[node name="translation" type="Node" parent="moneyPanel"]
+[node name="translation" type="Node" parent="moneyPanel" unique_id=888378630]
 script = ExtResource("10_wyfr1")
 nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh"), SubResource("Resource_g8u8v"), SubResource("Resource_owlnv")])
 
-[node name="calendar" type="Control" parent="."]
+[node name="calendar" type="Control" parent="." unique_id=1065727105]
 anchors_preset = 0
 offset_left = 16.0
 offset_top = 16.0
@@ -493,46 +493,46 @@ offset_right = 48.0
 offset_bottom = 48.0
 script = ExtResource("19_4ndcw")
 
-[node name="mondey" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="mondey" parent="calendar" unique_id=2134077229 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 
-[node name="tuesday" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="tuesday" parent="calendar" unique_id=791255722 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 72.0
 code = "tu"
 
-[node name="wednesday" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="wednesday" parent="calendar" unique_id=150991926 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 offset_left = 80.0
 offset_right = 112.0
 code = "we"
 
-[node name="thursday" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="thursday" parent="calendar" unique_id=1999499474 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 offset_left = 120.0
 offset_right = 152.0
 code = "th"
 
-[node name="friday" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="friday" parent="calendar" unique_id=2017617211 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 offset_left = 160.0
 offset_right = 192.0
 code = "fr"
 
-[node name="saturaday" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="saturaday" parent="calendar" unique_id=1498255164 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 offset_left = 200.0
 offset_right = 232.0
 code = "sa"
 
-[node name="sunday" parent="calendar" instance=ExtResource("19_oc68s")]
+[node name="sunday" parent="calendar" unique_id=1265064092 instance=ExtResource("19_oc68s")]
 layout_mode = 0
 offset_left = 240.0
 offset_right = 272.0
 code = "su"
 
-[node name="clock" type="Panel" parent="."]
+[node name="clock" type="Panel" parent="." unique_id=758516583]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 56.0
@@ -541,7 +541,7 @@ offset_bottom = 88.0
 script = ExtResource("13_11rc7")
 metadata/_edit_group_ = true
 
-[node name="label" type="Label" parent="clock"]
+[node name="label" type="Label" parent="clock" unique_id=1474421288]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -552,14 +552,14 @@ text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="hint" parent="." instance=ExtResource("1_icbsn")]
+[node name="hint" parent="." unique_id=2107750904 instance=ExtResource("1_icbsn")]
 visible = false
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 24.0
 mouse_filter = 1
 
-[node name="recipeOpened" type="Panel" parent="."]
+[node name="recipeOpened" type="Panel" parent="." unique_id=627292201]
 visible = false
 layout_mode = 1
 anchors_preset = 2
@@ -573,7 +573,7 @@ grow_vertical = 0
 script = ExtResource("20_vdm2n")
 metadata/_edit_group_ = true
 
-[node name="header" type="Label" parent="recipeOpened"]
+[node name="header" type="Label" parent="recipeOpened" unique_id=1777428850]
 modulate = Color(0.905843, 0.497936, 0.247716, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -587,7 +587,7 @@ grow_vertical = 2
 text = "Открыт рецепт:"
 vertical_alignment = 1
 
-[node name="item" type="Label" parent="recipeOpened"]
+[node name="item" type="Label" parent="recipeOpened" unique_id=1650879798]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -598,7 +598,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Сидор"
 
-[node name="icon" type="TextureRect" parent="recipeOpened"]
+[node name="icon" type="TextureRect" parent="recipeOpened" unique_id=44728884]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -610,14 +610,12 @@ offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("20_153si")
 
-[node name="translate" type="Node" parent="recipeOpened"]
+[node name="translate" type="Node" parent="recipeOpened" unique_id=1376995169]
 script = ExtResource("10_wyfr1")
 nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_153si")])
 
-[node name="anim" type="AnimationPlayer" parent="recipeOpened"]
-libraries = {
-&"": SubResource("AnimationLibrary_4ndcw")
-}
+[node name="anim" type="AnimationPlayer" parent="recipeOpened" unique_id=487849352]
+libraries/ = SubResource("AnimationLibrary_4ndcw")
 
 [connection signal="pressed" from="recipesIcon" to="recipesIcon" method="_on_pressed"]
 [connection signal="pressed" from="bagIcon" to="bagIcon" method="_on_pressed"]

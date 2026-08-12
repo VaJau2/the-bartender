@@ -2,6 +2,7 @@
 	"main_menu": {
 		"pause": "Pause",
 		"start": "Start",
+		"load": "Load",
 		"continue": "Continue",
 		"settings": "Settings",
 		"help": "Help",

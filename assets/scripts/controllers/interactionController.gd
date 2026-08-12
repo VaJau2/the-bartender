@@ -135,3 +135,20 @@ func drop_item() -> void:
 func _rand_speed() -> float:
 	var speed = randf_range(40, 60)
 	return speed if randf() > 0.5 else -speed
+
+
+func get_save_data() -> Dictionary:
+	var item_path: String = ""
+	if holding_item:
+		item_path = holding_item.get_path()
+	
+	return {
+		"item_path": item_path
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	var item_path = data.item_path
+	if item_path == "": return
+	var item = get_node(item_path)
+	update_holding_item(item)

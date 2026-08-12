@@ -21,6 +21,10 @@ signal taken(item: Item)
 
 
 func _ready() -> void:
+	_load_json_data()
+
+
+func _load_json_data() -> void:
 	var json_data = JsonParse.read("res://assets/json/data/items.json")
 	item_data = json_data[code]
 	category = item_data.category
@@ -34,6 +38,14 @@ func _ready() -> void:
 		booze_time = item_data.booze_time
 	type = Enums.ItemType.get(item_data.type)
 	_load_icon()
+
+
+func _load_icon() -> void:
+	var texture_path = item_data.texture
+	if !texture_path: return
+	var texture = load("res://" + texture_path)
+	if !texture: return
+	sprite.texture = texture
 
 
 func enable() -> void:
@@ -125,9 +137,19 @@ func _may_show_craft_hint(holding_item: Item) -> bool:
 	return false
 
 
-func _load_icon() -> void:
-	var texture_path = item_data.texture
-	if !texture_path: return
-	var texture = load("res://" + texture_path)
-	if !texture: return
-	sprite.texture = texture
+func get_save_data() -> Dictionary:
+	return {
+		"code": code,
+		"limit": limit,
+		"visible": var_to_str(visible),
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	code = data.code
+	_load_json_data()
+	limit = data.limit
+	if str_to_var(data.visible):
+		enable()
+	else:
+		disable()

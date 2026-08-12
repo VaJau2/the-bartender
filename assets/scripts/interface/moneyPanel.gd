@@ -13,6 +13,7 @@ func _ready() -> void:
 	temp_money = M.money
 	_update_money_text()
 	M.money_updated.connect(_on_money_updated)
+	M.money_force_updated.connect(_on_money_force_updated)
 
 
 func _process(delta: float) -> void:
@@ -33,3 +34,8 @@ func _update_money_text() -> void:
 
 func _on_money_updated() -> void:
 	set_process(true)
+
+
+func _on_money_force_updated() -> void:
+	temp_money = M.money
+	_update_money_text()

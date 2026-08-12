@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtgfl4038lfdi"]
+[gd_scene format=3 uid="uid://dtgfl4038lfdi"]
 
 [ext_resource type="Texture2D" uid="uid://b70di15i7pkoa" path="res://assets/sprites/buildings/bar/bar-front.png" id="1_jxwi2"]
 [ext_resource type="Script" uid="uid://cu84t81o48nqu" path="res://assets/scripts/props/bar/storageArea.gd" id="2_6h332"]
@@ -21,61 +21,61 @@ size = Vector2(19, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyso0"]
 size = Vector2(181, 21)
 
-[node name="bar-front" type="StaticBody2D"]
+[node name="bar-front" type="StaticBody2D" unique_id=1845240209]
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1315595457]
 position = Vector2(0, -30)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_jxwi2")
 
-[node name="storageArea" type="Area2D" parent="."]
+[node name="storageArea" type="Area2D" parent="." unique_id=315972136]
 position = Vector2(-113, -35)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_6h332")
 
-[node name="shape" type="CollisionShape2D" parent="storageArea"]
+[node name="shape" type="CollisionShape2D" parent="storageArea" unique_id=651129811]
 position = Vector2(-0.5, -9.5)
 shape = SubResource("RectangleShape2D_gc8bf")
 
-[node name="interactionHandler" type="Node" parent="storageArea"]
+[node name="interactionHandler" type="Node" parent="storageArea" unique_id=1824809293]
 script = ExtResource("3_xyso0")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="storageArea"]
+[node name="audi" type="AudioStreamPlayer2D" parent="storageArea" unique_id=2043391793]
 max_distance = 500.0
 
-[node name="storageHandler" type="Node" parent="storageArea" node_paths=PackedStringArray("area")]
+[node name="storageHandler" type="Node" parent="storageArea" unique_id=1342131123 node_paths=PackedStringArray("area") groups=["save"]]
 script = ExtResource("4_36lme")
 storage_type = 3
 area = NodePath("..")
 code = "drinks-locker"
 use_in_moving_items = false
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=618943144]
 position = Vector2(-1, -3)
 shape = SubResource("RectangleShape2D_a5ixf")
 
-[node name="shape2" type="CollisionShape2D" parent="."]
+[node name="shape2" type="CollisionShape2D" parent="." unique_id=1805363531]
 position = Vector2(-100, 19)
 shape = SubResource("RectangleShape2D_a02bt")
 
-[node name="shape3" type="CollisionShape2D" parent="."]
+[node name="shape3" type="CollisionShape2D" parent="." unique_id=1382827265]
 position = Vector2(-52, 19)
 shape = SubResource("RectangleShape2D_a02bt")
 
-[node name="shape4" type="CollisionShape2D" parent="."]
+[node name="shape4" type="CollisionShape2D" parent="." unique_id=449797701]
 position = Vector2(-7, 19)
 shape = SubResource("RectangleShape2D_a02bt")
 
-[node name="shape5" type="CollisionShape2D" parent="."]
+[node name="shape5" type="CollisionShape2D" parent="." unique_id=788301520]
 position = Vector2(45, 19)
 shape = SubResource("RectangleShape2D_a02bt")
 
-[node name="shape6" type="CollisionShape2D" parent="."]
+[node name="shape6" type="CollisionShape2D" parent="." unique_id=1037549796]
 position = Vector2(91, 19)
 shape = SubResource("RectangleShape2D_a02bt")
 
-[node name="putArea" type="Area2D" parent="." groups=["bar_front_area"]]
+[node name="putArea" type="Area2D" parent="." unique_id=254125159 groups=["bar_front_area"]]
 position = Vector2(0, -31)
 collision_layer = 4
 collision_mask = 0
@@ -83,54 +83,54 @@ collision_priority = 0.0
 monitorable = false
 script = ExtResource("2_a02bt")
 
-[node name="shape" type="CollisionShape2D" parent="putArea"]
+[node name="shape" type="CollisionShape2D" parent="putArea" unique_id=571209274]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_xyso0")
 
-[node name="interactionHandler" type="Node" parent="putArea"]
+[node name="interactionHandler" type="Node" parent="putArea" unique_id=510107040]
 script = ExtResource("3_xyso0")
 
-[node name="girlanga" type="Node2D" parent="."]
+[node name="girlanga" type="Node2D" parent="." unique_id=1218542228]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Girlanda" type="Sprite2D" parent="girlanga"]
+[node name="Girlanda" type="Sprite2D" parent="girlanga" unique_id=1545960984]
 position = Vector2(-67, -59.5)
 texture = ExtResource("5_thfa3")
 
-[node name="Girlanda2" type="Sprite2D" parent="girlanga"]
+[node name="Girlanda2" type="Sprite2D" parent="girlanga" unique_id=1052516287]
 position = Vector2(53, -58.5)
 texture = ExtResource("5_thfa3")
 
-[node name="light" type="PointLight2D" parent="girlanga"]
+[node name="light" type="PointLight2D" parent="girlanga" unique_id=901796363]
 position = Vector2(-120, -84)
 enabled = false
 color = Color(0.713726, 0.211765, 0.188235, 0.678431)
 texture = ExtResource("6_grxcm")
 script = ExtResource("7_7nvx4")
 
-[node name="light5" type="PointLight2D" parent="girlanga"]
+[node name="light5" type="PointLight2D" parent="girlanga" unique_id=926781713]
 position = Vector2(111, -80)
 enabled = false
 color = Color(0.713726, 0.211765, 0.188235, 0.678431)
 texture = ExtResource("6_grxcm")
 script = ExtResource("7_7nvx4")
 
-[node name="light2" type="PointLight2D" parent="girlanga"]
+[node name="light2" type="PointLight2D" parent="girlanga" unique_id=1864512352]
 position = Vector2(-56, -83)
 enabled = false
 color = Color(0.266667, 0.341176, 0.862745, 0.623529)
 texture = ExtResource("6_grxcm")
 script = ExtResource("7_7nvx4")
 
-[node name="light4" type="PointLight2D" parent="girlanga"]
+[node name="light4" type="PointLight2D" parent="girlanga" unique_id=109555793]
 position = Vector2(85, -81)
 enabled = false
 color = Color(0.266667, 0.341176, 0.862745, 0.623529)
 texture = ExtResource("6_grxcm")
 script = ExtResource("7_7nvx4")
 
-[node name="light3" type="PointLight2D" parent="girlanga"]
+[node name="light3" type="PointLight2D" parent="girlanga" unique_id=322288215]
 position = Vector2(8, -84)
 enabled = false
 color = Color(0.215686, 0.486275, 0.215686, 0.705882)

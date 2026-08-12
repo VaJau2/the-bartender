@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://codvvyc5gpxvq"]
+[gd_scene format=3 uid="uid://codvvyc5gpxvq"]
 
 [ext_resource type="Texture2D" uid="uid://c0csk28suino4" path="res://assets/sprites/items/coconut.png" id="1_m72mn"]
 [ext_resource type="Texture2D" uid="uid://b4lhecsvgs28s" path="res://assets/sprites/trees/palm-tree.png" id="2_w5cno"]
@@ -179,52 +179,50 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyrnh"]
 size = Vector2(9, 93)
 
-[node name="coconutPalmTree" type="StaticBody2D"]
+[node name="coconutPalmTree" type="StaticBody2D" unique_id=1193536548]
 
-[node name="fruits" type="Node2D" parent="."]
+[node name="fruits" type="Node2D" parent="." unique_id=728143626]
 position = Vector2(-1.5, 0)
 
-[node name="Coconut" type="Sprite2D" parent="fruits"]
+[node name="Coconut" type="Sprite2D" parent="fruits" unique_id=565234058]
 visible = false
 position = Vector2(-4.5, -90)
 texture = ExtResource("1_m72mn")
 
-[node name="Coconut2" type="Sprite2D" parent="fruits"]
+[node name="Coconut2" type="Sprite2D" parent="fruits" unique_id=895359525]
 visible = false
 position = Vector2(9.5, -88)
 texture = ExtResource("1_m72mn")
 
-[node name="Coconut3" type="Sprite2D" parent="fruits"]
+[node name="Coconut3" type="Sprite2D" parent="fruits" unique_id=1884959578]
 visible = false
 position = Vector2(13.5, -104)
 texture = ExtResource("1_m72mn")
 
-[node name="Coconut4" type="Sprite2D" parent="fruits"]
+[node name="Coconut4" type="Sprite2D" parent="fruits" unique_id=193518705]
 visible = false
 position = Vector2(-3.5, -102)
 texture = ExtResource("1_m72mn")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." unique_id=166864884]
 position = Vector2(4, -58)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("2_w5cno")
 
-[node name="shadows" type="LightOccluder2D" parent="sprite"]
+[node name="shadows" type="LightOccluder2D" parent="sprite" unique_id=1529305252]
 position = Vector2(-2.5, 36.25)
 scale = Vector2(0.625, 0.625)
 occluder = SubResource("OccluderPolygon2D_t3ywi")
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1140778636]
 position = Vector2(1, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6wrkm")
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5h8qq")
-}
+[node name="anim" type="AnimationPlayer" parent="." unique_id=145915403]
+libraries/ = SubResource("AnimationLibrary_5h8qq")
 
-[node name="area" type="Area2D" parent="." node_paths=PackedStringArray("fruits_parent", "anim")]
+[node name="area" type="Area2D" parent="." unique_id=1825730461 node_paths=PackedStringArray("fruits_parent", "anim") groups=["save"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_t3ywi")
@@ -235,12 +233,12 @@ fruit_code = "coconut"
 hit_sound = ExtResource("4_t3ywi")
 fall_sound = ExtResource("5_5h8qq")
 
-[node name="interactionHandler" type="Node" parent="area"]
+[node name="interactionHandler" type="Node" parent="area" unique_id=1579173404]
 script = ExtResource("4_5h8qq")
 
-[node name="shape" type="CollisionShape2D" parent="area"]
+[node name="shape" type="CollisionShape2D" parent="area" unique_id=1557068541]
 position = Vector2(1.5, -47.5)
 shape = SubResource("RectangleShape2D_wyrnh")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="area"]
+[node name="audi" type="AudioStreamPlayer2D" parent="area" unique_id=49990081]
 max_distance = 500.0

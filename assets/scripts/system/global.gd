@@ -15,7 +15,7 @@ var player: Player
 var time: TimeHandler
 var game_manager: GameManager
 
-
+signal game_started
 signal lang_changed
 
 

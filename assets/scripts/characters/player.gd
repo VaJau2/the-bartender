@@ -8,6 +8,7 @@ class_name Player
 @onready var storage_handler: StorageHandler = get_node("storageHandler")
 @onready var drunk_handler: DrunkHandler = get_node("drunkHandler")
 @onready var mouth: Sprite2D = get_node("mouth")
+@onready var camera: Camera2D = get_node("camera")
 
 @export var using_storage: bool
 @export var has_storage: bool = false

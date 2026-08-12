@@ -13,9 +13,12 @@ const ZOOM_SPEED: float = 1
 @onready var settings_panel: Panel = get_node("menu/settingsPanel")
 @onready var help_panel: Panel = get_node("menu/helpPanel")
 @onready var player_camera: Camera2D = G.player.get_node("camera")
+@onready var load_manager: LoadManager = get_node("/root/main/loadManager")
+@onready var load_button: Button = get_node("menu/Load")
 
 
 func _ready() -> void:
+	load_manager.file_exist_event.connect(_on_save_file_exist)
 	menu_camera.make_current()
 	G.player.movement_controller.may_move = false
 	set_process(false)
@@ -40,7 +43,12 @@ func _process(delta: float) -> void:
 		queue_free()
 
 
+func _on_save_file_exist() -> void:
+	load_button.disabled = false
+
+
 func _on_start_pressed() -> void:
+	G.game_started.emit()
 	visible = false
 	set_process(true)
 
@@ -57,3 +65,12 @@ func _on_help_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_load_pressed() -> void:
+	load_manager.load_data()
+	menu_camera.zoom = player_camera.zoom
+	menu_camera.global_position = player_camera.global_position
+	player_camera.reset_smoothing()
+	visible = false
+	set_process(true)

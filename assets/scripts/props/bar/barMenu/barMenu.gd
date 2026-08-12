@@ -91,3 +91,25 @@ func get_recipe_items() -> Array[String]:
 			result.append(item_code)
 	
 	return result
+
+
+func get_save_data() -> Dictionary:
+	var items_data = []
+	for item: BarMenuItem in items:
+		items_data.append(item.to_json())
+	
+	return {
+		"items": var_to_str(items_data),
+		"is_open": var_to_str(is_open),
+		"closing_timer": var_to_str(closing_timer)
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	set_is_open(str_to_var(data.is_open))
+	closing_timer = str_to_var(data.closing_timer)
+	var items_data = str_to_var(data.items)
+	for item in items_data:
+		var bar_item = BarMenuItem.from_json(item)
+		items.append(bar_item)
+	menu_changed.emit()
