@@ -99,13 +99,13 @@ position = Vector2(10.725, -108.08)
 position = Vector2(80, -119)
 scale = Vector2(1.2, 1.2)
 
-[node name="juicer" parent="kitchen-table" unique_id=1458520403 groups=["juicer"] instance=ExtResource("6_x3pc3")]
+[node name="juicer" parent="kitchen-table" unique_id=1458520403 instance=ExtResource("6_x3pc3")]
 process_mode = 4
 visible = false
 position = Vector2(-16.6667, -19.1667)
 code = "juicer"
 
-[node name="coffee_machine" parent="kitchen-table" unique_id=1934036403 groups=["coffee-machine"] instance=ExtResource("10_cdsm4")]
+[node name="coffee_machine" parent="kitchen-table" unique_id=1934036403 instance=ExtResource("10_cdsm4")]
 process_mode = 4
 visible = false
 position = Vector2(42.5, -17.5)

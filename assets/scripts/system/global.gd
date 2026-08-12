@@ -3,7 +3,7 @@ extends Node
 class_name Global
 
 const DAYS_GOAL: int = 5
-const MONEY_GOAL: int = 2000
+const MONEY_GOAL: int = 5000
 
 const GLASS_MAX_COUNT = 150
 var glasses_count: int = 0

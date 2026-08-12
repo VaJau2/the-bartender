@@ -23,20 +23,32 @@ func _process(_delta: float) -> void:
 func save_data() -> void:
 	var data = {
 		"nodes": {},
+		"group_items": {},
 		"spawned_items": {},
 	}
 	
 	for node: Node in get_tree().get_nodes_in_group("save"):
 		if !node.has_method("get_save_data"): continue
 		var path = node.get_path()
+		
+		# сохранение наспавненных вещей
 		if node.is_in_group("spawned_item"):
 			data["spawned_items"][path] = _get_spawned_item_data(node)
-		else:
-			data["nodes"][path] = node.get_save_data()
+			continue
+		
+		# сохранение радио, соковыжималки, кофемашины и тд
+		if node.has_method("get_unique_group_name"):
+			var group: String = node.get_unique_group_name()
+			data["group_items"][group] = node.get_save_data()
+			continue
+		
+		# сохранение всего остального
+		data["nodes"][path] = node.get_save_data()
 	
 	var file = FileAccess.open_compressed(FILE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data))
 	file.close()
+	
 	print("game saved")
 
 
@@ -45,10 +57,21 @@ func load_data() -> void:
 	var data: Dictionary = JSON.parse_string(file.get_as_text())
 	file.close()
 	
+	# загрузка наспавненных вещей
 	var items_to_spawn: Dictionary = data.spawned_items
 	for node_path in items_to_spawn.keys():
 		_load_spawned_item_data(items_to_spawn[node_path])
 	
+	# загрузка радио, соковыжималки, кофемашины и тд
+	var global_group_items: Dictionary = data.group_items
+	for node_group in global_group_items.keys():
+		var node_data = global_group_items[node_group]
+		var node = get_tree().get_first_node_in_group(node_group)
+		var load_manager = node.get_node_or_null("loadManager")
+		if load_manager and load_manager.has_method("load_save_data"):
+			load_manager.load_save_data(node_data)
+	
+	# загрузка всего остального
 	var exist_nodes: Dictionary = data.nodes
 	for node_path in exist_nodes.keys():
 		var node_data = exist_nodes[node_path]
