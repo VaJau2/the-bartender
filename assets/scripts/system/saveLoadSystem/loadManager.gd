@@ -1,16 +1,16 @@
 extends Node
 
-class_name LoadManager
+class_name LoadingManager
 
 const FILE_PATH: String = "user://save_game.dat"
 
-signal file_exist_event()
+var created_objects: Dictionary[int, Node]
+
+var file_exist: bool
 
 
 func _ready() -> void:
-	var file_exists = FileAccess.file_exists(FILE_PATH)
-	if file_exists:
-		file_exist_event.emit()
+	file_exist = FileAccess.file_exists(FILE_PATH)
 
 
 func _process(_delta: float) -> void:
@@ -49,6 +49,7 @@ func save_data() -> void:
 	file.store_string(JSON.stringify(data))
 	file.close()
 	
+	file_exist = true
 	print("game saved")
 
 
@@ -67,9 +68,9 @@ func load_data() -> void:
 	for node_group in global_group_items.keys():
 		var node_data = global_group_items[node_group]
 		var node = get_tree().get_first_node_in_group(node_group)
-		var load_manager = node.get_node_or_null("loadManager")
-		if load_manager and load_manager.has_method("load_save_data"):
-			load_manager.load_save_data(node_data)
+		var node_load_manager = node.get_node_or_null("loadManager")
+		if node_load_manager and node_load_manager.has_method("load_save_data"):
+			node_load_manager.load_save_data(node_data)
 	
 	# загрузка всего остального
 	var exist_nodes: Dictionary = data.nodes
@@ -78,13 +79,14 @@ func load_data() -> void:
 		var node = get_node(node_path)
 		if node and node.has_method("load_save_data"):
 			node.load_save_data(node_data)
+	
+	created_objects.clear()
 
 
 func _get_spawned_item_data(item: Item) -> Dictionary:
 	return {
 		"data": item.get_save_data(),
 		"parent": item.get_parent().get_path(),
-		"name": item.name,
 		"code": item.code,
 		"position": var_to_str(item.global_position)
 	}
@@ -95,5 +97,5 @@ func _load_spawned_item_data(data: Dictionary) -> void:
 	var parent = get_node(parent_path)
 	var item_pos = str_to_var(data["position"])
 	var item = ItemSpawner.spawn_item(data["code"], item_pos, parent)
-	item.name = data["name"]
 	item.load_save_data(data["data"])
+	created_objects[item.save_id] = item

@@ -25,8 +25,12 @@ func interact() -> void:
 	
 	if item == null:
 		interaction_controller.open_crafting_menu.emit(self)
+		return
 	
-	elif item.code == "empty-glass" and glass == null:
+	item.get_parent().remove_child(item)
+	get_parent().add_child(item)
+	
+	if item.code == "empty-glass" and glass == null:
 		glass = item
 		interaction_controller.holding_item = null
 		interaction_controller.clear_item.emit()

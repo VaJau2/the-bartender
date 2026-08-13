@@ -99,7 +99,6 @@
 [ext_resource type="Shader" uid="uid://dw2vcknsfkjvj" path="res://assets/materials/blur.gdshader" id="89_csdio"]
 [ext_resource type="PackedScene" uid="uid://dra84nwloiwru" path="res://objects/interface/endMenu/resumeMenu.tscn" id="92_nlgwl"]
 [ext_resource type="PackedScene" uid="uid://ccd5hs27hibxx" path="res://objects/interface/skip.tscn" id="94_p6l88"]
-[ext_resource type="Script" uid="uid://dq1mlqsb1hcj1" path="res://assets/scripts/system/loadManager.gd" id="100_84vju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebg2g"]
 texture = ExtResource("3_yxlcp")
@@ -2705,6 +2704,3 @@ lights_data = Array[ExtResource("67_8t8ul")]([SubResource("Resource_gia1l"), Sub
 script = ExtResource("73_mou0d")
 knowed_recipes = Array[String](["glass-water"])
 resume_menu = NodePath("../menu/resumeMenu")
-
-[node name="loadManager" type="Node" parent="." unique_id=357809134]
-script = ExtResource("100_84vju")

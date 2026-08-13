@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://dfvjjbydbnb6c" path="res://assets/scripts/characters/npc/npcInteraction.gd" id="16_xfs8l"]
 [ext_resource type="AudioStream" uid="uid://tyuabus2rfwy" path="res://assets/audio/buying/selling.mp3" id="17_x6edk"]
 [ext_resource type="Script" uid="uid://dvs0d4ofhm5lm" path="res://assets/scripts/characters/npc/drunkHandler.gd" id="20_fbupb"]
-[ext_resource type="Script" uid="uid://dxb7a1n6141w7" path="res://assets/scripts/system/loadSystem/npcSaveManager.gd" id="23_mjp1t"]
+[ext_resource type="Script" uid="uid://dxb7a1n6141w7" path="res://assets/scripts/system/saveLoadSystem/npcSaveManager.gd" id="23_mjp1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs8l"]
 size = Vector2(24, 44)

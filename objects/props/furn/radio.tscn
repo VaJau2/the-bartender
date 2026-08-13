@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cd2qk14vr6gfm" path="res://assets/sprites/props/furn/Radio.png" id="1_0uj6y"]
 [ext_resource type="Script" uid="uid://cb7umtmvgxs48" path="res://assets/scripts/props/bar/radio.gd" id="2_b5mjt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_tst2n"]
-[ext_resource type="Script" uid="uid://dbkboq1fu44mw" path="res://assets/scripts/system/loadSystem/furnLoadManager.gd" id="6_0a4fr"]
+[ext_resource type="Script" uid="uid://dbkboq1fu44mw" path="res://assets/scripts/system/saveLoadSystem/furnLoadManager.gd" id="6_0a4fr"]
 [ext_resource type="AudioStream" uid="uid://ce65ecms2fq38" path="res://assets/audio/radio/Switch.ogg" id="13_fg3pt"]
 [ext_resource type="AudioStream" uid="uid://1jt8etg8h5ls" path="res://assets/audio/radio/Noise.ogg" id="14_881ol"]
 

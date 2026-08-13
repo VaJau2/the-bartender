@@ -8,6 +8,8 @@ class_name Item
 
 @export var code: String
 
+var save_id: int
+
 var item_data: Dictionary
 
 var type: Enums.ItemType
@@ -139,6 +141,7 @@ func _may_show_craft_hint(holding_item: Item) -> bool:
 
 func get_save_data() -> Dictionary:
 	return {
+		"save_id": save_id,
 		"code": code,
 		"limit": limit,
 		"visible": var_to_str(visible),
@@ -146,6 +149,7 @@ func get_save_data() -> Dictionary:
 
 
 func load_save_data(data: Dictionary) -> void:
+	save_id = data.save_id
 	code = data.code
 	_load_json_data()
 	limit = data.limit

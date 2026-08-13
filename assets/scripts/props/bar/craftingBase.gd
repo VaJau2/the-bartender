@@ -36,3 +36,25 @@ func interact() -> void:
 
 func interact_alt() -> void:
 	pass
+
+
+func get_save_data() -> Dictionary:
+	var ingredient_id = -1
+	if ingredient: ingredient_id = ingredient.save_id
+	
+	var glass_id = -1
+	if glass: glass_id = glass.save_id
+	
+	return {
+		"ingredient_id": ingredient_id,
+		"glass_id": glass_id,
+		"result": result_code
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	if data.ingredient_id != -1:
+		ingredient = L.created_objects[data.ingredient_id]
+	if data.glass_id != -1:
+		glass = L.created_objects[data.glass_id]
+	result_code = data.result

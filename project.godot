@@ -32,6 +32,7 @@ buses/default_bus_layout="uid://dcjo7vn2716nk"
 G="*res://assets/scripts/system/global.gd"
 M="*res://assets/scripts/handlers/moneyHandler.gd"
 S="*res://assets/scripts/system/sceneLoader.gd"
+L="*uid://dq1mlqsb1hcj1"
 
 [debug]
 

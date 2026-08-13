@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cevaktefc4r0b" path="res://assets/sprites/props/furn/coffee-machine.png" id="2_or87b"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_rs34m"]
 [ext_resource type="AudioStream" uid="uid://dhqwji0tcw5e6" path="res://assets/audio/props/CofeeMachine.wav" id="4_or87b"]
-[ext_resource type="Script" uid="uid://dbkboq1fu44mw" path="res://assets/scripts/system/loadSystem/furnLoadManager.gd" id="5_xcqxp"]
+[ext_resource type="Script" uid="uid://dbkboq1fu44mw" path="res://assets/scripts/system/saveLoadSystem/furnLoadManager.gd" id="5_xcqxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqxp"]
 size = Vector2(20, 24)
@@ -47,7 +47,7 @@ _data = {
 &"work": SubResource("Animation_kbiog")
 }
 
-[node name="coffee_machine" type="Area2D" unique_id=1161290483 groups=["coffee_machine"]]
+[node name="coffee-machine" type="Area2D" unique_id=1161290483 groups=["coffee-machine"]]
 script = ExtResource("1_or87b")
 code = "coffee-machine"
 result_velocity = Vector2(0, 42)
