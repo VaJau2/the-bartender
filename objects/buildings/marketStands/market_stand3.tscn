@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://osyvdr2mv17r"]
+[gd_scene format=3 uid="uid://osyvdr2mv17r"]
 
 [ext_resource type="PackedScene" uid="uid://ckdwwp3um3c5l" path="res://objects/buildings/marketStands/market_stand.tscn" id="1_my7ec"]
 
-[node name="marketStand" instance=ExtResource("1_my7ec")]
+[node name="marketStand" unique_id=2016732119 groups=["save"] instance=ExtResource("1_my7ec")]
 
 [node name="sprite" parent="." index="1"]
 region_rect = Rect2(269.545, 7.8208, 82.0936, 95.7399)

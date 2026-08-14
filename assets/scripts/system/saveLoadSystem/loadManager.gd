@@ -6,6 +6,7 @@ const FILE_PATH: String = "user://save_game.dat"
 
 var created_objects: Dictionary[int, Node]
 
+var item_save_id: int = 0
 var file_exist: bool
 
 
@@ -16,25 +17,27 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_save"):
 		save_data()
-	if Input.is_action_just_pressed("ui_load"):
-		load_data()
 
 
 func save_data() -> void:
+	item_save_id = 0
 	var data = {
 		"nodes": {},
 		"group_items": {},
 		"spawned_items": {},
 	}
 	
+	# сохранение наспавненных вещей (отдельно, т.к. им при сохранении присваивается save_id)
+	for spawned_node: Node in get_tree().get_nodes_in_group("spawned_item"):
+		if !spawned_node.has_method("get_save_data"): continue
+		var path = spawned_node.get_path()
+		data["spawned_items"][path] = _get_spawned_item_data(spawned_node)
+	
 	for node: Node in get_tree().get_nodes_in_group("save"):
 		if !node.has_method("get_save_data"): continue
-		var path = node.get_path()
+		if node.is_in_group("spawned_item"): continue
 		
-		# сохранение наспавненных вещей
-		if node.is_in_group("spawned_item"):
-			data["spawned_items"][path] = _get_spawned_item_data(node)
-			continue
+		var path = node.get_path()
 		
 		# сохранение радио, соковыжималки, кофемашины и тд
 		if node.has_method("get_unique_group_name"):
@@ -84,6 +87,9 @@ func load_data() -> void:
 
 
 func _get_spawned_item_data(item: Item) -> Dictionary:
+	item_save_id += 1
+	item.save_id = item_save_id
+	
 	return {
 		"data": item.get_save_data(),
 		"parent": item.get_parent().get_path(),

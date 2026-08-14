@@ -110,3 +110,20 @@ func _deliver_item(item: Item) -> void:
 		if !needs_fridge and storage_type == Enums.StorageType.fridge: continue
 		
 		storage.put_item(item)
+
+
+func get_save_data() -> Dictionary:
+	var items_data = []
+	for item: ShopItem in items:
+		items_data.append(item.to_json())
+	
+	return {
+		"items_data": items_data
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	items.clear()
+	
+	for item in data.items_data:
+		items.append(ShopItem.from_json(item))
