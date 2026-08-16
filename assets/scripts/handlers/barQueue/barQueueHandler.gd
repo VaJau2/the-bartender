@@ -50,3 +50,24 @@ func _on_put_front_item(item: Item) -> void:
 			var check_result = queue_item.npc.interaction.check_ordered_drink(item)
 			if check_result:
 				break
+
+
+func get_save_data() -> Dictionary:
+	var items_npc = []
+	
+	for item in queue_items:
+		var npc_path = null
+		if item.npc: npc_path = item.npc.get_path()
+		items_npc.append(npc_path)
+	
+	return {
+		"items": items_npc
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	for i in range(len(queue_items)):
+		var item_npc_path = data.items[i]
+		if item_npc_path == null: continue
+		var item = queue_items[i]
+		item.npc = get_node(item_npc_path)

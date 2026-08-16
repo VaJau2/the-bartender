@@ -30,3 +30,13 @@ func add_drunk_time(time: float) -> void:
 		parent.walk_state = "drunk"
 	movement_controller.load_state("drunk")
 	set_process(true)
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"drunk_timer": drunk_timer
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	drunk_timer = data.drunk_timer

@@ -31,10 +31,10 @@ size = Vector2(24, 44)
 collision_mask = 0
 script = ExtResource("2_bcxtt")
 
-[node name="sprite" parent="." index="2"]
+[node name="sprite" parent="." index="2" unique_id=1649376875]
 script = ExtResource("3_a7t21")
 
-[node name="mouth" parent="." index="3"]
+[node name="mouth" parent="." index="3" unique_id=3327742]
 script = ExtResource("3_a7t21")
 add_name = "_mouth"
 
@@ -42,7 +42,7 @@ add_name = "_mouth"
 path_desired_distance = 23.0
 target_desired_distance = 25.0
 
-[node name="movementController" parent="." index="7" node_paths=PackedStringArray("nav_agent")]
+[node name="movementController" parent="." index="7" unique_id=149718637 node_paths=PackedStringArray("nav_agent")]
 script = ExtResource("3_c2sos")
 nav_agent = NodePath("../navAgent")
 
@@ -113,7 +113,7 @@ script = ExtResource("16_43ndy")
 [node name="audi" type="AudioStreamPlayer2D" parent="interactionArea" index="2" unique_id=172510441]
 max_distance = 500.0
 
-[node name="drunkHandler" type="Node" parent="." index="12" unique_id=926591341 node_paths=PackedStringArray("movement_controller")]
+[node name="drunkHandler" type="Node" parent="." index="12" unique_id=926591341 node_paths=PackedStringArray("movement_controller") groups=["save"]]
 script = ExtResource("20_fbupb")
 movement_controller = NodePath("../movementController")
 

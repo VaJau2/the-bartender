@@ -17,3 +17,5 @@ func _on_hour_tick() -> void:
 			energy = 1
 		else:
 			energy = 0.5
+	else:
+		enabled = false

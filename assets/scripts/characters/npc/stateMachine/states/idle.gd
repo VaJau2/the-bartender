@@ -112,3 +112,24 @@ func _on_minute_tick() -> void:
 	if G.time.hour >= SLEEP_TIME or G.time.hour < WAKE_TIME:
 		if randf() < SLEEP_CHANCE:
 			state_machine.set_state("sleep")
+
+
+func get_save_data() -> Dictionary:
+	var walk_point_path = "";
+	if temp_walk_point:
+		walk_point_path = temp_walk_point.get_path()
+		
+	return {
+		"wait_timer": wait_timer,
+		"is_walking": is_walking,
+		"walk_point_path": walk_point_path
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	wait_timer = data.wait_timer
+	is_walking = data.is_walking
+	if data.walk_point_path != "":
+		temp_walk_point = get_node(data.walk_point_path)
+		movement_controller.set_target(temp_walk_point.global_position)
+		temp_walk_point.is_busy = true

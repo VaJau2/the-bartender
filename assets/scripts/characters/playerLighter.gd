@@ -25,3 +25,5 @@ func _process(_delta: float) -> void:
 func _update_light() -> void:
 	if G.time.hour >= NIGHT_ON_HOUR or G.time.hour < MORNING_OFF_HOUR:
 		enabled = true
+	else:
+		enabled = false

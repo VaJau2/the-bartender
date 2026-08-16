@@ -166,3 +166,20 @@ func get_max(array_values: Array) -> int:
 	for value in array_values:
 		maxValue = max(maxValue, value)
 	return maxValue
+
+
+func get_save_data() -> Dictionary:
+	var props = {}
+	
+	for prop in get_property_list():
+		props[prop.name] = var_to_str(get(prop.name))
+	
+	return {
+		'props': props
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	for prop_name in data.props.keys():
+		var prop_value = data.props[prop_name]
+		set(prop_name, str_to_var(prop_value))

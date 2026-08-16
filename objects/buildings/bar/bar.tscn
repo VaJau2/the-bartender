@@ -142,7 +142,7 @@ metadata/_edit_group_ = true
 position = Vector2(11.5, -44)
 shape = SubResource("RectangleShape2D_x3pc3")
 
-[node name="queueHandler" type="Node2D" parent="." unique_id=1426273799 groups=["bar_queue"]]
+[node name="queueHandler" type="Node2D" parent="." unique_id=1426273799 groups=["bar_queue", "save"]]
 position = Vector2(3, 119)
 script = ExtResource("19_j358a")
 

@@ -4,6 +4,7 @@ class_name BaseCharacterSaveManager
 
 @onready var parent: CharacterBody2D = get_parent()
 @onready var animation_controller: AnimationController = get_node("../animationController")
+@onready var movement_controller: MovementController = get_node("../movementController")
 @export var savable_nodes: Array[Node]
 
 

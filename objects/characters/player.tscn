@@ -35,7 +35,7 @@ size = Vector2(19, 21)
 [node name="player" unique_id=248601070 instance=ExtResource("1_h3hc8")]
 script = ExtResource("2_ssmtf")
 
-[node name="sprite" parent="." index="2"]
+[node name="sprite" parent="." index="2" unique_id=1649376875]
 texture = ExtResource("2_ho5yc")
 
 [node name="inputController" type="Node" parent="." index="4" unique_id=252494265 node_paths=PackedStringArray("movement_controller")]
@@ -61,7 +61,7 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("8_th6j0")
 
-[node name="bag" parent="." index="8"]
+[node name="bag" parent="." index="8" unique_id=995117982]
 script = SubResource("GDScript_s7pd4")
 
 [node name="lighter" type="Node2D" parent="." index="12" unique_id=1608569908]
@@ -102,11 +102,11 @@ script = ExtResource("10_4tsrb")
 stream = ExtResource("12_w0sbo")
 max_distance = 500.0
 
-[node name="drunkHandler" type="Node" parent="." index="14" unique_id=273974800 node_paths=PackedStringArray("movement_controller")]
+[node name="drunkHandler" type="Node" parent="." index="14" unique_id=273974800 node_paths=PackedStringArray("movement_controller") groups=["save"]]
 script = ExtResource("11_ch64r")
 movement_controller = NodePath("../movementController")
 
-[node name="audi" parent="." index="15"]
+[node name="audi" parent="." index="15" unique_id=293715604]
 default_material = 1
 
 [node name="saveManager" type="Node" parent="." index="16" unique_id=703317182 groups=["save"]]

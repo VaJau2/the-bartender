@@ -10,7 +10,6 @@ signal know_recipe(code: String)
 
 
 func _ready() -> void:
-	add_to_group("save")
 	G.statistics.reset()
 	G.time.day_tick.connect(_on_day_tick)
 	try_know_recipe.connect(_on_know_recipe)
@@ -38,9 +37,11 @@ func _on_know_recipe(code: String) -> void:
 
 func get_save_data() -> Dictionary:
 	return {
-		"recipes": var_to_str(knowed_recipes)
+		"recipes": var_to_str(knowed_recipes),
+		"statistics": G.statistics.get_save_data(),
 	}
 
 
 func load_save_data(data: Dictionary) -> void:
 	knowed_recipes = str_to_var(data.recipes)
+	G.statistics.load_save_data(data.statistics)

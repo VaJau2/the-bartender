@@ -2690,17 +2690,17 @@ skip = NodePath("../skip")
 [node name="skip" parent="menu" unique_id=2116767626 instance=ExtResource("94_p6l88")]
 process_mode = 3
 
-[node name="timeHandler" type="Node" parent="." unique_id=675998990]
+[node name="timeHandler" type="Node" parent="." unique_id=675998990 groups=["save"]]
 script = ExtResource("66_gcaob")
 hour = 12
 
-[node name="timeLight" type="DirectionalLight2D" parent="timeHandler" unique_id=882174903]
+[node name="timeLight" type="DirectionalLight2D" parent="timeHandler" unique_id=882174903 groups=["save"]]
 color = Color(1, 1, 1, 0)
 blend_mode = 2
 script = ExtResource("66_aqa1v")
 lights_data = Array[ExtResource("67_8t8ul")]([SubResource("Resource_gia1l"), SubResource("Resource_aw8hi"), SubResource("Resource_cm7k6"), SubResource("Resource_csfbn"), SubResource("Resource_sj5fg"), SubResource("Resource_1xgkc"), SubResource("Resource_x1gp3"), SubResource("Resource_le2d2"), SubResource("Resource_gexia")])
 
-[node name="gameManager" type="Node" parent="." unique_id=808560330 node_paths=PackedStringArray("resume_menu")]
+[node name="gameManager" type="Node" parent="." unique_id=808560330 node_paths=PackedStringArray("resume_menu") groups=["save"]]
 script = ExtResource("73_mou0d")
 knowed_recipes = Array[String](["glass-water"])
 resume_menu = NodePath("../menu/resumeMenu")
