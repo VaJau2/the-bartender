@@ -488,9 +488,9 @@ nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_qawhh"), SubResour
 
 [node name="calendar" type="Control" parent="." unique_id=1065727105]
 anchors_preset = 0
-offset_left = 16.0
+offset_left = 104.0
 offset_top = 16.0
-offset_right = 48.0
+offset_right = 136.0
 offset_bottom = 48.0
 script = ExtResource("19_4ndcw")
 
@@ -536,9 +536,9 @@ code = "su"
 [node name="clock" type="Panel" parent="." unique_id=758516583]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 56.0
+offset_top = 16.0
 offset_right = 80.0
-offset_bottom = 88.0
+offset_bottom = 48.0
 script = ExtResource("13_11rc7")
 metadata/_edit_group_ = true
 
@@ -624,9 +624,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -72.0
-offset_top = 24.0
+offset_top = 56.0
 offset_right = 72.0
-offset_bottom = 56.0
+offset_bottom = 88.0
 grow_horizontal = 2
 script = ExtResource("27_nas6y")
 

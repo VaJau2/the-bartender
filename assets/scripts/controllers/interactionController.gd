@@ -138,17 +138,16 @@ func _rand_speed() -> float:
 
 
 func get_save_data() -> Dictionary:
-	var item_path: String = ""
-	if holding_item:
-		item_path = holding_item.get_path()
+	var item_id = null
+	
+	if holding_item: item_id = holding_item.save_id
 	
 	return {
-		"item_path": item_path
+		"item_id": item_id
 	}
 
 
 func load_save_data(data: Dictionary) -> void:
-	var item_path = data.item_path
-	if item_path == "": return
-	var item = get_node(item_path)
+	if data.item_id == null: return
+	var item = L.created_objects[data.item_id]
 	update_holding_item(item)

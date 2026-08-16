@@ -22,6 +22,7 @@ var bank_stand: StandBase
 
 func _ready() -> void:
 	interaction_controller.open_bank_menu.connect(_on_open_menu)
+	interaction_controller.close_menu.connect(_on_close_pressed)
 
 
 func _process(_delta: float) -> void:
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_close_pressed() -> void:
+	if !visible: return
 	visible = false
 	movement_controller.may_move = true
 	await get_tree().process_frame

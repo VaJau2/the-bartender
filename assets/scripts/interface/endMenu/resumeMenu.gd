@@ -28,6 +28,8 @@ const DELAY: float = 0.5
 @onready var anim: AnimationPlayer = get_node("anim")
 @onready var titles: Titles = get_node("titles")
 
+@onready var interaction_controller: InteractionController = G.player.interaction_controller
+
 var is_finances_calc_done: bool
 var is_stats_calc_done: bool
 var label_index: int
@@ -119,10 +121,19 @@ func _on_anim_end(anim_name: String) -> void:
 
 
 func _end() -> void:
+	M.remove_money(G.MONEY_GOAL)
+	M.money_force_updated.emit()
+	blurAnim.play("hide")
+	music_player.stop()
 	anim.animation_finished.disconnect(_on_anim_end)
 	skip.off()
 	get_tree().paused = false
-	S.goto_scene("Main")
+	interface.visible = true
+	pause_menu.may_pause = true
+	visible = false
+	interaction_controller.close_menu.emit()
+	G.game_manager.set_freeplay()
+
 
 func change_page() -> void:
 	finance_page.visible = !finance_page.visible

@@ -6,8 +6,9 @@ extends Panel
 
 func _ready() -> void:
 	visible = false
-	G.lang_changed.connect(_update_label)
 	L.game_saved.connect(_on_game_saved)
+	G.lang_changed.connect(_update_label)
+	_update_label()
 
 
 func _on_game_saved() -> void:

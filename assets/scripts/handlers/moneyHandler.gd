@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("ui_home"):
-		add_money(100)
+		add_money(1000)
 
 
 func add_money(value: int) -> void:

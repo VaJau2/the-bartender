@@ -14,7 +14,10 @@
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="10_4tsrb"]
 [ext_resource type="Script" uid="uid://dvs0d4ofhm5lm" path="res://assets/scripts/characters/npc/drunkHandler.gd" id="11_ch64r"]
 [ext_resource type="AudioStream" uid="uid://b4mjnhru82bog" path="res://assets/audio/drink.ogg" id="12_w0sbo"]
+[ext_resource type="AudioStream" uid="uid://btjbm21isjebg" path="res://assets/audio/eating/eating_1.ogg" id="13_6hlb3"]
+[ext_resource type="AudioStream" uid="uid://bfdm8ofydl575" path="res://assets/audio/eating/eating_2.ogg" id="14_0g6ig"]
 [ext_resource type="Script" uid="uid://duiutw1i5t8yo" path="res://assets/scripts/system/saveLoadSystem/playerSaveManager.gd" id="14_rfdru"]
+[ext_resource type="AudioStream" uid="uid://5u8q4068vvqy" path="res://assets/audio/eating/eating_3.ogg" id="15_u1jxi"]
 
 [sub_resource type="GDScript" id="GDScript_s7pd4"]
 script/source = "extends Sprite2D
@@ -30,7 +33,7 @@ func _on_update_using_storage(value: bool):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0sbo"]
-size = Vector2(19, 21)
+size = Vector2(20, 34)
 
 [node name="player" unique_id=248601070 instance=ExtResource("1_h3hc8")]
 script = ExtResource("2_ssmtf")
@@ -90,9 +93,11 @@ monitorable = false
 script = ExtResource("10_0xcfp")
 drunk_handler = NodePath("../drunkHandler")
 interaction_controller = NodePath("../interactionController")
+drinking_sound = ExtResource("12_w0sbo")
+eating_sounds = Array[AudioStream]([ExtResource("13_6hlb3"), ExtResource("14_0g6ig"), ExtResource("15_u1jxi")])
 
 [node name="shape" type="CollisionShape2D" parent="interactionArea" index="0" unique_id=1063432532]
-position = Vector2(-0.5, -9.5)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_w0sbo")
 
 [node name="interactionHandler" type="Node" parent="interactionArea" index="1" unique_id=555664130]
