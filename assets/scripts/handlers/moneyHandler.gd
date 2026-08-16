@@ -60,3 +60,4 @@ func load_save_data(data: Dictionary) -> void:
 	debt = data.debt
 	debt_days = data.debt_days
 	money_force_updated.emit()
+	debt_updated.emit()

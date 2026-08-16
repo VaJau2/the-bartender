@@ -42,7 +42,6 @@ func _on_show_item_hint(item: Item) -> void:
 
 
 func _on_show_hint_text(text: String) -> void:
-	if !movement_controller.may_move: return
 	name_label.text = text
 	_set_hint_visible()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bohrnxbwka51t"]
+[gd_scene format=3 uid="uid://bohrnxbwka51t"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_jgcyp"]
 [ext_resource type="Script" uid="uid://ovipc7k4mug7" path="res://assets/scripts/interface/shop/shopMenu.gd" id="2_rync5"]
@@ -25,14 +25,14 @@ node_path = NodePath("../empty")
 code = "storage.empty"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="shopMenu" type="Panel"]
+[node name="shopMenu" type="Panel" unique_id=966736620]
 offset_right = 384.0
 offset_bottom = 288.0
 theme = ExtResource("1_jgcyp")
 script = ExtResource("2_rync5")
 button_prefab = ExtResource("3_1tkwp")
 
-[node name="header" type="Label" parent="."]
+[node name="header" type="Label" parent="." unique_id=927479514]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -47,7 +47,7 @@ label_settings = ExtResource("4_ielyl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="empty" type="Label" parent="."]
+[node name="empty" type="Label" parent="." unique_id=640271745]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -64,7 +64,7 @@ text = "Empty
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="scroll" type="ScrollContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="." unique_id=493286650]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,11 +79,11 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="grid" type="GridContainer" parent="scroll"]
+[node name="grid" type="GridContainer" parent="scroll" unique_id=525295991]
 layout_mode = 2
 columns = 7
 
-[node name="close" type="Button" parent="."]
+[node name="close" type="Button" parent="." unique_id=377422763]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -95,7 +95,7 @@ offset_bottom = -12.0
 grow_vertical = 0
 text = "close"
 
-[node name="delivery" type="CheckBox" parent="."]
+[node name="delivery" type="CheckBox" parent="." unique_id=1613236323]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -110,7 +110,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "delivery (+10 bit)"
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=454642863]
 script = ExtResource("5_ielyl")
 nodes = Array[ExtResource("6_1pspb")]([SubResource("Resource_234wi"), SubResource("Resource_7xxgi"), SubResource("Resource_1tkwp")])
 
