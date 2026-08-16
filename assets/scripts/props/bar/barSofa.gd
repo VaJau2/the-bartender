@@ -35,3 +35,6 @@ func set_sleeping(value: bool):
 	G.player.movement_controller.may_move = !is_sleeping
 	G.player.movement_controller.load_state("sleep" if value else "walk")
 	Engine.time_scale = 20 if is_sleeping else 1
+	
+	L.may_save = !value
+	if !value: L.save_data()

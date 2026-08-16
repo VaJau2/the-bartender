@@ -23,3 +23,11 @@ func _ready() -> void:
 	player = get_node_or_null("/root/main/player")
 	time = get_node_or_null("/root/main/timeHandler")
 	game_manager = get_node_or_null("/root/main/gameManager")
+	load_os_lang()
+
+
+func load_os_lang() -> void:
+	var os_lang = OS.get_locale_language()
+	if os_lang == "ru": 
+		Loc.current_lang = Enums.Lang.ru
+		G.lang_changed.emit()

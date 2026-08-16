@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bghg0muxadbts"]
+[gd_scene format=3 uid="uid://bghg0muxadbts"]
 
 [ext_resource type="Script" uid="uid://bvbwr6fnfegst" path="res://assets/scripts/interface/recipes/recipesMenu.gd" id="2_0t0aj"]
 [ext_resource type="PackedScene" uid="uid://6ddnv5nfyid8" path="res://objects/interface/recipesMenu/recipeIcon.tscn" id="2_d61e2"]
@@ -9,7 +9,12 @@
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="5_vkfu8"]
 [ext_resource type="LabelSettings" uid="uid://kheimmpcibvt" path="res://assets/materials/regular_text_theme.tres" id="5_xjwmp"]
 [ext_resource type="Texture2D" uid="uid://c0csk28suino4" path="res://assets/sprites/items/coconut.png" id="6_vkfu8"]
+[ext_resource type="Theme" uid="uid://dj0p4qf74vctf" path="res://assets/materials/small_theme.tres" id="7_vkfu8"]
 [ext_resource type="Texture2D" uid="uid://drfdd2vbk7v2n" path="res://assets/sprites/items/sliced-coconut.png" id="7_xjwmp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xjwmp"]
+font_size = 8
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_bkyq0"]
 script = ExtResource("5_vkfu8")
@@ -23,13 +28,13 @@ node_path = NodePath("../header")
 code = "recipes.header"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="recipesMenu" type="Panel"]
+[node name="recipesMenu" type="Panel" unique_id=39654730]
 offset_right = 448.0
 offset_bottom = 320.0
 script = ExtResource("2_0t0aj")
 recipe_prefab = ExtResource("2_d61e2")
 
-[node name="header" type="Label" parent="."]
+[node name="header" type="Label" parent="." unique_id=2035687738]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -43,7 +48,7 @@ label_settings = ExtResource("3_gdhbi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="scroll" type="ScrollContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="." unique_id=1503819279]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,12 +61,12 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="vbox" type="GridContainer" parent="scroll"]
+[node name="vbox" type="GridContainer" parent="scroll" unique_id=660796757]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 10
 
-[node name="close" type="Button" parent="."]
+[node name="close" type="Button" parent="." unique_id=1859976648]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -73,23 +78,23 @@ offset_bottom = -12.0
 grow_vertical = 0
 text = "close"
 
-[node name="hint" type="Panel" parent="." groups=["item_hint"]]
+[node name="hint" type="Panel" parent="." unique_id=1003786298 groups=["item_hint"]]
 visible = false
 layout_mode = 0
-offset_right = 216.0
-offset_bottom = 72.0
+offset_right = 248.0
+offset_bottom = 104.0
 mouse_filter = 1
 script = ExtResource("4_gdhbi")
 metadata/_edit_group_ = true
 
-[node name="name" type="Label" parent="hint"]
+[node name="name" type="Label" parent="hint" unique_id=1544760781]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_right = -8.0
-offset_bottom = -48.0
+offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Разрезанный кокос"
@@ -97,50 +102,81 @@ label_settings = ExtResource("5_xjwmp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="item1" type="TextureRect" parent="hint"]
+[node name="item1" type="TextureRect" parent="hint" unique_id=347595171]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 56.0
-offset_bottom = 64.0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 72.0
 texture = ExtResource("5_ko32n")
 stretch_mode = 5
 
-[node name="+" type="Label" parent="hint"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 40.0
-offset_right = 80.0
-offset_bottom = 52.0
-text = "+"
+[node name="item1Name" type="Label" parent="hint" unique_id=147111]
+custom_minimum_size = Vector2(88, 27)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 72.0
+offset_right = 88.0
+grow_vertical = 2
+theme = ExtResource("7_vkfu8")
+text = "Предмет 1"
+label_settings = SubResource("LabelSettings_xjwmp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="item2" type="TextureRect" parent="hint"]
+[node name="+" type="Label" parent="hint" unique_id=1491618821]
 layout_mode = 0
 offset_left = 80.0
-offset_top = 24.0
-offset_right = 120.0
-offset_bottom = 64.0
+offset_top = 40.0
+offset_right = 96.0
+offset_bottom = 63.0
+text = "+"
+
+[node name="item2" type="TextureRect" parent="hint" unique_id=345018711]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 72.0
 texture = ExtResource("6_vkfu8")
 stretch_mode = 5
 
-[node name="=" type="Label" parent="hint"]
+[node name="item2Name" type="Label" parent="hint" unique_id=559459573]
+custom_minimum_size = Vector2(88, 27)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 176.0
+grow_vertical = 2
+theme = ExtResource("7_vkfu8")
+text = "Предмет 2"
+label_settings = SubResource("LabelSettings_xjwmp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="=" type="Label" parent="hint" unique_id=1698532889]
 layout_mode = 0
-offset_left = 136.0
+offset_left = 176.0
 offset_top = 40.0
-offset_right = 152.0
-offset_bottom = 52.0
+offset_right = 192.0
+offset_bottom = 63.0
 text = "="
 
-[node name="result" type="TextureRect" parent="hint"]
+[node name="result" type="TextureRect" parent="hint" unique_id=118117156]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 24.0
-offset_right = 200.0
-offset_bottom = 64.0
+offset_left = 200.0
+offset_top = 32.0
+offset_right = 240.0
+offset_bottom = 72.0
 texture = ExtResource("7_xjwmp")
 stretch_mode = 5
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=162411192]
 script = ExtResource("4_ko32n")
 nodes = Array[ExtResource("5_vkfu8")]([SubResource("Resource_bkyq0"), SubResource("Resource_lgo83")])
 

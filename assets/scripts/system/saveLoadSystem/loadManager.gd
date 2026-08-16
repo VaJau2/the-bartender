@@ -6,8 +6,12 @@ const FILE_PATH: String = "user://save_game.dat"
 
 var created_objects: Dictionary[int, Node]
 
+var may_save: bool = true
+
 var item_save_id: int = 0
 var file_exist: bool
+
+signal game_saved
 
 
 func _ready() -> void:
@@ -15,7 +19,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_save"):
+	if may_save && Input.is_action_just_pressed("ui_save"):
 		save_data()
 
 
@@ -53,7 +57,7 @@ func save_data() -> void:
 	file.close()
 	
 	file_exist = true
-	print("game saved")
+	game_saved.emit()
 
 
 func load_data() -> void:

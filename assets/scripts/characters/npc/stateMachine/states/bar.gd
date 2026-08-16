@@ -210,6 +210,5 @@ func load_save_data(data: Dictionary) -> void:
 	ordered_drink = data.ordered_drink
 	ordered_price = data.ordered_price
 	order_timer = data.order_timer
-	print(ordered_drink)
 	npc.dialogue_icons.show_item_icon(ordered_drink)
 	npc.dialogue_icons.set_transparency(order_timer / ORDER_WAITING_TIME)

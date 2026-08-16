@@ -3,7 +3,9 @@ extends Panel
 @onready var menu: RecipesMenu = get_node("../")
 @onready var header: Label = get_node("name")
 @onready var item1: TextureRect = get_node("item1")
+@onready var item1Name: Label = get_node("item1Name")
 @onready var item2: TextureRect = get_node("item2")
+@onready var item2Name: Label = get_node("item2Name")
 @onready var result: TextureRect = get_node("result")
 
 
@@ -37,6 +39,13 @@ func _show_hint(data: RecipeData) -> void:
 	
 	item2.texture = load(json_data[data.holding_item].texture)
 	result.texture = load(json_data[data.result].texture)
+	
+	if data.item:
+		item1Name.text = Loc.trans("items." + data.item + ".name")
+	else:
+		item1Name.text = ""
+	
+	item2Name.text = Loc.trans("items." + data.holding_item + ".name")
 	
 	set_process(true)
 

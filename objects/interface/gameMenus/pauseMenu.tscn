@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://m433kj61gret"]
+[gd_scene format=3 uid="uid://m433kj61gret"]
 
 [ext_resource type="Script" uid="uid://7gitqyjllng8" path="res://assets/scripts/interface/gameMenus/pauseMenu.gd" id="1_c11wu"]
 [ext_resource type="PackedScene" uid="uid://c3ybovnufvg4t" path="res://objects/interface/gameMenus/helpPanel.tscn" id="3_6t3y8"]
@@ -37,10 +37,10 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 [sub_resource type="Resource" id="Resource_su511"]
 script = ExtResource("5_wrthb")
 node_path = NodePath("../menu/Exit")
-code = "main_menu.exit"
+code = "main_menu.to_main_menu"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="pauseMenu" type="Control"]
+[node name="pauseMenu" type="Control" unique_id=878089783]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -52,7 +52,7 @@ mouse_filter = 1
 script = ExtResource("1_c11wu")
 metadata/_edit_lock_ = true
 
-[node name="menu" type="Panel" parent="."]
+[node name="menu" type="Panel" parent="." unique_id=1243033231]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -60,10 +60,10 @@ anchor_bottom = 0.5
 offset_left = 8.0
 offset_top = -196.0
 offset_right = 320.0
-offset_bottom = 100.0
+offset_bottom = 148.0
 grow_vertical = 2
 
-[node name="gameLabel" type="Label" parent="menu"]
+[node name="gameLabel" type="Label" parent="menu" unique_id=623138363]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -76,7 +76,7 @@ label_settings = SubResource("LabelSettings_c11wu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="divider" type="ColorRect" parent="menu"]
+[node name="divider" type="ColorRect" parent="menu" unique_id=1084946697]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -86,7 +86,7 @@ offset_right = -64.0
 offset_bottom = 72.0
 grow_horizontal = 2
 
-[node name="Continue" type="Button" parent="menu"]
+[node name="Continue" type="Button" parent="menu" unique_id=1895317574]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,14 +94,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -52.0
+offset_top = -76.0
 offset_right = 92.0
-offset_bottom = -21.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Continue"
 
-[node name="Settings" type="Button" parent="menu"]
+[node name="Settings" type="Button" parent="menu" unique_id=666545349]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,15 +109,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -4.0
+offset_top = 20.0
 offset_right = 92.0
-offset_bottom = 27.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings
 "
 
-[node name="Help" type="Button" parent="menu"]
+[node name="Help" type="Button" parent="menu" unique_id=1986034453]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,14 +125,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = 44.0
+offset_top = 68.0
 offset_right = 92.0
-offset_bottom = 75.0
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Help"
 
-[node name="Exit" type="Button" parent="menu"]
+[node name="Exit" type="Button" parent="menu" unique_id=1683111278]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -140,14 +140,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = 92.0
+offset_top = 116.0
 offset_right = 92.0
-offset_bottom = 123.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Exit"
+text = "To main menu"
 
-[node name="settingsPanel" parent="menu" instance=ExtResource("3_c11wu")]
+[node name="settingsPanel" parent="menu" unique_id=654626681 instance=ExtResource("3_c11wu")]
 visible = false
 layout_mode = 1
 offset_left = 16.0
@@ -155,7 +155,7 @@ offset_top = -68.0
 offset_right = 296.0
 offset_bottom = 104.0
 
-[node name="helpPanel" parent="menu" instance=ExtResource("3_6t3y8")]
+[node name="helpPanel" parent="menu" unique_id=267798867 instance=ExtResource("3_6t3y8")]
 visible = false
 layout_mode = 0
 offset_left = 328.0
@@ -163,7 +163,7 @@ offset_right = 712.0
 offset_bottom = 328.0
 metadata/_edit_group_ = true
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=767342861]
 script = ExtResource("4_6ob7q")
 nodes = Array[ExtResource("5_wrthb")]([SubResource("Resource_6t3y8"), SubResource("Resource_l5p4l"), SubResource("Resource_s0nid"), SubResource("Resource_og4by"), SubResource("Resource_su511")])
 

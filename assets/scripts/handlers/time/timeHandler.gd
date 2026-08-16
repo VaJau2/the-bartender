@@ -66,7 +66,6 @@ func get_save_data() -> Dictionary:
 
 
 func load_save_data(data: Dictionary) -> void:
-	print(data)
 	hour = data.hour
 	minute = data.minute
 	minute_delta = data.minute_delta

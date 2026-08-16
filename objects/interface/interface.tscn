@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cv8gqwgeywxfm" path="res://objects/interface/dayIcon.tscn" id="19_oc68s"]
 [ext_resource type="Texture2D" uid="uid://b6u70blr3nx0q" path="res://assets/sprites/items/cider.png" id="20_153si"]
 [ext_resource type="Script" uid="uid://d4iiiwm7dyu8k" path="res://assets/scripts/interface/recipeOpenedHint.gd" id="20_vdm2n"]
+[ext_resource type="Script" uid="uid://bfoal1si8i6ev" path="res://assets/scripts/interface/gameSavedLabel.gd" id="27_nas6y"]
 
 [sub_resource type="GDScript" id="GDScript_1mtbf"]
 script/source = "extends Label
@@ -616,6 +617,31 @@ nodes = Array[ExtResource("11_oxl46")]([SubResource("Resource_153si")])
 
 [node name="anim" type="AnimationPlayer" parent="recipeOpened" unique_id=487849352]
 libraries/ = SubResource("AnimationLibrary_4ndcw")
+
+[node name="gameSaved" type="Panel" parent="." unique_id=1330122751]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 24.0
+offset_right = 72.0
+offset_bottom = 56.0
+grow_horizontal = 2
+script = ExtResource("27_nas6y")
+
+[node name="label" type="Label" parent="gameSaved" unique_id=1518531668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game saved"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="timer" type="Timer" parent="gameSaved" unique_id=2094322765]
 
 [connection signal="pressed" from="recipesIcon" to="recipesIcon" method="_on_pressed"]
 [connection signal="pressed" from="bagIcon" to="bagIcon" method="_on_pressed"]

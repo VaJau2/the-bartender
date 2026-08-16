@@ -35,4 +35,5 @@ func _on_help_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	get_tree().paused = false
+	S.goto_scene("Main")

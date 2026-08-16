@@ -6,6 +6,7 @@
 		"continue": "Continue",
 		"settings": "Settings",
 		"help": "Help",
+		"to_main_menu": "To main menu",
 		"exit": "Exit game"
 	},
 	"settings": {
@@ -139,5 +140,6 @@
 	},
 	"plural": {
 		"bits": "bit|bits|bits"
-	}
+	},
+	"game_saved": "Game saved"
 }

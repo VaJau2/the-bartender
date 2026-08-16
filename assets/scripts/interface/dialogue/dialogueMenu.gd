@@ -4,6 +4,7 @@ class_name DialogueMenu
 
 const DEFAULT_TIMER: float = 0.03
 
+@onready var interaction_controller: InteractionController = G.player.interaction_controller
 @onready var movement_controller: MovementController = G.player.movement_controller
 @onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
@@ -43,6 +44,7 @@ func start_dialogue(npc: NPC, code: String) -> void:
 	dialogue_data = _get_dialogue_data(npc.code, code)
 	if dialogue_data.is_empty(): return
 	index = 0
+	interaction_controller.hide_item_hint.emit()
 	_show_node(dialogue_data[index])
 	pause_menu.may_pause = false
 	G.time.set_process(false)
