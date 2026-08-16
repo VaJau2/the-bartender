@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b18x8vlddqeud" path="res://assets/sprites/characters/pony_shadow.png" id="1_cfspk"]
 [ext_resource type="Texture2D" uid="uid://bcm8f8d4h1r6w" path="res://assets/sprites/characters/base.png" id="1_mapcr"]
 [ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="2_8wket"]
-[ext_resource type="Texture2D" uid="uid://d2p5abp4vaqvi" path="res://assets/sprites/characters/player_mouth.png" id="3_6ondm"]
+[ext_resource type="Texture2D" uid="uid://d2p5abp4vaqvi" path="res://assets/sprites/characters/player/player_mouth.png" id="3_6ondm"]
 [ext_resource type="Texture2D" uid="uid://digw164pwr3dv" path="res://assets/sprites/characters/items/bag.png" id="3_nrt7u"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_o4xot"]
 [ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="4_o4xot"]

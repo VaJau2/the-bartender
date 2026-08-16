@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://dd3mnq7v4cljx"]
 
 [ext_resource type="PackedScene" uid="uid://bbvon43a7hnst" path="res://objects/characters/character.tscn" id="1_h3hc8"]
-[ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player/player.png" id="2_ho5yc"]
+[ext_resource type="Texture2D" uid="uid://dln2duxc8wgyw" path="res://assets/sprites/characters/player.png" id="2_ho5yc"]
 [ext_resource type="Script" uid="uid://5bnrtyglk2lx" path="res://assets/scripts/characters/player.gd" id="2_ssmtf"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_ssmtf"]
-[ext_resource type="Script" uid="uid://dcjjpsjlchu1i" path="res://assets/scripts/characters/playerSpriteByNeed.gd" id="4_dbcui"]
-[ext_resource type="Texture2D" uid="uid://dvghrltcxin3v" path="res://assets/sprites/characters/player/player-serious.png" id="5_sln8r"]
 [ext_resource type="Script" uid="uid://ct52irg4tdev4" path="res://assets/scripts/handlers/storage/storageHandler.gd" id="6_g87t3"]
-[ext_resource type="Texture2D" uid="uid://dijscwnp680dg" path="res://assets/sprites/characters/player/player-tired.png" id="6_i1smo"]
 [ext_resource type="Script" uid="uid://dgrs1etu4tkry" path="res://assets/scripts/controllers/interactionController.gd" id="6_s7pd4"]
 [ext_resource type="AudioStream" uid="uid://cc7nxo1fbw1l3" path="res://assets/audio/ui_items_takeall.wav" id="7_g87t3"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="8_m8dop"]
@@ -46,13 +43,6 @@ script = ExtResource("2_ssmtf")
 [node name="sprite" parent="." index="2" unique_id=1649376875]
 texture = ExtResource("2_ho5yc")
 
-[node name="spriteByNeed" type="Node" parent="sprite" index="0" unique_id=1232355095 node_paths=PackedStringArray("need_controller")]
-script = ExtResource("4_dbcui")
-default_sprite = ExtResource("2_ho5yc")
-serious_sprite = ExtResource("5_sln8r")
-tired_sprite = ExtResource("6_i1smo")
-need_controller = NodePath("../../needsController")
-
 [node name="inputController" type="Node" parent="." index="4" unique_id=252494265 node_paths=PackedStringArray("movement_controller", "speed_by_need_logic")]
 script = ExtResource("3_ssmtf")
 movement_controller = NodePath("../movementController")
@@ -80,16 +70,12 @@ script = ExtResource("8_th6j0")
 [node name="bag" parent="." index="8" unique_id=995117982]
 script = SubResource("GDScript_s7pd4")
 
-[node name="walk" parent="movementController" parent_id_path=PackedInt32Array(149718637) index="0" unique_id=1444546825]
-speed = 150
+[node name="movementController" parent="." index="10" unique_id=149718637 node_paths=PackedStringArray("custom_speed_logic")]
+custom_speed_logic = NodePath("../speedByNeedLogic")
 
-[node name="run" parent="movementController" parent_id_path=PackedInt32Array(149718637) index="4" unique_id=1870285440]
-speed = 250
-
-[node name="speedByNeedLogic" type="Node" parent="." index="11" unique_id=2105970708 node_paths=PackedStringArray("needs_controller", "movement_controller")]
+[node name="speedByNeedLogic" type="Node" parent="." index="11" unique_id=2105970708 node_paths=PackedStringArray("needs_controller")]
 script = ExtResource("9_u1jxi")
 needs_controller = NodePath("../needsController")
-movement_controller = NodePath("../movementController")
 
 [node name="lighter" type="Node2D" parent="." index="13" unique_id=1608569908]
 
@@ -142,7 +128,5 @@ default_material = 1
 [node name="saveManager" type="Node" parent="." index="17" unique_id=703317182 groups=["save"]]
 script = ExtResource("14_rfdru")
 
-[node name="needsController" type="Node" parent="." index="18" unique_id=843634848 node_paths=PackedStringArray("movement_controller", "bag") groups=["save"]]
+[node name="needsController" type="Node" parent="." index="18" unique_id=843634848 groups=["save"]]
 script = ExtResource("19_0g6ig")
-movement_controller = NodePath("../movementController")
-bag = NodePath("../storageHandler")

@@ -34,7 +34,8 @@ func on_mouse_exited() -> void:
 
 
 func interact() -> void:
-	if !has_item or interaction_controller.holding_item != null: return
+	if !has_item: return
+	if interaction_controller.holding_item != null && !G.player.using_storage: return
 	
 	var item = ItemSpawner.spawn_item(code, global_position, get_parent())
 	G.statistics.ingredient_stolen(item.code)

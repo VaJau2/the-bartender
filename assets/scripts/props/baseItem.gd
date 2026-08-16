@@ -18,6 +18,7 @@ var limit: int
 var weight: float
 var needs_fridge: bool
 var booze_time: float
+var need_values: Dictionary[NeedsController.NeedEnum, int]
 
 signal taken(item: Item)
 
@@ -38,9 +39,18 @@ func _load_json_data() -> void:
 		needs_fridge = item_data.need_fridge
 	if item_data.has("booze_time"):
 		booze_time = item_data.booze_time
+	if item_data.has("needs"):
+		_load_needs(item_data.needs)
 	type = Enums.ItemType.get(item_data.type)
 	_load_icon()
 
+
+func _load_needs(needs_data: Dictionary) -> void:
+	for need_str in needs_data.keys():
+		#var need_enum = NeedsController.NeedEnum.keys()[NeedsController.NeedEnum.get(need_str)]
+		var need_delta = needs_data[need_str]
+		need_values[NeedsController.NeedEnum.get(need_str)] = int(need_delta)
+	
 
 func _load_icon() -> void:
 	var texture_path = item_data.texture
@@ -62,11 +72,12 @@ func disable() -> void:
 
 
 func on_mouse_entered() -> void:
-	if interaction_controller.holding_item != null: 
-		if _may_show_craft_hint(interaction_controller.holding_item):
-			interaction_controller.show_craft_hint.emit()
-	else:
+	if interaction_controller.holding_item != null || G.player.using_storage: 
 		interaction_controller.show_item_hint.emit(self)
+		
+		if interaction_controller.holding_item != null \
+		  && _may_show_craft_hint(interaction_controller.holding_item):
+			interaction_controller.show_craft_hint.emit()
 
 
 func on_mouse_exited() -> void:

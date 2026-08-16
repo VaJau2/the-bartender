@@ -4,11 +4,18 @@
 		"controls": {
 			"title": "Controls",
 			"text": "WASD or arrows — to move
+Mouse Wheel — to change the camera zoom
 LMB — Interact with items and tools by clicking at them
 RMB - Quickstart for juicer and coffee machine
 R — to open recipes menu
 Tab — to open bag (you need to buy it)
-G — to drop holding item"
+G — to drop holding item
+F5 — to save the game"
+		},
+		"hunger": {
+			"title": "Needs",
+			"text": "Hunger, thirst and fatigue affect the speed of movement and the ability to run.
+To feed the pony, take something edible and press LMB on her with it."
 		},
 		"craft": {
 			"title": "Drinks crafting",
