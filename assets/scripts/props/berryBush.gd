@@ -49,13 +49,25 @@ func _on_item_taken(item: Item) -> void:
 
 
 func get_save_data() -> Dictionary:
+	var spawned_item_ids: Array = []
+	
+	for item: Item in spawned_items:
+		spawned_item_ids.append(item.save_id)
+	
 	return {
 		"is_processing": var_to_str(is_processing()),
-		"spawn_timer": spawn_timer
+		"spawn_timer": spawn_timer,
+		"spawned_items": spawned_item_ids
 	}
 
 
 func load_save_data(data: Dictionary) -> void:
 	spawn_timer = data.spawn_timer
+	
 	if str_to_var(data.is_processing):
 		set_process(true)
+	
+	for item_id in data.spawned_items:
+		var item = L.created_objects[item_id]
+		item.taken.connect(_on_item_taken)
+		spawned_items.append(item)

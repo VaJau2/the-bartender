@@ -20,7 +20,7 @@ func interact() -> void:
 	
 	var item = interaction_controller.holding_item
 	
-	if item.type == Enums.ItemType.glass:
+	if item.type == Enums.ItemType.glass || item.category == "liquid":
 		audi.stream = drinking_sound
 	else:
 		audi.stream = eating_sounds.pick_random()

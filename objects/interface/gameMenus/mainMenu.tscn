@@ -210,6 +210,24 @@ text = "by VaJa72 & McFord"
 label_settings = ExtResource("7_gg33v")
 vertical_alignment = 1
 
+[node name="versionLabel" type="Label" parent="." unique_id=1330794235]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v 1.1"
+label_settings = ExtResource("7_gg33v")
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [connection signal="pressed" from="menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="menu/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_settings_pressed"]

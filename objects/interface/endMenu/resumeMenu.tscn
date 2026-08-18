@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dra84nwloiwru"]
+[gd_scene format=3 uid="uid://dra84nwloiwru"]
 
 [ext_resource type="Theme" uid="uid://bq4xgelmdppae" path="res://assets/materials/default_theme.tres" id="1_wsvqf"]
 [ext_resource type="Script" uid="uid://ccvy1pb1xvnld" path="res://assets/scripts/interface/endMenu/resumeMenu.gd" id="2_ppf3d"]
@@ -450,7 +450,7 @@ _data = {
 &"show-titles": SubResource("Animation_fshaa")
 }
 
-[node name="resumeMenu" type="Control" node_paths=PackedStringArray("finances_labels", "statistics_labels", "paid_stamp", "drinks_table", "finance_page", "continue_button", "resume_button")]
+[node name="resumeMenu" type="Control" unique_id=1550283613 node_paths=PackedStringArray("finances_labels", "statistics_labels", "paid_stamp", "drinks_table", "finance_page", "continue_button", "resume_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -473,7 +473,7 @@ lose_music = ExtResource("4_mshqk")
 stamp_sound = ExtResource("12_wsvqf")
 ticks_sounds = Array[AudioStream]([ExtResource("6_at28u"), ExtResource("7_bd3no")])
 
-[node name="continueButton" type="Button" parent="."]
+[node name="continueButton" type="Button" parent="." unique_id=2070522]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -488,7 +488,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Continue"
 
-[node name="resumeButton" type="Button" parent="."]
+[node name="resumeButton" type="Button" parent="." unique_id=202541363]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -503,7 +503,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Statistics"
 
-[node name="tabletBackground" type="TextureRect" parent="."]
+[node name="tabletBackground" type="TextureRect" parent="." unique_id=924102619]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -518,7 +518,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_m7wrt")
 
-[node name="statisticsHeader" type="Label" parent="."]
+[node name="statisticsHeader" type="Label" parent="." unique_id=1141567183]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -536,7 +536,7 @@ theme_override_font_sizes/font_size = 28
 text = "Statistics"
 horizontal_alignment = 1
 
-[node name="divider" type="ColorRect" parent="."]
+[node name="divider" type="ColorRect" parent="." unique_id=243153830]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -552,7 +552,7 @@ grow_vertical = 2
 pivot_offset = Vector2(140, 2)
 color = Color(0, 0, 0, 1)
 
-[node name="scroll" type="ScrollContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="." unique_id=1936691285]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -567,15 +567,15 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="Statistics" type="VBoxContainer" parent="scroll"]
+[node name="Statistics" type="VBoxContainer" parent="scroll" unique_id=497148765]
 custom_minimum_size = Vector2(309, 0)
 layout_mode = 2
 
-[node name="totalClientsServed" type="Control" parent="scroll/Statistics"]
+[node name="totalClientsServed" type="Control" parent="scroll/Statistics" unique_id=130535011]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/totalClientsServed"]
+[node name="label" type="Label" parent="scroll/Statistics/totalClientsServed" unique_id=192534628]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -588,7 +588,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Total clients served:"
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="scroll/Statistics/totalClientsServed"]
+[node name="count" type="Label" parent="scroll/Statistics/totalClientsServed" unique_id=1513479019]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -606,11 +606,11 @@ script = ExtResource("4_cpupi")
 code = "clients_served_per_day"
 method = 1
 
-[node name="maxClientsPerDay" type="Control" parent="scroll/Statistics"]
+[node name="maxClientsPerDay" type="Control" parent="scroll/Statistics" unique_id=643988773]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
+[node name="label" type="Label" parent="scroll/Statistics/maxClientsPerDay" unique_id=454063599]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -623,7 +623,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Max clients served per day:"
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="scroll/Statistics/maxClientsPerDay"]
+[node name="count" type="Label" parent="scroll/Statistics/maxClientsPerDay" unique_id=611132394]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -641,11 +641,11 @@ script = ExtResource("4_cpupi")
 code = "clients_served_per_day"
 method = 3
 
-[node name="avgClientsPerDay" type="Control" parent="scroll/Statistics"]
+[node name="avgClientsPerDay" type="Control" parent="scroll/Statistics" unique_id=40615922]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
+[node name="label" type="Label" parent="scroll/Statistics/avgClientsPerDay" unique_id=1499320134]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -658,7 +658,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Average clients served per day:"
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="scroll/Statistics/avgClientsPerDay"]
+[node name="count" type="Label" parent="scroll/Statistics/avgClientsPerDay" unique_id=1737855798]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -676,11 +676,11 @@ script = ExtResource("4_cpupi")
 code = "clients_served_per_day"
 method = 2
 
-[node name="avgOrderTime" type="Control" parent="scroll/Statistics"]
+[node name="avgOrderTime" type="Control" parent="scroll/Statistics" unique_id=1482444053]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/avgOrderTime"]
+[node name="label" type="Label" parent="scroll/Statistics/avgOrderTime" unique_id=1831209265]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -693,7 +693,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Average order fulfillment time:"
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="scroll/Statistics/avgOrderTime"]
+[node name="count" type="Label" parent="scroll/Statistics/avgOrderTime" unique_id=1665209197]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -712,11 +712,11 @@ code = "avg_order_fulfillment_time"
 method = 2
 unit = 3
 
-[node name="mostSoldDrink" type="Control" parent="scroll/Statistics"]
+[node name="mostSoldDrink" type="Control" parent="scroll/Statistics" unique_id=1364297736]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+[node name="label" type="Label" parent="scroll/Statistics/mostSoldDrink" unique_id=1646584906]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -729,7 +729,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Most sold drink:"
 vertical_alignment = 1
 
-[node name="name" type="Label" parent="scroll/Statistics/mostSoldDrink"]
+[node name="name" type="Label" parent="scroll/Statistics/mostSoldDrink" unique_id=571354805]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -744,11 +744,11 @@ script = ExtResource("4_cpupi")
 method = 4
 unit = 4
 
-[node name="mostProfitDrink" type="Control" parent="scroll/Statistics"]
+[node name="mostProfitDrink" type="Control" parent="scroll/Statistics" unique_id=1880720668]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/mostProfitDrink"]
+[node name="label" type="Label" parent="scroll/Statistics/mostProfitDrink" unique_id=874945940]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -761,7 +761,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Most profit drink:"
 vertical_alignment = 1
 
-[node name="name" type="Label" parent="scroll/Statistics/mostProfitDrink"]
+[node name="name" type="Label" parent="scroll/Statistics/mostProfitDrink" unique_id=262317713]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -776,14 +776,14 @@ script = ExtResource("4_cpupi")
 method = 5
 unit = 4
 
-[node name="space" type="Label" parent="scroll/Statistics"]
+[node name="space" type="Label" parent="scroll/Statistics" unique_id=640694716]
 layout_mode = 2
 
-[node name="table" type="Control" parent="scroll/Statistics"]
+[node name="table" type="Control" parent="scroll/Statistics" unique_id=49394835]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="bought" type="Label" parent="scroll/Statistics/table"]
+[node name="bought" type="Label" parent="scroll/Statistics/table" unique_id=584573234]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -799,7 +799,7 @@ text = "bought"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="stolen" type="Label" parent="scroll/Statistics/table"]
+[node name="stolen" type="Label" parent="scroll/Statistics/table" unique_id=221414771]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -813,7 +813,7 @@ text = "stolen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="line" type="ColorRect" parent="scroll/Statistics/table"]
+[node name="line" type="ColorRect" parent="scroll/Statistics/table" unique_id=375457792]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -828,7 +828,7 @@ grow_vertical = 2
 pivot_offset = Vector2(0, 2)
 color = Color(0.898039, 0.109804, 0.109804, 1)
 
-[node name="collected" type="Label" parent="scroll/Statistics/table"]
+[node name="collected" type="Label" parent="scroll/Statistics/table" unique_id=1004695442]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -845,11 +845,11 @@ text = "collected"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="fruits" type="Control" parent="scroll/Statistics"]
+[node name="fruits" type="Control" parent="scroll/Statistics" unique_id=218141838]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/fruits"]
+[node name="label" type="Label" parent="scroll/Statistics/fruits" unique_id=687915989]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -863,7 +863,7 @@ text = "Fruits:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="boughtCount" type="Label" parent="scroll/Statistics/fruits"]
+[node name="boughtCount" type="Label" parent="scroll/Statistics/fruits" unique_id=1177694972]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -880,7 +880,7 @@ script = ExtResource("4_cpupi")
 code = "fruits_bought"
 unit = 2
 
-[node name="stolenCount" type="Label" parent="scroll/Statistics/fruits"]
+[node name="stolenCount" type="Label" parent="scroll/Statistics/fruits" unique_id=2112359883]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -897,11 +897,11 @@ script = ExtResource("4_cpupi")
 code = "fruits_stolen"
 unit = 2
 
-[node name="berries" type="Control" parent="scroll/Statistics"]
+[node name="berries" type="Control" parent="scroll/Statistics" unique_id=1526630032]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/berries"]
+[node name="label" type="Label" parent="scroll/Statistics/berries" unique_id=279756220]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -915,7 +915,7 @@ text = "Berries:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="boughtCount" type="Label" parent="scroll/Statistics/berries"]
+[node name="boughtCount" type="Label" parent="scroll/Statistics/berries" unique_id=1539949918]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -932,7 +932,7 @@ script = ExtResource("4_cpupi")
 code = "berries_bought"
 unit = 2
 
-[node name="stolenCount" type="Label" parent="scroll/Statistics/berries"]
+[node name="stolenCount" type="Label" parent="scroll/Statistics/berries" unique_id=1446489074]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -949,11 +949,11 @@ script = ExtResource("4_cpupi")
 code = "berries_stolen"
 unit = 2
 
-[node name="vegetables" type="Control" parent="scroll/Statistics"]
+[node name="vegetables" type="Control" parent="scroll/Statistics" unique_id=1732148699]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="scroll/Statistics/vegetables"]
+[node name="label" type="Label" parent="scroll/Statistics/vegetables" unique_id=1383182291]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -967,7 +967,7 @@ text = "Vegetables:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="boughtCount" type="Label" parent="scroll/Statistics/vegetables"]
+[node name="boughtCount" type="Label" parent="scroll/Statistics/vegetables" unique_id=848225120]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -984,7 +984,7 @@ script = ExtResource("4_cpupi")
 code = "vegetables_bought"
 unit = 2
 
-[node name="stolenCount" type="Label" parent="scroll/Statistics/vegetables"]
+[node name="stolenCount" type="Label" parent="scroll/Statistics/vegetables" unique_id=1724440619]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1001,11 +1001,11 @@ script = ExtResource("4_cpupi")
 code = "vegetables_stolen"
 unit = 2
 
-[node name="DrinksTable" type="VBoxContainer" parent="scroll/Statistics"]
+[node name="DrinksTable" type="VBoxContainer" parent="scroll/Statistics" unique_id=48873363]
 layout_mode = 2
 script = ExtResource("5_tempj")
 
-[node name="title" type="Label" parent="scroll/Statistics/DrinksTable"]
+[node name="title" type="Label" parent="scroll/Statistics/DrinksTable" unique_id=49928274]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "
@@ -1015,11 +1015,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="headers" type="Control" parent="scroll/Statistics/DrinksTable"]
+[node name="headers" type="Control" parent="scroll/Statistics/DrinksTable" unique_id=1688192155]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="nameLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+[node name="nameLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers" unique_id=825573869]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1033,7 +1033,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name"
 vertical_alignment = 1
 
-[node name="soldLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+[node name="soldLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers" unique_id=1908571804]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1048,7 +1048,7 @@ text = "Sold"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProfitLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers"]
+[node name="ProfitLabel" type="Label" parent="scroll/Statistics/DrinksTable/headers" unique_id=1062648248]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1063,7 +1063,7 @@ text = "Profit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FinancePage" type="TextureRect" parent="."]
+[node name="FinancePage" type="TextureRect" parent="." unique_id=850052437]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1078,7 +1078,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_7x0ta")
 
-[node name="financeHeader" type="Label" parent="FinancePage"]
+[node name="financeHeader" type="Label" parent="FinancePage" unique_id=519488255]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1096,7 +1096,7 @@ theme_override_font_sizes/font_size = 28
 text = "Financial Results"
 horizontal_alignment = 1
 
-[node name="divider" type="ColorRect" parent="FinancePage"]
+[node name="divider" type="ColorRect" parent="FinancePage" unique_id=1681063962]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1112,7 +1112,7 @@ grow_vertical = 2
 pivot_offset = Vector2(140, 2)
 color = Color(0, 0, 0, 1)
 
-[node name="Finanсe" type="VBoxContainer" parent="FinancePage"]
+[node name="Finanсe" type="VBoxContainer" parent="FinancePage" unique_id=1110938512]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1126,11 +1126,11 @@ offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="totalEarned" type="Control" parent="FinancePage/Finanсe"]
+[node name="totalEarned" type="Control" parent="FinancePage/Finanсe" unique_id=554163560]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/totalEarned"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/totalEarned" unique_id=815051273]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1145,7 +1145,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/totalEarned"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/totalEarned" unique_id=763473431]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.812
@@ -1162,11 +1162,11 @@ code = "profit_per_day"
 method = 1
 unit = 1
 
-[node name="juicesSold" type="Control" parent="FinancePage/Finanсe"]
+[node name="juicesSold" type="Control" parent="FinancePage/Finanсe" unique_id=242822328]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/juicesSold"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/juicesSold" unique_id=1776104338]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1180,7 +1180,7 @@ text = "Juices sold:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/juicesSold"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/juicesSold" unique_id=1089940879]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.812
@@ -1196,11 +1196,11 @@ script = ExtResource("4_cpupi")
 code = "juices_sold"
 unit = 2
 
-[node name="coffeeSold" type="Control" parent="FinancePage/Finanсe"]
+[node name="coffeeSold" type="Control" parent="FinancePage/Finanсe" unique_id=1189735193]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/coffeeSold" unique_id=1604467379]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1214,7 +1214,7 @@ text = "Coffee sold:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/coffeeSold"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/coffeeSold" unique_id=849521004]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.05
@@ -1232,11 +1232,11 @@ script = ExtResource("4_cpupi")
 code = "coffee_sold"
 unit = 2
 
-[node name="alcoholSold" type="Control" parent="FinancePage/Finanсe"]
+[node name="alcoholSold" type="Control" parent="FinancePage/Finanсe" unique_id=442011920]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/alcoholSold" unique_id=431444488]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1250,7 +1250,7 @@ text = "Alcohol sold:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/alcoholSold"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/alcoholSold" unique_id=407368222]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.812
@@ -1266,11 +1266,11 @@ script = ExtResource("4_cpupi")
 code = "alcohol_sold"
 unit = 2
 
-[node name="otherSold" type="Control" parent="FinancePage/Finanсe"]
+[node name="otherSold" type="Control" parent="FinancePage/Finanсe" unique_id=968495750]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/otherSold"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/otherSold" unique_id=669307564]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1284,7 +1284,7 @@ text = "Other sold:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/otherSold"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/otherSold" unique_id=505279304]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.812
@@ -1300,11 +1300,11 @@ script = ExtResource("4_cpupi")
 code = "other_sold"
 unit = 2
 
-[node name="averageProfit" type="Control" parent="FinancePage/Finanсe"]
+[node name="averageProfit" type="Control" parent="FinancePage/Finanсe" unique_id=1139456231]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/averageProfit"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/averageProfit" unique_id=1061663682]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1318,7 +1318,7 @@ text = "Average earn per day:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/averageProfit"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/averageProfit" unique_id=1207060908]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1335,14 +1335,14 @@ code = "profit_per_day"
 method = 2
 unit = 1
 
-[node name="Control" type="Label" parent="FinancePage/Finanсe"]
+[node name="Control" type="Label" parent="FinancePage/Finanсe" unique_id=1574372639]
 layout_mode = 2
 
-[node name="totalSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="totalSpent" type="Control" parent="FinancePage/Finanсe" unique_id=1999043883]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/totalSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/totalSpent" unique_id=1938911855]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1357,7 +1357,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/totalSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/totalSpent" unique_id=480474686]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1374,11 +1374,11 @@ code = "spent_per_day"
 method = 1
 unit = 1
 
-[node name="ingredietsSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="ingredietsSpent" type="Control" parent="FinancePage/Finanсe" unique_id=801732350]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/ingredietsSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/ingredietsSpent" unique_id=196067020]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1392,7 +1392,7 @@ text = "Ingredients:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/ingredietsSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/ingredietsSpent" unique_id=1585671778]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1408,11 +1408,11 @@ script = ExtResource("4_cpupi")
 code = "ingredients_spent"
 unit = 1
 
-[node name="deliveriesSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="deliveriesSpent" type="Control" parent="FinancePage/Finanсe" unique_id=1038294689]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/deliveriesSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/deliveriesSpent" unique_id=252590481]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1426,7 +1426,7 @@ text = "Deliveries:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/deliveriesSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/deliveriesSpent" unique_id=537395384]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1442,11 +1442,11 @@ script = ExtResource("4_cpupi")
 code = "deliveries_spent"
 unit = 1
 
-[node name="toolsAndFurnsSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="toolsAndFurnsSpent" type="Control" parent="FinancePage/Finanсe" unique_id=1377083466]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent" unique_id=1893829991]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1460,7 +1460,7 @@ text = "Tools & Recepies:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/toolsAndFurnsSpent" unique_id=1998206237]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1476,11 +1476,11 @@ script = ExtResource("4_cpupi")
 code = "tools_and_furns_spent"
 unit = 1
 
-[node name="recipesSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="recipesSpent" type="Control" parent="FinancePage/Finanсe" unique_id=1771801743]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/recipesSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/recipesSpent" unique_id=442279834]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1494,7 +1494,7 @@ text = "Furns:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/recipesSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/recipesSpent" unique_id=1201073587]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1510,11 +1510,11 @@ script = ExtResource("4_cpupi")
 code = "recipes_spent"
 unit = 1
 
-[node name="averageSpent" type="Control" parent="FinancePage/Finanсe"]
+[node name="averageSpent" type="Control" parent="FinancePage/Finanсe" unique_id=1248043506]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="label" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+[node name="label" type="Label" parent="FinancePage/Finanсe/averageSpent" unique_id=1496464044]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1528,7 +1528,7 @@ text = "Average spent per day:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="count" type="Label" parent="FinancePage/Finanсe/averageSpent"]
+[node name="count" type="Label" parent="FinancePage/Finanсe/averageSpent" unique_id=2006375880]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1545,7 +1545,7 @@ code = "spent_per_day"
 method = 2
 unit = 1
 
-[node name="Loan" type="Control" parent="FinancePage"]
+[node name="Loan" type="Control" parent="FinancePage" unique_id=414480699]
 custom_minimum_size = Vector2(0, 20)
 anchors_preset = 0
 offset_left = -58.0
@@ -1553,7 +1553,7 @@ offset_top = 442.0
 offset_right = 454.0
 offset_bottom = 462.0
 
-[node name="label" type="Label" parent="FinancePage/Loan"]
+[node name="label" type="Label" parent="FinancePage/Loan" unique_id=148357830]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1568,7 +1568,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
 
-[node name="stamp" type="TextureRect" parent="FinancePage/Loan"]
+[node name="stamp" type="TextureRect" parent="FinancePage/Loan" unique_id=1289746565]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1584,7 +1584,7 @@ script = ExtResource("8_bd3no")
 paid_stamp = ExtResource("9_o3uty")
 unpaid_stamp = ExtResource("7_at28u")
 
-[node name="paper_holder" type="TextureRect" parent="."]
+[node name="paper_holder" type="TextureRect" parent="." unique_id=353211213]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1601,7 +1601,7 @@ mouse_filter = 2
 texture = ExtResource("10_sh44t")
 metadata/_edit_lock_ = true
 
-[node name="titles" type="RichTextLabel" parent="."]
+[node name="titles" type="RichTextLabel" parent="." unique_id=336534983]
 process_mode = 3
 layout_mode = 1
 anchors_preset = -1
@@ -1714,6 +1714,9 @@ scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 script = ExtResource("16_oijhr")
+testers = "StaSyan
+McFord
+Матушка Бо"
 music = "Let's Twist Again
 Chubby Checker
 [font_size=12]ABKCO Music & Records, Inc.[/font_size]
@@ -1766,7 +1769,7 @@ Sea Of Love
 The Twilights
 [font_size=12]Fort Knox Music Inc.[/font_size]"
 
-[node name="black" type="ColorRect" parent="."]
+[node name="black" type="ColorRect" parent="." unique_id=85015577]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 15
@@ -1778,19 +1781,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="music" type="AudioStreamPlayer" parent="."]
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1250960069]
 
-[node name="sound" type="AudioStreamPlayer" parent="."]
+[node name="sound" type="AudioStreamPlayer" parent="." unique_id=290990050]
 
-[node name="timeScaleReturn" type="Node" parent="."]
+[node name="timeScaleReturn" type="Node" parent="." unique_id=2023747653]
 script = SubResource("GDScript_pnk8a")
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=1230322789]
 script = ExtResource("13_i11jm")
 nodes = Array[ExtResource("14_sbs1r")]([SubResource("Resource_tgfro"), SubResource("Resource_svj81"), SubResource("Resource_7kxht"), SubResource("Resource_sv55w"), SubResource("Resource_mbcvx"), SubResource("Resource_a4oae"), SubResource("Resource_qi1iy"), SubResource("Resource_ukgp0"), SubResource("Resource_tqmt7"), SubResource("Resource_17uhj"), SubResource("Resource_ibus1"), SubResource("Resource_wc5pl"), SubResource("Resource_83prw"), SubResource("Resource_npi8v"), SubResource("Resource_re1lo"), SubResource("Resource_upxml"), SubResource("Resource_8wsly"), SubResource("Resource_s6aau"), SubResource("Resource_qnits"), SubResource("Resource_qr0lv"), SubResource("Resource_ju3qx"), SubResource("Resource_uttjn"), SubResource("Resource_tkkke"), SubResource("Resource_rb0l4"), SubResource("Resource_6yuqr"), SubResource("Resource_hitgy"), SubResource("Resource_x4psh"), SubResource("Resource_raq4n"), SubResource("Resource_05bw0"), SubResource("Resource_wsvqf"), SubResource("Resource_ppf3d"), SubResource("Resource_m7wrt")])
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="." unique_id=961150222]
 process_mode = 3
-libraries = {
-&"": SubResource("AnimationLibrary_fcx8a")
-}
+libraries/ = SubResource("AnimationLibrary_fcx8a")

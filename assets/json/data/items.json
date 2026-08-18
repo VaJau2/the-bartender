@@ -667,6 +667,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/beer-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 200,
+		},
+		"booze_time": 25,
 		"limit": 4,
 		"need_fridge": 1
 	},
@@ -675,6 +679,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/cola-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 500,
+			"fatigue": 100,
+		},
 		"limit": 3,
 		"need_fridge": 1
 	},
@@ -683,6 +691,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/cider-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 300,
+		},
+		"booze_time": 20,
 		"limit": 4,
 		"need_fridge": 1
 	},
@@ -691,6 +703,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/vodka-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 200,
+		},
+		"booze_time": 40,
 		"limit": 6,
 		"need_fridge": 1
 	},
@@ -699,6 +715,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/whiskey-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 250,
+		},
+		"booze_time": 35,
 		"limit": 4,
 		"need_fridge": 1
 	},
@@ -707,6 +727,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/wine-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 100,
+		},
+		"booze_time": 20,
 		"limit": 5,
 		"need_fridge": 1
 	},
@@ -715,6 +739,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/tequila-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 100,
+		},
+		"booze_time": 45,
 		"limit": 7,
 		"need_fridge": 1
 	},
@@ -723,6 +751,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/rum-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 250,
+		},
+		"booze_time": 35,
 		"limit": 5,
 		"need_fridge": 1
 	},
@@ -731,6 +763,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/absinthe-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 300,
+		},
+		"booze_time": 35,
 		"limit": 6,
 		"need_fridge": 1
 	},
@@ -739,6 +775,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/gin-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 200,
+		},
+		"booze_time": 39,
 		"limit": 4,
 		"need_fridge": 1
 	}

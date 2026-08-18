@@ -11,4 +11,5 @@ func _on_saved() -> void:
 
 
 func _on_timeout() -> void:
-	L.save_data()
+	if L.may_save:
+		L.save_data()

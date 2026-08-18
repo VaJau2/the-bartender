@@ -26,13 +26,12 @@ func _on_stage_updated(need: NeedsController.NeedEnum, stage: NeedsController.Ne
 	
 	if is_tired: return
 	
-	if stage == NeedsController.NeedStageEnum.yellow:
+	if [NeedsController.NeedStageEnum.yellow, NeedsController.NeedStageEnum.red].has(stage):
 		sprite.texture = serious_sprite
 		return
 	
-	
 	for temp_stage in need_controller.need_stages.values():
-		if temp_stage == NeedsController.NeedStageEnum.yellow:
+		if [NeedsController.NeedStageEnum.yellow, NeedsController.NeedStageEnum.red].has(temp_stage):
 			return
 	
 	sprite.texture = default_sprite

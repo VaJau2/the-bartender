@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 
 
 func start_dialogue(npc: NPC, code: String) -> void:
+	L.may_save = false
 	temp_npc = npc
 	temp_npc.state_machine.set_state("talk")
 	dialogue_data = _get_dialogue_data(npc.code, code)
@@ -53,6 +54,7 @@ func start_dialogue(npc: NPC, code: String) -> void:
 
 
 func finish_dialogue() -> void:
+	L.may_save = true
 	temp_npc.state_machine.set_state("idle")
 	G.time.set_process(true)
 	pause_menu.may_pause = true
