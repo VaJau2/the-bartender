@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://b0t4cwyeyv8n7"]
+[gd_resource type="TileSet" format=3 uid="uid://b0t4cwyeyv8n7"]
 
 [ext_resource type="Texture2D" uid="uid://b1h5v7gsxfpft" path="res://assets/sprites/tiles/ocean-autotiles-anim.png" id="1_3ag47"]
 [ext_resource type="Texture2D" uid="uid://cl0bk1k5eg8aa" path="res://assets/sprites/tiles/calm-water-autotiles-anim.png" id="2_an34n"]

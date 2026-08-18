@@ -106,20 +106,27 @@ func interact_alt(item) -> void:
 
 
 func try_get_item(item: Item) -> bool:
-	if G.player.using_storage:
-		if G.player.storage_handler.can_put_item(item):
-			item.taken.emit(item)
-			item.disable()
-			G.player.storage_handler.put_item(item)
-			return true
-		
 	if holding_item == null:
 		item.disable()
 		update_holding_item(item)
 		item.taken.emit(item)
 		return true
 	
+	if G.player.using_storage:
+		if G.player.storage_handler.can_put_item(item):
+			item.taken.emit(item)
+			item.disable()
+			G.player.storage_handler.put_item(item)
+			return true
+	
 	return false
+
+
+func take_holding_item_to_storage() -> void:
+	if holding_item == null || !G.player.using_storage: return
+	if !G.player.storage_handler.can_put_item(holding_item): return
+	G.player.storage_handler.put_item(holding_item)
+	update_holding_item(null)
 
 
 func drop_item() -> void:
@@ -135,3 +142,19 @@ func drop_item() -> void:
 func _rand_speed() -> float:
 	var speed = randf_range(40, 60)
 	return speed if randf() > 0.5 else -speed
+
+
+func get_save_data() -> Dictionary:
+	var item_id = null
+	
+	if holding_item: item_id = holding_item.save_id
+	
+	return {
+		"item_id": item_id
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	if data.item_id == null: return
+	var item = L.created_objects[data.item_id]
+	update_holding_item(item)

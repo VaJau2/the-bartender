@@ -38,3 +38,13 @@ func _set_start_light() -> void:
 	
 	if temp_start_light:
 		color = temp_start_light.color
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"color": var_to_str(color),
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	color = str_to_var(data.color)

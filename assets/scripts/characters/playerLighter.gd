@@ -9,8 +9,8 @@ const MORNING_OFF_HOUR = 7
 
 
 func _ready() -> void:
-	G.time.hour_tick.connect(_on_hour_tick)
-	_set_start_light()
+	G.time.hour_tick.connect(_update_light)
+	_update_light()
 
 
 func _process(_delta: float) -> void:
@@ -22,14 +22,8 @@ func _process(_delta: float) -> void:
 		position = pos_r.position
 
 
-func _on_hour_tick() -> void:
-	if G.time.hour == NIGHT_ON_HOUR:
-		enabled = true
-	
-	if G.time.hour == MORNING_OFF_HOUR:
-		enabled = false
-
-
-func _set_start_light() -> void:
+func _update_light() -> void:
 	if G.time.hour >= NIGHT_ON_HOUR or G.time.hour < MORNING_OFF_HOUR:
 		enabled = true
+	else:
+		enabled = false

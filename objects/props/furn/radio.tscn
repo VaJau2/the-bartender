@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://brqbgo141gdix"]
+[gd_scene format=3 uid="uid://brqbgo141gdix"]
 
 [ext_resource type="Texture2D" uid="uid://cd2qk14vr6gfm" path="res://assets/sprites/props/furn/Radio.png" id="1_0uj6y"]
 [ext_resource type="Script" uid="uid://cb7umtmvgxs48" path="res://assets/scripts/props/bar/radio.gd" id="2_b5mjt"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_tst2n"]
+[ext_resource type="Script" uid="uid://dbkboq1fu44mw" path="res://assets/scripts/system/saveLoadSystem/furnLoadManager.gd" id="6_0a4fr"]
 [ext_resource type="AudioStream" uid="uid://ce65ecms2fq38" path="res://assets/audio/radio/Switch.ogg" id="13_fg3pt"]
 [ext_resource type="AudioStream" uid="uid://1jt8etg8h5ls" path="res://assets/audio/radio/Noise.ogg" id="14_881ol"]
 
@@ -47,22 +48,20 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv3my"]
 size = Vector2(21, 15)
 
-[node name="radio" type="Node2D" groups=["radio"]]
+[node name="radio" type="Node2D" unique_id=2090092813 groups=["radio"]]
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." unique_id=286366116]
 position = Vector2(0, -12)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_0uj6y")
 hframes = 2
 vframes = 3
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1342869903]
 root_node = NodePath("../sprite")
-libraries = {
-&"": SubResource("AnimationLibrary_qdd3c")
-}
+libraries/ = SubResource("AnimationLibrary_qdd3c")
 
-[node name="interactArea" type="Area2D" parent="." node_paths=PackedStringArray("anim")]
+[node name="interactArea" type="Area2D" parent="." unique_id=910192401 node_paths=PackedStringArray("anim")]
 collision_layer = 4
 collision_mask = 0
 monitorable = false
@@ -71,20 +70,24 @@ anim = NodePath("../anim")
 switch = ExtResource("13_fg3pt")
 noise = ExtResource("14_881ol")
 
-[node name="shape" type="CollisionShape2D" parent="interactArea"]
+[node name="shape" type="CollisionShape2D" parent="interactArea" unique_id=304349204]
 position = Vector2(-0.5, -7.5)
 shape = SubResource("RectangleShape2D_mv3my")
 
-[node name="interactionHandler" type="Node" parent="interactArea"]
+[node name="interactionHandler" type="Node" parent="interactArea" unique_id=1934051090]
 script = ExtResource("3_tst2n")
 
-[node name="song" type="AudioStreamPlayer2D" parent="interactArea"]
+[node name="song" type="AudioStreamPlayer2D" parent="interactArea" unique_id=115586046]
 max_distance = 800.0
 bus = &"Radio"
 
-[node name="noise" type="AudioStreamPlayer2D" parent="interactArea"]
+[node name="noise" type="AudioStreamPlayer2D" parent="interactArea" unique_id=1142978063]
 volume_db = -10.0
 max_distance = 500.0
+
+[node name="loadManager" type="Node" parent="." unique_id=1040708076 node_paths=PackedStringArray("furn_logic") groups=["save"]]
+script = ExtResource("6_0a4fr")
+furn_logic = NodePath("../interactArea")
 
 [connection signal="finished" from="interactArea/song" to="interactArea" method="_on_song_finished"]
 [connection signal="finished" from="interactArea/noise" to="interactArea" method="_on_noise_finished"]

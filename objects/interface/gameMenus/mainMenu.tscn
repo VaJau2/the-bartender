@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qimmp16brh26"]
+[gd_scene format=3 uid="uid://qimmp16brh26"]
 
 [ext_resource type="Script" uid="uid://bq1mfx0o3t5v7" path="res://assets/scripts/interface/gameMenus/mainMenu.gd" id="1_kqg8x"]
 [ext_resource type="FontFile" uid="uid://dh7j8o2l35way" path="res://assets/materials/JosefinSans-Bold.ttf" id="1_qw6eu"]
@@ -38,7 +38,13 @@ node_path = NodePath("../menu/Exit")
 code = "main_menu.exit"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="mainMenu" type="Control"]
+[sub_resource type="Resource" id="Resource_84vju"]
+script = ExtResource("4_su511")
+node_path = NodePath("../menu/Load")
+code = "main_menu.load"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="mainMenu" type="Control" unique_id=598601280]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,18 +54,18 @@ grow_vertical = 2
 script = ExtResource("1_kqg8x")
 metadata/_edit_lock_ = true
 
-[node name="menu" type="Panel" parent="."]
+[node name="menu" type="Panel" parent="." unique_id=2098814120]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 16.0
-offset_top = -180.0
+offset_top = -196.0
 offset_right = 368.0
-offset_bottom = 148.0
+offset_bottom = 164.0
 grow_vertical = 2
 
-[node name="gameLabel" type="Label" parent="menu"]
+[node name="gameLabel" type="Label" parent="menu" unique_id=1040351663]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -72,7 +78,7 @@ label_settings = SubResource("LabelSettings_kqg8x")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Start" type="Button" parent="menu"]
+[node name="Start" type="Button" parent="menu" unique_id=1052142741]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,14 +86,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = -52.0
+offset_top = -68.0
 offset_right = 88.0
-offset_bottom = -21.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start"
 
-[node name="Settings" type="Button" parent="menu"]
+[node name="Load" type="Button" parent="menu" unique_id=2100618543]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,15 +101,31 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = -4.0
+offset_top = -20.0
 offset_right = 88.0
-offset_bottom = 27.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "Load"
+
+[node name="Settings" type="Button" parent="menu" unique_id=18538151]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 28.0
+offset_right = 88.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings
 "
 
-[node name="Help" type="Button" parent="menu"]
+[node name="Help" type="Button" parent="menu" unique_id=1463180049]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -111,14 +133,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = 44.0
+offset_top = 76.0
 offset_right = 88.0
-offset_bottom = 75.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Help"
 
-[node name="Exit" type="Button" parent="menu"]
+[node name="Exit" type="Button" parent="menu" unique_id=978394752]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,14 +148,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = 92.0
+offset_top = 124.0
 offset_right = 88.0
-offset_bottom = 123.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Exit"
 
-[node name="settingsPanel" parent="menu" instance=ExtResource("3_orms5")]
+[node name="settingsPanel" parent="menu" unique_id=595616652 instance=ExtResource("3_orms5")]
 visible = false
 layout_mode = 1
 offset_left = 16.0
@@ -141,7 +163,7 @@ offset_top = -52.0
 offset_right = 296.0
 offset_bottom = 120.0
 
-[node name="helpPanel" parent="menu" instance=ExtResource("5_fhv3o")]
+[node name="helpPanel" parent="menu" unique_id=2144364805 instance=ExtResource("5_fhv3o")]
 visible = false
 layout_mode = 0
 offset_left = 368.0
@@ -149,7 +171,7 @@ offset_right = 752.0
 offset_bottom = 328.0
 metadata/_edit_group_ = true
 
-[node name="dividerShadow" type="ColorRect" parent="menu"]
+[node name="dividerShadow" type="ColorRect" parent="menu" unique_id=1714100035]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -160,7 +182,7 @@ offset_bottom = 82.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
 
-[node name="divider" type="ColorRect" parent="menu"]
+[node name="divider" type="ColorRect" parent="menu" unique_id=860998833]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -170,11 +192,11 @@ offset_right = -64.0
 offset_bottom = 80.0
 grow_horizontal = 2
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=411211084]
 script = ExtResource("3_s0nid")
-nodes = Array[ExtResource("4_su511")]([SubResource("Resource_l5p4l"), SubResource("Resource_s0nid"), SubResource("Resource_gg33v"), SubResource("Resource_su511")])
+nodes = Array[ExtResource("4_su511")]([SubResource("Resource_l5p4l"), SubResource("Resource_s0nid"), SubResource("Resource_gg33v"), SubResource("Resource_su511"), SubResource("Resource_84vju")])
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=758301331]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -188,7 +210,26 @@ text = "by VaJa72 & McFord"
 label_settings = ExtResource("7_gg33v")
 vertical_alignment = 1
 
+[node name="versionLabel" type="Label" parent="." unique_id=1330794235]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v 1.1"
+label_settings = ExtResource("7_gg33v")
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [connection signal="pressed" from="menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="menu/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="menu/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="menu/Exit" to="." method="_on_exit_pressed"]

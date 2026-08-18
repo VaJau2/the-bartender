@@ -22,6 +22,7 @@ func _ready() -> void:
 	if talk_on_start:
 		await get_tree().create_timer(state_machine.DELAY).timeout
 		state_machine.set_state("startTalking")
+		talk_on_start = false
 
 
 func animate_mouth(time: float = 0):
@@ -29,3 +30,12 @@ func animate_mouth(time: float = 0):
 		mouth.visible = true
 		await get_tree().create_timer(time).timeout
 		mouth.visible = false
+
+
+func get_save_props() -> Array[StringName]:
+	return [
+		&"work_place",
+		&"sleep_place",
+		&"dialogue_code",
+		&"talk_to_start",
+	]

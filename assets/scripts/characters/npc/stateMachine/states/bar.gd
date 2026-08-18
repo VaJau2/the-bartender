@@ -33,6 +33,10 @@ func init() -> void:
 
 
 func enable() -> void:
+	if ordered_drink != "":
+		super()
+		return
+	
 	if state_machine.npc.global_position.distance_to(bar_queue.global_position) > DISTANCE_TO_BAR:
 		movement_controller.set_came_distance(DISTANCE_TO_BAR)
 		movement_controller.set_target(bar_queue.global_position)
@@ -192,3 +196,19 @@ func have_drink(drink_item: Item) -> void:
 		drunk_handler.add_drunk_time(booze_time)
 	
 	state_machine.set_state("idle")
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"ordered_drink": ordered_drink,
+		"ordered_price": ordered_price,
+		"order_timer": order_timer
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	ordered_drink = data.ordered_drink
+	ordered_price = data.ordered_price
+	order_timer = data.order_timer
+	npc.dialogue_icons.show_item_icon(ordered_drink)
+	npc.dialogue_icons.set_transparency(order_timer / ORDER_WAITING_TIME)

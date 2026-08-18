@@ -8,6 +8,8 @@ class_name Item
 
 @export var code: String
 
+var save_id: int
+
 var item_data: Dictionary
 
 var type: Enums.ItemType
@@ -16,11 +18,16 @@ var limit: int
 var weight: float
 var needs_fridge: bool
 var booze_time: float
+var need_values: Dictionary[NeedsController.NeedEnum, int]
 
 signal taken(item: Item)
 
 
 func _ready() -> void:
+	_load_json_data()
+
+
+func _load_json_data() -> void:
 	var json_data = JsonParse.read("res://assets/json/data/items.json")
 	item_data = json_data[code]
 	category = item_data.category
@@ -32,8 +39,25 @@ func _ready() -> void:
 		needs_fridge = item_data.need_fridge
 	if item_data.has("booze_time"):
 		booze_time = item_data.booze_time
+	if item_data.has("needs"):
+		_load_needs(item_data.needs)
 	type = Enums.ItemType.get(item_data.type)
 	_load_icon()
+
+
+func _load_needs(needs_data: Dictionary) -> void:
+	for need_str in needs_data.keys():
+		#var need_enum = NeedsController.NeedEnum.keys()[NeedsController.NeedEnum.get(need_str)]
+		var need_delta = needs_data[need_str]
+		need_values[NeedsController.NeedEnum.get(need_str)] = int(need_delta)
+	
+
+func _load_icon() -> void:
+	var texture_path = item_data.texture
+	if !texture_path: return
+	var texture = load("res://" + texture_path)
+	if !texture: return
+	sprite.texture = texture
 
 
 func enable() -> void:
@@ -48,11 +72,12 @@ func disable() -> void:
 
 
 func on_mouse_entered() -> void:
-	if interaction_controller.holding_item != null: 
-		if _may_show_craft_hint(interaction_controller.holding_item):
-			interaction_controller.show_craft_hint.emit()
-	else:
+	if interaction_controller.holding_item != null || G.player.using_storage: 
 		interaction_controller.show_item_hint.emit(self)
+		
+		if interaction_controller.holding_item != null \
+		  && _may_show_craft_hint(interaction_controller.holding_item):
+			interaction_controller.show_craft_hint.emit()
 
 
 func on_mouse_exited() -> void:
@@ -125,9 +150,21 @@ func _may_show_craft_hint(holding_item: Item) -> bool:
 	return false
 
 
-func _load_icon() -> void:
-	var texture_path = item_data.texture
-	if !texture_path: return
-	var texture = load("res://" + texture_path)
-	if !texture: return
-	sprite.texture = texture
+func get_save_data() -> Dictionary:
+	return {
+		"save_id": save_id,
+		"code": code,
+		"limit": limit,
+		"visible": var_to_str(visible),
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	save_id = data.save_id
+	code = data.code
+	_load_json_data()
+	limit = data.limit
+	if str_to_var(data.visible):
+		enable()
+	else:
+		disable()

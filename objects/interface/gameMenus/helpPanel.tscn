@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3ybovnufvg4t"]
+[gd_scene format=3 uid="uid://c3ybovnufvg4t"]
 
 [ext_resource type="Theme" uid="uid://dj0p4qf74vctf" path="res://assets/materials/small_theme.tres" id="1_ifwwy"]
 [ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="2_cud1c"]
@@ -85,13 +85,25 @@ node_path = NodePath("../scroll/container/bankText")
 code = "categories.bank.text"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
-[node name="helpPanel" type="Panel"]
+[sub_resource type="Resource" id="Resource_84vju"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/hunger")
+code = "categories.hunger.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ps7y1"]
+script = ExtResource("6_pdcoo")
+node_path = NodePath("../scroll/container/hungerText")
+code = "categories.hunger.text"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="helpPanel" type="Panel" unique_id=2100907429]
 offset_right = 384.0
 offset_bottom = 320.0
 theme = ExtResource("1_ifwwy")
 metadata/_edit_lock_ = true
 
-[node name="header" type="Label" parent="."]
+[node name="header" type="Label" parent="." unique_id=608307157]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -102,7 +114,7 @@ label_settings = ExtResource("2_cud1c")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="scroll" type="ScrollContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="." unique_id=1660625470]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -116,20 +128,20 @@ offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="container" type="VBoxContainer" parent="scroll"]
+[node name="container" type="VBoxContainer" parent="scroll" unique_id=197915481]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="controls" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+[node name="controls" type="Button" parent="scroll/container" unique_id=1854780269 node_paths=PackedStringArray("my_label")]
 layout_mode = 2
 theme = ExtResource("3_m6oh8")
 text = "Управление"
 script = ExtResource("3_cud1c")
 my_label = NodePath("../controlsText")
 
-[node name="controlsText" type="Label" parent="scroll/container"]
+[node name="controlsText" type="Label" parent="scroll/container" unique_id=1844059044]
 visible = false
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 text = "WASD — передвижение
 ЛКМ — взаимодействие c поньками, предметами и инструментами
@@ -138,16 +150,30 @@ Tab — открыть меню сумки (сначала её нужно ку�
 G — выбросить предмет"
 autowrap_mode = 2
 
-[node name="craft" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+[node name="hunger" type="Button" parent="scroll/container" unique_id=47289009 node_paths=PackedStringArray("my_label")]
+layout_mode = 2
+theme = ExtResource("3_m6oh8")
+text = "Потребности"
+script = ExtResource("3_cud1c")
+my_label = NodePath("../hungerText")
+
+[node name="hungerText" type="Label" parent="scroll/container" unique_id=1628574074]
+visible = false
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+text = "Тестовый текст для потребностей"
+autowrap_mode = 2
+
+[node name="craft" type="Button" parent="scroll/container" unique_id=1036624557 node_paths=PackedStringArray("my_label")]
 layout_mode = 2
 theme = ExtResource("3_m6oh8")
 text = "Крафт напитков"
 script = ExtResource("3_cud1c")
 my_label = NodePath("../craftText")
 
-[node name="craftText" type="Label" parent="scroll/container"]
+[node name="craftText" type="Label" parent="scroll/container" unique_id=534913565]
 visible = false
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Для получения соков нужно купить и использовать соковыжималку
 Для получения кофе нужно купить и использовать кофемашину
@@ -157,63 +183,63 @@ text = "Для получения соков нужно купить и испо
 "
 autowrap_mode = 2
 
-[node name="opening" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+[node name="opening" type="Button" parent="scroll/container" unique_id=2112920108 node_paths=PackedStringArray("my_label")]
 layout_mode = 2
 theme = ExtResource("3_m6oh8")
 text = "Открытие бара"
 script = ExtResource("3_cud1c")
 my_label = NodePath("../openingText")
 
-[node name="openingText" type="Label" parent="scroll/container"]
+[node name="openingText" type="Label" parent="scroll/container" unique_id=351613562]
 visible = false
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Для открытия бара нужно добавить в меню хотя бы один напиток и кликнуть на табличку \"Closed\".
 Если в меню будут убраны все напитки, бар автоматически закроется.
 Если выйти из бара, он автоматически закроется через минуту."
 autowrap_mode = 2
 
-[node name="selling" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+[node name="selling" type="Button" parent="scroll/container" unique_id=144192754 node_paths=PackedStringArray("my_label")]
 layout_mode = 2
 theme = ExtResource("3_m6oh8")
 text = "Продажа напитков"
 script = ExtResource("3_cud1c")
 my_label = NodePath("../sellingText")
 
-[node name="sellingText" type="Label" parent="scroll/container"]
+[node name="sellingText" type="Label" parent="scroll/container" unique_id=899771826]
 visible = false
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Стоимость напитков подбирается вручную опытным путем. Если клиенты не покупают твои напитки, попробуй снизить цену.
 Когда клиент выбирает, какой напиток хочет купить, над ним появляется иконка выбранного им напитка. Для продажи напитка нужно кликнуть им на клиента.
 Также продать напиток можно, положив его на стойку. Если клиент выберет напиток, который уже лежит на стойке, он автоматически его купит."
 autowrap_mode = 2
 
-[node name="radio" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+[node name="radio" type="Button" parent="scroll/container" unique_id=607539294 node_paths=PackedStringArray("my_label")]
 layout_mode = 2
 theme = ExtResource("3_m6oh8")
 text = "Радио"
 script = ExtResource("3_cud1c")
 my_label = NodePath("../radioText")
 
-[node name="radioText" type="Label" parent="scroll/container"]
+[node name="radioText" type="Label" parent="scroll/container" unique_id=1760229017]
 visible = false
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Радио продается на рынке в городе.
 Включенное в баре радио повышает шанс прихода клиентов"
 autowrap_mode = 2
 
-[node name="bank" type="Button" parent="scroll/container" node_paths=PackedStringArray("my_label")]
+[node name="bank" type="Button" parent="scroll/container" unique_id=1076655350 node_paths=PackedStringArray("my_label")]
 layout_mode = 2
 theme = ExtResource("3_m6oh8")
 text = "Банк"
 script = ExtResource("3_cud1c")
 my_label = NodePath("../bankText")
 
-[node name="bankText" type="Label" parent="scroll/container"]
+[node name="bankText" type="Label" parent="scroll/container" unique_id=253828619]
 visible = false
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "В банке в городе можно взять без процентый займ на два дня. 
 Можно взять любую сумму от 1 до 1000 битов.
@@ -221,7 +247,7 @@ text = "В банке в городе можно взять без процен�
 Если не вернуть займ в течение двух дней, игра автоматически закончится."
 autowrap_mode = 2
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=249511336]
 script = ExtResource("5_0ebty")
 file = "help"
-nodes = Array[ExtResource("6_pdcoo")]([SubResource("Resource_iyehu"), SubResource("Resource_0ebty"), SubResource("Resource_pdcoo"), SubResource("Resource_wt653"), SubResource("Resource_ssg54"), SubResource("Resource_xd3lq"), SubResource("Resource_335e6"), SubResource("Resource_a8hu0"), SubResource("Resource_r3xk5"), SubResource("Resource_qtq3e"), SubResource("Resource_avcws"), SubResource("Resource_3auwm"), SubResource("Resource_lviaw")])
+nodes = Array[ExtResource("6_pdcoo")]([SubResource("Resource_iyehu"), SubResource("Resource_0ebty"), SubResource("Resource_pdcoo"), SubResource("Resource_wt653"), SubResource("Resource_ssg54"), SubResource("Resource_xd3lq"), SubResource("Resource_335e6"), SubResource("Resource_a8hu0"), SubResource("Resource_r3xk5"), SubResource("Resource_qtq3e"), SubResource("Resource_avcws"), SubResource("Resource_3auwm"), SubResource("Resource_lviaw"), SubResource("Resource_84vju"), SubResource("Resource_ps7y1")])

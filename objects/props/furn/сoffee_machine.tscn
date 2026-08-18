@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm0rfpspa728k"]
+[gd_scene format=3 uid="uid://bm0rfpspa728k"]
 
 [ext_resource type="Script" uid="uid://de5gkr10fgewt" path="res://assets/scripts/props/bar/juicer.gd" id="1_or87b"]
 [ext_resource type="Texture2D" uid="uid://cevaktefc4r0b" path="res://assets/sprites/props/furn/coffee-machine.png" id="2_or87b"]
 [ext_resource type="Script" uid="uid://bp4x04483jrev" path="res://assets/scripts/handlers/interactionHandler.gd" id="3_rs34m"]
 [ext_resource type="AudioStream" uid="uid://dhqwji0tcw5e6" path="res://assets/audio/props/CofeeMachine.wav" id="4_or87b"]
+[ext_resource type="Script" uid="uid://dbkboq1fu44mw" path="res://assets/scripts/system/saveLoadSystem/furnLoadManager.gd" id="5_xcqxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqxp"]
 size = Vector2(20, 24)
@@ -46,34 +47,36 @@ _data = {
 &"work": SubResource("Animation_kbiog")
 }
 
-[node name="coffee_machine" type="Area2D"]
+[node name="coffee-machine" type="Area2D" unique_id=1161290483 groups=["coffee-machine"]]
 script = ExtResource("1_or87b")
 code = "coffee-machine"
 result_velocity = Vector2(0, 42)
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1687086102]
 position = Vector2(0, -12)
 texture = ExtResource("2_or87b")
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=463440794]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_xcqxp")
 
-[node name="interactionHandler" type="Node" parent="."]
+[node name="interactionHandler" type="Node" parent="." unique_id=1619470670]
 script = ExtResource("3_rs34m")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="."]
+[node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=355218645]
 position = Vector2(-2, -10)
 stream = ExtResource("4_or87b")
 max_distance = 800.0
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qhjfk")
-}
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1705788056]
+libraries/ = SubResource("AnimationLibrary_qhjfk")
 speed_scale = 2.0
 
-[node name="timer" type="Timer" parent="."]
+[node name="timer" type="Timer" parent="." unique_id=1156330020]
 
-[node name="spawnPoint" type="Node2D" parent="."]
+[node name="spawnPoint" type="Node2D" parent="." unique_id=1962832345]
 position = Vector2(0, -2)
+
+[node name="loadManager" type="Node" parent="." unique_id=495979916 node_paths=PackedStringArray("furn_logic") groups=["save"]]
+script = ExtResource("5_xcqxp")
+furn_logic = NodePath("..")

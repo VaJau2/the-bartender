@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deo4bi0lfym01"]
+[gd_scene format=3 uid="uid://deo4bi0lfym01"]
 
 [ext_resource type="Script" uid="uid://bbqh0uth48udr" path="res://assets/scripts/interface/storage/storageMenu.gd" id="2_dqpl8"]
 [ext_resource type="LabelSettings" uid="uid://dbfi3kl8vte8s" path="res://assets/materials/title_theme.tres" id="3_6ilx7"]
@@ -28,7 +28,6 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Resource" id="Resource_eumj3"]
 script = ExtResource("7_6ilx7")
-min_percent = 0
 max_percent = 60
 color = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://c6iw112sre23d"
@@ -54,13 +53,13 @@ max_percent = 100
 color = Color(0.841251, 2.96004e-06, 9.62615e-07, 1)
 metadata/_custom_type_script = "uid://c6iw112sre23d"
 
-[node name="storageMenu" type="Panel"]
+[node name="storageMenu" type="Panel" unique_id=755722800]
 offset_right = 376.0
 offset_bottom = 272.0
 script = ExtResource("2_dqpl8")
 button_prefab = ExtResource("3_qm6x6")
 
-[node name="header" type="Label" parent="."]
+[node name="header" type="Label" parent="." unique_id=165958259]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -74,7 +73,7 @@ label_settings = ExtResource("3_6ilx7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="empty" type="Label" parent="."]
+[node name="empty" type="Label" parent="." unique_id=803642579]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +89,7 @@ text = "Empty
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="scroll" type="ScrollContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="." unique_id=796604468]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,11 +102,11 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="vbox" type="VBoxContainer" parent="scroll"]
+[node name="vbox" type="VBoxContainer" parent="scroll" unique_id=318302962]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="close" type="Button" parent="."]
+[node name="close" type="Button" parent="." unique_id=1994145556]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -119,11 +118,11 @@ offset_bottom = -12.0
 grow_vertical = 0
 text = "close"
 
-[node name="translation" type="Node" parent="."]
+[node name="translation" type="Node" parent="." unique_id=1616936054]
 script = ExtResource("3_vsb81")
 nodes = Array[ExtResource("4_schpk")]([SubResource("Resource_sljo8"), SubResource("Resource_bkyq0"), SubResource("Resource_qm6x6")])
 
-[node name="weight" type="Control" parent="."]
+[node name="weight" type="Control" parent="." unique_id=343371681]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -135,7 +134,7 @@ offset_top = -56.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="weightBar" type="ProgressBar" parent="weight"]
+[node name="weightBar" type="ProgressBar" parent="weight" unique_id=1444646861]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -153,7 +152,7 @@ show_percentage = false
 script = ExtResource("6_upfr7")
 colors = Array[ExtResource("7_6ilx7")]([SubResource("Resource_eumj3"), SubResource("Resource_l103h"), SubResource("Resource_06rwd"), SubResource("Resource_p4mtg")])
 
-[node name="Label" type="Label" parent="weight"]
+[node name="Label" type="Label" parent="weight" unique_id=1861003054]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5

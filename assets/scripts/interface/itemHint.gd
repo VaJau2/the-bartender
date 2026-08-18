@@ -3,6 +3,7 @@ extends Panel
 class_name ItemHint
 
 @onready var interaction_controller: InteractionController = G.player.interaction_controller
+@onready var movement_controller: MovementController = G.player.movement_controller
 @onready var name_label: Label = get_node("name")
 
 
@@ -27,11 +28,13 @@ func _update_pos() -> void:
 
 
 func _on_show_hint(code: String) -> void:
+	if !movement_controller.may_move: return
 	name_label.text = Loc.trans("items." + code + ".name")
 	_set_hint_visible()
 
 
 func _on_show_item_hint(item: Item) -> void:
+	if !movement_controller.may_move: return
 	name_label.text = Loc.trans("items." + item.code + ".name")
 	if item.limit > 0:
 		name_label.text += " (" + item.get_limit_percent() + ")"

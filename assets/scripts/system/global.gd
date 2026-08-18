@@ -3,7 +3,7 @@ extends Node
 class_name Global
 
 const DAYS_GOAL: int = 5
-const MONEY_GOAL: int = 2000
+const MONEY_GOAL: int = 5000
 
 const GLASS_MAX_COUNT = 150
 var glasses_count: int = 0
@@ -15,7 +15,7 @@ var player: Player
 var time: TimeHandler
 var game_manager: GameManager
 
-
+signal game_started
 signal lang_changed
 
 
@@ -23,3 +23,11 @@ func _ready() -> void:
 	player = get_node_or_null("/root/main/player")
 	time = get_node_or_null("/root/main/timeHandler")
 	game_manager = get_node_or_null("/root/main/gameManager")
+	load_os_lang()
+
+
+func load_os_lang() -> void:
+	var os_lang = OS.get_locale_language()
+	if os_lang == "ru": 
+		Loc.current_lang = Enums.Lang.ru
+		G.lang_changed.emit()

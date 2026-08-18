@@ -51,3 +51,17 @@ func _set_start_volume() -> void:
 		if G.time.hour < hour_on and G.time.hour >= hour_off:
 			volume_linear = 0
 			stop()
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"is_on": var_to_str(is_on),
+		"volume": var_to_str(volume_linear)
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	is_on = str_to_var(data.is_on)
+	volume_linear = str_to_var(data.volume)
+	if volume_linear > 0: play()
+	if is_on: set_process(true)

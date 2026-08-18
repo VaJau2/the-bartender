@@ -15,7 +15,7 @@ signal changed_volume
 
 
 func _ready() -> void:
-	get_node("volume").value = G.settings.music_volume
+	volume_slider.value = G.settings.music_volume
 	interaction_controller.show_radio_menu.connect(_on_open_menu)
 
 
@@ -26,6 +26,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_open_menu(new_radio: Radio) -> void:
+	volume_slider.value = G.settings.music_volume
 	current_radio = new_radio
 	visible = true
 	pause_menu.may_pause = false

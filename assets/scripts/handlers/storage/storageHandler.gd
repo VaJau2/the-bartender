@@ -48,6 +48,10 @@ func get_item(storage_item: StorageItem) -> void:
 		item.limit = storage_item.limit
 	
 	if storage_type == Enums.StorageType.bag:
+		if interaction_controller.holding_item == null:
+			interaction_controller.update_holding_item(item)
+			item.disable()
+			return
 		item.get_parent().remove_child(item)
 		get_node("/root/main").add_child(item)
 		item.global_position = get_parent().global_position
@@ -96,3 +100,20 @@ func _on_move_items_to_bag() -> void:
 	
 	for item in items_moved:
 		G.player.storage_handler.items.erase(item)
+
+
+func get_save_data() -> Dictionary:
+	var items_data: Array = []
+	for item: StorageItem in items:
+		items_data.append(item.to_json())
+	
+	return {
+		"items": items_data
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	var items_data = data.items
+	for item_data in items_data:
+		var item: StorageItem = StorageItem.from_json(item_data)
+		items.append(item)

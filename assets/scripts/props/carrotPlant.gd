@@ -34,7 +34,8 @@ func on_mouse_exited() -> void:
 
 
 func interact() -> void:
-	if !has_item or interaction_controller.holding_item != null: return
+	if !has_item: return
+	if interaction_controller.holding_item != null && !G.player.using_storage: return
 	
 	var item = ItemSpawner.spawn_item(code, global_position, get_parent())
 	G.statistics.ingredient_stolen(item.code)
@@ -48,3 +49,19 @@ func interact() -> void:
 	has_item = false
 	spawn_timer = randf_range(SPAWN_TIME_MIN, SPAWN_TIME_MAX)
 	set_process(true)
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"has_item": var_to_str(has_item),
+		"is_processing": var_to_str(is_processing()),
+		"spawn_timer": spawn_timer
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	has_item = str_to_var(data.has_item)
+	sprite.visible = has_item
+	spawn_timer = data.spawn_timer
+	if str_to_var(data.is_processing):
+		set_process(true)

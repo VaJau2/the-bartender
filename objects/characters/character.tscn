@@ -1,9 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://bbvon43a7hnst"]
+[gd_scene format=3 uid="uid://bbvon43a7hnst"]
 
 [ext_resource type="Texture2D" uid="uid://b18x8vlddqeud" path="res://assets/sprites/characters/pony_shadow.png" id="1_cfspk"]
 [ext_resource type="Texture2D" uid="uid://bcm8f8d4h1r6w" path="res://assets/sprites/characters/base.png" id="1_mapcr"]
 [ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="2_8wket"]
-[ext_resource type="Texture2D" uid="uid://d2p5abp4vaqvi" path="res://assets/sprites/characters/player_mouth.png" id="3_6ondm"]
+[ext_resource type="Texture2D" uid="uid://d2p5abp4vaqvi" path="res://assets/sprites/characters/player/player_mouth.png" id="3_6ondm"]
 [ext_resource type="Texture2D" uid="uid://digw164pwr3dv" path="res://assets/sprites/characters/items/bag.png" id="3_nrt7u"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_o4xot"]
 [ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="4_o4xot"]
@@ -516,7 +516,6 @@ _data = {
 
 [sub_resource type="Resource" id="Resource_nrt7u"]
 script = ExtResource("6_1lg8h")
-material_name = 0
 walk_sounds = Array[AudioStream]([ExtResource("10_6sj3t"), ExtResource("11_varnu"), ExtResource("12_4bg8u")])
 run_sounds = Array[AudioStream]([ExtResource("7_cfspk"), ExtResource("8_gcnsu"), ExtResource("9_75x00")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
@@ -542,94 +541,92 @@ walk_sounds = Array[AudioStream]([ExtResource("26_2kgtx"), ExtResource("27_kmw3l
 run_sounds = Array[AudioStream]([ExtResource("26_2kgtx"), ExtResource("27_kmw3l"), ExtResource("28_51m1h")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
-[node name="character" type="CharacterBody2D"]
+[node name="character" type="CharacterBody2D" unique_id=1846285674]
 
-[node name="shape" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="." unique_id=825901582]
 position = Vector2(0.75, -1)
 shape = SubResource("RectangleShape2D_l51np")
 
-[node name="shadow" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="." unique_id=1778111942]
 modulate = Color(1, 1, 1, 0.321569)
 position = Vector2(1, -2)
 scale = Vector2(0.651163, 1)
 texture = ExtResource("1_cfspk")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1649376875]
 position = Vector2(0, -28)
 texture = ExtResource("1_mapcr")
 hframes = 8
 vframes = 6
 
-[node name="mouth" type="Sprite2D" parent="."]
+[node name="mouth" type="Sprite2D" parent="." unique_id=3327742]
 visible = false
 position = Vector2(0, -28)
 texture = ExtResource("3_6ondm")
 hframes = 8
 vframes = 6
 
-[node name="bag" type="Sprite2D" parent="."]
+[node name="bag" type="Sprite2D" parent="." unique_id=995117982]
 visible = false
 position = Vector2(0, -28)
 texture = ExtResource("3_nrt7u")
 hframes = 8
 vframes = 6
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ndjo6")
-}
+[node name="anim" type="AnimationPlayer" parent="." unique_id=537960115]
+libraries/ = SubResource("AnimationLibrary_ndjo6")
 
-[node name="movementController" type="Node" parent="."]
+[node name="movementController" type="Node" parent="." unique_id=149718637]
 script = ExtResource("2_8wket")
 
-[node name="walk" type="Node" parent="movementController"]
+[node name="walk" type="Node" parent="movementController" unique_id=1444546825]
 script = ExtResource("3_o4xot")
 speed = 120
 default = true
 
-[node name="sit" type="Node" parent="movementController"]
+[node name="sit" type="Node" parent="movementController" unique_id=1665711851]
 script = ExtResource("3_o4xot")
 idle_anim = "sit"
 speed = 0
 
-[node name="sleep" type="Node" parent="movementController"]
+[node name="sleep" type="Node" parent="movementController" unique_id=1478068710]
 script = ExtResource("3_o4xot")
 idle_anim = "sleep"
 speed = 0
 
-[node name="lay" type="Node" parent="movementController"]
+[node name="lay" type="Node" parent="movementController" unique_id=1422020886]
 script = ExtResource("3_o4xot")
 idle_anim = "lay"
 speed = 0
 
-[node name="run" type="Node" parent="movementController"]
+[node name="run" type="Node" parent="movementController" unique_id=1870285440]
 script = ExtResource("3_o4xot")
 anim = "run"
 speed = 220
 
-[node name="drunk" type="Node" parent="movementController"]
+[node name="drunk" type="Node" parent="movementController" unique_id=311680774]
 script = ExtResource("3_o4xot")
 idle_anim = "idle-drunk"
 anim = "walk-drunk"
 speed = 80
 
-[node name="animationController" type="Node" parent="." node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
+[node name="animationController" type="Node" parent="." unique_id=1192621268 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("4_o4xot")
 sprites = [NodePath("../sprite"), NodePath("../bag"), NodePath("../mouth")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movementController")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="." node_paths=PackedStringArray("movement_controller")]
+[node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=293715604 node_paths=PackedStringArray("movement_controller")]
 max_distance = 200.0
 script = ExtResource("5_yuviu")
 movement_controller = NodePath("../movementController")
 steps_data = Array[ExtResource("6_1lg8h")]([SubResource("Resource_nrt7u"), SubResource("Resource_6ondm"), SubResource("Resource_xyefa"), SubResource("Resource_8om3k")])
 
-[node name="materialChecker" type="Node2D" parent="audi" node_paths=PackedStringArray("parent")]
+[node name="materialChecker" type="Node2D" parent="audi" unique_id=976672382 node_paths=PackedStringArray("parent")]
 script = ExtResource("19_1lg8h")
 parent = NodePath("../..")
 
-[node name="stepSpawner" type="Node2D" parent="audi" node_paths=PackedStringArray("steps_controller", "movement_controller")]
+[node name="stepSpawner" type="Node2D" parent="audi" unique_id=1311186164 node_paths=PackedStringArray("steps_controller", "movement_controller")]
 script = ExtResource("30_c3thp")
 prefab = ExtResource("31_7twir")
 steps_controller = NodePath("..")

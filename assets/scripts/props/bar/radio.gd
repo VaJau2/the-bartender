@@ -22,7 +22,7 @@ var is_inside_bar: bool
 var song_index: int
 
 
-func _ready() -> void:	
+func _ready() -> void:
 	for filename in songsFileNames:
 		if filename.contains(".import"): continue
 		var song: AudioStream = load(SONGS_PATH + "/" + filename)
@@ -95,6 +95,22 @@ func _on_noise_finished() -> void:
 		anim.play("play")
 		noise_player.stream = noise
 		noise_player.play()
-				
 	else:
 		anim.play("RESET")
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"is_playing": var_to_str(is_playing),
+		"volume": var_to_str(G.settings.music_volume),
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	is_playing = str_to_var(data.is_playing)
+	if is_playing: anim.play("play")
+	
+	var volume = str_to_var(data.volume)
+	AudioServer.set_bus_volume_linear(1, volume)
+	AudioServer.set_bus_mute(1, volume == 0)
+	G.settings.music_volume = volume

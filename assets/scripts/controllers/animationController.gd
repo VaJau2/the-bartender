@@ -8,6 +8,7 @@ class_name AnimationController
 @onready var parent: CharacterBody2D = get_parent()
 
 var watch_velocity: bool = false
+var flip_x: bool = false
 
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 
 
 func set_flip(value: bool) -> void:
+	flip_x = value
 	for sprite in sprites:
 		sprite.flip_h = value
 

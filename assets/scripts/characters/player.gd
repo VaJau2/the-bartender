@@ -7,7 +7,9 @@ class_name Player
 @onready var movement_controller: MovementController = get_node("movementController")
 @onready var storage_handler: StorageHandler = get_node("storageHandler")
 @onready var drunk_handler: DrunkHandler = get_node("drunkHandler")
+@onready var needs_controller: NeedsController = get_node("needsController")
 @onready var mouth: Sprite2D = get_node("mouth")
+@onready var camera: Camera2D = get_node("camera")
 
 @export var using_storage: bool
 @export var has_storage: bool = false

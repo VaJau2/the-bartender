@@ -11,6 +11,7 @@ var minute_delta: float
 signal hour_tick
 signal minute_tick
 signal day_tick
+signal force_update_time
 
 
 func _ready() -> void:
@@ -53,3 +54,23 @@ func get_time_formatted() -> String:
 		result += "0"
 	
 	return result + str(int(minute))
+
+
+func get_save_data() -> Dictionary:
+	return {
+		"hour": hour,
+		"minute": minute,
+		"minute_delta": minute_delta,
+		"day": day,
+	}
+
+
+func load_save_data(data: Dictionary) -> void:
+	hour = data.hour
+	minute = data.minute
+	minute_delta = data.minute_delta
+	day = data.day
+	
+	minute_tick.emit()
+	hour_tick.emit()
+	day_tick.emit()

@@ -11,6 +11,9 @@
 		"category": "glass",
 		"texture": "assets/sprites/items/glass-water.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 500,
+		},
 		"prices": [1, 6]
 	},
 	"glass-milk": {
@@ -19,6 +22,10 @@
 		"texture": "assets/sprites/items/glass-milk.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 420,
+			"hunger": 20
+		},
 		"prices": [5, 10]
 	},
 	"apple-juice": {
@@ -27,6 +34,10 @@
 		"texture": "assets/sprites/items/apple-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 420,
+			"hunger": 2
+		},
 		"prices": [6, 12]
 	},
 	"banana-juice": {
@@ -35,6 +46,10 @@
 		"texture": "assets/sprites/items/banana-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 420,
+			"hunger": 10
+		},
 		"prices": [5, 10]
 	},
 	"coconut-juice": {
@@ -43,6 +58,10 @@
 		"texture": "assets/sprites/items/coconut-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 400,
+			"hunger": 1
+		},
 		"prices": [10, 20]
 	},
 	"blueberry-juice": {
@@ -51,6 +70,10 @@
 		"texture": "assets/sprites/items/blueberry-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 400,
+			"hunger": 10
+		},
 		"prices": [4, 8]
 	},
 	"strawberry-juice": {
@@ -59,6 +82,10 @@
 		"texture": "assets/sprites/items/strawberry-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 400,
+			"hunger": 15
+		},
 		"prices": [6, 12]
 	},
 	"raspberry-juice": {
@@ -67,6 +94,10 @@
 		"texture": "assets/sprites/items/raspberry-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 350,
+			"hunger": 20
+		},
 		"prices": [4, 9]
 	},
 	"blackberry-juice": {
@@ -75,6 +106,10 @@
 		"texture": "assets/sprites/items/blackberry-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 350,
+			"hunger": 10
+		},
 		"prices": [6, 12]
 	},
 	"tomato-juice": {
@@ -83,6 +118,10 @@
 		"texture": "assets/sprites/items/tomato-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 100,
+			"hunger": 150
+		},
 		"prices": [4, 8]
 	},
 	"carrot-juice": {
@@ -91,6 +130,9 @@
 		"texture": "assets/sprites/items/carrot-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 200,
+		},
 		"prices": [5, 10]
 	},
 	"orange-juice": {
@@ -99,6 +141,9 @@
 		"texture": "assets/sprites/items/orange-juice.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 200,
+		},
 		"prices": [14, 20]
 	},
 	"espresso": {
@@ -107,6 +152,10 @@
 		"texture": "assets/sprites/items/espresso.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 10,
+			"fatigue": 200,
+		},
 		"prices": [15, 20]
 	},
 	"cappuccino": {
@@ -115,6 +164,11 @@
 		"texture": "assets/sprites/items/cappuccino.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 50,
+			"hunger": 10,
+			"fatigue": 100,
+		},
 		"prices": [25, 35]
 	},
 	"latte": {
@@ -123,6 +177,11 @@
 		"texture": "assets/sprites/items/latte.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 100,
+			"hunger": 50,
+			"fatigue": 50,
+		},
 		"prices": [35, 50]
 	},
 	"mocha": {
@@ -131,6 +190,11 @@
 		"texture": "assets/sprites/items/mocha.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 120,
+			"hunger": 80,
+			"fatigue": 40,
+		},
 		"prices": [85, 90]
 	},
 	"banana-smoothie": {
@@ -139,6 +203,10 @@
 		"texture": "assets/sprites/items/banana-smoothie.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 120,
+			"hunger": 200,
+		},
 		"prices": [40, 55]
 	},
 	"strawberry-smoothie": {
@@ -147,6 +215,10 @@
 		"texture": "assets/sprites/items/strawberry-smoothie.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 130,
+			"hunger": 190,
+		},
 		"prices": [65, 75]
 	},
 	"chocolate-milk": {
@@ -155,6 +227,10 @@
 		"texture": "assets/sprites/items/chocolate-milk.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 10,
+			"hunger": 200,
+		},
 		"prices": [50, 60]
 	},
 	"cola": {
@@ -163,6 +239,10 @@
 		"texture": "assets/sprites/items/cola.png",
 		"weight": 1,
 		"need_fridge": 1,
+		"needs": {
+			"thirst": 100,
+			"fatigue": 100,
+		},
 		"prices": [5, 10]
 	},
 	"beer": {
@@ -172,6 +252,9 @@
 		"weight": 2,
 		"need_fridge": 1,
 		"booze_time": 5,
+		"needs": {
+			"thirst": 100,
+		},
 		"prices": [10, 20]
 	},
 	"cider": {
@@ -181,6 +264,10 @@
 		"weight": 2,
 		"need_fridge": 1,
 		"booze_time": 4,
+		"needs": {
+			"thirst": 100,
+			"hunger": 10
+		},
 		"prices": [11, 21]
 	},
 	"vodka": {
@@ -190,6 +277,9 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 15,
+		"needs": {
+			"thirst": 10,
+		},
 		"prices": [20, 30]
 	},
 	"whiskey": {
@@ -199,6 +289,9 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 14,
+		"needs": {
+			"thirst": 20,
+		},
 		"prices": [30, 45]
 	},
 	"wine": {
@@ -208,6 +301,9 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 5,
+		"needs": {
+			"thirst": 30,
+		},
 		"prices": [60, 80]
 	},
 	"tequila": {
@@ -217,6 +313,9 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 18,
+		"needs": {
+			"thirst": -10,
+		},
 		"prices": [22, 32]
 	},
 	"rum": {
@@ -226,6 +325,9 @@
 		"weight": 0.3,
 		"need_fridge": 1,
 		"booze_time": 13,
+		"needs": {
+			"thirst": 10,
+		},
 		"prices": [25, 40]
 	},
 	"absinthe": {
@@ -235,6 +337,9 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 16,
+		"needs": {
+			"thirst": 10,
+		},
 		"prices": [30, 42]
 	},
 	"gin": {
@@ -244,6 +349,9 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 16,
+		"needs": {
+			"thirst": 15,
+		},
 		"prices": [15, 25]
 	},
 	"whiskey-cola": {
@@ -253,6 +361,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 50,
+		"needs": {
+			"thirst": 100,
+			"fatigue": 100
+		},
 		"prices": [95, 105]
 	},
 	"applejack": {
@@ -262,6 +374,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 40,
+		"needs": {
+			"thirst": 100,
+			"hunger": 100
+		},
 		"prices": [80, 90]
 	},
 	"screwdriver": {
@@ -271,6 +387,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 40,
+		"needs": {
+			"thirst": 100,
+			"hunger": 50
+		},
 		"prices": [70, 80]
 	},
 	"blood-mary": {
@@ -280,6 +400,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 60,
+		"needs": {
+			"thirst": 100,
+			"hunger": 150
+		},
 		"prices": [94, 105]
 	},
 	"mulled-wine": {
@@ -289,6 +413,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 60,
+		"needs": {
+			"thirst": 120,
+			"hunger": 120
+		},
 		"prices": [94, 105]
 	},
 	"hoofington-cream": {
@@ -298,6 +426,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 30,
+		"needs": {
+			"thirst": 120,
+			"hunger": 120,
+		},
 		"prices": [42, 55]
 	},
 	"hoofington-coffee": {
@@ -307,6 +439,11 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 42,
+		"needs": {
+			"thirst": 120,
+			"hunger": 120,
+			"fatigue": 150
+		},
 		"prices": [75, 110]
 	},
 	"vampiro": {
@@ -316,6 +453,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 50,
+		"needs": {
+			"thirst": 100,
+			"hunger": 200,
+		},
 		"prices": [85, 99]
 	},
 	"b-52": {
@@ -325,6 +466,10 @@
 		"weight": 0.2,
 		"need_fridge": 1,
 		"booze_time": 100,
+		"needs": {
+			"thirst": 100,
+			"fatigue": 100
+		},
 		"prices": [250, 300]
 	},
 	"atomic-bomb": {
@@ -334,6 +479,11 @@
 		"weight": 0.4,
 		"need_fridge": 1,
 		"booze_time": 150,
+		"needs": {
+			"thirst": -50,
+			"hunger": -100,
+			"fatigue": 2000
+		},
 		"prices": [450, 500]
 	},
 	
@@ -342,6 +492,10 @@
 		"category": "fruit",
 		"texture": "assets/sprites/items/apple.png",
 		"weight": 1.5,
+		"needs": {
+			"thirst": 10,
+			"hunger": 300,
+		},
 		"prices": [2, 5]
 	},
 	"banana": {
@@ -349,6 +503,10 @@
 		"category": "fruit",
 		"texture": "assets/sprites/items/banana.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 10,
+			"hunger": 500,
+		},
 		"prices": [4]
 	},
 	"coconut": {
@@ -363,6 +521,10 @@
 		"category": "fruit",
 		"texture": "assets/sprites/items/sliced-coconut.png",
 		"weight": 0.5,
+		"needs": {
+			"thirst": 100,
+			"hunger": 200,
+		},
 		"limit": 3,
 		"prices": [6]
 	},
@@ -371,6 +533,10 @@
 		"category": "fruit",
 		"texture": "assets/sprites/items/orange.png",
 		"weight": 0.6,
+		"needs": {
+			"thirst": 200,
+			"hunger": 200,
+		},
 		"prices": [8]
 	},
 	"blueberry": {
@@ -378,6 +544,10 @@
 		"category": "berry",
 		"texture": "assets/sprites/items/blueberry.png",
 		"weight": 0.1,
+		"needs": {
+			"thirst": 100,
+			"hunger": 100,
+		},
 		"prices": [1]
 	},
 	"strawberry": {
@@ -385,6 +555,10 @@
 		"category": "berry",
 		"texture": "assets/sprites/items/strawberry.png",
 		"weight": 0.1,
+		"needs": {
+			"thirst": 150,
+			"hunger": 150,
+		},
 		"prices": [3]
 	},
 	"raspberry": {
@@ -392,6 +566,10 @@
 		"category": "berry",
 		"texture": "assets/sprites/items/raspberry.png",
 		"weight": 0.1,
+		"needs": {
+			"thirst": 200,
+			"hunger": 200,
+		},
 		"prices": [2]
 	},
 	"blackberry": {
@@ -399,6 +577,10 @@
 		"category": "berry",
 		"texture": "assets/sprites/items/blackberry.png",
 		"weight": 0.1,
+		"needs": {
+			"thirst": 250,
+			"hunger": 250,
+		},
 		"prices": [3]
 	},
 	"tomato": {
@@ -406,6 +588,10 @@
 		"category": "vegetable",
 		"texture": "assets/sprites/items/tomato.png",
 		"weight": 0.2,
+		"needs": {
+			"thirst": 100,
+			"hunger": 800,
+		},
 		"prices": [2]
 	},
 	"carrot": {
@@ -413,6 +599,10 @@
 		"category": "vegetable",
 		"texture": "assets/sprites/items/carrot.png",
 		"weight": 0.2,
+		"needs": {
+			"thirst": 10,
+			"hunger": 700,
+		},
 		"prices": [2]
 	},
 	"coffee-beans": {
@@ -454,6 +644,10 @@
 		"texture": "assets/sprites/items/chocolate.png",
 		"weight": 0.2,
 		"limit": 1,
+		"needs": {
+			"thirst": -50,
+			"hunger": 300,
+		},
 		"need_fridge": 1
 	},
 	"milk": {
@@ -462,6 +656,10 @@
 		"texture": "assets/sprites/items/milk.png",
 		"weight": 2,
 		"limit": 5,
+		"needs": {
+			"thirst": 1000,
+			"hunger": 2000,
+		},
 		"need_fridge": 1
 	},
 	"beer-bottle": {
@@ -469,6 +667,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/beer-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 200,
+		},
+		"booze_time": 25,
 		"limit": 4,
 		"need_fridge": 1
 	},
@@ -477,6 +679,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/cola-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 500,
+			"fatigue": 100,
+		},
 		"limit": 3,
 		"need_fridge": 1
 	},
@@ -485,6 +691,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/cider-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 300,
+		},
+		"booze_time": 20,
 		"limit": 4,
 		"need_fridge": 1
 	},
@@ -493,6 +703,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/vodka-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 200,
+		},
+		"booze_time": 40,
 		"limit": 6,
 		"need_fridge": 1
 	},
@@ -501,6 +715,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/whiskey-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 250,
+		},
+		"booze_time": 35,
 		"limit": 4,
 		"need_fridge": 1
 	},
@@ -509,6 +727,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/wine-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 100,
+		},
+		"booze_time": 20,
 		"limit": 5,
 		"need_fridge": 1
 	},
@@ -517,6 +739,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/tequila-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 100,
+		},
+		"booze_time": 45,
 		"limit": 7,
 		"need_fridge": 1
 	},
@@ -525,6 +751,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/rum-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 250,
+		},
+		"booze_time": 35,
 		"limit": 5,
 		"need_fridge": 1
 	},
@@ -533,6 +763,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/absinthe-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 300,
+		},
+		"booze_time": 35,
 		"limit": 6,
 		"need_fridge": 1
 	},
@@ -541,6 +775,10 @@
 		"category": "liquid",
 		"texture": "assets/sprites/items/gin-bottle.png",
 		"weight": 1,
+		"needs": {
+			"thirst": 200,
+		},
+		"booze_time": 39,
 		"limit": 4,
 		"need_fridge": 1
 	}
