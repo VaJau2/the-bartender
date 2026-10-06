@@ -20,6 +20,7 @@ var needs_fridge: bool
 var booze_time: float
 var need_values: Dictionary[NeedsController.NeedEnum, int]
 
+signal crafted
 signal taken(item: Item)
 
 
@@ -47,7 +48,6 @@ func _load_json_data() -> void:
 
 func _load_needs(needs_data: Dictionary) -> void:
 	for need_str in needs_data.keys():
-		#var need_enum = NeedsController.NeedEnum.keys()[NeedsController.NeedEnum.get(need_str)]
 		var need_delta = needs_data[need_str]
 		need_values[NeedsController.NeedEnum.get(need_str)] = int(need_delta)
 	
@@ -72,12 +72,11 @@ func disable() -> void:
 
 
 func on_mouse_entered() -> void:
-	if interaction_controller.holding_item != null || G.player.using_storage: 
-		interaction_controller.show_item_hint.emit(self)
-		
-		if interaction_controller.holding_item != null \
-		  && _may_show_craft_hint(interaction_controller.holding_item):
-			interaction_controller.show_craft_hint.emit()
+	interaction_controller.show_item_hint.emit(self)
+	
+	if interaction_controller.holding_item != null \
+	  && _may_show_craft_hint(interaction_controller.holding_item):
+		interaction_controller.show_craft_hint.emit()
 
 
 func on_mouse_exited() -> void:
@@ -127,16 +126,18 @@ func _try_craft_item(item1: Item, item2: Item) -> bool:
 	item1.code = result
 	G.game_manager.try_know_recipe.emit(result)
 	item1._ready()
+	item1.crafted.emit(item1)
+	
 	if item1 == interaction_controller.holding_item:
 		interaction_controller.update_holding_item(item1)
-		
+	
 	if item2.limit == -1: return true
 	if item2.limit > 1:
 		item2.limit -= 1
 	else:
 		if item2 == interaction_controller.holding_item:
 			interaction_controller.update_holding_item(null)
-			
+		
 		item2.queue_free()
 	
 	return true
@@ -156,6 +157,7 @@ func get_save_data() -> Dictionary:
 		"code": code,
 		"limit": limit,
 		"visible": var_to_str(visible),
+		"signal_connections": SignalConnectionsSerializer.get_signal_connections_data(self)
 	}
 
 
@@ -164,6 +166,8 @@ func load_save_data(data: Dictionary) -> void:
 	code = data.code
 	_load_json_data()
 	limit = data.limit
+	if data.signal_connections:
+		SignalConnectionsSerializer.load_signal_connections_data(self, data.signal_connections)
 	if str_to_var(data.visible):
 		enable()
 	else:

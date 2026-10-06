@@ -69,5 +69,6 @@ func load_save_data(data: Dictionary) -> void:
 	
 	for item_id in data.spawned_items:
 		var item = L.created_objects[item_id]
-		item.taken.connect(_on_item_taken)
+		if !item.taken.is_connected(_on_item_taken):
+			item.taken.connect(_on_item_taken)
 		spawned_items.append(item)

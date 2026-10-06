@@ -32,7 +32,8 @@ func check_ordered_drink(drink: Item) -> bool:
 		return false
 	else:
 		bar_state.have_drink(drink)
-		interaction_controller.update_holding_item(null)
+		if interaction_controller.holding_item == drink:
+			interaction_controller.update_holding_item(null)
 		return true
 
 

@@ -562,6 +562,63 @@ offset_right = 128.0
 offset_bottom = 24.0
 mouse_filter = 1
 
+[node name="needIcons" type="Control" parent="." unique_id=928607587]
+layout_mode = 1
+anchor_left = 0.014
+anchor_top = 0.77800006
+anchor_right = 0.042000003
+anchor_bottom = 0.975
+offset_left = -0.12800026
+offset_top = -0.14404297
+offset_right = -0.3840027
+offset_bottom = 0.2000122
+grow_vertical = 0
+script = ExtResource("28_sgxcr")
+green_color = Color(0.13725491, 0.8235294, 0, 1)
+yellow_color = Color(0.9865946, 0.6965878, 0.09144699, 1)
+red_color = Color(0.9755834, 0, 0.13933238, 1)
+
+[node name="thirst" type="Panel" parent="needIcons" unique_id=1164760923]
+visible = false
+layout_mode = 1
+offset_top = 96.0
+offset_right = 32.0
+offset_bottom = 128.0
+
+[node name="sprite" type="Sprite2D" parent="needIcons/thirst" unique_id=656513693]
+modulate = Color(0.1495165, 0.9017877, 0, 1)
+position = Vector2(16, 16)
+texture = ExtResource("28_pwlkd")
+region_enabled = true
+region_rect = Rect2(0, 0, 27, 27)
+
+[node name="hunger" type="Panel" parent="needIcons" unique_id=7765442]
+visible = false
+layout_mode = 1
+offset_top = 48.0
+offset_right = 32.0
+offset_bottom = 80.0
+
+[node name="sprite" type="Sprite2D" parent="needIcons/hunger" unique_id=1594603768]
+modulate = Color(0.14901961, 0.9019608, 0, 1)
+position = Vector2(16, 16)
+texture = ExtResource("28_pwlkd")
+region_enabled = true
+region_rect = Rect2(27, 0, 27, 27)
+
+[node name="fatigue" type="Panel" parent="needIcons" unique_id=327903958]
+visible = false
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="sprite" type="Sprite2D" parent="needIcons/fatigue" unique_id=1058629779]
+modulate = Color(0.14901961, 0.9019608, 0, 1)
+position = Vector2(16, 16)
+texture = ExtResource("28_pwlkd")
+region_enabled = true
+region_rect = Rect2(54, 0, 27, 27)
+
 [node name="recipeOpened" type="Panel" parent="." unique_id=627292201]
 visible = false
 layout_mode = 1
@@ -644,63 +701,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="timer" type="Timer" parent="gameSaved" unique_id=2094322765]
-
-[node name="needIcons" type="Control" parent="." unique_id=928607587]
-layout_mode = 1
-anchor_left = 0.014
-anchor_top = 0.77800006
-anchor_right = 0.042000003
-anchor_bottom = 0.975
-offset_left = -0.12800026
-offset_top = -0.14404297
-offset_right = -0.3840027
-offset_bottom = 0.2000122
-grow_vertical = 0
-script = ExtResource("28_sgxcr")
-green_color = Color(0.13725491, 0.8235294, 0, 1)
-yellow_color = Color(0.9865946, 0.6965878, 0.09144699, 1)
-red_color = Color(0.9755834, 0, 0.13933238, 1)
-
-[node name="thirst" type="Panel" parent="needIcons" unique_id=1164760923]
-visible = false
-layout_mode = 1
-offset_top = 96.0
-offset_right = 32.0
-offset_bottom = 128.0
-
-[node name="sprite" type="Sprite2D" parent="needIcons/thirst" unique_id=656513693]
-modulate = Color(0.1495165, 0.9017877, 0, 1)
-position = Vector2(16, 16)
-texture = ExtResource("28_pwlkd")
-region_enabled = true
-region_rect = Rect2(0, 0, 27, 27)
-
-[node name="hunger" type="Panel" parent="needIcons" unique_id=7765442]
-visible = false
-layout_mode = 1
-offset_top = 48.0
-offset_right = 32.0
-offset_bottom = 80.0
-
-[node name="sprite" type="Sprite2D" parent="needIcons/hunger" unique_id=1594603768]
-modulate = Color(0.14901961, 0.9019608, 0, 1)
-position = Vector2(16, 16)
-texture = ExtResource("28_pwlkd")
-region_enabled = true
-region_rect = Rect2(27, 0, 27, 27)
-
-[node name="fatigue" type="Panel" parent="needIcons" unique_id=327903958]
-visible = false
-layout_mode = 1
-offset_right = 32.0
-offset_bottom = 32.0
-
-[node name="sprite" type="Sprite2D" parent="needIcons/fatigue" unique_id=1058629779]
-modulate = Color(0.14901961, 0.9019608, 0, 1)
-position = Vector2(16, 16)
-texture = ExtResource("28_pwlkd")
-region_enabled = true
-region_rect = Rect2(54, 0, 27, 27)
 
 [connection signal="gui_input" from="itemIcon" to="itemIcon" method="_on_gui_input"]
 [connection signal="mouse_entered" from="itemIcon" to="itemIcon" method="_on_mouse_entered"]

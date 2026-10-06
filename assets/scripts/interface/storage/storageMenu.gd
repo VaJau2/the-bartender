@@ -40,6 +40,7 @@ func _on_open_menu(storage: StorageHandler) -> void:
 	pause_menu.may_pause = false
 	movement_controller.may_move = false
 	temp_storage = storage
+	temp_storage.items_updated.connect(_update_storage)
 	
 	name_label.text = Loc.trans("items." + storage.code + ".name")
 	weight_parent.visible = storage.weight > 0
@@ -62,6 +63,8 @@ func _on_open_menu(storage: StorageHandler) -> void:
 
 func _on_close_pressed() -> void:
 	if !visible: return
+	
+	temp_storage.items_updated.disconnect(_update_storage)
 	temp_storage.close()
 	visible = false
 	movement_controller.may_move = true
@@ -120,6 +123,10 @@ func _create_item_button(item_data: Dictionary, create_category: bool) -> void:
 
 func _on_item_button_click(item: StorageItem) -> void:
 	temp_storage.get_item(item)
+	_update_storage()
+
+
+func _update_storage() -> void:
 	_on_close_pressed()
 	if temp_storage.storage_type == Enums.StorageType.bag:
 		_on_open_menu(temp_storage)

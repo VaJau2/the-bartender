@@ -55,6 +55,7 @@ func update_holding_item(item: Item) -> void:
 		
 		pickup_item.emit(item)
 	else:
+		hide_item_hint.emit()
 		clear_item.emit()
 
 
