@@ -9,6 +9,7 @@ class_name StorageHandler
 @export var weight: int
 @export var use_in_moving_items: bool = true
 
+signal items_updated
 var items: Array[StorageItem]
 
 
@@ -30,6 +31,7 @@ func put_holding_item() -> void:
 func put_item(item: Item) -> void:
 	var item_data = StorageItem.new(item.code, item.category, item.limit)
 	items.append(item_data)
+	items_updated.emit()
 	item.queue_free()
 
 
