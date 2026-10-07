@@ -141,5 +141,25 @@
 	"plural": {
 		"bits": "bit|bits|bits"
 	},
+	"needs_hints": {
+		"thirst": {
+			"none": "Its all fine с:",
+			"green": "I'm a little thirsty",
+			"yellow": "I'm thirsty",
+			"red": "I'm dying of thirst, pls help :с",
+		},
+		"hunger": {
+			"none": "A well-fed pony is a happy pony с:",
+			"green": "My stomach is rumbling a little",
+			"yellow": "I'm hungry",
+			"red": "I'm dying of hunger, pls help :с",
+		},
+		"fatigue": {
+			"none": "Full of energy and confidence in the future с:",
+			"green": "I’d like to rest a little",
+			"yellow": "Wanna sleep",
+			"red": "I must survive",
+		}
+	},
 	"game_saved": "Game saved"
 }

@@ -1,4 +1,4 @@
-extends Panel
+extends PanelContainer
 
 class_name ItemHint
 
@@ -24,7 +24,8 @@ func _process(_delta: float) -> void:
 
 func _update_pos() -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
-	position = mouse_pos + Vector2(20, 20)
+	var pos_y_delta = -20 if mouse_pos.y > 600 else 20
+	position = mouse_pos + Vector2(20, pos_y_delta)
 
 
 func _on_show_hint(code: String) -> void:
